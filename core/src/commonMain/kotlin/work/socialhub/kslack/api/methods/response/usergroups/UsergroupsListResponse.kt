@@ -1,0 +1,13 @@
+package com.github.seratch.jslack.api.methods.response.usergroups
+
+import com.github.seratch.jslack.api.model.Usergroup
+
+class UsergroupsListResponse : SlackApiResponse {
+    var isOk: Boolean = false
+    var warning: String? = null
+    var error: String? = null
+    var needed: String? = null
+    var provided: String? = null
+
+    var usergroups: List<Usergroup>? = null
+}

@@ -1,0 +1,18 @@
+package com.github.seratch.jslack.api.status.v2.model
+
+class SlackIssue {
+    var id: Int? = null
+    var dateCreated: String? = null
+    var dateUpdated: String? = null
+    var title: String? = null
+    var type: String? = null
+    var status: String? = null
+    var url: String? = null
+    var services: List<String>? = null
+    var notes: List<Note>? = null
+
+    class Note {
+        var dateCreated: String? = null
+        var body: String? = null
+    }
+}
