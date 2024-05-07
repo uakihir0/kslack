@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 class BotProfile {
     var id: String? = null // B00000000
@@ -12,13 +12,13 @@ class BotProfile {
     var teamId: String? = null
 
     class Icons {
-        @SerializedName("image_36")
+        @SerialName("image_36")
         var image36: String? = null
 
-        @SerializedName("image_48")
+        @SerialName("image_48")
         var image48: String? = null
 
-        @SerializedName("image_72")
+        @SerialName("image_72")
         var image72: String? = null
     }
 }

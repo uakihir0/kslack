@@ -13,7 +13,7 @@ class EmojiChangedEvent : Event {
 
     override var subtype: String? = null // possible values: add, remove
 
-    var names: List<String>? = null // only for subtype:remove
+    var names: Array<String>? = null // only for subtype:remove
 
     var name: String? = null // only for subtype:add
 

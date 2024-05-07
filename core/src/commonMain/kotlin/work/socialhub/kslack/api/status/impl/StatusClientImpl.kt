@@ -24,9 +24,9 @@ class StatusClientImpl(slackHttpClient: SlackHttpClient) : StatusClient {
     }
 
     @Throws(java.io.IOException::class, StatusApiException::class)
-    fun history(): List<SlackIssue> {
+    fun history(): Array<SlackIssue> {
 //        Response response = slackHttpClient.get(endpointUrlPrefix + "history", null, null);
-//        Type listType = new TypeToken<ArrayList<SlackIssue>>() {
+//        Type listType = new TypeToken<ArrayArray<SlackIssue>>() {
 //        }.getType();
 //        String body = response.body().string();
 //        slackHttpClient.runHttpResponseListeners(response, body);

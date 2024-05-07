@@ -12,6 +12,6 @@ class AdminUsersSetAdminResponse : SlackApiResponse {
     var responseMetadata: ResponseMetadata? = null
 
     class ResponseMetadata {
-        var messages: List<String>? = null
+        var messages: Array<String>? = null
     }
 }

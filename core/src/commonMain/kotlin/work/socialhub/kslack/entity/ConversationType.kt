@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * Represents a type of conversation such as a public channel or IM.
@@ -8,13 +8,13 @@ import com.google.gson.annotations.SerializedName
  * @see [Conversations.list API](https://api.slack.com/methods/conversations.list)
  */
 enum class ConversationType(private val value: String) {
-    @SerializedName("public_channel")
+    @SerialName("public_channel")
     PUBLIC_CHANNEL("public_channel"),
-    @SerializedName("private_channel")
+    @SerialName("private_channel")
     PRIVATE_CHANNEL("private_channel"),
-    @SerializedName("mpim")
+    @SerialName("mpim")
     MPIM("mpim"),
-    @SerializedName("im")
+    @SerialName("im")
     IM("im");
 
     fun value(): String {

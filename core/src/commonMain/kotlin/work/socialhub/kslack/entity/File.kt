@@ -19,7 +19,7 @@ class File {
     var mode: String? = null
     var isEditable: Boolean = false
 
-    @SerializedName("is_external")
+    @SerialName("is_external")
     var isExternal: Boolean = false
     var externalType: String? = null
     var externalId: String? = null
@@ -33,123 +33,123 @@ class File {
     var appId: String? = null
     var appName: String? = null
 
-    @SerializedName("thumb_64")
+    @SerialName("thumb_64")
     var thumb64: String? = null
 
-    @SerializedName("thumb_64_gif")
+    @SerialName("thumb_64_gif")
     var thumb64Gif: String? = null
 
-    @SerializedName("thumb_64_w")
+    @SerialName("thumb_64_w")
     var thumb64Width: String? = null
 
-    @SerializedName("thumb_64_h")
+    @SerialName("thumb_64_h")
     var thumb64Height: String? = null
 
-    @SerializedName("thumb_80")
+    @SerialName("thumb_80")
     var thumb80: String? = null
 
-    @SerializedName("thumb_80_gif")
+    @SerialName("thumb_80_gif")
     var thumb80Gif: String? = null
 
-    @SerializedName("thumb_80_w")
+    @SerialName("thumb_80_w")
     var thumb80Width: String? = null
 
-    @SerializedName("thumb_80_h")
+    @SerialName("thumb_80_h")
     var thumb80Height: String? = null
 
-    @SerializedName("thumb_160")
+    @SerialName("thumb_160")
     var thumb160: String? = null
 
-    @SerializedName("thumb_160_gif")
+    @SerialName("thumb_160_gif")
     var thumb160Gif: String? = null
 
-    @SerializedName("thumb_160_w")
+    @SerialName("thumb_160_w")
     var thumb160Width: String? = null
 
-    @SerializedName("thumb_160_h")
+    @SerialName("thumb_160_h")
     var thumb160Height: String? = null
 
-    @SerializedName("thumb_360")
+    @SerialName("thumb_360")
     var thumb360: String? = null
 
-    @SerializedName("thumb_360_gif")
+    @SerialName("thumb_360_gif")
     var thumb360Gif: String? = null
 
-    @SerializedName("thumb_360_w")
+    @SerialName("thumb_360_w")
     var thumb360Width: String? = null
 
-    @SerializedName("thumb_360_h")
+    @SerialName("thumb_360_h")
     var thumb360Height: String? = null
 
-    @SerializedName("thumb_480")
+    @SerialName("thumb_480")
     var thumb480: String? = null
 
-    @SerializedName("thumb_480_gif")
+    @SerialName("thumb_480_gif")
     var thumb480Gif: String? = null
 
-    @SerializedName("thumb_480_w")
+    @SerialName("thumb_480_w")
     var thumb480Width: String? = null
 
-    @SerializedName("thumb_480_h")
+    @SerialName("thumb_480_h")
     var thumb480Height: String? = null
 
-    @SerializedName("thumb_720")
+    @SerialName("thumb_720")
     var thumb720: String? = null
 
-    @SerializedName("thumb_720_gif")
+    @SerialName("thumb_720_gif")
     var thumb720Gif: String? = null
 
-    @SerializedName("thumb_720_w")
+    @SerialName("thumb_720_w")
     var thumb720Width: String? = null
 
-    @SerializedName("thumb_720_h")
+    @SerialName("thumb_720_h")
     var thumb720Height: String? = null
 
-    @SerializedName("thumb_800")
+    @SerialName("thumb_800")
     var thumb800: String? = null
 
-    @SerializedName("thumb_800_gif")
+    @SerialName("thumb_800_gif")
     var thumb800Gif: String? = null
 
-    @SerializedName("thumb_800_w")
+    @SerialName("thumb_800_w")
     var thumb800Width: String? = null
 
-    @SerializedName("thumb_800_h")
+    @SerialName("thumb_800_h")
     var thumb800Height: String? = null
 
-    @SerializedName("thumb_960")
+    @SerialName("thumb_960")
     var thumb960: String? = null
 
-    @SerializedName("thumb_960_gif")
+    @SerialName("thumb_960_gif")
     var thumb960Gif: String? = null
 
-    @SerializedName("thumb_960_w")
+    @SerialName("thumb_960_w")
     var thumb960Width: String? = null
 
-    @SerializedName("thumb_960_h")
+    @SerialName("thumb_960_h")
     var thumb960Height: String? = null
 
-    @SerializedName("thumb_1024")
+    @SerialName("thumb_1024")
     var thumb1024: String? = null
 
-    @SerializedName("thumb_1024_gif")
+    @SerialName("thumb_1024_gif")
     var thumb1024Gif: String? = null
 
-    @SerializedName("thumb_1024_w")
+    @SerialName("thumb_1024_w")
     var thumb1024Width: String? = null
 
-    @SerializedName("thumb_1024_h")
+    @SerialName("thumb_1024_h")
     var thumb1024Height: String? = null
 
     var thumbVideo: String? = null
 
-    @SerializedName("thumb_pdf")
+    @SerialName("thumb_pdf")
     var thumbPdf: String? = null
 
-    @SerializedName("thumb_pdf_w")
+    @SerialName("thumb_pdf_w")
     var thumbPdfWidth: String? = null
 
-    @SerializedName("thumb_pdf_h")
+    @SerialName("thumb_pdf_h")
     var thumbPdfHeight: String? = null
 
     var thumbTiny: String? = null
@@ -158,10 +158,10 @@ class File {
 
     var imageExifRotation: Int? = null
 
-    @SerializedName("original_w")
+    @SerialName("original_w")
     var originalWidth: String? = null
 
-    @SerializedName("original_h")
+    @SerialName("original_h")
     var originalHeight: String? = null
 
     var deanimateGif: String? = null
@@ -174,7 +174,7 @@ class File {
 
     var isHasRichPreview: Boolean = false
 
-    @SerializedName("preview_is_truncated")
+    @SerialName("preview_is_truncated")
     var isPreviewTruncated: Boolean = false
     var preview: String? = null
     var previewHighlight: String? = null
@@ -189,7 +189,7 @@ class File {
     var lines: Int? = null
     var linesMore: Int? = null
 
-    @SerializedName("is_public")
+    @SerialName("is_public")
     var isPublic: Boolean = false
 
     constructor(
@@ -279,23 +279,23 @@ class File {
         _public: Boolean,
         publicUrlShared: Boolean,
         displayAsBot: Boolean,
-        channels: List<String>?,
-        groups: List<String>?,
-        ims: List<String>?,
+        channels: Array<String>?,
+        groups: Array<String>?,
+        ims: Array<String>?,
         initialComment: FileComment?,
         numStars: Int?,
         starred: Boolean,
-        pinnedTo: List<String>?,
-        reactions: List<Reaction>?,
+        pinnedTo: Array<String>?,
+        reactions: Array<Reaction>?,
         commentsCount: Int?,
         channelActionsTs: String?,
         channelActionsCount: Int?,
-        attachments: List<Attachment>?,
-        blocks: List<LayoutBlock>?,
+        attachments: Array<Attachment>?,
+        blocks: Array<LayoutBlock>?,
         shares: Shares?,
-        to: List<Address>?,
-        from: List<Address>?,
-        cc: List<Address>?,
+        to: Array<Address>?,
+        from: Array<Address>?,
+        cc: Array<Address>?,
         pinnedInfo: Map<String, PinnedInfo>?
     ) {
         this.id = id
@@ -409,24 +409,24 @@ class File {
     var isPublicUrlShared: Boolean = false
     var isDisplayAsBot: Boolean = false
 
-    var channels: List<String>? = null
-    var groups: List<String>? = null
-    var ims: List<String>? = null
+    var channels: Array<String>? = null
+    var groups: Array<String>? = null
+    var ims: Array<String>? = null
     private var initialComment: FileComment? = null
     var numStars: Int? = null
 
-    @SerializedName("is_starred")
+    @SerialName("is_starred")
     var isStarred: Boolean = false
 
-    var pinnedTo: List<String>? = null
-    var reactions: List<Reaction>? = null
+    var pinnedTo: Array<String>? = null
+    var reactions: Array<Reaction>? = null
     var commentsCount: Int? = null
 
     var channelActionsTs: String? = null
     var channelActionsCount: Int? = null
 
-    private var attachments: List<Attachment>? = null
-    private var blocks: List<LayoutBlock>? = null
+    private var attachments: Array<Attachment>? = null
+    private var blocks: Array<LayoutBlock>? = null
 
     var shares: Shares? = null
 
@@ -434,11 +434,11 @@ class File {
         return this.initialComment
     }
 
-    fun getAttachments(): List<Attachment>? {
+    fun getAttachments(): Array<Attachment>? {
         return this.attachments
     }
 
-    fun getBlocks(): List<LayoutBlock>? {
+    fun getBlocks(): Array<LayoutBlock>? {
         return this.blocks
     }
 
@@ -446,11 +446,11 @@ class File {
         this.initialComment = initialComment
     }
 
-    fun setAttachments(attachments: List<Attachment>?) {
+    fun setAttachments(attachments: Array<Attachment>?) {
         this.attachments = attachments
     }
 
-    fun setBlocks(blocks: List<LayoutBlock>?) {
+    fun setBlocks(blocks: Array<LayoutBlock>?) {
         this.blocks = blocks
     }
 
@@ -458,18 +458,18 @@ class File {
         /**
          * The key of the Map: channel ID
          */
-        @SerializedName("public")
-        var publicChannels: Map<String, List<ShareDetail>>? = null
+        @SerialName("public")
+        var publicChannels: Map<String, Array<ShareDetail>>? = null
 
         /**
          * The key of the Map: channel ID
          */
-        @SerializedName("private")
-        var privateChannels: Map<String, List<ShareDetail>>? = null
+        @SerialName("private")
+        var privateChannels: Map<String, Array<ShareDetail>>? = null
     }
 
     class ShareDetail {
-        var replyUsers: List<String>? = null
+        var replyUsers: Array<String>? = null
         var replyUsersCount: Int? = null
         var replyCount: Int? = null
         var ts: String? = null
@@ -479,9 +479,9 @@ class File {
         var teamId: String? = null
     }
 
-    var to: List<Address>? = null
-    var from: List<Address>? = null
-    var cc: List<Address>? = null
+    var to: Array<Address>? = null
+    var from: Array<Address>? = null
+    var cc: Array<Address>? = null
 
     class Address {
         var address: String? = null
@@ -583,23 +583,23 @@ class File {
         private var _public = false
         private var publicUrlShared = false
         private var displayAsBot = false
-        private var channels: List<String>? = null
-        private var groups: List<String>? = null
-        private var ims: List<String>? = null
+        private var channels: Array<String>? = null
+        private var groups: Array<String>? = null
+        private var ims: Array<String>? = null
         private var initialComment: FileComment? = null
         private var numStars: Int? = null
         private var starred = false
-        private var pinnedTo: List<String>? = null
-        private var reactions: List<Reaction>? = null
+        private var pinnedTo: Array<String>? = null
+        private var reactions: Array<Reaction>? = null
         private var commentsCount: Int? = null
         private var channelActionsTs: String? = null
         private var channelActionsCount: Int? = null
-        private var attachments: List<Attachment>? = null
-        private var blocks: List<LayoutBlock>? = null
+        private var attachments: Array<Attachment>? = null
+        private var blocks: Array<LayoutBlock>? = null
         private var shares: Shares? = null
-        private var to: List<Address>? = null
-        private var from: List<Address>? = null
-        private var cc: List<Address>? = null
+        private var to: Array<Address>? = null
+        private var from: Array<Address>? = null
+        private var cc: Array<Address>? = null
         private var pinnedInfo: Map<String, PinnedInfo>? = null
 
         fun id(id: String?): FileBuilder {
@@ -1032,17 +1032,17 @@ class File {
             return this
         }
 
-        fun channels(channels: List<String>?): FileBuilder {
+        fun channels(channels: Array<String>?): FileBuilder {
             this.channels = channels
             return this
         }
 
-        fun groups(groups: List<String>?): FileBuilder {
+        fun groups(groups: Array<String>?): FileBuilder {
             this.groups = groups
             return this
         }
 
-        fun ims(ims: List<String>?): FileBuilder {
+        fun ims(ims: Array<String>?): FileBuilder {
             this.ims = ims
             return this
         }
@@ -1062,12 +1062,12 @@ class File {
             return this
         }
 
-        fun pinnedTo(pinnedTo: List<String>?): FileBuilder {
+        fun pinnedTo(pinnedTo: Array<String>?): FileBuilder {
             this.pinnedTo = pinnedTo
             return this
         }
 
-        fun reactions(reactions: List<Reaction>?): FileBuilder {
+        fun reactions(reactions: Array<Reaction>?): FileBuilder {
             this.reactions = reactions
             return this
         }
@@ -1087,12 +1087,12 @@ class File {
             return this
         }
 
-        fun attachments(attachments: List<Attachment>?): FileBuilder {
+        fun attachments(attachments: Array<Attachment>?): FileBuilder {
             this.attachments = attachments
             return this
         }
 
-        fun blocks(blocks: List<LayoutBlock>?): FileBuilder {
+        fun blocks(blocks: Array<LayoutBlock>?): FileBuilder {
             this.blocks = blocks
             return this
         }
@@ -1102,17 +1102,17 @@ class File {
             return this
         }
 
-        fun to(to: List<Address>?): FileBuilder {
+        fun to(to: Array<Address>?): FileBuilder {
             this.to = to
             return this
         }
 
-        fun from(from: List<Address>?): FileBuilder {
+        fun from(from: Array<Address>?): FileBuilder {
             this.from = from
             return this
         }
 
-        fun cc(cc: List<Address>?): FileBuilder {
+        fun cc(cc: Array<Address>?): FileBuilder {
             this.cc = cc
             return this
         }

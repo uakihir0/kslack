@@ -8,8 +8,8 @@ class SlackIssue {
     var type: String? = null
     var status: String? = null
     var url: String? = null
-    var services: List<String>? = null
-    var notes: List<Note>? = null
+    var services: Array<String>? = null
+    var notes: Array<Note>? = null
 
     class Note {
         var dateCreated: String? = null

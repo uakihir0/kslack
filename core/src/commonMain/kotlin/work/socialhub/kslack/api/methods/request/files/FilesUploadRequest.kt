@@ -14,7 +14,7 @@ class FilesUploadRequest internal constructor(
     filename: String?,
     title: String?,
     initialComment: String?,
-    channels: List<String>?,
+    channels: Array<String>?,
     threadTs: String?
 ) : SlackApiRequest {
     /**
@@ -51,7 +51,7 @@ class FilesUploadRequest internal constructor(
     /**
      * Comma-separated list of channel names or IDs where the file will be shared.
      */
-    var channels: List<String>?
+    var channels: Array<String>?
 
     /**
      * Provide another message's ts value to upload this file as a reply. Never use a reply's ts value; use its parent instead.
@@ -95,7 +95,7 @@ class FilesUploadRequest internal constructor(
         private var filename: String? = null
         private var title: String? = null
         private var initialComment: String? = null
-        private var channels: List<String>? = null
+        private var channels: Array<String>? = null
         private var threadTs: String? = null
 
         fun token(token: String?): FilesUploadRequestBuilder {
@@ -138,7 +138,7 @@ class FilesUploadRequest internal constructor(
             return this
         }
 
-        fun channels(channels: List<String>?): FilesUploadRequestBuilder {
+        fun channels(channels: Array<String>?): FilesUploadRequestBuilder {
             this.channels = channels
             return this
         }

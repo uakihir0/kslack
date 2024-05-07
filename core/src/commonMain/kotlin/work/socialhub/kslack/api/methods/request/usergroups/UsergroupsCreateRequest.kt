@@ -22,7 +22,7 @@ class UsergroupsCreateRequest internal constructor(
     /**
      * A comma separated string of encoded channel IDs for which the User Group uses as a default.
      */
-    var channels: List<String>?,
+    var channels: Array<String>?,
     /**
      * Include the number of users in each User Group.
      */
@@ -33,7 +33,7 @@ class UsergroupsCreateRequest internal constructor(
         private var name: String? = null
         private var handle: String? = null
         private var description: String? = null
-        private var channels: List<String>? = null
+        private var channels: Array<String>? = null
         private var includeCount = false
 
         fun token(token: String?): UsergroupsCreateRequestBuilder {
@@ -56,7 +56,7 @@ class UsergroupsCreateRequest internal constructor(
             return this
         }
 
-        fun channels(channels: List<String>?): UsergroupsCreateRequestBuilder {
+        fun channels(channels: Array<String>?): UsergroupsCreateRequestBuilder {
             this.channels = channels
             return this
         }

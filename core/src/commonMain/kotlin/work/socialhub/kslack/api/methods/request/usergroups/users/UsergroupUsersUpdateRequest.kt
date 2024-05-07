@@ -14,7 +14,7 @@ class UsergroupUsersUpdateRequest internal constructor(
     /**
      * A comma separated string of encoded user IDs that represent the entire list of users for the User Group.
      */
-    var users: List<String>?,
+    var users: Array<String>?,
     /**
      * Include the number of users in the User Group.
      */
@@ -23,7 +23,7 @@ class UsergroupUsersUpdateRequest internal constructor(
     class UsergroupUsersUpdateRequestBuilder internal constructor() {
         private var token: String? = null
         private var usergroup: String? = null
-        private var users: List<String>? = null
+        private var users: Array<String>? = null
         private var includeCount = false
 
         fun token(token: String?): UsergroupUsersUpdateRequestBuilder {
@@ -36,7 +36,7 @@ class UsergroupUsersUpdateRequest internal constructor(
             return this
         }
 
-        fun users(users: List<String>?): UsergroupUsersUpdateRequestBuilder {
+        fun users(users: Array<String>?): UsergroupUsersUpdateRequestBuilder {
             this.users = users
             return this
         }

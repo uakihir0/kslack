@@ -9,7 +9,7 @@ class PinsListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var items: List<MessageItem>? = null
+    var items: Array<MessageItem>? = null
 
     class MessageItem {
         var type: String? = null

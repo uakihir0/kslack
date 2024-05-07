@@ -17,12 +17,12 @@ class MigrationExchangeRequest internal constructor(
     /**
      * A comma-separated list of user ids, up to 400 per request
      */
-    var users: List<String>?
+    var users: Array<String>?
 ) : SlackApiRequest {
     class MigrationExchangeRequestBuilder internal constructor() {
         private var token: String? = null
         private var toOld = false
-        private var users: List<String>? = null
+        private var users: Array<String>? = null
 
         fun token(token: String?): MigrationExchangeRequestBuilder {
             this.token = token
@@ -34,7 +34,7 @@ class MigrationExchangeRequest internal constructor(
             return this
         }
 
-        fun users(users: List<String>?): MigrationExchangeRequestBuilder {
+        fun users(users: Array<String>?): MigrationExchangeRequestBuilder {
             this.users = users
             return this
         }

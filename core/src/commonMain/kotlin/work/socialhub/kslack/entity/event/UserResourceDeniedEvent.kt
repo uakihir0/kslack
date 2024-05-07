@@ -10,7 +10,7 @@ package work.socialhub.kslack.entity.event
 class UserResourceDeniedEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null
-    var scopes: List<String>? = null
+    var scopes: Array<String>? = null
     var triggerId: String? = null
 
     companion object {

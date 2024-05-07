@@ -9,7 +9,7 @@ class ReactionsListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var items: List<Item>? = null
+    var items: Array<Item>? = null
     var paging: Paging? = null
 
     class Item {
@@ -21,20 +21,20 @@ class ReactionsListResponse : SlackApiResponse {
             var type: String? = null
             var subtype: String? = null
             var text: String? = null
-            var attachments: List<Attachment>? = null
-            var blocks: List<LayoutBlock>? = null
+            var attachments: Array<Attachment>? = null
+            var blocks: Array<LayoutBlock>? = null
             var ts: String? = null
             var team: String? = null
             var user: String? = null
             var username: String? = null
             var botId: String? = null
             var permalink: String? = null
-            var reactions: List<Reaction>? = null
+            var reactions: Array<Reaction>? = null
             var threadTs: String? = null
             var replyCount: Int? = null
             var replyUsersCount: Int? = null
             var latestReply: String? = null
-            var replyUsers: List<String>? = null
+            var replyUsers: Array<String>? = null
 
             // https://api.slack.com/messaging/retrieving#threading
             // Parent messages in a thread will no longer explicitly list their replies.
@@ -45,7 +45,7 @@ class ReactionsListResponse : SlackApiResponse {
             @get:Deprecated("")
             @set:Deprecated("")
             @Deprecated("")
-            var replies: List<MessageRootReply>? = null
+            var replies: Array<MessageRootReply>? = null
 
             /**
              * A reply message information in a MessageRoot.
@@ -66,23 +66,23 @@ class ReactionsListResponse : SlackApiResponse {
             var botProfile: BotProfile? = null
 
             class Icons {
-                @SerializedName("image_36")
+                @SerialName("image_36")
                 var image36: String? = null
 
-                @SerializedName("image_48")
+                @SerialName("image_48")
                 var image48: String? = null
 
-                @SerializedName("image_64")
+                @SerialName("image_64")
                 var image64: String? = null
 
-                @SerializedName("image_72")
+                @SerialName("image_72")
                 var image72: String? = null
             }
 
             class UserProfile {
                 var avatarHash: String? = null
 
-                @SerializedName("image_72")
+                @SerialName("image_72")
                 var image72: String? = null
                 var firstName: String? = null
                 var realName: String? = null
@@ -94,14 +94,14 @@ class ReactionsListResponse : SlackApiResponse {
                  * is_restricted indicates the user is a multi-channel guest.
                  * see also: https://get.slack.help/hc/en-us/articles/201314026-roles-and-permissions-in-slack
                  */
-                @SerializedName("is_restricted")
+                @SerialName("is_restricted")
                 var isRestricted: Boolean = false
 
                 /**
                  * is_ultra_restricted indicates they are a single channel guest.
                  * see also: https://get.slack.help/hc/en-us/articles/201314026-roles-and-permissions-in-slack
                  */
-                @SerializedName("is_ultra_restricted")
+                @SerialName("is_ultra_restricted")
                 var isUltraRestricted: Boolean = false
             }
         }

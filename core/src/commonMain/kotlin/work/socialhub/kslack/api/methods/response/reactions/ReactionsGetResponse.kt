@@ -21,6 +21,6 @@ class ReactionsGetResponse : SlackApiResponse {
         var username: String? = null
         var botId: String? = null
         var permalink: String? = null
-        var reactions: List<Reaction>? = null
+        var reactions: Array<Reaction>? = null
     }
 }

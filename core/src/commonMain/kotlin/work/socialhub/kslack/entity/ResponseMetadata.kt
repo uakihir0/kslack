@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * An attribute included within the response of the newest Slack APIs which contains a `next_cursor`
@@ -8,6 +8,6 @@ import com.google.gson.annotations.SerializedName
  * navigate through the collection page by virtual page.
  */
 class ResponseMetadata {
-    @SerializedName("next_cursor")
+    @SerialName("next_cursor")
     var nextCursor: String? = null
 }

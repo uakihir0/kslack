@@ -16,6 +16,6 @@ class SearchAllResponse : SlackApiResponse {
 
     class Posts {
         var total: Int? = null
-        var matches: List<String>? = null
+        var matches: Array<String>? = null
     }
 }

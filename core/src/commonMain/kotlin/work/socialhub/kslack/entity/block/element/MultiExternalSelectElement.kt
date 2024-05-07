@@ -10,7 +10,7 @@ class MultiExternalSelectElement : BlockElement {
     var fallback: String? = null
     private var placeholder: PlainTextObject? = null
     var actionId: String? = null
-    private var initialOptions: List<OptionObject>? = null
+    private var initialOptions: Array<OptionObject>? = null
     var minQueryLength: Int? = null
     private var confirm: ConfirmationDialogObject? = null
     var maxSelectedItems: Int? = null
@@ -19,7 +19,7 @@ class MultiExternalSelectElement : BlockElement {
         fallback: String?,
         placeholder: PlainTextObject?,
         actionId: String?,
-        initialOptions: List<OptionObject>?,
+        initialOptions: Array<OptionObject>?,
         minQueryLength: Int?,
         confirm: ConfirmationDialogObject?,
         maxSelectedItems: Int?
@@ -39,7 +39,7 @@ class MultiExternalSelectElement : BlockElement {
         return this.placeholder
     }
 
-    fun getInitialOptions(): List<OptionObject>? {
+    fun getInitialOptions(): Array<OptionObject>? {
         return this.initialOptions
     }
 
@@ -51,7 +51,7 @@ class MultiExternalSelectElement : BlockElement {
         this.placeholder = placeholder
     }
 
-    fun setInitialOptions(initialOptions: List<OptionObject>?) {
+    fun setInitialOptions(initialOptions: Array<OptionObject>?) {
         this.initialOptions = initialOptions
     }
 
@@ -122,7 +122,7 @@ class MultiExternalSelectElement : BlockElement {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null
-        private var initialOptions: List<OptionObject>? = null
+        private var initialOptions: Array<OptionObject>? = null
         private var minQueryLength: Int? = null
         private var confirm: ConfirmationDialogObject? = null
         private var maxSelectedItems: Int? = null
@@ -142,7 +142,7 @@ class MultiExternalSelectElement : BlockElement {
             return this
         }
 
-        fun initialOptions(initialOptions: List<OptionObject>?): MultiExternalSelectElementBuilder {
+        fun initialOptions(initialOptions: Array<OptionObject>?): MultiExternalSelectElementBuilder {
             this.initialOptions = initialOptions
             return this
         }

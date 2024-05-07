@@ -17,9 +17,9 @@ class SubteamMembersChangedEvent : Event {
     var teamId: String? = null
     var datePreviousUpdate: Int? = null
     var dateUpdate: Int? = null
-    var addedUsers: List<String>? = null
+    var addedUsers: Array<String>? = null
     var addedUsersCount: Int? = null
-    var removedUsers: List<String>? = null
+    var removedUsers: Array<String>? = null
     var removedUsersCount: Int? = null
 
     companion object {

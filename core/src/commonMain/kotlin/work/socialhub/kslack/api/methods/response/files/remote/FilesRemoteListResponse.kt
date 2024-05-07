@@ -9,6 +9,6 @@ class FilesRemoteListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var files: List<File>? = null
+    var files: Array<File>? = null
     var responseMetadata: ResponseMetadata? = null
 }

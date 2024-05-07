@@ -11,7 +11,7 @@ class MultiUsersSelectElement : BlockElement {
 
     private var placeholder: PlainTextObject? = null
     var actionId: String? = null
-    var initialUsers: List<String>? = null
+    var initialUsers: Array<String>? = null
     private var confirm: ConfirmationDialogObject? = null
     var maxSelectedItems: Int? = null
 
@@ -19,7 +19,7 @@ class MultiUsersSelectElement : BlockElement {
         fallback: String?,
         placeholder: PlainTextObject?,
         actionId: String?,
-        initialUsers: List<String>?,
+        initialUsers: Array<String>?,
         confirm: ConfirmationDialogObject?,
         maxSelectedItems: Int?
     ) {
@@ -107,7 +107,7 @@ class MultiUsersSelectElement : BlockElement {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null
-        private var initialUsers: List<String>? = null
+        private var initialUsers: Array<String>? = null
         private var confirm: ConfirmationDialogObject? = null
         private var maxSelectedItems: Int? = null
 
@@ -126,7 +126,7 @@ class MultiUsersSelectElement : BlockElement {
             return this
         }
 
-        fun initialUsers(initialUsers: List<String>?): MultiUsersSelectElementBuilder {
+        fun initialUsers(initialUsers: Array<String>?): MultiUsersSelectElementBuilder {
             this.initialUsers = initialUsers
             return this
         }

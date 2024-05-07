@@ -10,7 +10,7 @@ class MultiConversationsSelectElement : BlockElement {
     var fallback: String? = null
     private var placeholder: PlainTextObject? = null
     var actionId: String? = null
-    var initialConversations: List<String>? = null
+    var initialConversations: Array<String>? = null
     private var confirm: ConfirmationDialogObject? = null
     var maxSelectedItems: Int? = null
 
@@ -18,7 +18,7 @@ class MultiConversationsSelectElement : BlockElement {
         fallback: String?,
         placeholder: PlainTextObject?,
         actionId: String?,
-        initialConversations: List<String>?,
+        initialConversations: Array<String>?,
         confirm: ConfirmationDialogObject?,
         maxSelectedItems: Int?
     ) {
@@ -106,7 +106,7 @@ class MultiConversationsSelectElement : BlockElement {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null
-        private var initialConversations: List<String>? = null
+        private var initialConversations: Array<String>? = null
         private var confirm: ConfirmationDialogObject? = null
         private var maxSelectedItems: Int? = null
 
@@ -125,7 +125,7 @@ class MultiConversationsSelectElement : BlockElement {
             return this
         }
 
-        fun initialConversations(initialConversations: List<String>?): MultiConversationsSelectElementBuilder {
+        fun initialConversations(initialConversations: Array<String>?): MultiConversationsSelectElementBuilder {
             this.initialConversations = initialConversations
             return this
         }

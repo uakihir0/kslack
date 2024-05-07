@@ -61,38 +61,38 @@ class Payload internal constructor(
     :Deprecated(
         ""
     ) @set:Deprecated("") @get:Deprecated("") var iconEmoji: String?,
-    blocks: List<LayoutBlock>?,
-    attachments: List<Attachment>?
+    blocks: Array<LayoutBlock>?,
+    attachments: Array<Attachment>?
 ) {
     /**
      * An array of [layout blocks][LayoutBlock] in the same format as described in the
      * [layout block guide](https://api.slack.com/messaging/composing/layouts#getting-started).
      */
-    private var blocks: List<LayoutBlock>?
+    private var blocks: Array<LayoutBlock>?
 
     /**
      * An array of legacy secondary attachments. We recommend you use [.blocks] instead.
      */
-    private var attachments: List<Attachment>?
+    private var attachments: Array<Attachment>?
 
     init {
         this.blocks = blocks
         this.attachments = attachments
     }
 
-    fun getBlocks(): List<LayoutBlock>? {
+    fun getBlocks(): Array<LayoutBlock>? {
         return this.blocks
     }
 
-    fun getAttachments(): List<Attachment>? {
+    fun getAttachments(): Array<Attachment>? {
         return this.attachments
     }
 
-    fun setBlocks(blocks: List<LayoutBlock>?) {
+    fun setBlocks(blocks: Array<LayoutBlock>?) {
         this.blocks = blocks
     }
 
-    fun setAttachments(attachments: List<Attachment>?) {
+    fun setAttachments(attachments: Array<Attachment>?) {
         this.attachments = attachments
     }
 
@@ -103,8 +103,8 @@ class Payload internal constructor(
         private var username: String? = null
         private var iconUrl: String? = null
         private var iconEmoji: String? = null
-        private var blocks: List<LayoutBlock>? = null
-        private var attachments: List<Attachment>? = null
+        private var blocks: Array<LayoutBlock>? = null
+        private var attachments: Array<Attachment>? = null
 
         fun threadTs(threadTs: String?): PayloadBuilder {
             this.threadTs = threadTs
@@ -140,12 +140,12 @@ class Payload internal constructor(
             return this
         }
 
-        fun blocks(blocks: List<LayoutBlock>?): PayloadBuilder {
+        fun blocks(blocks: Array<LayoutBlock>?): PayloadBuilder {
             this.blocks = blocks
             return this
         }
 
-        fun attachments(attachments: List<Attachment>?): PayloadBuilder {
+        fun attachments(attachments: Array<Attachment>?): PayloadBuilder {
             this.attachments = attachments
             return this
         }

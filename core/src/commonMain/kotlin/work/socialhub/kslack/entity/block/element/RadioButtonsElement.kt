@@ -13,11 +13,11 @@ class RadioButtonsElement : BlockElement {
     var actionId: String? = null
 
     // https://github.com/seratch/jslack/pull/103
-    // The reason I didn't initialize the List<> fields is because Slack (sometimes) gives errors
+    // The reason I didn't initialize the Array<> fields is because Slack (sometimes) gives errors
     // when it encounters an empty list in the generated JSON.
     // The proper solution if/when you don't want un-initialized fields is to have a Gson type adapter that skips empty lists
     // (e.g. something like https://stackoverflow.com/questions/11942118/how-do-you-get-gson-to-omit-null-or-empty-objects-and-empty-arrays-and-lists)
-    private var options: List<OptionObject>? = null
+    private var options: Array<OptionObject>? = null
 
     private var initialOption: OptionObject? = null
     private var confirm: ConfirmationDialogObject? = null
@@ -26,7 +26,7 @@ class RadioButtonsElement : BlockElement {
         fallback: String?,
         placeholder: PlainTextObject?,
         actionId: String?,
-        options: List<OptionObject>?,
+        options: Array<OptionObject>?,
         initialOption: OptionObject?,
         confirm: ConfirmationDialogObject?
     ) {
@@ -44,7 +44,7 @@ class RadioButtonsElement : BlockElement {
         return this.placeholder
     }
 
-    fun getOptions(): List<OptionObject>? {
+    fun getOptions(): Array<OptionObject>? {
         return this.options
     }
 
@@ -60,7 +60,7 @@ class RadioButtonsElement : BlockElement {
         this.placeholder = placeholder
     }
 
-    fun setOptions(options: List<OptionObject>?) {
+    fun setOptions(options: Array<OptionObject>?) {
         this.options = options
     }
 
@@ -130,7 +130,7 @@ class RadioButtonsElement : BlockElement {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null
-        private var options: List<OptionObject>? = null
+        private var options: Array<OptionObject>? = null
         private var initialOption: OptionObject? = null
         private var confirm: ConfirmationDialogObject? = null
 
@@ -149,7 +149,7 @@ class RadioButtonsElement : BlockElement {
             return this
         }
 
-        fun options(options: List<OptionObject>?): RadioButtonsElementBuilder {
+        fun options(options: Array<OptionObject>?): RadioButtonsElementBuilder {
             this.options = options
             return this
         }

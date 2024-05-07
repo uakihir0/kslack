@@ -10,18 +10,18 @@ class DndTeamInfoRequest internal constructor(
     /**
      * Comma-separated list of users to fetch Do Not Disturb status for
      */
-    var users: List<String>?
+    var users: Array<String>?
 ) : SlackApiRequest {
     class DndTeamInfoRequestBuilder internal constructor() {
         private var token: String? = null
-        private var users: List<String>? = null
+        private var users: Array<String>? = null
 
         fun token(token: String?): DndTeamInfoRequestBuilder {
             this.token = token
             return this
         }
 
-        fun users(users: List<String>?): DndTeamInfoRequestBuilder {
+        fun users(users: Array<String>?): DndTeamInfoRequestBuilder {
             this.users = users
             return this
         }

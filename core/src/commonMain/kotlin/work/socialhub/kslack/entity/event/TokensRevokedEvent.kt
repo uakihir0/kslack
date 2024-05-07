@@ -25,8 +25,8 @@ class TokensRevokedEvent : Event {
     var tokens: Tokens? = null
 
     class Tokens {
-        var oauth: List<String>? = null
-        var bot: List<String>? = null
+        var oauth: Array<String>? = null
+        var bot: Array<String>? = null
     }
 
     companion object {

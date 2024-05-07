@@ -7,13 +7,13 @@ class OptionGroupObject {
     private var label: PlainTextObject? = null
 
     // https://github.com/seratch/jslack/pull/103
-    // The reason I didn't initialize the List<> fields is because Slack (sometimes) gives errors
+    // The reason I didn't initialize the Array<> fields is because Slack (sometimes) gives errors
     // when it encounters an empty list in the generated JSON.
     // The proper solution if/when you don't want un-initialized fields is to have a Gson type adapter that skips empty lists
     // (e.g. something like https://stackoverflow.com/questions/11942118/how-do-you-get-gson-to-omit-null-or-empty-objects-and-empty-arrays-and-lists)
-    private var options: List<OptionObject>? = null
+    private var options: Array<OptionObject>? = null
 
-    constructor(label: PlainTextObject?, options: List<OptionObject>?) {
+    constructor(label: PlainTextObject?, options: Array<OptionObject>?) {
         this.label = label
         this.options = options
     }
@@ -24,7 +24,7 @@ class OptionGroupObject {
         return this.label
     }
 
-    fun getOptions(): List<OptionObject>? {
+    fun getOptions(): Array<OptionObject>? {
         return this.options
     }
 
@@ -32,20 +32,20 @@ class OptionGroupObject {
         this.label = label
     }
 
-    fun setOptions(options: List<OptionObject>?) {
+    fun setOptions(options: Array<OptionObject>?) {
         this.options = options
     }
 
     class OptionGroupObjectBuilder internal constructor() {
         private var label: PlainTextObject? = null
-        private var options: List<OptionObject>? = null
+        private var options: Array<OptionObject>? = null
 
         fun label(label: PlainTextObject?): OptionGroupObjectBuilder {
             this.label = label
             return this
         }
 
-        fun options(options: List<OptionObject>?): OptionGroupObjectBuilder {
+        fun options(options: Array<OptionObject>?): OptionGroupObjectBuilder {
             this.options = options
             return this
         }

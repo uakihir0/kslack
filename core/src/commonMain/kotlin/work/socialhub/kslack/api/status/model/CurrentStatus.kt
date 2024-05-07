@@ -4,5 +4,5 @@ class CurrentStatus {
     var status: String? = null
     var dateCreated: String? = null
     var dateUpdated: String? = null
-    var activeIncidents: List<SlackIssue>? = null
+    var activeIncidents: Array<SlackIssue>? = null
 }

@@ -21,7 +21,7 @@ class Dialog {
     /**
      * Up to 5 form elements are allowed per dialog. Required.
      */
-    private var elements: List<DialogElement>? = null
+    private var elements: Array<DialogElement>? = null
 
     /**
      * User-facing string for whichever button-like thing submits the form, depending on
@@ -45,7 +45,7 @@ class Dialog {
     constructor(
         title: String?,
         callbackId: String?,
-        elements: List<DialogElement>?,
+        elements: Array<DialogElement>?,
         submitLabel: String?,
         notifyOnCancel: Boolean,
         state: String?
@@ -60,18 +60,18 @@ class Dialog {
 
     constructor()
 
-    fun getElements(): List<DialogElement>? {
+    fun getElements(): Array<DialogElement>? {
         return this.elements
     }
 
-    fun setElements(elements: List<DialogElement>?) {
+    fun setElements(elements: Array<DialogElement>?) {
         this.elements = elements
     }
 
     class DialogBuilder internal constructor() {
         private var title: String? = null
         private var callbackId: String? = null
-        private var elements: List<DialogElement>? = null
+        private var elements: Array<DialogElement>? = null
         private var submitLabel: String? = null
         private var notifyOnCancel = false
         private var state: String? = null
@@ -86,7 +86,7 @@ class Dialog {
             return this
         }
 
-        fun elements(elements: List<DialogElement>?): DialogBuilder {
+        fun elements(elements: Array<DialogElement>?): DialogBuilder {
             this.elements = elements
             return this
         }

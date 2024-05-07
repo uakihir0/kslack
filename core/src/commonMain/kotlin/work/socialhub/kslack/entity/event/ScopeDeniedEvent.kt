@@ -9,7 +9,7 @@ package work.socialhub.kslack.entity.event
  */
 class ScopeDeniedEvent : Event {
     override val type: String = TYPE_NAME
-    var scopes: List<String>? = null
+    var scopes: Array<String>? = null
     var triggerId: String? = null
 
     companion object {

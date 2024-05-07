@@ -9,6 +9,6 @@ class AdminTeamsOwnersListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var ownerIds: List<String>? = null
+    var ownerIds: Array<String>? = null
     var responseMetadata: ResponseMetadata? = null
 }

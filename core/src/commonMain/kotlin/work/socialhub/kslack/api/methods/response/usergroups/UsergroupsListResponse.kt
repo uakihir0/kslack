@@ -9,5 +9,5 @@ class UsergroupsListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var usergroups: List<Usergroup>? = null
+    var usergroups: Array<Usergroup>? = null
 }

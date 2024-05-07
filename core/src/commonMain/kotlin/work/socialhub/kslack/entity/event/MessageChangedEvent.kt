@@ -31,17 +31,17 @@ class MessageChangedEvent : Event {
         var edited: Edited? = null
 
         var text: String? = null
-        var blocks: List<LayoutBlock>? = null
-        var attachments: List<Attachment>? = null
+        var blocks: Array<LayoutBlock>? = null
+        var attachments: Array<Attachment>? = null
 
         var ts: String? = null
         var userTeam: String? = null
         var sourceTeam: String? = null
 
-        @SerializedName("is_starred")
+        @SerialName("is_starred")
         var isStarred: Boolean = false
-        var pinnedTo: List<String>? = null
-        var reactions: List<Reaction>? = null
+        var pinnedTo: Array<String>? = null
+        var reactions: Array<Reaction>? = null
     }
 
     class Edited {

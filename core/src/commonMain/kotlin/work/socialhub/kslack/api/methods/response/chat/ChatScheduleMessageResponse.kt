@@ -23,7 +23,7 @@ class ChatScheduleMessageResponse : SlackApiResponse {
         var user: String? = null
 
         var text: String? = null
-        var attachments: List<Attachment>? = null
-        var blocks: List<LayoutBlock>? = null
+        var attachments: Array<Attachment>? = null
+        var blocks: Array<LayoutBlock>? = null
     }
 }

@@ -9,5 +9,5 @@ class UsergroupUsersListResponse : SlackApiResponse {
     override var needed: String? = null
     override var provided: String? = null
 
-    var users: List<String>? = null
+    var users: Array<String>? = null
 }

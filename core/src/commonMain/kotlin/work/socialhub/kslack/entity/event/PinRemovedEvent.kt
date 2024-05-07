@@ -35,10 +35,10 @@ class PinRemovedEvent : Event {
         var type: String? = null
         var user: String? = null
         var text: String? = null
-        var blocks: List<LayoutBlock>? = null
-        var attachments: List<Attachment>? = null
+        var blocks: Array<LayoutBlock>? = null
+        var attachments: Array<Attachment>? = null
         var ts: String? = null
-        var pinnedTo: List<String>? = null
+        var pinnedTo: Array<String>? = null
         var permalink: String? = null
     }
 

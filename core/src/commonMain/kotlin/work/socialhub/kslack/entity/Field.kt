@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * https://api.slack.com/docs/message-attachments
@@ -20,7 +20,7 @@ class Field {
     /**
      * An optional flag indicating whether the value is short enough to be displayed side-by-side with other values.
      */
-    @SerializedName("short")
+    @SerialName("short")
     var isValueShortEnough: Boolean = false
 
     constructor(title: String?, value: String?, valueShortEnough: Boolean) {

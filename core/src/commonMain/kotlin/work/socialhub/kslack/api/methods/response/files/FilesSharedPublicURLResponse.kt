@@ -10,6 +10,6 @@ class FilesSharedPublicURLResponse : SlackApiResponse {
     var provided: String? = null
 
     var file: File? = null
-    var comments: List<FileComment>? = null
+    var comments: Array<FileComment>? = null
     var paging: Paging? = null
 }

@@ -20,13 +20,13 @@ class ConversationsOpenRequest internal constructor(
      * The ordering of the users is preserved whenever a multi-person direct message is returned.
      * Supply a `channel` when not supplying `users`.
      */
-    var users: List<String>?
+    var users: Array<String>?
 ) : SlackApiRequest {
     class ConversationsOpenRequestBuilder internal constructor() {
         private var token: String? = null
         private var channel: String? = null
         private var returnIm = false
-        private var users: List<String>? = null
+        private var users: Array<String>? = null
 
         fun token(token: String?): ConversationsOpenRequestBuilder {
             this.token = token
@@ -43,7 +43,7 @@ class ConversationsOpenRequest internal constructor(
             return this
         }
 
-        fun users(users: List<String>?): ConversationsOpenRequestBuilder {
+        fun users(users: Array<String>?): ConversationsOpenRequestBuilder {
             this.users = users
             return this
         }

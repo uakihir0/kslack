@@ -35,7 +35,7 @@ package work.socialhub.kslack.entity.event
 class PresenceChangeEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null // Single-user presence change event:
-    var users: List<String>? = null // Multiple-user batch presence change event:
+    var users: Array<String>? = null // Multiple-user batch presence change event:
     var presence: String? = null
 
     companion object {

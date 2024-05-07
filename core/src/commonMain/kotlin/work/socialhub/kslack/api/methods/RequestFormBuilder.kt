@@ -678,7 +678,7 @@ object RequestFormBuilder {
         setIfNotNull("limit", req.getLimit(), form)
 
         if (req.getTypes() != null) {
-            val typeValues: MutableList<String> = java.util.ArrayList<String>()
+            val typeValues: MutableArray<String> = java.util.ArrayArray<String>()
             for (type in req.getTypes()) {
                 typeValues.add(type.value())
             }
@@ -1474,7 +1474,7 @@ object RequestFormBuilder {
         setIfNotNull("limit", req.getLimit(), form)
 
         if (req.getTypes() != null) {
-            val typeValues: MutableList<String> = java.util.ArrayList<String>()
+            val typeValues: MutableArray<String> = java.util.ArrayArray<String>()
             for (type in req.getTypes()) {
                 typeValues.add(type.value())
             }

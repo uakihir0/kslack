@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.response.users
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 class UsersIdentityResponse : SlackApiResponse {
     var isOk: Boolean = false
@@ -17,22 +17,22 @@ class UsersIdentityResponse : SlackApiResponse {
         var id: String? = null
         var email: String? = null
 
-        @SerializedName("image_24")
+        @SerialName("image_24")
         var image24: String? = null
 
-        @SerializedName("image_32")
+        @SerialName("image_32")
         var image32: String? = null
 
-        @SerializedName("image_48")
+        @SerialName("image_48")
         var image48: String? = null
 
-        @SerializedName("image_72")
+        @SerialName("image_72")
         var image72: String? = null
 
-        @SerializedName("image_192")
+        @SerialName("image_192")
         var image192: String? = null
 
-        @SerializedName("image_512")
+        @SerialName("image_512")
         var image512: String? = null
     }
 

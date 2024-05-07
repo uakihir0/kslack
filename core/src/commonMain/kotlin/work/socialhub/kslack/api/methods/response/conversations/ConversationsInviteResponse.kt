@@ -6,7 +6,7 @@ class ConversationsInviteResponse : SlackApiResponse {
     var isOk: Boolean = false
     var warning: String? = null
     var error: String? = null
-    var errors: List<Error>? = null
+    var errors: Array<Error>? = null
     var needed: String? = null
     var provided: String? = null
 

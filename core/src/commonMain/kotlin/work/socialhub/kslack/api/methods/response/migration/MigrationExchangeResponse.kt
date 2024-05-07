@@ -22,7 +22,7 @@ class MigrationExchangeResponse : SlackApiResponse {
     /**
      * A list of User IDs that cannot be mapped or found
      */
-    var invalidUserIds: List<String>? = null
+    var invalidUserIds: Array<String>? = null
 
     /**
      * A mapping of provided user IDs with mapped user IDs

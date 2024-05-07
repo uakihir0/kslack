@@ -24,7 +24,7 @@ class ViewState {
         var selectedChannel: String? = null
         var selectedUser: String? = null
         var selectedOption: SelectedOption? = null
-        var selectedUsers: List<String>? = null
+        var selectedUsers: Array<String>? = null
     }
 
     class SelectedOption {

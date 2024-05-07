@@ -56,7 +56,7 @@ abstract class AbstractTest {
 
     @Serializable
     class Secrets {
-        var params: List<SecretParams> = listOf()
+        var params: Array<SecretParams> = listOf()
     }
 
     @Serializable

@@ -9,15 +9,15 @@ class AppsPermissionsScopesListResponse : SlackApiResponse {
     override var needed: String? = null
     override var provided: String? = null
 
-    var scopes: List<Scope>? = null
+    var scopes: Array<Scope>? = null
 
     class Scope {
-        var appHome: List<String>? = null
-        var team: List<String>? = null
-        var channel: List<String>? = null
-        var group: List<String>? = null
-        var mpim: List<String>? = null
-        var im: List<String>? = null
-        var user: List<String>? = null
+        var appHome: Array<String>? = null
+        var team: Array<String>? = null
+        var channel: Array<String>? = null
+        var group: Array<String>? = null
+        var mpim: Array<String>? = null
+        var im: Array<String>? = null
+        var user: Array<String>? = null
     }
 }

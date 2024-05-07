@@ -3,15 +3,15 @@ package work.socialhub.kslack.entity.block.composition
 import com.github.seratch.jslack.api.model.ModelConfigurator
 
 object BlockCompositions {
-    fun asSectionFields(vararg elements: TextObject?): List<TextObject> {
+    fun asSectionFields(vararg elements: TextObject?): Array<TextObject> {
         return java.util.Arrays.asList(*elements)
     }
 
-    fun asOptionGroups(vararg optionGroups: OptionGroupObject?): List<OptionGroupObject> {
+    fun asOptionGroups(vararg optionGroups: OptionGroupObject?): Array<OptionGroupObject> {
         return java.util.Arrays.asList(*optionGroups)
     }
 
-    fun asOptions(vararg options: OptionObject?): List<OptionObject> {
+    fun asOptions(vararg options: OptionObject?): Array<OptionObject> {
         return java.util.Arrays.asList(*options)
     }
 

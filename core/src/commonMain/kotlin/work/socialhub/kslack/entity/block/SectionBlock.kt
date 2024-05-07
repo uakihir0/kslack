@@ -10,10 +10,10 @@ class SectionBlock : LayoutBlock {
     override val type: String = TYPE
     private var text: TextObject? = null
     var blockId: String? = null
-    private var fields: List<TextObject>? = null
+    private var fields: Array<TextObject>? = null
     private var accessory: BlockElement? = null
 
-    constructor(text: TextObject?, blockId: String?, fields: List<TextObject>?, accessory: BlockElement?) {
+    constructor(text: TextObject?, blockId: String?, fields: Array<TextObject>?, accessory: BlockElement?) {
         this.text = text
         this.blockId = blockId
         this.fields = fields
@@ -26,7 +26,7 @@ class SectionBlock : LayoutBlock {
         return this.text
     }
 
-    fun getFields(): List<TextObject>? {
+    fun getFields(): Array<TextObject>? {
         return this.fields
     }
 
@@ -38,7 +38,7 @@ class SectionBlock : LayoutBlock {
         this.text = text
     }
 
-    fun setFields(fields: List<TextObject>?) {
+    fun setFields(fields: Array<TextObject>?) {
         this.fields = fields
     }
 
@@ -49,7 +49,7 @@ class SectionBlock : LayoutBlock {
     class SectionBlockBuilder internal constructor() {
         private var text: TextObject? = null
         private var blockId: String? = null
-        private var fields: List<TextObject>? = null
+        private var fields: Array<TextObject>? = null
         private var accessory: BlockElement? = null
 
         fun text(text: TextObject?): SectionBlockBuilder {
@@ -62,7 +62,7 @@ class SectionBlock : LayoutBlock {
             return this
         }
 
-        fun fields(fields: List<TextObject>?): SectionBlockBuilder {
+        fun fields(fields: Array<TextObject>?): SectionBlockBuilder {
             this.fields = fields
             return this
         }

@@ -12,6 +12,6 @@ class TeamProfileGetResponse : SlackApiResponse {
     var profile: Profiles? = null
 
     class Profiles {
-        var fields: List<Team.Profile>? = null
+        var fields: Array<Team.Profile>? = null
     }
 }

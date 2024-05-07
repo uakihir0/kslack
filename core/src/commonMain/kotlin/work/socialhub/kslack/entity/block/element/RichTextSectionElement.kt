@@ -5,19 +5,19 @@ package work.socialhub.kslack.entity.block.element
  */
 class RichTextSectionElement : BlockElement, RichTextElement {
     override val type: String = TYPE
-    private var elements: List<RichTextElement>? = java.util.ArrayList<RichTextElement>()
+    private var elements: Array<RichTextElement>? = java.util.ArrayArray<RichTextElement>()
 
-    constructor(elements: List<RichTextElement>?) {
+    constructor(elements: Array<RichTextElement>?) {
         this.elements = elements
     }
 
     constructor()
 
-    fun getElements(): List<RichTextElement>? {
+    fun getElements(): Array<RichTextElement>? {
         return this.elements
     }
 
-    fun setElements(elements: List<RichTextElement>?) {
+    fun setElements(elements: Array<RichTextElement>?) {
         this.elements = elements
     }
 
@@ -467,9 +467,9 @@ class RichTextSectionElement : BlockElement, RichTextElement {
     }
 
     class RichTextSectionElementBuilder internal constructor() {
-        private var elements: List<RichTextElement>? = null
+        private var elements: Array<RichTextElement>? = null
 
-        fun elements(elements: List<RichTextElement>?): RichTextSectionElementBuilder {
+        fun elements(elements: Array<RichTextElement>?): RichTextSectionElementBuilder {
             this.elements = elements
             return this
         }

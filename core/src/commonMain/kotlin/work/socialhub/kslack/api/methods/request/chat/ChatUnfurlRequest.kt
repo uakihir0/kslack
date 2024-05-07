@@ -44,9 +44,9 @@ class ChatUnfurlRequest internal constructor(
         var callbackId: String? = null
         var attachmentType: String? = null
         var fallback: String? = null
-        var actions: List<Action>? = null
+        var actions: Array<Action>? = null
 
-        var blocks: List<LayoutBlock>? = null
+        var blocks: Array<LayoutBlock>? = null
     }
 
     class ChatUnfurlRequestBuilder internal constructor() {

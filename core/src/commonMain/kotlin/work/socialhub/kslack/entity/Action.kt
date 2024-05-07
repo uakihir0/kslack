@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 class Action {
     constructor(
@@ -11,11 +11,11 @@ class Action {
         type: Type?,
         value: String?,
         confirm: Confirmation?,
-        options: List<Option>?,
-        selectedOptions: List<Option>?,
+        options: Array<Option>?,
+        selectedOptions: Array<Option>?,
         dataSource: String?,
         minQueryLength: Int?,
-        optionGroups: List<OptionGroup>?,
+        optionGroups: Array<OptionGroup>?,
         url: String?
     ) {
         this.id = id
@@ -52,13 +52,13 @@ class Action {
         /**
          * @see [Message button](https://api.slack.com/docs/message-buttons)
          */
-        @SerializedName("button")
+        @SerialName("button")
         BUTTON("button"),
 
         /**
          * @see [Message menus](https://api.slack.com/docs/message-menus)
          */
-        @SerializedName("select")
+        @SerialName("select")
         SELECT("select");
 
         fun value(): String {
@@ -73,18 +73,18 @@ class Action {
     var type: Type? = Type.BUTTON
     var value: String? = null
     private var confirm: Confirmation? = null
-    var options: List<Option>? = java.util.ArrayList<Option>()
-    var selectedOptions: List<Option>? = java.util.ArrayList<Option>()
+    var options: Array<Option>? = java.util.ArrayArray<Option>()
+    var selectedOptions: Array<Option>? = java.util.ArrayArray<Option>()
     var dataSource: String? = null
     var minQueryLength: Int? = null
-    var optionGroups: List<OptionGroup>? = null
+    var optionGroups: Array<OptionGroup>? = null
     var url: String? = null
 
     class OptionGroup {
         var text: String? = null
-        var options: List<Option>? = null
+        var options: Array<Option>? = null
 
-        constructor(text: String?, options: List<Option>?) {
+        constructor(text: String?, options: Array<Option>?) {
             this.text = text
             this.options = options
         }
@@ -93,14 +93,14 @@ class Action {
 
         class OptionGroupBuilder internal constructor() {
             private var text: String? = null
-            private var options: List<Option>? = null
+            private var options: Array<Option>? = null
 
             fun text(text: String?): OptionGroupBuilder {
                 this.text = text
                 return this
             }
 
-            fun options(options: List<Option>?): OptionGroupBuilder {
+            fun options(options: Array<Option>?): OptionGroupBuilder {
                 this.options = options
                 return this
             }
@@ -170,11 +170,11 @@ class Action {
         private var type: Type? = null
         private var value: String? = null
         private var confirm: Confirmation? = null
-        private var options: List<Option>? = null
-        private var selectedOptions: List<Option>? = null
+        private var options: Array<Option>? = null
+        private var selectedOptions: Array<Option>? = null
         private var dataSource: String? = null
         private var minQueryLength: Int? = null
-        private var optionGroups: List<OptionGroup>? = null
+        private var optionGroups: Array<OptionGroup>? = null
         private var url: String? = null
 
         fun id(id: String?): ActionBuilder {
@@ -212,12 +212,12 @@ class Action {
             return this
         }
 
-        fun options(options: List<Option>?): ActionBuilder {
+        fun options(options: Array<Option>?): ActionBuilder {
             this.options = options
             return this
         }
 
-        fun selectedOptions(selectedOptions: List<Option>?): ActionBuilder {
+        fun selectedOptions(selectedOptions: Array<Option>?): ActionBuilder {
             this.selectedOptions = selectedOptions
             return this
         }
@@ -232,7 +232,7 @@ class Action {
             return this
         }
 
-        fun optionGroups(optionGroups: List<OptionGroup>?): ActionBuilder {
+        fun optionGroups(optionGroups: Array<OptionGroup>?): ActionBuilder {
             this.optionGroups = optionGroups
             return this
         }

@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 class Team {
     var id: String? = null
@@ -19,15 +19,15 @@ class Team {
         var label: String? = null
         var hint: String? = null
         var type: String? = null
-        var possibleValues: List<String>? = null
+        var possibleValues: Array<String>? = null
         var options: ProfileOptions? = null
 
-        @SerializedName("is_hidden")
+        @SerialName("is_hidden")
         var isHidden: Boolean = false
     }
 
     class ProfileOptions {
-        @SerializedName("is_protected")
+        @SerialName("is_protected")
         var isProtected: Boolean = false
 
         fun is_protected(): Boolean {

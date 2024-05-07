@@ -3,7 +3,7 @@ package com.github.seratch.jslack.api.methods
 import net.socialhub.http.HttpParameter
 import kotlin.jvm.JvmOverloads
 
-class FormBody internal constructor(private val names: List<String>, private val values: List<Any>) {
+class FormBody internal constructor(private val names: Array<String>, private val values: Array<Any>) {
     fun size(): Int {
         return names.size
     }
@@ -37,8 +37,8 @@ class FormBody internal constructor(private val names: List<String>, private val
     }
 
     class Builder @JvmOverloads constructor(charset: java.nio.charset.Charset? = null as java.nio.charset.Charset?) {
-        private val names: MutableList<String> = java.util.ArrayList<String>()
-        private val values: MutableList<Any> = java.util.ArrayList<Any>()
+        private val names: MutableArray<String> = java.util.ArrayArray<String>()
+        private val values: MutableArray<Any> = java.util.ArrayArray<Any>()
         private val charset: java.nio.charset.Charset? = charset
         private var includeFile = false
 

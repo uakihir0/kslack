@@ -11,18 +11,18 @@ class MpimOpenRequest internal constructor(
      * Comma separated lists of users.
      * The ordering of the users is preserved whenever a MPIM group is returned.
      */
-    var users: List<String>?
+    var users: Array<String>?
 ) : SlackApiRequest {
     class MpimOpenRequestBuilder internal constructor() {
         private var token: String? = null
-        private var users: List<String>? = null
+        private var users: Array<String>? = null
 
         fun token(token: String?): MpimOpenRequestBuilder {
             this.token = token
             return this
         }
 
-        fun users(users: List<String>?): MpimOpenRequestBuilder {
+        fun users(users: Array<String>?): MpimOpenRequestBuilder {
             this.users = users
             return this
         }

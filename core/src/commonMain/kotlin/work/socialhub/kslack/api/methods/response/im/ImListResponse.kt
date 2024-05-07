@@ -9,6 +9,6 @@ class ImListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var ims: List<Im>? = null
+    var ims: Array<Im>? = null
     var responseMetadata: ResponseMetadata? = null
 }

@@ -5,11 +5,11 @@ package work.socialhub.kslack.entity.block.element
  */
 class RichTextListElement : BlockElement, RichTextElement {
     override val type: String = TYPE
-    private var elements: List<RichTextElement>? = java.util.ArrayList<RichTextElement>()
+    private var elements: Array<RichTextElement>? = java.util.ArrayArray<RichTextElement>()
     var style: String? = null // bullet, ordered
     var indent: Int? = null
 
-    constructor(elements: List<RichTextElement>?, style: String?, indent: Int?) {
+    constructor(elements: Array<RichTextElement>?, style: String?, indent: Int?) {
         this.elements = elements
         this.style = style
         this.indent = indent
@@ -17,11 +17,11 @@ class RichTextListElement : BlockElement, RichTextElement {
 
     constructor()
 
-    fun getElements(): List<RichTextElement>? {
+    fun getElements(): Array<RichTextElement>? {
         return this.elements
     }
 
-    fun setElements(elements: List<RichTextElement>?) {
+    fun setElements(elements: Array<RichTextElement>?) {
         this.elements = elements
     }
 
@@ -65,11 +65,11 @@ class RichTextListElement : BlockElement, RichTextElement {
     }
 
     class RichTextListElementBuilder internal constructor() {
-        private var elements: List<RichTextElement>? = null
+        private var elements: Array<RichTextElement>? = null
         private var style: String? = null
         private var indent: Int? = null
 
-        fun elements(elements: List<RichTextElement>?): RichTextListElementBuilder {
+        fun elements(elements: Array<RichTextElement>?): RichTextListElementBuilder {
             this.elements = elements
             return this
         }

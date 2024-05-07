@@ -3,11 +3,11 @@ package work.socialhub.kslack.entity.dialog
 import com.github.seratch.jslack.api.model.ModelConfigurator
 
 object Dialogs {
-    fun asElements(vararg elements: DialogElement?): List<DialogElement> {
+    fun asElements(vararg elements: DialogElement?): Array<DialogElement> {
         return java.util.Arrays.asList(*elements)
     }
 
-    fun asOptions(vararg options: DialogOption?): List<DialogOption> {
+    fun asOptions(vararg options: DialogOption?): Array<DialogOption> {
         return java.util.Arrays.asList(*options)
     }
 

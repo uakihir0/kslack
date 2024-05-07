@@ -9,12 +9,12 @@ class AppsPermissionsUsersListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var resources: List<Resource>? = null
+    var resources: Array<Resource>? = null
     var responseMetadata: ResponseMetadata? = null
 
     class Resource {
         var id: String? = null
         var type: String? = null
-        var scopes: List<String>? = null
+        var scopes: Array<String>? = null
     }
 }

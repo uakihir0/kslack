@@ -10,7 +10,7 @@ class UsersListResponse : SlackApiResponse {
     var provided: String? = null
 
     var offset: String? = null // user id
-    var members: List<User>? = null
+    var members: Array<User>? = null
     var cacheTs: String? = null
     var responseMetadata: ResponseMetadata? = null
 }

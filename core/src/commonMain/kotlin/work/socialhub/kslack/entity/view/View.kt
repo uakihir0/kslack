@@ -14,7 +14,7 @@ class View {
     private var title: ViewTitle? = null
     private var submit: ViewSubmit? = null
     private var close: ViewClose? = null
-    private var blocks: List<LayoutBlock>? = null
+    private var blocks: Array<LayoutBlock>? = null
     var privateMetadata: String? = null
     var callbackId: String? = null
     var externalId: String? = null
@@ -34,7 +34,7 @@ class View {
         title: ViewTitle?,
         submit: ViewSubmit?,
         close: ViewClose?,
-        blocks: List<LayoutBlock>?,
+        blocks: Array<LayoutBlock>?,
         privateMetadata: String?,
         callbackId: String?,
         externalId: String?,
@@ -81,7 +81,7 @@ class View {
         return this.close
     }
 
-    fun getBlocks(): List<LayoutBlock>? {
+    fun getBlocks(): Array<LayoutBlock>? {
         return this.blocks
     }
 
@@ -101,7 +101,7 @@ class View {
         this.close = close
     }
 
-    fun setBlocks(blocks: List<LayoutBlock>?) {
+    fun setBlocks(blocks: Array<LayoutBlock>?) {
         this.blocks = blocks
     }
 
@@ -116,7 +116,7 @@ class View {
         private var title: ViewTitle? = null
         private var submit: ViewSubmit? = null
         private var close: ViewClose? = null
-        private var blocks: List<LayoutBlock>? = null
+        private var blocks: Array<LayoutBlock>? = null
         private var privateMetadata: String? = null
         private var callbackId: String? = null
         private var externalId: String? = null
@@ -159,7 +159,7 @@ class View {
             return this
         }
 
-        fun blocks(blocks: List<LayoutBlock>?): ViewBuilder {
+        fun blocks(blocks: Array<LayoutBlock>?): ViewBuilder {
             this.blocks = blocks
             return this
         }

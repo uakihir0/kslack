@@ -13,7 +13,7 @@ class AdminUsersInviteRequest internal constructor(
     /**
      * A comma-separated list of channel_ids for this user to join. At least one channel is required.
      */
-    var channelIds: List<String>?,
+    var channelIds: Array<String>?,
     /**
      * The email address of the person to invite.
      */
@@ -50,7 +50,7 @@ class AdminUsersInviteRequest internal constructor(
 ) : SlackApiRequest {
     class AdminUsersInviteRequestBuilder internal constructor() {
         private var token: String? = null
-        private var channelIds: List<String>? = null
+        private var channelIds: Array<String>? = null
         private var email: String? = null
         private var teamId: String? = null
         private var customMessage: String? = null
@@ -65,7 +65,7 @@ class AdminUsersInviteRequest internal constructor(
             return this
         }
 
-        fun channelIds(channelIds: List<String>?): AdminUsersInviteRequestBuilder {
+        fun channelIds(channelIds: Array<String>?): AdminUsersInviteRequestBuilder {
             this.channelIds = channelIds
             return this
         }

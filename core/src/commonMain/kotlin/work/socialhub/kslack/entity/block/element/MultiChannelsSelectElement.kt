@@ -10,7 +10,7 @@ class MultiChannelsSelectElement : BlockElement {
     var fallback: String? = null
     private var placeholder: PlainTextObject? = null
     var actionId: String? = null
-    var initialChannels: List<String>? = null
+    var initialChannels: Array<String>? = null
     private var confirm: ConfirmationDialogObject? = null
     var maxSelectedItems: Int? = null
 
@@ -18,7 +18,7 @@ class MultiChannelsSelectElement : BlockElement {
         fallback: String?,
         placeholder: PlainTextObject?,
         actionId: String?,
-        initialChannels: List<String>?,
+        initialChannels: Array<String>?,
         confirm: ConfirmationDialogObject?,
         maxSelectedItems: Int?
     ) {
@@ -106,7 +106,7 @@ class MultiChannelsSelectElement : BlockElement {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null
-        private var initialChannels: List<String>? = null
+        private var initialChannels: Array<String>? = null
         private var confirm: ConfirmationDialogObject? = null
         private var maxSelectedItems: Int? = null
 
@@ -125,7 +125,7 @@ class MultiChannelsSelectElement : BlockElement {
             return this
         }
 
-        fun initialChannels(initialChannels: List<String>?): MultiChannelsSelectElementBuilder {
+        fun initialChannels(initialChannels: Array<String>?): MultiChannelsSelectElementBuilder {
             this.initialChannels = initialChannels
             return this
         }

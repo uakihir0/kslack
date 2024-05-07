@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * https://api.slack.com/methods/files.comments.add
@@ -13,7 +13,7 @@ class FileComment {
     var comment: String? = null
     var channel: String? = null
 
-    @SerializedName("is_intro")
+    @SerialName("is_intro")
     var isIntro: Boolean = false
 
     constructor(

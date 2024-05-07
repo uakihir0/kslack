@@ -6,10 +6,10 @@ package work.socialhub.kslack.entity
 class Reaction {
     var name: String? = null
     var count: Int? = null
-    var users: List<String>? = null
+    var users: Array<String>? = null
     var url: String? = null
 
-    constructor(name: String?, count: Int?, users: List<String>?, url: String?) {
+    constructor(name: String?, count: Int?, users: Array<String>?, url: String?) {
         this.name = name
         this.count = count
         this.users = users
@@ -21,7 +21,7 @@ class Reaction {
     class ReactionBuilder internal constructor() {
         private var name: String? = null
         private var count: Int? = null
-        private var users: List<String>? = null
+        private var users: Array<String>? = null
         private var url: String? = null
 
         fun name(name: String?): ReactionBuilder {
@@ -34,7 +34,7 @@ class Reaction {
             return this
         }
 
-        fun users(users: List<String>?): ReactionBuilder {
+        fun users(users: Array<String>?): ReactionBuilder {
             this.users = users
             return this
         }

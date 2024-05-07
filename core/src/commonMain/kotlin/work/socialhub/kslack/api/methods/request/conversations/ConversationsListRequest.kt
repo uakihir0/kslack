@@ -21,23 +21,23 @@ class ConversationsListRequest internal constructor(
      * The maximum number of items to return. Fewer than the requested number of items may be returned,
      * even if the end of the list hasn't been reached. Must be an integer no larger than 1000.
      */
-    var limit: Int?, types: List<ConversationType>?
+    var limit: Int?, types: Array<ConversationType>?
 ) : SlackApiRequest {
     /**
      * Mix and match channel types by providing a comma-separated list of
      * any combination of `public_channel`, `private_channel`, `mpim`, `im`
      */
-    private var types: List<ConversationType>?
+    private var types: Array<ConversationType>?
 
     init {
         this.types = types
     }
 
-    fun getTypes(): List<ConversationType>? {
+    fun getTypes(): Array<ConversationType>? {
         return this.types
     }
 
-    fun setTypes(types: List<ConversationType>?) {
+    fun setTypes(types: Array<ConversationType>?) {
         this.types = types
     }
 
@@ -46,7 +46,7 @@ class ConversationsListRequest internal constructor(
         private var cursor: String? = null
         private var excludeArchived = false
         private var limit: Int? = null
-        private var types: List<ConversationType>? = null
+        private var types: Array<ConversationType>? = null
 
         fun token(token: String?): ConversationsListRequestBuilder {
             this.token = token
@@ -68,7 +68,7 @@ class ConversationsListRequest internal constructor(
             return this
         }
 
-        fun types(types: List<ConversationType>?): ConversationsListRequestBuilder {
+        fun types(types: Array<ConversationType>?): ConversationsListRequestBuilder {
             this.types = types
             return this
         }

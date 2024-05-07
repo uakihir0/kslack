@@ -14,12 +14,12 @@ class ConversationsInviteRequest internal constructor(
     /**
      * A comma separated list of user IDs. Up to 30 users may be listed.
      */
-    var users: List<String>?
+    var users: Array<String>?
 ) : SlackApiRequest {
     class ConversationsInviteRequestBuilder internal constructor() {
         private var token: String? = null
         private var channel: String? = null
-        private var users: List<String>? = null
+        private var users: Array<String>? = null
 
         fun token(token: String?): ConversationsInviteRequestBuilder {
             this.token = token
@@ -31,7 +31,7 @@ class ConversationsInviteRequest internal constructor(
             return this
         }
 
-        fun users(users: List<String>?): ConversationsInviteRequestBuilder {
+        fun users(users: Array<String>?): ConversationsInviteRequestBuilder {
             this.users = users
             return this
         }

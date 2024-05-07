@@ -7,7 +7,7 @@ class AppsPermissionsUsersRequestRequest internal constructor(
     /**
      * A comma separated list of user scopes to request for
      */
-    var scopes: List<String>?,
+    var scopes: Array<String>?,
     /**
      * Token used to trigger the request
      */
@@ -19,7 +19,7 @@ class AppsPermissionsUsersRequestRequest internal constructor(
 ) : SlackApiRequest {
     class AppsPermissionsUsersRequestRequestBuilder internal constructor() {
         private var token: String? = null
-        private var scopes: List<String>? = null
+        private var scopes: Array<String>? = null
         private var triggerId: String? = null
         private var user: String? = null
 
@@ -28,7 +28,7 @@ class AppsPermissionsUsersRequestRequest internal constructor(
             return this
         }
 
-        fun scopes(scopes: List<String>?): AppsPermissionsUsersRequestRequestBuilder {
+        fun scopes(scopes: Array<String>?): AppsPermissionsUsersRequestRequestBuilder {
             this.scopes = scopes
             return this
         }

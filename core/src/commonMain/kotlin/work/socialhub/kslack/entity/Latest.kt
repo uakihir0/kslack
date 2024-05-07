@@ -12,10 +12,10 @@ class Latest {
     var username: String? = null
     var text: String? = null
     var topic: String? = null // groups
-    var attachments: List<Attachment>? = null
-    var blocks: List<LayoutBlock>? = null
-    var files: List<File>? = null
-    var reactions: List<Reaction>? = null
+    var attachments: Array<Attachment>? = null
+    var blocks: Array<LayoutBlock>? = null
+    var files: Array<File>? = null
+    var reactions: Array<Reaction>? = null
     var root: Message.MessageRoot? = null
     var isUpload: Boolean = false
     var isDisplayAsBot: Boolean = false
@@ -24,5 +24,5 @@ class Latest {
     var threadTs: String? = null
     var ts: String? = null
     var icons: Message.Icons? = null
-    var xFiles: List<String>? = null
+    var xFiles: Array<String>? = null
 }

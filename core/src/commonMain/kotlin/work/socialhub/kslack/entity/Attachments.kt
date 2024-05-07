@@ -1,7 +1,7 @@
 package work.socialhub.kslack.entity
 
 object Attachments {
-    fun asAttachments(vararg attachments: Attachment?): List<Attachment> {
+    fun asAttachments(vararg attachments: Attachment?): Array<Attachment> {
         return java.util.Arrays.asList(*attachments)
     }
 
@@ -33,23 +33,23 @@ object Attachments {
         return configurator.configure(Action.Option.builder()).build()
     }
 
-    fun asActions(vararg actions: Action?): List<Action> {
+    fun asActions(vararg actions: Action?): Array<Action> {
         return java.util.Arrays.asList(*actions)
     }
 
-    fun asFields(vararg fields: Field?): List<Field> {
+    fun asFields(vararg fields: Field?): Array<Field> {
         return java.util.Arrays.asList(*fields)
     }
 
-    fun asOptionGroups(vararg optionGroups: Action.OptionGroup?): List<Action.OptionGroup> {
+    fun asOptionGroups(vararg optionGroups: Action.OptionGroup?): Array<Action.OptionGroup> {
         return java.util.Arrays.asList(*optionGroups)
     }
 
-    fun asOptions(vararg options: Action.Option?): List<Action.Option> {
+    fun asOptions(vararg options: Action.Option?): Array<Action.Option> {
         return java.util.Arrays.asList(*options)
     }
 
-    fun asList(vararg values: String?): List<String> {
-        return java.util.Arrays.asList<String>(*values)
+    fun asList(vararg values: String?): Array<String> {
+        return java.util.Arrays.asArray<String>(*values)
     }
 }

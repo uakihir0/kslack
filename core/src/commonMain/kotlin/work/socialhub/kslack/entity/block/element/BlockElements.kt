@@ -3,15 +3,15 @@ package work.socialhub.kslack.entity.block.element
 import com.github.seratch.jslack.api.model.ModelConfigurator
 
 object BlockElements {
-    fun asElements(vararg elements: BlockElement?): List<BlockElement> {
+    fun asElements(vararg elements: BlockElement?): Array<BlockElement> {
         return java.util.Arrays.asList(*elements)
     }
 
-    fun asContextElements(vararg elements: ContextBlockElement?): List<ContextBlockElement> {
+    fun asContextElements(vararg elements: ContextBlockElement?): Array<ContextBlockElement> {
         return java.util.Arrays.asList(*elements)
     }
 
-    fun asRichTextElements(vararg elements: RichTextElement?): List<RichTextElement> {
+    fun asRichTextElements(vararg elements: RichTextElement?): Array<RichTextElement> {
         return java.util.Arrays.asList(*elements)
     }
 

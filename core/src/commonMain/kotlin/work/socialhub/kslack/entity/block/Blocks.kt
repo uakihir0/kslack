@@ -4,7 +4,7 @@ import com.github.seratch.jslack.api.model.ModelConfigurator
 import com.github.seratch.jslack.api.model.block.element.BlockElement
 
 object Blocks {
-    fun asBlocks(vararg blocks: LayoutBlock?): List<LayoutBlock> {
+    fun asBlocks(vararg blocks: LayoutBlock?): Array<LayoutBlock> {
         return java.util.Arrays.asList(*blocks)
     }
 
@@ -13,11 +13,11 @@ object Blocks {
         return configurator.configure(ActionsBlock.builder()).build()
     }
 
-    fun actions(elements: List<BlockElement>?): ActionsBlock {
+    fun actions(elements: Array<BlockElement>?): ActionsBlock {
         return ActionsBlock.builder().elements(elements).build()
     }
 
-    fun actions(blockId: String?, elements: List<BlockElement>?): ActionsBlock {
+    fun actions(blockId: String?, elements: Array<BlockElement>?): ActionsBlock {
         return ActionsBlock.builder().blockId(blockId).elements(elements).build()
     }
 
@@ -26,11 +26,11 @@ object Blocks {
         return configurator.configure(ContextBlock.builder()).build()
     }
 
-    fun context(elements: List<ContextBlockElement?>?): ContextBlock {
+    fun context(elements: Array<ContextBlockElement?>?): ContextBlock {
         return ContextBlock.builder().elements(elements).build()
     }
 
-    fun context(blockId: String?, elements: List<ContextBlockElement?>?): ContextBlock {
+    fun context(blockId: String?, elements: Array<ContextBlockElement?>?): ContextBlock {
         return ContextBlock.builder().blockId(blockId).elements(elements).build()
     }
 

@@ -11,7 +11,7 @@ class TeamPlanChangeEvent : Event {
     override val type: String = TYPE_NAME
     var plan: String? = null // possible values are: empty string, comp, std, plus
     var isCanAddUra: Boolean = false
-    var paidFeatures: List<String>? = null
+    var paidFeatures: Array<String>? = null
 
     companion object {
         const val TYPE_NAME: String = "team_plan_change"

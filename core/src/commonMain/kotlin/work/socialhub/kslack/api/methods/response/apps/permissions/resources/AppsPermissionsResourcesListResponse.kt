@@ -9,7 +9,7 @@ class AppsPermissionsResourcesListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var resources: List<Resource>? = null
+    var resources: Array<Resource>? = null
     var responseMetadata: ResponseMetadata? = null
 
     class Resource {

@@ -9,5 +9,5 @@ class AdminInviteRequestsDeniedListResponse : SlackApiResponse {
     override var needed: String? = null
     override var provided: String? = null
 
-    var deniedRequests: List<String>? = null
+    var deniedRequests: Array<String>? = null
 }

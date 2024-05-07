@@ -1,19 +1,19 @@
 package work.socialhub.kslack.entity.dialog
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * Represents the subtype for an [DialogTextElement] or [DialogTextAreaElement]
  * In some form factors, optimized input is provided for this subtype.
  */
 enum class DialogSubType(private val value: String) {
-    @SerializedName("email")
+    @SerialName("email")
     EMAIL("email"),
-    @SerializedName("number")
+    @SerialName("number")
     NUMBER("number"),
-    @SerializedName("tel")
+    @SerialName("tel")
     TEL("tel"),
-    @SerializedName("url")
+    @SerialName("url")
     URL("url");
 
     fun value(): String {

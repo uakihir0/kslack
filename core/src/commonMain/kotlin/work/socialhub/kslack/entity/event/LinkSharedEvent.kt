@@ -12,7 +12,7 @@ class LinkSharedEvent : Event {
     var user: String? = null
     var messageTs: String? = null
     var threadTs: String? = null
-    var links: List<Link>? = null
+    var links: Array<Link>? = null
 
     class Link {
         var domain: String? = null

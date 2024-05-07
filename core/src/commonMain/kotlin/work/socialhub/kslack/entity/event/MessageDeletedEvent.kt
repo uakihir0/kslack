@@ -30,13 +30,13 @@ class MessageDeletedEvent : Event {
         var edited: Edited? = null
 
         var text: String? = null
-        var blocks: List<LayoutBlock>? = null
-        var attachments: List<Attachment>? = null
+        var blocks: Array<LayoutBlock>? = null
+        var attachments: Array<Attachment>? = null
 
-        @SerializedName("is_starred")
+        @SerialName("is_starred")
         var isStarred: Boolean = false
-        var pinnedTo: List<String>? = null
-        var reactions: List<Reaction>? = null
+        var pinnedTo: Array<String>? = null
+        var reactions: Array<Reaction>? = null
 
         var ts: String? = null
     }

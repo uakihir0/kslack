@@ -50,7 +50,7 @@ class DialogSelectElement : DialogElement {
     /**
      * Provide up to 100 option element attributes. Required for this type.
      */
-    private var options: List<DialogOption>? = null
+    private var options: Array<DialogOption>? = null
 
     constructor(
         label: String?,
@@ -58,7 +58,7 @@ class DialogSelectElement : DialogElement {
         value: String?,
         placeholder: String?,
         optional: Boolean,
-        options: List<DialogOption>?
+        options: Array<DialogOption>?
     ) {
         this.label = label
         this.name = name
@@ -70,11 +70,11 @@ class DialogSelectElement : DialogElement {
 
     constructor()
 
-    fun getOptions(): List<DialogOption>? {
+    fun getOptions(): Array<DialogOption>? {
         return this.options
     }
 
-    fun setOptions(options: List<DialogOption>?) {
+    fun setOptions(options: Array<DialogOption>?) {
         this.options = options
     }
 
@@ -84,7 +84,7 @@ class DialogSelectElement : DialogElement {
         private var value: String? = null
         private var placeholder: String? = null
         private var optional = false
-        private var options: List<DialogOption>? = null
+        private var options: Array<DialogOption>? = null
 
         fun label(label: String?): DialogSelectElementBuilder {
             this.label = label
@@ -111,7 +111,7 @@ class DialogSelectElement : DialogElement {
             return this
         }
 
-        fun options(options: List<DialogOption>?): DialogSelectElementBuilder {
+        fun options(options: Array<DialogOption>?): DialogSelectElementBuilder {
             this.options = options
             return this
         }

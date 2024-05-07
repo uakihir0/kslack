@@ -109,7 +109,7 @@ class Attachment {
         title: String?,
         titleLink: String?,
         text: String?,
-        fields: List<Field>?,
+        fields: Array<Field>?,
         imageUrl: String?,
         imageWidth: Int?,
         imageHeight: Int?,
@@ -123,9 +123,9 @@ class Attachment {
         footer: String?,
         footerIcon: String?,
         ts: String?,
-        mrkdwnIn: List<String>?,
-        actions: List<Action>?,
-        blocks: List<LayoutBlock>?,
+        mrkdwnIn: Array<String>?,
+        actions: Array<Action>?,
+        blocks: Array<LayoutBlock>?,
         filename: String?,
         size: Int?,
         mimetype: String?,
@@ -196,16 +196,16 @@ class Attachment {
      * NOTE: The the following Booleans (is_msg_unfurl, is_reply_unfurl, is_thread_root_unfurl,
      * is_app_unfurl) default to null intentionally to support block attachments.
      */
-    @SerializedName("is_msg_unfurl")
+    @SerialName("is_msg_unfurl")
     var isMsgUnfurl: Boolean? = null
 
-    @SerializedName("is_reply_unfurl")
+    @SerialName("is_reply_unfurl")
     var isReplyUnfurl: Boolean? = null
 
-    @SerializedName("is_thread_root_unfurl")
+    @SerialName("is_thread_root_unfurl")
     var isThreadRootUnfurl: Boolean? = null
 
-    @SerializedName("is_app_unfurl")
+    @SerialName("is_app_unfurl")
     var isAppUnfurl: Boolean? = null
 
     var appUnfurlUrl: String? = null
@@ -235,7 +235,7 @@ class Attachment {
     /**
      * Fields are defined as an array, and hashes contained within it will be displayed in a table inside the message attachment.
      */
-    private var fields: List<Field>? = java.util.ArrayList<Field>()
+    private var fields: Array<Field>? = java.util.ArrayArray<Field>()
 
     /**
      * A valid URL to an image file that will be displayed inside a message attachment.
@@ -308,14 +308,14 @@ class Attachment {
  * in attachments](https://api.slack.com/docs/message-formatting#message_formatting) are not formatted. To enable formatting on attachment fields, add the
      * name of the field (as defined in the API) in this list.
      */
-    var mrkdwnIn: List<String>? = java.util.ArrayList<String>()
+    var mrkdwnIn: Array<String>? = java.util.ArrayArray<String>()
 
     /**
      * Actions are defined as an array, and hashes contained within it will be displayed in as buttons in the message attachment.
      */
-    private var actions: List<Action>? = java.util.ArrayList<Action>()
+    private var actions: Array<Action>? = java.util.ArrayArray<Action>()
 
-    private var blocks: List<LayoutBlock>? = null
+    private var blocks: Array<LayoutBlock>? = null
 
     // --------------------------
     // Files
@@ -325,50 +325,50 @@ class Attachment {
     var url: String? = null
     var metadata: AttachmentMetadata? = null
 
-    fun getFields(): List<Field>? {
+    fun getFields(): Array<Field>? {
         return this.fields
     }
 
-    fun getActions(): List<Action>? {
+    fun getActions(): Array<Action>? {
         return this.actions
     }
 
-    fun getBlocks(): List<LayoutBlock>? {
+    fun getBlocks(): Array<LayoutBlock>? {
         return this.blocks
     }
 
-    fun setFields(fields: List<Field>?) {
+    fun setFields(fields: Array<Field>?) {
         this.fields = fields
     }
 
-    fun setActions(actions: List<Action>?) {
+    fun setActions(actions: Array<Action>?) {
         this.actions = actions
     }
 
-    fun setBlocks(blocks: List<LayoutBlock>?) {
+    fun setBlocks(blocks: Array<LayoutBlock>?) {
         this.blocks = blocks
     }
 
     class AttachmentMetadata {
-        @SerializedName("thumb_64")
+        @SerialName("thumb_64")
         var thumb64: Boolean? = null
 
-        @SerializedName("thumb_80")
+        @SerialName("thumb_80")
         var thumb80: Boolean? = null
 
-        @SerializedName("thumb_160")
+        @SerialName("thumb_160")
         var thumb160: Boolean? = null
 
-        @SerializedName("original_w")
+        @SerialName("original_w")
         var originalWidth: Int? = null
 
-        @SerializedName("original_h")
+        @SerialName("original_h")
         var originalHeight: Int? = null
 
-        @SerializedName("thumb_360_w")
+        @SerialName("thumb_360_w")
         var thumb360Width: Int? = null
 
-        @SerializedName("thumb_360_h")
+        @SerialName("thumb_360_h")
         var thumb360Height: Int? = null
 
         var format: String? = null
@@ -528,7 +528,7 @@ class Attachment {
         private var title: String? = null
         private var titleLink: String? = null
         private var text: String? = null
-        private var fields: List<Field>? = null
+        private var fields: Array<Field>? = null
         private var imageUrl: String? = null
         private var imageWidth: Int? = null
         private var imageHeight: Int? = null
@@ -542,9 +542,9 @@ class Attachment {
         private var footer: String? = null
         private var footerIcon: String? = null
         private var ts: String? = null
-        private var mrkdwnIn: List<String>? = null
-        private var actions: List<Action>? = null
-        private var blocks: List<LayoutBlock>? = null
+        private var mrkdwnIn: Array<String>? = null
+        private var actions: Array<Action>? = null
+        private var blocks: Array<LayoutBlock>? = null
         private var filename: String? = null
         private var size: Int? = null
         private var mimetype: String? = null
@@ -686,7 +686,7 @@ class Attachment {
             return this
         }
 
-        fun fields(fields: List<Field>?): AttachmentBuilder {
+        fun fields(fields: Array<Field>?): AttachmentBuilder {
             this.fields = fields
             return this
         }
@@ -756,17 +756,17 @@ class Attachment {
             return this
         }
 
-        fun mrkdwnIn(mrkdwnIn: List<String>?): AttachmentBuilder {
+        fun mrkdwnIn(mrkdwnIn: Array<String>?): AttachmentBuilder {
             this.mrkdwnIn = mrkdwnIn
             return this
         }
 
-        fun actions(actions: List<Action>?): AttachmentBuilder {
+        fun actions(actions: Array<Action>?): AttachmentBuilder {
             this.actions = actions
             return this
         }
 
-        fun blocks(blocks: List<LayoutBlock>?): AttachmentBuilder {
+        fun blocks(blocks: Array<LayoutBlock>?): AttachmentBuilder {
             this.blocks = blocks
             return this
         }

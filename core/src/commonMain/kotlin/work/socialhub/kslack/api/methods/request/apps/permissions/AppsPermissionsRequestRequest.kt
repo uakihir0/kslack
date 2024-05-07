@@ -14,12 +14,12 @@ class AppsPermissionsRequestRequest internal constructor(
     /**
      * A comma separated list of scopes to request for
      */
-    var scopes: List<String>?
+    var scopes: Array<String>?
 ) : SlackApiRequest {
     class AppsPermissionsRequestRequestBuilder internal constructor() {
         private var token: String? = null
         private var triggerId: String? = null
-        private var scopes: List<String>? = null
+        private var scopes: Array<String>? = null
 
         fun token(token: String?): AppsPermissionsRequestRequestBuilder {
             this.token = token
@@ -31,7 +31,7 @@ class AppsPermissionsRequestRequest internal constructor(
             return this
         }
 
-        fun scopes(scopes: List<String>?): AppsPermissionsRequestRequestBuilder {
+        fun scopes(scopes: Array<String>?): AppsPermissionsRequestRequestBuilder {
             this.scopes = scopes
             return this
         }

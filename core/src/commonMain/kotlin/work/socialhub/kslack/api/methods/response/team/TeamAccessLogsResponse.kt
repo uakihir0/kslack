@@ -9,6 +9,6 @@ class TeamAccessLogsResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var logins: List<Login>? = null
+    var logins: Array<Login>? = null
     var paging: Paging? = null
 }

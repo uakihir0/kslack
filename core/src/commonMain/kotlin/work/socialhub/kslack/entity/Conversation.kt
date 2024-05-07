@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * Represents a [conversation](https://api.slack.com/types/conversation)
@@ -16,102 +16,102 @@ class Conversation {
     var creator: String? = null
     var unlinked: Int? = null
 
-    @SerializedName("name_normalized")
+    @SerialName("name_normalized")
     var nameNormalized: String? = null
 
-    @SerializedName("pending_shared")
-    var pendingShared: List<String>? = null
+    @SerialName("pending_shared")
+    var pendingShared: Array<String>? = null
 
-    @SerializedName("last_read")
+    @SerialName("last_read")
     var lastRead: String? = null
     var topic: Topic? = null
     var purpose: Purpose? = null
 
-    @SerializedName("previous_names")
-    var previousNames: List<String>? = null
+    @SerialName("previous_names")
+    var previousNames: Array<String>? = null
 
-    @SerializedName("num_members")
+    @SerialName("num_members")
     var numOfMembers: Int? = null
-    var members: List<String>? = null
+    var members: Array<String>? = null
     var latest: Latest? = null
     var locale: String? = null
 
-    @SerializedName("unread_count")
+    @SerialName("unread_count")
     var unreadCount: Int? = null
 
-    @SerializedName("unread_count_display")
+    @SerialName("unread_count_display")
     var unreadCountDisplay: Int? = null
     var user: String? = null // conversations.open
     var priority: Double? = null
 
-    var sharedTeamIds: List<String>? = null
+    var sharedTeamIds: Array<String>? = null
 
     var parentConversation: String? = null
-    var pendingConnectedTeamIds: List<String>? = null
+    var pendingConnectedTeamIds: Array<String>? = null
 
     // shared channels
     var conversationHostId: String? = null
-    var internalTeamIds: List<String>? = null
-    var connectedTeamIds: List<String>? = null
+    var internalTeamIds: Array<String>? = null
+    var connectedTeamIds: Array<String>? = null
 
-    @SerializedName("is_channel")
+    @SerialName("is_channel")
     var isChannel: Boolean = false
 
-    @SerializedName("is_group")
+    @SerialName("is_group")
     var isGroup: Boolean = false
 
-    @SerializedName("is_im")
+    @SerialName("is_im")
     var isIm: Boolean = false
 
-    @SerializedName("is_archived")
+    @SerialName("is_archived")
     var isArchived: Boolean = false
 
-    @SerializedName("is_general")
+    @SerialName("is_general")
     var isGeneral: Boolean = false
 
-    @SerializedName("is_read_only")
+    @SerialName("is_read_only")
     var isReadOnly: Boolean = false
 
-    @SerializedName("is_thread_only")
+    @SerialName("is_thread_only")
     var isThreadOnly: Boolean = false
 
-    @SerializedName("is_non_threadable")
+    @SerialName("is_non_threadable")
     var isNonThreadable: Boolean = false
 
-    @SerializedName("is_shared")
+    @SerialName("is_shared")
     var isShared: Boolean = false
 
-    @SerializedName("is_ext_shared")
+    @SerialName("is_ext_shared")
     var isExtShared: Boolean = false
 
-    @SerializedName("is_org_shared")
+    @SerialName("is_org_shared")
     var isOrgShared: Boolean = false
 
-    @SerializedName("is_pending_ext_shared")
+    @SerialName("is_pending_ext_shared")
     var isPendingExtShared: Boolean = false
 
-    @SerializedName("is_global_shared")
+    @SerialName("is_global_shared")
     var isGlobalShared: Boolean = false
 
-    @SerializedName("is_org_default")
+    @SerialName("is_org_default")
     var isOrgDefault: Boolean = false
 
-    @SerializedName("is_org_mandatory")
+    @SerialName("is_org_mandatory")
     var isOrgMandatory: Boolean = false
 
-    @SerializedName("is_moved")
+    @SerialName("is_moved")
     var isMoved: Int? = null
 
-    @SerializedName("is_member")
+    @SerialName("is_member")
     var isMember: Boolean = false
 
-    @SerializedName("is_open")
+    @SerialName("is_open")
     var isOpen: Boolean = false
 
-    @SerializedName("is_private")
+    @SerialName("is_private")
     var isPrivate: Boolean = false
 
-    @SerializedName("is_mpim")
+    @SerialName("is_mpim")
     var isMpim: Boolean = false
 
     constructor(
@@ -122,25 +122,25 @@ class Conversation {
         creator: String?,
         unlinked: Int?,
         nameNormalized: String?,
-        pendingShared: List<String>?,
+        pendingShared: Array<String>?,
         lastRead: String?,
         topic: Topic?,
         purpose: Purpose?,
-        previousNames: List<String>?,
+        previousNames: Array<String>?,
         numOfMembers: Int?,
-        members: List<String>?,
+        members: Array<String>?,
         latest: Latest?,
         locale: String?,
         unreadCount: Int?,
         unreadCountDisplay: Int?,
         user: String?,
         priority: Double?,
-        sharedTeamIds: List<String>?,
+        sharedTeamIds: Array<String>?,
         parentConversation: String?,
-        pendingConnectedTeamIds: List<String>?,
+        pendingConnectedTeamIds: Array<String>?,
         conversationHostId: String?,
-        internalTeamIds: List<String>?,
-        connectedTeamIds: List<String>?,
+        internalTeamIds: Array<String>?,
+        connectedTeamIds: Array<String>?,
         isChannel: Boolean,
         isGroup: Boolean,
         isIm: Boolean,
@@ -220,25 +220,25 @@ class Conversation {
         private var creator: String? = null
         private var unlinked: Int? = null
         private var nameNormalized: String? = null
-        private var pendingShared: List<String>? = null
+        private var pendingShared: Array<String>? = null
         private var lastRead: String? = null
         private var topic: Topic? = null
         private var purpose: Purpose? = null
-        private var previousNames: List<String>? = null
+        private var previousNames: Array<String>? = null
         private var numOfMembers: Int? = null
-        private var members: List<String>? = null
+        private var members: Array<String>? = null
         private var latest: Latest? = null
         private var locale: String? = null
         private var unreadCount: Int? = null
         private var unreadCountDisplay: Int? = null
         private var user: String? = null
         private var priority: Double? = null
-        private var sharedTeamIds: List<String>? = null
+        private var sharedTeamIds: Array<String>? = null
         private var parentConversation: String? = null
-        private var pendingConnectedTeamIds: List<String>? = null
+        private var pendingConnectedTeamIds: Array<String>? = null
         private var conversationHostId: String? = null
-        private var internalTeamIds: List<String>? = null
-        private var connectedTeamIds: List<String>? = null
+        private var internalTeamIds: Array<String>? = null
+        private var connectedTeamIds: Array<String>? = null
         private var isChannel = false
         private var isGroup = false
         private var isIm = false
@@ -295,7 +295,7 @@ class Conversation {
             return this
         }
 
-        fun pendingShared(pendingShared: List<String>?): ConversationBuilder {
+        fun pendingShared(pendingShared: Array<String>?): ConversationBuilder {
             this.pendingShared = pendingShared
             return this
         }
@@ -315,7 +315,7 @@ class Conversation {
             return this
         }
 
-        fun previousNames(previousNames: List<String>?): ConversationBuilder {
+        fun previousNames(previousNames: Array<String>?): ConversationBuilder {
             this.previousNames = previousNames
             return this
         }
@@ -325,7 +325,7 @@ class Conversation {
             return this
         }
 
-        fun members(members: List<String>?): ConversationBuilder {
+        fun members(members: Array<String>?): ConversationBuilder {
             this.members = members
             return this
         }
@@ -360,7 +360,7 @@ class Conversation {
             return this
         }
 
-        fun sharedTeamIds(sharedTeamIds: List<String>?): ConversationBuilder {
+        fun sharedTeamIds(sharedTeamIds: Array<String>?): ConversationBuilder {
             this.sharedTeamIds = sharedTeamIds
             return this
         }
@@ -370,7 +370,7 @@ class Conversation {
             return this
         }
 
-        fun pendingConnectedTeamIds(pendingConnectedTeamIds: List<String>?): ConversationBuilder {
+        fun pendingConnectedTeamIds(pendingConnectedTeamIds: Array<String>?): ConversationBuilder {
             this.pendingConnectedTeamIds = pendingConnectedTeamIds
             return this
         }
@@ -380,12 +380,12 @@ class Conversation {
             return this
         }
 
-        fun internalTeamIds(internalTeamIds: List<String>?): ConversationBuilder {
+        fun internalTeamIds(internalTeamIds: Array<String>?): ConversationBuilder {
             this.internalTeamIds = internalTeamIds
             return this
         }
 
-        fun connectedTeamIds(connectedTeamIds: List<String>?): ConversationBuilder {
+        fun connectedTeamIds(connectedTeamIds: Array<String>?): ConversationBuilder {
             this.connectedTeamIds = connectedTeamIds
             return this
         }

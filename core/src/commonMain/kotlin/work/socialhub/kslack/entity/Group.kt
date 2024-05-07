@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * https://api.slack.com/types/group
@@ -10,27 +10,27 @@ class Group {
     var name: String? = null
     var nameNormalized: String? = null
 
-    @SerializedName("is_group")
+    @SerialName("is_group")
     var isGroup: Boolean = false
     var created: Int? = null
     var creator: String? = null
 
-    @SerializedName("is_archived")
+    @SerialName("is_archived")
     var isArchived: Boolean = false
 
-    @SerializedName("is_mpim")
+    @SerialName("is_mpim")
     var isMpim: Boolean = false
 
-    @SerializedName("is_open")
+    @SerialName("is_open")
     var isOpen: Boolean = false
 
-    @SerializedName("is_read_only")
+    @SerialName("is_read_only")
     var isReadOnly: Boolean = false
 
-    @SerializedName("is_thread_only")
+    @SerialName("is_thread_only")
     var isThreadOnly: Boolean = false
 
-    var members: List<String>? = null
+    var members: Array<String>? = null
     var parentGroup: String? = null // group id
     var topic: Topic? = null
     var purpose: Purpose? = null
@@ -52,7 +52,7 @@ class Group {
         open: Boolean,
         readOnly: Boolean,
         threadOnly: Boolean,
-        members: List<String>?,
+        members: Array<String>?,
         parentGroup: String?,
         topic: Topic?,
         purpose: Purpose?,
@@ -98,7 +98,7 @@ class Group {
         private var open = false
         private var readOnly = false
         private var threadOnly = false
-        private var members: List<String>? = null
+        private var members: Array<String>? = null
         private var parentGroup: String? = null
         private var topic: Topic? = null
         private var purpose: Purpose? = null
@@ -163,7 +163,7 @@ class Group {
             return this
         }
 
-        fun members(members: List<String>?): GroupBuilder {
+        fun members(members: Array<String>?): GroupBuilder {
             this.members = members
             return this
         }

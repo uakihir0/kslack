@@ -37,7 +37,7 @@ class FilesListRequest internal constructor(
      * You can pass multiple values in the types argument, like `types=spaces,snippets`.
      * The default value is `all`, which does not filter the list.
      */
-    var types: List<String>?, var count: Int?, var page: Int?,
+    var types: Array<String>?, var count: Int?, var page: Int?,
     /**
      * https://api.slack.com/changelog/2019-03-wild-west-for-files-no-more
      *
@@ -55,7 +55,7 @@ class FilesListRequest internal constructor(
         private var channel: String? = null
         private var tsFrom: String? = null
         private var tsTo: String? = null
-        private var types: List<String>? = null
+        private var types: Array<String>? = null
         private var count: Int? = null
         private var page: Int? = null
         private var showFilesHiddenByLimit = false
@@ -85,7 +85,7 @@ class FilesListRequest internal constructor(
             return this
         }
 
-        fun types(types: List<String>?): FilesListRequestBuilder {
+        fun types(types: Array<String>?): FilesListRequestBuilder {
             this.types = types
             return this
         }

@@ -25,9 +25,9 @@ class ChatScheduleMessageRequest internal constructor(
      * Pass true to post the message as the authed user, instead of as a bot. Defaults to false. See authorship below.
      */
     var isAsUser: Boolean?,
-    attachments: List<Attachment>?,
+    attachments: Array<Attachment>?,
     attachmentsAsString: String?,
-    blocks: List<LayoutBlock>?,
+    blocks: Array<LayoutBlock>?,
     blocksAsString: String?,
     linkNames: Boolean,
     parse: String?,
@@ -42,7 +42,7 @@ class ChatScheduleMessageRequest internal constructor(
     /**
      * A JSON-based array of structured attachments, presented as a URL-encoded string.
      */
-    private var attachments: List<Attachment>?
+    private var attachments: Array<Attachment>?
 
     /**
      * A JSON-based array of structured attachments, presented as a URL-encoded string.
@@ -52,7 +52,7 @@ class ChatScheduleMessageRequest internal constructor(
     /**
      * A JSON-based array of structured blocks, presented as a URL-encoded string.
      */
-    private var blocks: List<LayoutBlock>?
+    private var blocks: Array<LayoutBlock>?
 
     /**
      * A JSON-based array of structured blocks as a String, presented as a URL-encoded string.
@@ -104,19 +104,19 @@ class ChatScheduleMessageRequest internal constructor(
         this.isUnfurlMedia = unfurlMedia
     }
 
-    fun getAttachments(): List<Attachment>? {
+    fun getAttachments(): Array<Attachment>? {
         return this.attachments
     }
 
-    fun getBlocks(): List<LayoutBlock>? {
+    fun getBlocks(): Array<LayoutBlock>? {
         return this.blocks
     }
 
-    fun setAttachments(attachments: List<Attachment>?) {
+    fun setAttachments(attachments: Array<Attachment>?) {
         this.attachments = attachments
     }
 
-    fun setBlocks(blocks: List<LayoutBlock>?) {
+    fun setBlocks(blocks: Array<LayoutBlock>?) {
         this.blocks = blocks
     }
 
@@ -126,9 +126,9 @@ class ChatScheduleMessageRequest internal constructor(
         private var postAt: Int? = null
         private var text: String? = null
         private var asUser: Boolean? = null
-        private var attachments: List<Attachment>? = null
+        private var attachments: Array<Attachment>? = null
         private var attachmentsAsString: String? = null
-        private var blocks: List<LayoutBlock>? = null
+        private var blocks: Array<LayoutBlock>? = null
         private var blocksAsString: String? = null
         private var linkNames = false
         private var parse: String? = null
@@ -162,7 +162,7 @@ class ChatScheduleMessageRequest internal constructor(
             return this
         }
 
-        fun attachments(attachments: List<Attachment>?): ChatScheduleMessageRequestBuilder {
+        fun attachments(attachments: Array<Attachment>?): ChatScheduleMessageRequestBuilder {
             this.attachments = attachments
             return this
         }
@@ -172,7 +172,7 @@ class ChatScheduleMessageRequest internal constructor(
             return this
         }
 
-        fun blocks(blocks: List<LayoutBlock>?): ChatScheduleMessageRequestBuilder {
+        fun blocks(blocks: Array<LayoutBlock>?): ChatScheduleMessageRequestBuilder {
             this.blocks = blocks
             return this
         }

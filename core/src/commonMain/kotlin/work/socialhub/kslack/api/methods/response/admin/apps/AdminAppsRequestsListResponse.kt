@@ -9,6 +9,6 @@ class AdminAppsRequestsListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var appRequests: List<AppRequest>? = null
+    var appRequests: Array<AppRequest>? = null
     var responseMetadata: ResponseMetadata? = null
 }

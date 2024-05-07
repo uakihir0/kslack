@@ -7,6 +7,6 @@ class ImRepliesResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var messages: List<MessageRoot>? = null
+    var messages: Array<MessageRoot>? = null
     var isHasMore: Boolean = false
 }

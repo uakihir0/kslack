@@ -9,5 +9,5 @@ class RemindersListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var reminders: List<Reminder>? = null
+    var reminders: Array<Reminder>? = null
 }

@@ -9,6 +9,6 @@ class TeamIntegrationLogsResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var logs: List<IntegrationLog>? = null
+    var logs: Array<IntegrationLog>? = null
     var paging: Paging? = null
 }

@@ -18,13 +18,13 @@ class FilesRemoteShareRequest internal constructor(
     /**
      * Comma-separated list of channel IDs where the file will be shared.
      */
-    var channels: List<String>?
+    var channels: Array<String>?
 ) : SlackApiRequest {
     class FilesRemoteShareRequestBuilder internal constructor() {
         private var token: String? = null
         private var externalId: String? = null
         private var file: String? = null
-        private var channels: List<String>? = null
+        private var channels: Array<String>? = null
 
         fun token(token: String?): FilesRemoteShareRequestBuilder {
             this.token = token
@@ -41,7 +41,7 @@ class FilesRemoteShareRequest internal constructor(
             return this
         }
 
-        fun channels(channels: List<String>?): FilesRemoteShareRequestBuilder {
+        fun channels(channels: Array<String>?): FilesRemoteShareRequestBuilder {
             this.channels = channels
             return this
         }

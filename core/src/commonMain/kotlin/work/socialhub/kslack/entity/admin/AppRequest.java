@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.admin;
 
-import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.SerialName;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public class AppRequest {
     private App app;
     private User user;
     private Team team;
-    private List<Scope> scopes;
+    private Array<Scope> scopes;
     private PreviousResolution previousResolution;
     private String message;
     private Integer dateCreated;
@@ -30,7 +30,7 @@ public class AppRequest {
         return this.team;
     }
 
-    public List<Scope> getScopes() {
+    public Array<Scope> getScopes() {
         return this.scopes;
     }
 
@@ -62,7 +62,7 @@ public class AppRequest {
         this.team = team;
     }
 
-    public void setScopes(List<Scope> scopes) {
+    public void setScopes(Array<Scope> scopes) {
         this.scopes = scopes;
     }
 
@@ -86,9 +86,9 @@ public class AppRequest {
         private String privacyPolicyUrl;
         private String appHomepageUrl;
         private String appDirectoryUrl;
-        @SerializedName("is_app_directory_approved")
+        @SerialName("is_app_directory_approved")
         private boolean isAppDirectoryApproved;
-        @SerializedName("is_internal")
+        @SerialName("is_internal")
         private boolean isInternal;
         private String additionalInfo;
         private Icons icons;
@@ -245,7 +245,7 @@ public class AppRequest {
     public static class Scope {
         private String name;
         private String description;
-        @SerializedName("is_sensitive")
+        @SerialName("is_sensitive")
         private boolean isSensitive;
         private String tokenType;
 
@@ -284,13 +284,13 @@ public class AppRequest {
 
     public static class PreviousResolution {
         private String status;
-        private List<Scope> scopes;
+        private Array<Scope> scopes;
 
         public String getStatus() {
             return this.status;
         }
 
-        public List<Scope> getScopes() {
+        public Array<Scope> getScopes() {
             return this.scopes;
         }
 
@@ -298,31 +298,31 @@ public class AppRequest {
             this.status = status;
         }
 
-        public void setScopes(List<Scope> scopes) {
+        public void setScopes(Array<Scope> scopes) {
             this.scopes = scopes;
         }
     }
 
     public static class Icons {
-        @SerializedName("image_32")
+        @SerialName("image_32")
         private String image32;
-        @SerializedName("image_36")
+        @SerialName("image_36")
         private String image36;
-        @SerializedName("image_48")
+        @SerialName("image_48")
         private String image48;
-        @SerializedName("image_64")
+        @SerialName("image_64")
         private String image64;
-        @SerializedName("image_72")
+        @SerialName("image_72")
         private String image72;
-        @SerializedName("image_96")
+        @SerialName("image_96")
         private String image96;
-        @SerializedName("image_128")
+        @SerialName("image_128")
         private String image128;
-        @SerializedName("image_192")
+        @SerialName("image_192")
         private String image192;
-        @SerializedName("image_512")
+        @SerialName("image_512")
         private String image512;
-        @SerializedName("image_1024")
+        @SerialName("image_1024")
         private String image1024;
 
         public String getImage32() {

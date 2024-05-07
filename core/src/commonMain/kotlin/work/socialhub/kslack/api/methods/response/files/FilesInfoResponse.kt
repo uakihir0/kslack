@@ -14,8 +14,8 @@ class FilesInfoResponse : SlackApiResponse {
     var contentHighlightHtml: String? = null
     var contentHighlightCss: String? = null
 
-    @SerializedName("is_truncated")
+    @SerialName("is_truncated")
     var isTruncated: Boolean = false
-    var comments: List<FileComment>? = null
+    var comments: Array<FileComment>? = null
     var paging: Paging? = null
 }

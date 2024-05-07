@@ -7,29 +7,29 @@ import com.github.seratch.jslack.api.model.block.element.BlockElement
  */
 class ActionsBlock : LayoutBlock {
     override val type: String = TYPE
-    private var elements: List<BlockElement>? = java.util.ArrayList<BlockElement>()
+    private var elements: Array<BlockElement>? = java.util.ArrayArray<BlockElement>()
     var blockId: String? = null
 
-    constructor(elements: List<BlockElement>?, blockId: String?) {
+    constructor(elements: Array<BlockElement>?, blockId: String?) {
         this.elements = elements
         this.blockId = blockId
     }
 
     constructor()
 
-    fun getElements(): List<BlockElement>? {
+    fun getElements(): Array<BlockElement>? {
         return this.elements
     }
 
-    fun setElements(elements: List<BlockElement>?) {
+    fun setElements(elements: Array<BlockElement>?) {
         this.elements = elements
     }
 
     class ActionsBlockBuilder internal constructor() {
-        private var elements: List<BlockElement>? = null
+        private var elements: Array<BlockElement>? = null
         private var blockId: String? = null
 
-        fun elements(elements: List<BlockElement>?): ActionsBlockBuilder {
+        fun elements(elements: Array<BlockElement>?): ActionsBlockBuilder {
             this.elements = elements
             return this
         }

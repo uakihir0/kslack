@@ -5,29 +5,29 @@ package work.socialhub.kslack.entity.block
  */
 class ContextBlock : LayoutBlock {
     override val type: String = TYPE
-    private var elements: List<ContextBlockElement?>? = java.util.ArrayList<ContextBlockElement>()
+    private var elements: Array<ContextBlockElement?>? = java.util.ArrayArray<ContextBlockElement>()
     var blockId: String? = null
 
-    constructor(elements: List<ContextBlockElement?>?, blockId: String?) {
+    constructor(elements: Array<ContextBlockElement?>?, blockId: String?) {
         this.elements = elements
         this.blockId = blockId
     }
 
     constructor()
 
-    fun getElements(): List<ContextBlockElement?>? {
+    fun getElements(): Array<ContextBlockElement?>? {
         return this.elements
     }
 
-    fun setElements(elements: List<ContextBlockElement?>?) {
+    fun setElements(elements: Array<ContextBlockElement?>?) {
         this.elements = elements
     }
 
     class ContextBlockBuilder internal constructor() {
-        private var elements: List<ContextBlockElement?>? = null
+        private var elements: Array<ContextBlockElement?>? = null
         private var blockId: String? = null
 
-        fun elements(elements: List<ContextBlockElement?>?): ContextBlockBuilder {
+        fun elements(elements: Array<ContextBlockElement?>?): ContextBlockBuilder {
             this.elements = elements
             return this
         }

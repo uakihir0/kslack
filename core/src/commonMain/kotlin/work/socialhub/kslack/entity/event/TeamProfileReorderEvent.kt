@@ -14,7 +14,7 @@ class TeamProfileReorderEvent : Event {
     var profile: Profile? = null
 
     class Profile {
-        var fields: List<Field>? = null
+        var fields: Array<Field>? = null
     }
 
     class Field {

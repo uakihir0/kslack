@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 /**
  * The subteam_created event is sent to all connections for a workspace when a new User Group is created.
@@ -17,13 +17,13 @@ class SubteamCreatedEvent : Event {
         var id: String? = null
         var teamId: String? = null
 
-        @SerializedName("is_usergroup")
+        @SerialName("is_usergroup")
         var isUsergroup: Boolean = false
         var name: String? = null
         var description: String? = null
         var handle: String? = null
 
-        @SerializedName("is_external")
+        @SerialName("is_external")
         var isExternal: Boolean = false
         var dateCreate: Int? = null
         var dateUpdate: Int? = null
@@ -37,8 +37,8 @@ class SubteamCreatedEvent : Event {
     }
 
     class Prefs {
-        var channels: List<String>? = null
-        var groups: List<String>? = null
+        var channels: Array<String>? = null
+        var groups: Array<String>? = null
     }
 
     companion object {

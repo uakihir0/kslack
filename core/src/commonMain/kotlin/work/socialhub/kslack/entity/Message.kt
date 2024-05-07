@@ -13,20 +13,20 @@ class Message {
     var username: String? = null
 
     var text: String? = null
-    var blocks: List<LayoutBlock>? = null
-    var attachments: List<Attachment>? = null
+    var blocks: Array<LayoutBlock>? = null
+    var attachments: Array<Attachment>? = null
 
     var ts: String? = null
     var threadTs: String? = null
 
-    @SerializedName("is_intro")
+    @SerialName("is_intro")
     var isIntro: Boolean = false
 
-    @SerializedName("is_starred")
+    @SerialName("is_starred")
     var isStarred: Boolean = false
     var isWibblr: Boolean = false
-    var pinnedTo: List<String>? = null
-    var reactions: List<Reaction>? = null
+    var pinnedTo: Array<String>? = null
+    var reactions: Array<Reaction>? = null
 
     var botId: String? = null
     var botLink: String? = null
@@ -37,7 +37,7 @@ class Message {
     var icons: Icons? = null
 
     var file: File? = null
-    var files: List<File>? = null
+    var files: Array<File>? = null
     var isUpload: Boolean = false
 
     var parentUserId: String? = null
@@ -55,7 +55,7 @@ class Message {
     var isUnfurlLinks: Boolean = false
     var isUnfurlMedia: Boolean = false
 
-    @SerializedName("is_thread_broadcast")
+    @SerialName("is_thread_broadcast")
     var isThreadBroadcast: Boolean = false
 
     // https://api.slack.com/messaging/retrieving#threading
@@ -67,17 +67,17 @@ class Message {
     @get:Deprecated("")
     @set:Deprecated("")
     @Deprecated("")
-    var replies: List<MessageRootReply>? = null
+    var replies: Array<MessageRootReply>? = null
     var replyCount: Int? = null
 
-    var replyUsers: List<String>? = null
+    var replyUsers: Array<String>? = null
     var replyUsersCount: Int? = null
 
     var latestReply: String? = null // ts
 
     var isSubscribed: Boolean = false
 
-    var xFiles: List<String>? = null // remote file ids
+    var xFiles: Array<String>? = null // remote file ids
 
     var lastRead: String? = null
 
@@ -113,9 +113,9 @@ class Message {
         @get:Deprecated("")
         @set:Deprecated("")
         @Deprecated("")
-        var replies: List<MessageRootReply>? = null
+        var replies: Array<MessageRootReply>? = null
         var replyCount: Int? = null
-        var replyUsers: List<String>? = null
+        var replyUsers: Array<String>? = null
         var replyUsersCount: Int? = null
         var latestReply: String? = null // ts
 
@@ -138,16 +138,16 @@ class Message {
     class Icons {
         var emoji: String? = null
 
-        @SerializedName("image_36")
+        @SerialName("image_36")
         var image36: String? = null
 
-        @SerializedName("image_48")
+        @SerialName("image_48")
         var image48: String? = null
 
-        @SerializedName("image_64")
+        @SerialName("image_64")
         var image64: String? = null
 
-        @SerializedName("image_72")
+        @SerialName("image_72")
         var image72: String? = null
     }
 
@@ -160,13 +160,13 @@ class Message {
         var user: String? = null
         var username: String? = null
 
-        @SerializedName("is_intro")
+        @SerialName("is_intro")
         var isIntro: Boolean = false
 
-        @SerializedName("is_public")
+        @SerialName("is_public")
         var isPublic: Boolean = false
 
-        @SerializedName("is_starred")
+        @SerialName("is_starred")
         var isStarred: Boolean = false
 
         var isPublicUrlShared: Boolean = false
@@ -183,7 +183,7 @@ class Message {
         var lines: Int? = null
         var linesMore: Int? = null
 
-        @SerializedName("preview_is_truncated")
+        @SerialName("preview_is_truncated")
         var isPreviewTruncated: Boolean = false
         var isHasRichPreview: Boolean = false
 
@@ -191,7 +191,7 @@ class Message {
         var filetype: String? = null
         var prettyType: String? = null // "Plain Text"
 
-        @SerializedName("is_external")
+        @SerialName("is_external")
         var isExternal: Boolean = false
         var externalType: String? = null
         var isEditable: Boolean = false

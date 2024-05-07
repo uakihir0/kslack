@@ -13,20 +13,20 @@ class MultiStaticSelectElement : BlockElement {
     var actionId: String? = null
 
     // https://github.com/seratch/jslack/pull/103
-    // The reason I didn't initialize the List<> fields is because Slack (sometimes) gives errors
+    // The reason I didn't initialize the Array<> fields is because Slack (sometimes) gives errors
     // when it encounters an empty list in the generated JSON.
     // The proper solution if/when you don't want un-initialized fields is to have a Gson type adapter that skips empty lists
     // (e.g. something like https://stackoverflow.com/questions/11942118/how-do-you-get-gson-to-omit-null-or-empty-objects-and-empty-arrays-and-lists)
-    private var options: List<OptionObject>? = null
+    private var options: Array<OptionObject>? = null
 
     // https://github.com/seratch/jslack/pull/103
-    // The reason I didn't initialize the List<> fields is because Slack (sometimes) gives errors
+    // The reason I didn't initialize the Array<> fields is because Slack (sometimes) gives errors
     // when it encounters an empty list in the generated JSON.
     // The proper solution if/when you don't want un-initialized fields is to have a Gson type adapter that skips empty lists
     // (e.g. something like https://stackoverflow.com/questions/11942118/how-do-you-get-gson-to-omit-null-or-empty-objects-and-empty-arrays-and-lists)
-    private var optionGroups: List<OptionGroupObject>? = null
+    private var optionGroups: Array<OptionGroupObject>? = null
 
-    private var initialOptions: List<OptionObject>? = null
+    private var initialOptions: Array<OptionObject>? = null
     private var confirm: ConfirmationDialogObject? = null
     var maxSelectedItems: Int? = null
 
@@ -34,9 +34,9 @@ class MultiStaticSelectElement : BlockElement {
         fallback: String?,
         placeholder: PlainTextObject?,
         actionId: String?,
-        options: List<OptionObject>?,
-        optionGroups: List<OptionGroupObject>?,
-        initialOptions: List<OptionObject>?,
+        options: Array<OptionObject>?,
+        optionGroups: Array<OptionGroupObject>?,
+        initialOptions: Array<OptionObject>?,
         confirm: ConfirmationDialogObject?,
         maxSelectedItems: Int?
     ) {
@@ -56,15 +56,15 @@ class MultiStaticSelectElement : BlockElement {
         return this.placeholder
     }
 
-    fun getOptions(): List<OptionObject>? {
+    fun getOptions(): Array<OptionObject>? {
         return this.options
     }
 
-    fun getOptionGroups(): List<OptionGroupObject>? {
+    fun getOptionGroups(): Array<OptionGroupObject>? {
         return this.optionGroups
     }
 
-    fun getInitialOptions(): List<OptionObject>? {
+    fun getInitialOptions(): Array<OptionObject>? {
         return this.initialOptions
     }
 
@@ -76,15 +76,15 @@ class MultiStaticSelectElement : BlockElement {
         this.placeholder = placeholder
     }
 
-    fun setOptions(options: List<OptionObject>?) {
+    fun setOptions(options: Array<OptionObject>?) {
         this.options = options
     }
 
-    fun setOptionGroups(optionGroups: List<OptionGroupObject>?) {
+    fun setOptionGroups(optionGroups: Array<OptionGroupObject>?) {
         this.optionGroups = optionGroups
     }
 
-    fun setInitialOptions(initialOptions: List<OptionObject>?) {
+    fun setInitialOptions(initialOptions: Array<OptionObject>?) {
         this.initialOptions = initialOptions
     }
 
@@ -160,9 +160,9 @@ class MultiStaticSelectElement : BlockElement {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null
-        private var options: List<OptionObject>? = null
-        private var optionGroups: List<OptionGroupObject>? = null
-        private var initialOptions: List<OptionObject>? = null
+        private var options: Array<OptionObject>? = null
+        private var optionGroups: Array<OptionGroupObject>? = null
+        private var initialOptions: Array<OptionObject>? = null
         private var confirm: ConfirmationDialogObject? = null
         private var maxSelectedItems: Int? = null
 
@@ -181,17 +181,17 @@ class MultiStaticSelectElement : BlockElement {
             return this
         }
 
-        fun options(options: List<OptionObject>?): MultiStaticSelectElementBuilder {
+        fun options(options: Array<OptionObject>?): MultiStaticSelectElementBuilder {
             this.options = options
             return this
         }
 
-        fun optionGroups(optionGroups: List<OptionGroupObject>?): MultiStaticSelectElementBuilder {
+        fun optionGroups(optionGroups: Array<OptionGroupObject>?): MultiStaticSelectElementBuilder {
             this.optionGroups = optionGroups
             return this
         }
 
-        fun initialOptions(initialOptions: List<OptionObject>?): MultiStaticSelectElementBuilder {
+        fun initialOptions(initialOptions: Array<OptionObject>?): MultiStaticSelectElementBuilder {
             this.initialOptions = initialOptions
             return this
         }

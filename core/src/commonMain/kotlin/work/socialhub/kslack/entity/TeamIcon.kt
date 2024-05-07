@@ -1,29 +1,29 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.SerialName
 
 class TeamIcon {
     var imageOriginal: String? = null
 
-    @SerializedName("image_34")
+    @SerialName("image_34")
     var image34: String? = null
 
-    @SerializedName("image_44")
+    @SerialName("image_44")
     var image44: String? = null
 
-    @SerializedName("image_68")
+    @SerialName("image_68")
     var image68: String? = null
 
-    @SerializedName("image_88")
+    @SerialName("image_88")
     var image88: String? = null
 
-    @SerializedName("image_102")
+    @SerialName("image_102")
     var image102: String? = null
 
-    @SerializedName("image_132")
+    @SerialName("image_132")
     var image132: String? = null
 
-    @SerializedName("image_230")
+    @SerialName("image_230")
     var image230: String? = null
 
     var isImageDefault: Boolean = false

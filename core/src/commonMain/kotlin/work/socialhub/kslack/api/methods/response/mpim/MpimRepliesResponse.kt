@@ -9,5 +9,5 @@ class MpimRepliesResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var messages: List<Message>? = null
+    var messages: Array<Message>? = null
 }

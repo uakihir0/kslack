@@ -9,7 +9,7 @@ class ChatScheduleMessagesListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var scheduledMessages: List<ScheduledMessage>? = null
+    var scheduledMessages: Array<ScheduledMessage>? = null
     var responseMetadata: ResponseMetadata? = null
 
     class ScheduledMessage {

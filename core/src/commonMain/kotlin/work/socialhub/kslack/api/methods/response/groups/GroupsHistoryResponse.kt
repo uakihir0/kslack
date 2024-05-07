@@ -10,7 +10,7 @@ class GroupsHistoryResponse : SlackApiResponse {
     var provided: String? = null
 
     var latest: String? = null
-    var messages: List<Message>? = null
+    var messages: Array<Message>? = null
     var isHasMore: Boolean = false
     var channelActionsTs: String? = null
     var channelActionsCount: Int? = null

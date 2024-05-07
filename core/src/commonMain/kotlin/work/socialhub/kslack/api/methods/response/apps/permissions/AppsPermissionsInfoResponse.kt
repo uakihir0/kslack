@@ -20,13 +20,13 @@ class AppsPermissionsInfoResponse : SlackApiResponse {
         var appHome: Permissions? = null
 
         class Permissions {
-            var scopes: List<String>? = null
+            var scopes: Array<String>? = null
             var resources: Resources? = null
 
             class Resources {
-                var ids: List<String>? = null
+                var ids: Array<String>? = null
                 var isWildcard: Boolean = false
-                var excludedIds: List<String>? = null
+                var excludedIds: Array<String>? = null
             }
         }
     }

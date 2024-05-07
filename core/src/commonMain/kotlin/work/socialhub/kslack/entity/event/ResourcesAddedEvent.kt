@@ -12,11 +12,11 @@ package work.socialhub.kslack.entity.event
  */
 class ResourcesAddedEvent : Event {
     override val type: String = TYPE_NAME
-    var resources: List<ResourceItem>? = null
+    var resources: Array<ResourceItem>? = null
 
     class ResourceItem {
         var resource: Resource? = null
-        var scopes: List<String>? = null
+        var scopes: Array<String>? = null
     }
 
     class Resource {

@@ -9,6 +9,6 @@ class ConversationsMembersResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var members: List<String>? = null
+    var members: Array<String>? = null
     var responseMetadata: ResponseMetadata? = null
 }

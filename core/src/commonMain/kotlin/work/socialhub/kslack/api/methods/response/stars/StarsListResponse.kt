@@ -9,7 +9,7 @@ class StarsListResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var items: List<Item>? = null
+    var items: Array<Item>? = null
     var paging: Paging? = null
 
     class Item {
@@ -29,12 +29,12 @@ class StarsListResponse : SlackApiResponse {
         var botId: String? = null
         var team: String? = null
 
-        var attachments: List<Attachment>? = null
-        var blocks: List<LayoutBlock>? = null
+        var attachments: Array<Attachment>? = null
+        var blocks: Array<LayoutBlock>? = null
 
         var permalink: String? = null
 
-        @SerializedName("is_starred")
+        @SerialName("is_starred")
         var isStarred: Boolean = false
 
         var clientMsgId: String? = null
@@ -44,7 +44,7 @@ class StarsListResponse : SlackApiResponse {
         var replyCount: Int? = null
         var replyUsersCount: Int? = null
         var latestReply: String? = null
-        var replyUsers: List<String>? = null
+        var replyUsers: Array<String>? = null
 
         // https://api.slack.com/messaging/retrieving#threading
         // Parent messages in a thread will no longer explicitly list their replies.
@@ -55,10 +55,10 @@ class StarsListResponse : SlackApiResponse {
         @get:Deprecated("")
         @set:Deprecated("")
         @Deprecated("")
-        var replies: List<MessageRootReply>? = null
+        var replies: Array<MessageRootReply>? = null
         var isSubscribed: Boolean = false
         var lastRead: String? = null
-        var reactions: List<Reaction>? = null
+        var reactions: Array<Reaction>? = null
 
         /**
          * A reply message information in a MessageRoot.
@@ -75,12 +75,12 @@ class StarsListResponse : SlackApiResponse {
         var timestamp: Int? = null
         var user: String? = null
 
-        @SerializedName("is_intro")
+        @SerialName("is_intro")
         var isIntro: Boolean = false
         var comment: String? = null
         var numStars: Int? = null
 
-        @SerializedName("is_starred")
+        @SerialName("is_starred")
         var isStarred: Boolean = false
     }
 }

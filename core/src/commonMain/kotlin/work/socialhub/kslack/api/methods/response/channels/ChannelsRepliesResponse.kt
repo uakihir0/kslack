@@ -9,7 +9,7 @@ class ChannelsRepliesResponse : SlackApiResponse {
     var needed: String? = null
     var provided: String? = null
 
-    var messages: List<Message>? = null
+    var messages: Array<Message>? = null
     var threadInfo: ThreadInfo? = null
     var isHasMore: Boolean = false
 }
