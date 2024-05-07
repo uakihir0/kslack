@@ -1,6 +1,6 @@
-package work.socialhub.kslack.entity
+package work.socialhub.kslack.entity.team
 
-import com.google.gson.annotations.SerialName
+import kotlinx.serialization.SerialName
 
 class TeamIcon {
     var imageOriginal: String? = null

@@ -1,4 +1,6 @@
-package work.socialhub.kslack.entity
+package work.socialhub.kslack.entity.search
+
+import work.socialhub.kslack.entity.Paging
 
 class SearchResult {
     var total: Int? = null

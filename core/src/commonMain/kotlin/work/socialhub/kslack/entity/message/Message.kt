@@ -1,6 +1,10 @@
-package work.socialhub.kslack.entity
+package work.socialhub.kslack.entity.message
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock
+import work.socialhub.kslack.entity.Attachment
+import work.socialhub.kslack.entity.BotProfile
+import work.socialhub.kslack.entity.File
+import work.socialhub.kslack.entity.Reaction
 
 class Message {
     var type: String? = null

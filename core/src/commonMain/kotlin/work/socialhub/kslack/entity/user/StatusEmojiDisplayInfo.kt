@@ -7,6 +7,7 @@ import kotlin.js.JsExport
 @JsExport
 @Serializable
 class StatusEmojiDisplayInfo {
+
     @SerialName("emoji_name")
     val emojiName: String? = null
 
@@ -16,6 +17,5 @@ class StatusEmojiDisplayInfo {
     @SerialName("display_url")
     val displayUrl: String? = null
 
-    @SerialName("unicode")
     val unicode: String? = null
 }

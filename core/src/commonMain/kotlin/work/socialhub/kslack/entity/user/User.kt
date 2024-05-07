@@ -12,27 +12,21 @@ import kotlin.js.JsExport
 @Serializable
 class User {
 
-    // In Example
-
-    @SerialName("id")
     var id: String? = null
 
     @SerialName("team_id")
     var teamId: String? = null
 
-    @SerialName("name")
     var name: String? = null
 
     @SerialName("deleted")
     var isDeleted: Boolean = false
 
-    @SerialName("color")
     var color: String? = null
 
     @SerialName("real_name")
     var realName: String? = null
 
-    @SerialName("tz")
     var tz: String? = null
 
     @SerialName("tz_label")
@@ -41,7 +35,6 @@ class User {
     @SerialName("tz_offset")
     var tzOffset: Int? = null
 
-    @SerialName("profile")
     var profile: Profile? = null
 
     @SerialName("is_admin")
@@ -79,7 +72,6 @@ class User {
     @SerialName("is_app_user")
     var isAppUser: Boolean = false
 
-    @SerialName("updated")
     var updated: Int? = null
 
     @SerialName("has_2fa")
@@ -88,7 +80,6 @@ class User {
     @SerialName("is_email_confirmed")
     var isEmailConfirmed: Boolean = false
 
-    @SerialName("presence")
     var presence: String? = null // away, etc
 
     @SerialName("enterprise_user")
@@ -100,7 +91,6 @@ class User {
     @SerialName("has_files")
     var isHasFiles: Boolean = false
 
-    @SerialName("locale")
     var locale: String? = null
 
     @SerialName("is_workflow_bot")

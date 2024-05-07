@@ -1,4 +1,4 @@
-package work.socialhub.kslack.entity
+package work.socialhub.kslack.entity.user
 
 import kotlinx.serialization.Serializable
 import kotlin.js.JsExport

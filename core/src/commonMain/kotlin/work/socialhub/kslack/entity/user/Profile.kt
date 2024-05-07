@@ -56,19 +56,10 @@ class Profile {
     var botId: String? = null
 
 
-    @SerialName("title")
     var title: String? = null
-
-    @SerialName("email")
     var email: String? = null
-
-    @SerialName("skype")
     var skype: String? = null
-
-    @SerialName("phone")
     var phone: String? = null
-
-    @SerialName("team")
     var team: String? = null
 
 
@@ -109,7 +100,6 @@ class Profile {
     var isCustomImage: Boolean = false
 
 
-    @SerialName("pronouns")
     var pronouns: String? = null
 
     @SerialName("status_emoji_display_info")
@@ -125,7 +115,7 @@ class Profile {
     @SerialName("huddle_state_expiration_ts")
     val huddleStateExpirationTs: Int? = null
 
-    
+
     @SerialName("first_name")
     @Deprecated("")
     var firstName: String? = null

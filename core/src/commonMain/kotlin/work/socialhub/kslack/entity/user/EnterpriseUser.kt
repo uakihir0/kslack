@@ -8,7 +8,6 @@ import kotlin.js.JsExport
 @Serializable
 class EnterpriseUser {
 
-    @SerialName("id")
     var id: String? = null
 
     @SerialName("enterprise_id")
@@ -26,6 +25,5 @@ class EnterpriseUser {
     @SerialName("is_owner")
     var isOwner: Boolean = false
 
-    @SerialName("teams")
     var teams: Array<String>? = null
 }

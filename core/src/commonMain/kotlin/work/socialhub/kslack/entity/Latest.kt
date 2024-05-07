@@ -1,6 +1,7 @@
 package work.socialhub.kslack.entity
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock
+import work.socialhub.kslack.entity.message.Message
 
 class Latest {
     var clientMsgId: String? = null
