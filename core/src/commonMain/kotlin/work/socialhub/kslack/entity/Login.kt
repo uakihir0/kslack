@@ -1,5 +1,13 @@
 package work.socialhub.kslack.entity
 
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
+
+/**
+ * https://github.com/slackapi/java-slack-sdk/blob/main/slack-api-model/src/main/java/com/slack/api/model/Login.java
+ */
+@JsExport
+@Serializable
 class Login {
     var userId: String? = null
     var username: String? = null

@@ -1,16 +1,49 @@
 package work.socialhub.kslack.entity.team
 
-import com.google.gson.annotations.SerialName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
+@JsExport
+@Serializable
 class Team {
+
     var id: String? = null
     var name: String? = null
     var domain: String? = null
-    var emailDomain: String? = null
-    var icon: TeamIcon? = null
 
+    @SerialName("email_domain")
+    var emailDomain: String? = null
+
+    var icon: TeamIcon? = null
+    var url: String? = null
+
+
+    @SerialName("enterprise_id")
     var enterpriseId: String? = null
+
+    @SerialName("enterprise_name")
     var enterpriseName: String? = null
+
+    @SerialName("enterprise_domain")
+    var enterpriseDomain: String? = null
+
+
+    @SerialName("default_channels")
+    var defaultChannels: Array<String>? = null
+
+    @SerialName("is_verified")
+    var isVerified: Boolean? = null
+
+    @SerialName("discoverable")
+    var discoverable: String? = null // "invite_only"
+
+    @SerialName("avatar_base_url")
+    var avatarBaseUrl: String? = null
+
+    @SerialName("lob_sales_home_enabled")
+    var lobSalesHomeEnabled: Boolean? = null
+
 
     class Profile {
         var id: String? = null

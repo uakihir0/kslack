@@ -1,8 +1,13 @@
 package work.socialhub.kslack.entity
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.entity.message.Message
+import kotlin.js.JsExport
 
+
+@JsExport
+@Serializable
 class Latest {
     var clientMsgId: String? = null
 

@@ -1,8 +1,14 @@
 package work.socialhub.kslack.entity.team
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
+@JsExport
+@Serializable
 class TeamIcon {
+
+    @SerialName("image_original")
     var imageOriginal: String? = null
 
     @SerialName("image_34")
@@ -26,5 +32,6 @@ class TeamIcon {
     @SerialName("image_230")
     var image230: String? = null
 
+    @SerialName("is_image_default")
     var isImageDefault: Boolean = false
 }
