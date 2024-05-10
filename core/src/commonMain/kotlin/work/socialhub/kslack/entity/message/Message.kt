@@ -1,10 +1,13 @@
 package work.socialhub.kslack.entity.message
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.entity.Attachment
-import work.socialhub.kslack.entity.BotProfile
+import work.socialhub.kslack.entity.bot.BotProfile
 import work.socialhub.kslack.entity.File
 import work.socialhub.kslack.entity.Reaction
+import kotlin.js.JsExport
 
 class Message {
     var type: String? = null
@@ -99,6 +102,8 @@ class Message {
     /**
      * The root message information of a "thread_broadcast" message.
      */
+    @JsExport
+    @Serializable
     class MessageRoot {
         var text: String? = null
         var username: String? = null
@@ -139,6 +144,8 @@ class Message {
 
     // https://raw.githubusercontent.com/slackapi/slack-api-specs/master/web-api/slack_web_openapi_v2.json
     // TODO: confirm the actual behavior
+    @JsExport
+    @Serializable
     class Icons {
         var emoji: String? = null
 

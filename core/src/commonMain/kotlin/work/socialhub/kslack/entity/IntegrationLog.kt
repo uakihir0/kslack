@@ -1,6 +1,12 @@
 package work.socialhub.kslack.entity
 
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
+
+@JsExport
+@Serializable
 class IntegrationLog {
+
     var appType: String? = null
     var appId: String? = null
 
@@ -14,6 +20,7 @@ class IntegrationLog {
 
     var date: Int? = null
     var changeType: String? = null
+    var resolution: String? = null
     var reason: String? = null
     var scope: String? = null
 

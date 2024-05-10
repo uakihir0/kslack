@@ -10,4 +10,7 @@ class ProfileOptions {
 
     @SerialName("is_protected")
     var isProtected: Boolean = false
+
+    @SerialName("is_scim")
+    var scim: Boolean? = false
 }

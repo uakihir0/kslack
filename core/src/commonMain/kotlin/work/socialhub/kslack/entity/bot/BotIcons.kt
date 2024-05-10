@@ -1,8 +1,13 @@
-package work.socialhub.kslack.entity
+package work.socialhub.kslack.entity.bot
 
-import com.google.gson.annotations.SerialName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
+@JsExport
+@Serializable
 class BotIcons {
+
     @SerialName("image_36")
     var image36: String? = null
 

@@ -1,11 +1,16 @@
 package work.socialhub.kslack.entity
 
-import com.github.seratch.jslack.api.model.block.LayoutBlock
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/types/file
  */
+@JsExport
+@Serializable
 class File {
+
     var id: String? = null
     var created: Int? = null
     var timestamp: Int? = null
@@ -21,8 +26,11 @@ class File {
 
     @SerialName("is_external")
     var isExternal: Boolean = false
+    @SerialName("external_type")
     var externalType: String? = null
+    @SerialName("external_id")
     var externalId: String? = null
+    @SerialName("external_url")
     var externalUrl: String? = null
 
     var username: String? = null

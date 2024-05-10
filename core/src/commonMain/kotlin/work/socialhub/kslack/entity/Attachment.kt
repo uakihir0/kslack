@@ -1,11 +1,16 @@
 package work.socialhub.kslack.entity
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/docs/message-attachments
  */
+@JsExport
+@Serializable
 class Attachment {
+
     var msgSubtype: String? = null // "bot_message"
 
     /**

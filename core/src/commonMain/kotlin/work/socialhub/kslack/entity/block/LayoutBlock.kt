@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.block
 
+import kotlin.js.JsExport
+
 /**
  * Block Kit is a new UI framework that offers you more control and flexibility
  * when building messages for Slack. Comprised of "blocks," stackable bits of
@@ -10,6 +12,7 @@ package work.socialhub.kslack.entity.block
  *
  * @see [Block Kit Reference](https://api.slack.com/reference/messaging/blocks)
  */
+@JsExport
 interface LayoutBlock {
     /**
      * Determines the type of layout block, e.g. section, divider, context, actions
