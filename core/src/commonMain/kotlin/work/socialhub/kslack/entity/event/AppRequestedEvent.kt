@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.github.seratch.jslack.api.model.admin.AppRequest
+import work.socialhub.kslack.entity.admin.AppRequest
 
 /**
  * https://api.slack.com/events/app_requested

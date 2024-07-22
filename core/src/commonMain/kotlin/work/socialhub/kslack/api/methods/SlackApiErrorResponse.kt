@@ -1,5 +1,7 @@
 package com.github.seratch.jslack.api.methods
 
+import work.socialhub.kslack.api.methods.SlackApiResponse
+
 class SlackApiErrorResponse : SlackApiResponse {
     override var isOk: Boolean = false
     override var warning: String? = null

@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.response.oauth
 
-import com.github.seratch.jslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
 /**
  * https://api.slack.com/methods/oauth.v2.access

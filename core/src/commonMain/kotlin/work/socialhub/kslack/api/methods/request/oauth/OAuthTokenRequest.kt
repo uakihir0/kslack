@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.oauth
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * Exchanges a temporary OAuth verifier code for a workspace token.

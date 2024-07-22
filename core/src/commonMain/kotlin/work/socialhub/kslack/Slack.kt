@@ -1,6 +1,4 @@
-package com.github.seratch.jslack
-
-import kotlin.jvm.JvmOverloads
+package work.socialhub.kslack
 
 /**
  * Slack Integrations
@@ -8,7 +6,7 @@ import kotlin.jvm.JvmOverloads
  *
  * https://{your team name}.slack.com/apps/manage/custom-integrations
  */
-class Slack private constructor(config: SlackConfig, httpClient: SlackHttpClient) {
+class Slack(config: SlackConfig, httpClient: SlackHttpClient) {
     private val httpClient: SlackHttpClient = httpClient
     private val config: SlackConfig = config
 
@@ -32,7 +30,6 @@ class Slack private constructor(config: SlackConfig, httpClient: SlackHttpClient
     /**
      * Creates a Methods API client.
      */
-    @JvmOverloads
     fun methods(token: String? = null): MethodsClient {
         val client: MethodsClientImpl = MethodsClientImpl(httpClient, token)
         client.setEndpointUrlPrefix(config.getMethodsEndpointUrlPrefix())

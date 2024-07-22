@@ -1,9 +1,9 @@
 package work.socialhub.kslack.entity.search
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock
-import work.socialhub.kslack.entity.Attachment
+import work.socialhub.kmastodon.entity.Attachment
 import work.socialhub.kslack.entity.Channel
-import work.socialhub.kslack.entity.File
+import work.socialhub.kslack.entity.file.File
 
 class MatchedItem {
     var iid: String? = null

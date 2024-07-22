@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.response.stars
 
-import com.github.seratch.jslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
 class StarsAddResponse : SlackApiResponse {
     override var isOk: Boolean = false

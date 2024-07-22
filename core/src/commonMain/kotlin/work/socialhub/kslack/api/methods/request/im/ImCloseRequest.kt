@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.im
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ImCloseRequest internal constructor(
     /**

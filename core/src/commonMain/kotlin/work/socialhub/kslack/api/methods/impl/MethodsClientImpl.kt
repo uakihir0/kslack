@@ -2,7 +2,7 @@ package com.github.seratch.jslack.api.methods.impl
 
 import com.github.seratch.jslack.api.RequestConfigurator
 import com.github.seratch.jslack.api.methods.FormBody
-import com.github.seratch.jslack.api.methods.Methods
+import work.socialhub.kslack.api.methods.Methods
 
 class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : MethodsClient {
     var endpointUrlPrefix: String = MethodsClient.ENDPOINT_URL_PREFIX
@@ -15,7 +15,6 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
     // ----------------------------------------------------------------------------------
     // public methods
     // ----------------------------------------------------------------------------------
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsApprove(req: AdminAppsApproveRequest): AdminAppsApproveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -25,12 +24,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsApprove(req: RequestConfigurator<AdminAppsApproveRequest.AdminAppsApproveRequestBuilder?>): AdminAppsApproveResponse {
         return adminAppsApprove(req.configure(AdminAppsApproveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsRestrict(req: AdminAppsRestrictRequest): AdminAppsRestrictResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -40,12 +37,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsRestrict(req: RequestConfigurator<AdminAppsRestrictRequest.AdminAppsRestrictRequestBuilder?>): AdminAppsRestrictResponse {
         return adminAppsRestrict(req.configure(AdminAppsRestrictRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsRequestsList(req: AdminAppsRequestsListRequest): AdminAppsRequestsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -55,12 +50,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsRequestsList(req: RequestConfigurator<AdminAppsRequestsListRequest.AdminAppsRequestsListRequestBuilder?>): AdminAppsRequestsListResponse {
         return adminAppsRequestsList(req.configure(AdminAppsRequestsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsApprove(req: AdminInviteRequestsApproveRequest): AdminInviteRequestsApproveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -70,12 +63,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsApprove(req: RequestConfigurator<AdminInviteRequestsApproveRequest.AdminInviteRequestsApproveRequestBuilder?>): AdminInviteRequestsApproveResponse {
         return adminInviteRequestsApprove(req.configure(AdminInviteRequestsApproveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsDeny(req: AdminInviteRequestsDenyRequest): AdminInviteRequestsDenyResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -85,12 +76,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsDeny(req: RequestConfigurator<AdminInviteRequestsDenyRequest.AdminInviteRequestsDenyRequestBuilder?>): AdminInviteRequestsDenyResponse {
         return adminInviteRequestsDeny(req.configure(AdminInviteRequestsDenyRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsList(req: AdminInviteRequestsListRequest): AdminInviteRequestsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -100,12 +89,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsList(req: RequestConfigurator<AdminInviteRequestsListRequest.AdminInviteRequestsListRequestBuilder?>): AdminInviteRequestsListResponse {
         return adminInviteRequestsList(req.configure(AdminInviteRequestsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsApprovedList(req: AdminInviteRequestsApprovedListRequest): AdminInviteRequestsApprovedListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -115,12 +102,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsApprovedList(req: RequestConfigurator<AdminInviteRequestsApprovedListRequest.AdminInviteRequestsApprovedListRequestBuilder?>): AdminInviteRequestsApprovedListResponse {
         return adminInviteRequestsApprovedList(req.configure(AdminInviteRequestsApprovedListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsDeniedList(req: AdminInviteRequestsDeniedListRequest): AdminInviteRequestsDeniedListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -130,12 +115,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsDeniedList(req: RequestConfigurator<AdminInviteRequestsDeniedListRequest.AdminInviteRequestsDeniedListRequestBuilder?>): AdminInviteRequestsDeniedListResponse {
         return adminInviteRequestsDeniedList(req.configure(AdminInviteRequestsDeniedListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsAdminsList(req: AdminTeamsAdminsListRequest): AdminTeamsAdminsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -145,12 +128,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsAdminsList(req: RequestConfigurator<AdminTeamsAdminsListRequest.AdminTeamsAdminsListRequestBuilder?>): AdminTeamsAdminsListResponse {
         return adminTeamsAdminsList(req.configure(AdminTeamsAdminsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsCreate(req: AdminTeamsCreateRequest): AdminTeamsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -160,12 +141,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsCreate(req: RequestConfigurator<AdminTeamsCreateRequest.AdminTeamsCreateRequestBuilder?>): AdminTeamsCreateResponse {
         return adminTeamsCreate(req.configure(AdminTeamsCreateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsOwnersList(req: AdminTeamsOwnersListRequest): AdminTeamsOwnersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -175,12 +154,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsOwnersList(req: RequestConfigurator<AdminTeamsOwnersListRequest.AdminTeamsOwnersListRequestBuilder?>): AdminTeamsOwnersListResponse {
         return adminTeamsOwnersList(req.configure(AdminTeamsOwnersListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsSettingsSetDescription(req: AdminTeamsSettingsSetDescriptionRequest): AdminTeamsSettingsSetDescriptionResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -190,14 +167,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsSettingsSetDescription(req: RequestConfigurator<AdminTeamsSettingsSetDescriptionRequest.AdminTeamsSettingsSetDescriptionRequestBuilder?>): AdminTeamsSettingsSetDescriptionResponse {
         return adminTeamsSettingsSetDescription(
             req.configure(AdminTeamsSettingsSetDescriptionRequest.builder()).build()
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsSettingsSetIcon(req: AdminTeamsSettingsSetIconRequest): AdminTeamsSettingsSetIconResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -207,12 +182,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsSettingsSetIcon(req: RequestConfigurator<AdminTeamsSettingsSetIconRequest.AdminTeamsSettingsSetIconRequestBuilder?>): AdminTeamsSettingsSetIconResponse {
         return adminTeamsSettingsSetIcon(req.configure(AdminTeamsSettingsSetIconRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsSettingsSetName(req: AdminTeamsSettingsSetNameRequest): AdminTeamsSettingsSetNameResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -222,12 +195,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminTeamsSettingsSetName(req: RequestConfigurator<AdminTeamsSettingsSetNameRequest.AdminTeamsSettingsSetNameRequestBuilder?>): AdminTeamsSettingsSetNameResponse {
         return adminTeamsSettingsSetName(req.configure(AdminTeamsSettingsSetNameRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersAssign(req: AdminUsersAssignRequest): AdminUsersAssignResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -237,12 +208,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersAssign(req: RequestConfigurator<AdminUsersAssignRequest.AdminUsersAssignRequestBuilder?>): AdminUsersAssignResponse {
         return adminUsersAssign(req.configure(AdminUsersAssignRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersInvite(req: AdminUsersInviteRequest): AdminUsersInviteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -252,12 +221,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersInvite(req: RequestConfigurator<AdminUsersInviteRequest.AdminUsersInviteRequestBuilder?>): AdminUsersInviteResponse {
         return adminUsersInvite(req.configure(AdminUsersInviteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersRemove(req: AdminUsersRemoveRequest): AdminUsersRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -267,12 +234,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersRemove(req: RequestConfigurator<AdminUsersRemoveRequest.AdminUsersRemoveRequestBuilder?>): AdminUsersRemoveResponse {
         return adminUsersRemove(req.configure(AdminUsersRemoveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSetAdmin(req: AdminUsersSetAdminRequest): AdminUsersSetAdminResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -282,12 +247,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSetAdmin(req: RequestConfigurator<AdminUsersSetAdminRequest.AdminUsersSetAdminRequestBuilder?>): AdminUsersSetAdminResponse {
         return adminUsersSetAdmin(req.configure(AdminUsersSetAdminRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSetOwner(req: AdminUsersSetOwnerRequest): AdminUsersSetOwnerResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -297,12 +260,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSetOwner(req: RequestConfigurator<AdminUsersSetOwnerRequest.AdminUsersSetOwnerRequestBuilder?>): AdminUsersSetOwnerResponse {
         return adminUsersSetOwner(req.configure(AdminUsersSetOwnerRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSetRegular(req: AdminUsersSetRegularRequest): AdminUsersSetRegularResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -312,12 +273,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSetRegular(req: RequestConfigurator<AdminUsersSetRegularRequest.AdminUsersSetRegularRequestBuilder?>): AdminUsersSetRegularResponse {
         return adminUsersSetRegular(req.configure(AdminUsersSetRegularRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSessionReset(req: AdminUsersSessionResetRequest): AdminUsersSessionResetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -327,12 +286,10 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminUsersSessionReset(req: RequestConfigurator<AdminUsersSessionResetRequest.AdminUsersSessionResetRequestBuilder?>): AdminUsersSessionResetResponse {
         return adminUsersSessionReset(req.configure(AdminUsersSessionResetRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun apiTest(req: ApiTestRequest?): ApiTestResponse {
         return postFormAndParseResponse(toForm(req), Methods.API_TEST, ApiTestResponse::class.java)
     }

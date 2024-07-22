@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.response.channels
 
-import com.github.seratch.jslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
 class ChannelsLeaveResponse : SlackApiResponse {
     override var isOk: Boolean = false

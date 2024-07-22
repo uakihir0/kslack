@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.migration
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * For Enterprise Grid workspaces, map local user IDs to global user IDs

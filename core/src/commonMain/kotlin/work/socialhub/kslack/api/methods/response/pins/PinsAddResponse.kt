@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.response.pins
 
-import com.github.seratch.jslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
 class PinsAddResponse : SlackApiResponse {
     override var isOk: Boolean = false

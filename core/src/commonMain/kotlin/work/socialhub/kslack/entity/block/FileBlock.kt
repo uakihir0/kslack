@@ -17,48 +17,4 @@ class FileBlock : LayoutBlock {
 
     // 	At the moment, source will always be remote for a remote file.
     var source: String? = null // "remote"
-
-    constructor(blockId: String?, externalId: String?, source: String?) {
-        this.blockId = blockId
-        this.externalId = externalId
-        this.source = source
-    }
-
-    constructor()
-
-    class FileBlockBuilder internal constructor() {
-        private var blockId: String? = null
-        private var externalId: String? = null
-        private var source: String? = null
-
-        fun blockId(blockId: String?): FileBlockBuilder {
-            this.blockId = blockId
-            return this
-        }
-
-        fun externalId(externalId: String?): FileBlockBuilder {
-            this.externalId = externalId
-            return this
-        }
-
-        fun source(source: String?): FileBlockBuilder {
-            this.source = source
-            return this
-        }
-
-        fun build(): FileBlock {
-            return FileBlock(blockId, externalId, source)
-        }
-
-        override fun toString(): String {
-            return "FileBlock.FileBlockBuilder(blockId=" + this.blockId + ", externalId=" + this.externalId + ", source=" + this.source + ")"
-        }
-    }
-
-    companion object {
-        const val TYPE: String = "file"
-        fun builder(): FileBlockBuilder {
-            return FileBlockBuilder()
-        }
-    }
 }

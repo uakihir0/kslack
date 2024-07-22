@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-interface Event : java.io.Serializable {
+interface Event {
     val type: String?
 
     val subtype: String?

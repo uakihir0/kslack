@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.files.remote
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * https://api.slack.com/methods/files.remote.add

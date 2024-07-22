@@ -1,4 +1,4 @@
-package work.socialhub.kslack.entity
+package work.socialhub.kslack.entity.file
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

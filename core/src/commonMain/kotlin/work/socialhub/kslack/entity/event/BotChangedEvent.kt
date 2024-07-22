@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.github.seratch.jslack.api.model.BotIcons
+import work.socialhub.kslack.entity.bot.BotIcons
 
 /**
  * The bot_changed event is sent to all connections for a workspace when an integration "bot" is updated.

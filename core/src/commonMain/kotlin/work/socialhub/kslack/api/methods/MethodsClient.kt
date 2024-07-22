@@ -1,23 +1,24 @@
-package com.github.seratch.jslack.api.methods
+package work.socialhub.kslack.api.methods
 
-import com.github.seratch.jslack.api.RequestConfigurator
-import com.github.seratch.jslack.api.methods.request.admin.apps.AdminAppsApproveRequest
-import com.github.seratch.jslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
-import com.github.seratch.jslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
+import com.github.seratch.jslack.api.methods.FormBody
+import com.github.seratch.jslack.api.methods.SlackApiException
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
 import com.github.seratch.jslack.api.methods.request.admin.invite_requests.*
 import com.github.seratch.jslack.api.methods.request.admin.teams.*
 import com.github.seratch.jslack.api.methods.request.admin.users.*
-import com.github.seratch.jslack.api.methods.request.api.ApiTestRequest
-import com.github.seratch.jslack.api.methods.request.apps.AppsUninstallRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.AppsPermissionsInfoRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.AppsPermissionsRequestRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.resources.AppsPermissionsResourcesListRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.scopes.AppsPermissionsScopesListRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersListRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersRequestRequest
-import com.github.seratch.jslack.api.methods.request.auth.AuthRevokeRequest
-import com.github.seratch.jslack.api.methods.request.auth.AuthTestRequest
-import com.github.seratch.jslack.api.methods.request.bots.BotsInfoRequest
+import work.socialhub.kslack.api.methods.request.api.ApiTestRequest
+import work.socialhub.kslack.api.methods.request.apps.AppsUninstallRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsInfoRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsRequestRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.resources.AppsPermissionsResourcesListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.scopes.AppsPermissionsScopesListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersRequestRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthRevokeRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
+import work.socialhub.kslack.api.methods.request.bots.BotsInfoRequest
 import com.github.seratch.jslack.api.methods.request.channels.*
 import com.github.seratch.jslack.api.methods.request.chat.*
 import com.github.seratch.jslack.api.methods.request.chat.scheduled_messages.ChatScheduleMessagesListRequest
@@ -70,7 +71,7 @@ import com.github.seratch.jslack.api.methods.request.views.ViewsPushRequest
 import com.github.seratch.jslack.api.methods.request.views.ViewsUpdateRequest
 import com.github.seratch.jslack.api.methods.response.admin.apps.AdminAppsApproveResponse
 import com.github.seratch.jslack.api.methods.response.admin.apps.AdminAppsRequestsListResponse
-import com.github.seratch.jslack.api.methods.response.admin.apps.AdminAppsRestrictResponse
+import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsRestrictResponse
 import com.github.seratch.jslack.api.methods.response.admin.invite_requests.*
 import com.github.seratch.jslack.api.methods.response.admin.teams.*
 import com.github.seratch.jslack.api.methods.response.admin.users.*
@@ -109,7 +110,7 @@ import com.github.seratch.jslack.api.methods.response.pins.PinsListResponse
 import com.github.seratch.jslack.api.methods.response.pins.PinsRemoveResponse
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsAddResponse
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsGetResponse
-import com.github.seratch.jslack.api.methods.response.reactions.ReactionsListResponse
+import work.socialhub.kslack.api.methods.response.reactions.ReactionsListResponse
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsRemoveResponse
 import com.github.seratch.jslack.api.methods.response.reminders.*
 import com.github.seratch.jslack.api.methods.response.rtm.RTMConnectResponse
@@ -135,7 +136,13 @@ import com.github.seratch.jslack.api.methods.response.views.ViewsOpenResponse
 import com.github.seratch.jslack.api.methods.response.views.ViewsPublishResponse
 import com.github.seratch.jslack.api.methods.response.views.ViewsPushResponse
 import com.github.seratch.jslack.api.methods.response.views.ViewsUpdateResponse
-import net.socialhub.http.HttpResponse
+import work.socialhub.khttpclient.HttpResponse
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsApproveRequest
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsApprovedListRequest
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsDeniedListRequest
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsDenyRequest
+import work.socialhub.kslack.api.methods.request.admin.teams.*
+import work.socialhub.kslack.api.methods.request.admin.users.*
 
 /**
  * API Methods.
@@ -147,20 +154,17 @@ interface MethodsClient {
     // ----------------------------------------------
     //  OkHttp layer methods
     // ----------------------------------------------
-    @Throws(java.io.IOException::class)
     fun runPostForm(
         form: FormBody.Builder?,
         endpoint: String?
     ): HttpResponse?
 
-    @Throws(java.io.IOException::class)
     fun runPostFormWithToken(
         form: FormBody.Builder?,
         endpoint: String?,
         token: String?
     ): HttpResponse?
 
-    @Throws(java.io.IOException::class)
     fun runPostMultipart(
         form: FormBody.Builder?,
         endpoint: String?,
@@ -170,14 +174,12 @@ interface MethodsClient {
     // ----------------------------------------------
     //  Methods to send requests and parse responses
     // ----------------------------------------------
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun <T> postFormAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>?,
         endpoint: String?,
         clazz: java.lang.Class<T>?
     ): T
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun <T> postFormWithAuthorizationHeaderAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>?,
         endpoint: String?,
@@ -185,7 +187,6 @@ interface MethodsClient {
         clazz: java.lang.Class<T>?
     ): T
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun <T> postFormWithTokenAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>?,
         endpoint: String?,
@@ -193,7 +194,6 @@ interface MethodsClient {
         clazz: java.lang.Class<T>?
     ): T
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun <T> postMultipartAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>?,
         endpoint: String?,
@@ -204,46 +204,42 @@ interface MethodsClient {
     // ------------------------------
     // admin.apps
     // ------------------------------
-    @Throws(java.io.IOException::class, SlackApiException::class)
-    fun adminAppsApprove(req: AdminAppsApproveRequest?): AdminAppsApproveResponse?
+    fun adminAppsApprove(
+        req: AdminAppsApproveRequest?
+    ): AdminAppsApproveResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
-    fun adminAppsApprove(req: RequestConfigurator<AdminAppsApproveRequest.AdminAppsApproveRequestBuilder?>?): AdminAppsApproveResponse?
+    fun adminAppsApprove(
+        req: RequestConfigurator<AdminAppsApproveRequest.AdminAppsApproveRequestBuilder?>?
+    ): AdminAppsApproveResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
-    fun adminAppsRestrict(req: AdminAppsRestrictRequest?): AdminAppsRestrictResponse?
+    fun adminAppsRestrict(
+        req: AdminAppsRestrictRequest?
+    ): AdminAppsRestrictResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
-    fun adminAppsRestrict(req: RequestConfigurator<AdminAppsRestrictRequest.AdminAppsRestrictRequestBuilder?>?): AdminAppsRestrictResponse?
+    fun adminAppsRestrict(
+        req: RequestConfigurator<AdminAppsRestrictRequest.AdminAppsRestrictRequestBuilder?>?
+    ): AdminAppsRestrictResponse?
 
     // ------------------------------
     // admin.apps.requests
     // ------------------------------
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsRequestsList(req: AdminAppsRequestsListRequest?): AdminAppsRequestsListResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminAppsRequestsList(req: RequestConfigurator<AdminAppsRequestsListRequest.AdminAppsRequestsListRequestBuilder?>?): AdminAppsRequestsListResponse?
 
     // ------------------------------
     // admin.inviteRequests
     // ------------------------------
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsApprove(req: AdminInviteRequestsApproveRequest?): AdminInviteRequestsApproveResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsApprove(req: RequestConfigurator<AdminInviteRequestsApproveRequest.AdminInviteRequestsApproveRequestBuilder?>?): AdminInviteRequestsApproveResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsDeny(req: AdminInviteRequestsDenyRequest?): AdminInviteRequestsDenyResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsDeny(req: RequestConfigurator<AdminInviteRequestsDenyRequest.AdminInviteRequestsDenyRequestBuilder?>?): AdminInviteRequestsDenyResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsList(req: AdminInviteRequestsListRequest?): AdminInviteRequestsListResponse?
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
     fun adminInviteRequestsList(req: RequestConfigurator<AdminInviteRequestsListRequest.AdminInviteRequestsListRequestBuilder?>?): AdminInviteRequestsListResponse?
 
     @Throws(java.io.IOException::class, SlackApiException::class)

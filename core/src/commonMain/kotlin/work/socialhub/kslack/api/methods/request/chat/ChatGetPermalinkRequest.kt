@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.chat
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * A request to retrieve a permalink URL for a specific extant message

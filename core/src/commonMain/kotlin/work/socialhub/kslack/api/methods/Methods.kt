@@ -1,6 +1,7 @@
-package com.github.seratch.jslack.api.methods
+package work.socialhub.kslack.api.methods
 
 object Methods {
+
     // ------------------------------
     // admin.apps
     // ------------------------------

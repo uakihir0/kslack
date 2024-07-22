@@ -1,11 +1,12 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerialName
+import kotlinx.serialization.SerialName
 
 /**
  * https://api.slack.com/docs/message-attachments
  */
 class Field {
+
     /**
      * Shown as a bold heading above the value text. It cannot contain markup and will be escaped for you.
      */
@@ -22,47 +23,4 @@ class Field {
      */
     @SerialName("short")
     var isValueShortEnough: Boolean = false
-
-    constructor(title: String?, value: String?, valueShortEnough: Boolean) {
-        this.title = title
-        this.value = value
-        this.isValueShortEnough = valueShortEnough
-    }
-
-    constructor()
-
-    class FieldBuilder internal constructor() {
-        private var title: String? = null
-        private var value: String? = null
-        private var valueShortEnough = false
-
-        fun title(title: String?): FieldBuilder {
-            this.title = title
-            return this
-        }
-
-        fun value(value: String?): FieldBuilder {
-            this.value = value
-            return this
-        }
-
-        fun valueShortEnough(valueShortEnough: Boolean): FieldBuilder {
-            this.valueShortEnough = valueShortEnough
-            return this
-        }
-
-        fun build(): Field {
-            return Field(title, value, valueShortEnough)
-        }
-
-        override fun toString(): String {
-            return "Field.FieldBuilder(title=" + this.title + ", value=" + this.value + ", valueShortEnough=" + this.valueShortEnough + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): FieldBuilder {
-            return FieldBuilder()
-        }
-    }
 }

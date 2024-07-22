@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.files
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class FilesSharedPublicURLRequest internal constructor(
     /**

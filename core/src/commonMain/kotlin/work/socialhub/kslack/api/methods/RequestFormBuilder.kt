@@ -1,22 +1,22 @@
 package com.github.seratch.jslack.api.methods
 
-import com.github.seratch.jslack.api.methods.request.admin.apps.AdminAppsApproveRequest
-import com.github.seratch.jslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
-import com.github.seratch.jslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
 import com.github.seratch.jslack.api.methods.request.admin.invite_requests.*
 import com.github.seratch.jslack.api.methods.request.admin.teams.*
 import com.github.seratch.jslack.api.methods.request.admin.users.*
-import com.github.seratch.jslack.api.methods.request.api.ApiTestRequest
-import com.github.seratch.jslack.api.methods.request.apps.AppsUninstallRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.AppsPermissionsInfoRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.AppsPermissionsRequestRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.resources.AppsPermissionsResourcesListRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.scopes.AppsPermissionsScopesListRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersListRequest
-import com.github.seratch.jslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersRequestRequest
-import com.github.seratch.jslack.api.methods.request.auth.AuthRevokeRequest
-import com.github.seratch.jslack.api.methods.request.auth.AuthTestRequest
-import com.github.seratch.jslack.api.methods.request.bots.BotsInfoRequest
+import work.socialhub.kslack.api.methods.request.api.ApiTestRequest
+import work.socialhub.kslack.api.methods.request.apps.AppsUninstallRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsInfoRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsRequestRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.resources.AppsPermissionsResourcesListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.scopes.AppsPermissionsScopesListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersRequestRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthRevokeRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
+import work.socialhub.kslack.api.methods.request.bots.BotsInfoRequest
 import com.github.seratch.jslack.api.methods.request.channels.*
 import com.github.seratch.jslack.api.methods.request.chat.*
 import com.github.seratch.jslack.api.methods.request.chat.scheduled_messages.ChatScheduleMessagesListRequest
@@ -71,6 +71,12 @@ import com.github.seratch.jslack.api.methods.request.views.ViewsPushRequest
 import com.github.seratch.jslack.api.methods.request.views.ViewsUpdateRequest
 import com.github.seratch.jslack.common.json.GsonFactory
 import net.socialhub.logger.Logger
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsApproveRequest
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsApprovedListRequest
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsDeniedListRequest
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsDenyRequest
+import work.socialhub.kslack.api.methods.request.admin.teams.*
+import work.socialhub.kslack.api.methods.request.admin.users.*
 
 object RequestFormBuilder {
     private val log: Logger = Logger.getLogger(SlackApiException::class.java)

@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.admin.apps
+package work.socialhub.kslack.api.methods.response.admin.apps
 
-import com.github.seratch.jslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
 class AdminAppsRestrictResponse : SlackApiResponse {
     override var isOk: Boolean = false

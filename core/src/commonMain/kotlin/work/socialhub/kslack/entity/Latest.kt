@@ -2,11 +2,14 @@ package work.socialhub.kslack.entity
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
+import work.socialhub.kmastodon.entity.Attachment
 import work.socialhub.kslack.entity.block.LayoutBlock
 import work.socialhub.kslack.entity.bot.BotProfile
+import work.socialhub.kslack.entity.file.File
 import work.socialhub.kslack.entity.message.Message
+import work.socialhub.kslack.entity.message.MessageIcons
+import work.socialhub.kslack.entity.message.MessageRoot
 import kotlin.js.JsExport
-
 
 @JsExport
 @Serializable
@@ -31,7 +34,7 @@ class Latest {
     var blocks: Array<LayoutBlock>? = null
     var files: Array<File>? = null
     var reactions: Array<Reaction>? = null
-    var root: Message.MessageRoot? = null
+    var root: MessageRoot? = null
 
     @SerialName("upload")
     var isUpload: Boolean = false
@@ -55,7 +58,7 @@ class Latest {
     var threadTs: String? = null
 
     var ts: String? = null
-    var icons: Message.Icons? = null
+    var icons: MessageIcons? = null
 
     @SerialName("x_files")
     var xFiles: Array<String>? = null

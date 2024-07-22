@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.github.seratch.jslack.api.model.view.View
+import work.socialhub.kslack.entity.view.View
 
 /**
  * This app event notifies your app when a user has entered into the App Home space—that's the place

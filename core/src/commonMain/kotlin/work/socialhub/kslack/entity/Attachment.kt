@@ -2,6 +2,7 @@ package work.socialhub.kslack.entity
 
 import com.github.seratch.jslack.api.model.block.LayoutBlock
 import kotlinx.serialization.Serializable
+import work.socialhub.kmastodon.entity.Attachment
 import kotlin.js.JsExport
 
 /**
@@ -802,7 +803,7 @@ class Attachment {
         }
 
         fun build(): Attachment {
-            return Attachment(
+            return work.socialhub.kmastodon.entity.Attachment(
                 msgSubtype,
                 fallback,
                 callbackId,

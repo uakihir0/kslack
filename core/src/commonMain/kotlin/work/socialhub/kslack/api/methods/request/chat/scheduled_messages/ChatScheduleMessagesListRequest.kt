@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.chat.scheduled_messages
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ChatScheduleMessagesListRequest internal constructor(
     override var token: String?,

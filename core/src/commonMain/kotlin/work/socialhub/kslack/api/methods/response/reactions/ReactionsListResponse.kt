@@ -1,6 +1,11 @@
-package com.github.seratch.jslack.api.methods.response.reactions
+package work.socialhub.kslack.api.methods.response.reactions
 
-import com.github.seratch.jslack.api.model.Attachment
+import kotlinx.serialization.SerialName
+import work.socialhub.kmastodon.entity.Attachment
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.Paging
+import work.socialhub.kslack.entity.Reaction
+import work.socialhub.kslack.entity.block.LayoutBlock
 
 class ReactionsListResponse : SlackApiResponse {
     var isOk: Boolean = false

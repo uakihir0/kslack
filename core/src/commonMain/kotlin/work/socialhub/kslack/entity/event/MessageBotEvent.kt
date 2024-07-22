@@ -1,6 +1,8 @@
 package work.socialhub.kslack.entity.event
 
-import com.github.seratch.jslack.api.model.Attachment
+import work.socialhub.kmastodon.entity.Attachment
+import work.socialhub.kslack.entity.block.LayoutBlock
+import work.socialhub.kslack.entity.message.MessageIcons
 
 /**
  * https://api.slack.com/events/message/bot_message
@@ -11,7 +13,7 @@ class MessageBotEvent : Event {
 
     var botId: String? = null
     var username: String? = null
-    var icons: Message.Icons? = null
+    var icons: MessageIcons? = null
 
     var channel: String? = null
 

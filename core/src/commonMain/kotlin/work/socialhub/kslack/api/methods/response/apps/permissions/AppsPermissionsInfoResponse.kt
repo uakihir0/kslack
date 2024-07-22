@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.response.apps.permissions
 
-import com.github.seratch.jslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
 class AppsPermissionsInfoResponse : SlackApiResponse {
     override var isOk: Boolean = false

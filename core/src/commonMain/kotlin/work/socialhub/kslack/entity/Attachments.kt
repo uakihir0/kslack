@@ -1,16 +1,16 @@
 package work.socialhub.kslack.entity
 
 object Attachments {
-    fun asAttachments(vararg attachments: Attachment?): Array<Attachment> {
+    fun asAttachments(vararg attachments: work.socialhub.kmastodon.entity.Attachment?): Array<work.socialhub.kmastodon.entity.Attachment> {
         return java.util.Arrays.asList(*attachments)
     }
 
-    fun attachment(configurator: ModelConfigurator<Attachment.AttachmentBuilder>): Attachment {
+    fun attachment(configurator: ModelConfigurator<work.socialhub.kmastodon.entity.Attachment.AttachmentBuilder>): work.socialhub.kmastodon.entity.Attachment {
         return configurator.configure(Attachment.builder()).build()
     }
 
-    fun attachmentMetadata(configurator: ModelConfigurator<Attachment.AttachmentMetadata.AttachmentMetadataBuilder>): Attachment.AttachmentMetadata {
-        return configurator.configure(Attachment.AttachmentMetadata.builder()).build()
+    fun attachmentMetadata(configurator: ModelConfigurator<work.socialhub.kmastodon.entity.Attachment.AttachmentMetadata.AttachmentMetadataBuilder>): work.socialhub.kmastodon.entity.Attachment.AttachmentMetadata {
+        return configurator.configure(work.socialhub.kmastodon.entity.Attachment.AttachmentMetadata.builder()).build()
     }
 
     fun field(configurator: ModelConfigurator<Field.FieldBuilder>): Field {

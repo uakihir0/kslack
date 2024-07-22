@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.response.conversations
 
-import com.github.seratch.jslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
 class ConversationsCloseResponse : SlackApiResponse {
     override var isOk: Boolean = false

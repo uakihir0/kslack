@@ -1,6 +1,6 @@
 package com.github.seratch.jslack.api.methods.request.usergroups
 
-import com.github.seratch.jslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class UsergroupsEnableRequest internal constructor(
     /**
