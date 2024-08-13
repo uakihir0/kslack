@@ -3,41 +3,9 @@ package work.socialhub.kslack.api.methods.request.files
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class FilesRevokePublicURLRequest(
-    /**
-     * Authentication token. Requires scope: `files:write:user`
-     */
+
+    /** Authentication token. Requires scope: `files:write:user` */
     override var token: String?,
-    /**
-     * File to revoke
-     */
+    /** File to revoke */
     var file: String?
-) : SlackApiRequest {
-    class FilesRevokePublicURLRequestBuilder() {
-        private var token: String? = null
-        private var file: String? = null
-
-        fun token(token: String?): FilesRevokePublicURLRequestBuilder {
-            this.token = token
-            return this
-        }
-
-        fun file(file: String?): FilesRevokePublicURLRequestBuilder {
-            this.file = file
-            return this
-        }
-
-        fun build(): FilesRevokePublicURLRequest {
-            return FilesRevokePublicURLRequest(token, file)
-        }
-
-        override fun toString(): String {
-            return "FilesRevokePublicURLRequest.FilesRevokePublicURLRequestBuilder(token=" + this.token + ", file=" + this.file + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): FilesRevokePublicURLRequestBuilder {
-            return FilesRevokePublicURLRequestBuilder()
-        }
-    }
-}
+) : SlackApiRequest

@@ -294,12 +294,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return postFormAndParseResponse(toForm(req), Methods.API_TEST, ApiTestResponse::class.java)
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun apiTest(req: RequestConfigurator<ApiTestRequest.ApiTestRequestBuilder?>): ApiTestResponse {
         return apiTest(req.configure(ApiTestRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsUninstall(req: AppsUninstallRequest): AppsUninstallResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -309,12 +309,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsUninstall(req: RequestConfigurator<AppsUninstallRequest.AppsUninstallRequestBuilder?>): AppsUninstallResponse {
         return appsUninstall(req.configure(AppsUninstallRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsInfo(req: AppsPermissionsInfoRequest): AppsPermissionsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -324,12 +324,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsInfo(req: RequestConfigurator<AppsPermissionsInfoRequest.AppsPermissionsInfoRequestBuilder?>): AppsPermissionsInfoResponse {
         return appsPermissionsInfo(req.configure(AppsPermissionsInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsRequest(req: AppsPermissionsRequestRequest): AppsPermissionsRequestResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -339,12 +339,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsRequest(req: RequestConfigurator<AppsPermissionsRequestRequest.AppsPermissionsRequestRequestBuilder?>): AppsPermissionsRequestResponse {
         return appsPermissionsRequest(req.configure(AppsPermissionsRequestRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsResourcesList(req: AppsPermissionsResourcesListRequest): AppsPermissionsResourcesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -354,7 +354,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsScopesList(req: AppsPermissionsScopesListRequest): AppsPermissionsScopesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -364,7 +364,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsUsersList(req: AppsPermissionsUsersListRequest): AppsPermissionsUsersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -374,7 +374,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun appsPermissionsUsersRequest(req: AppsPermissionsUsersRequestRequest): AppsPermissionsUsersRequestResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -384,7 +384,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun authRevoke(req: AuthRevokeRequest): AuthRevokeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -394,12 +394,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun authRevoke(req: RequestConfigurator<AuthRevokeRequest.AuthRevokeRequestBuilder?>): AuthRevokeResponse {
         return authRevoke(req.configure(AuthRevokeRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun authTest(req: AuthTestRequest): AuthTestResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -409,12 +409,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun authTest(req: RequestConfigurator<AuthTestRequest.AuthTestRequestBuilder?>): AuthTestResponse {
         return authTest(req.configure(AuthTestRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun botsInfo(req: BotsInfoRequest): BotsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -424,12 +424,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun botsInfo(req: RequestConfigurator<BotsInfoRequest.BotsInfoRequestBuilder?>): BotsInfoResponse {
         return botsInfo(req.configure(BotsInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsArchive(req: ChannelsArchiveRequest): ChannelsArchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -439,12 +439,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsArchive(req: RequestConfigurator<ChannelsArchiveRequest.ChannelsArchiveRequestBuilder?>): ChannelsArchiveResponse {
         return channelsArchive(req.configure(ChannelsArchiveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsCreate(req: ChannelsCreateRequest): ChannelsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -454,12 +454,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsCreate(req: RequestConfigurator<ChannelsCreateRequest.ChannelsCreateRequestBuilder?>): ChannelsCreateResponse {
         return channelsCreate(req.configure(ChannelsCreateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsHistory(req: ChannelsHistoryRequest): ChannelsHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -469,12 +469,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsHistory(req: RequestConfigurator<ChannelsHistoryRequest.ChannelsHistoryRequestBuilder?>): ChannelsHistoryResponse {
         return channelsHistory(req.configure(ChannelsHistoryRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsReplies(req: ChannelsRepliesRequest): ChannelsRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -484,12 +484,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsReplies(req: RequestConfigurator<ChannelsRepliesRequest.ChannelsRepliesRequestBuilder?>): ChannelsRepliesResponse {
         return channelsReplies(req.configure(ChannelsRepliesRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsInfo(req: ChannelsInfoRequest): ChannelsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -499,12 +499,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsInfo(req: RequestConfigurator<ChannelsInfoRequest.ChannelsInfoRequestBuilder?>): ChannelsInfoResponse {
         return channelsInfo(req.configure(ChannelsInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsList(req: ChannelsListRequest): ChannelsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -514,12 +514,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsList(req: RequestConfigurator<ChannelsListRequest.ChannelsListRequestBuilder?>): ChannelsListResponse {
         return channelsList(req.configure(ChannelsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsInvite(req: ChannelsInviteRequest): ChannelsInviteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -529,12 +529,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsInvite(req: RequestConfigurator<ChannelsInviteRequest.ChannelsInviteRequestBuilder?>): ChannelsInviteResponse {
         return channelsInvite(req.configure(ChannelsInviteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsJoin(req: ChannelsJoinRequest): ChannelsJoinResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -544,12 +544,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsJoin(req: RequestConfigurator<ChannelsJoinRequest.ChannelsJoinRequestBuilder?>): ChannelsJoinResponse {
         return channelsJoin(req.configure(ChannelsJoinRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsKick(req: ChannelsKickRequest): ChannelsKickResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -559,12 +559,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsKick(req: RequestConfigurator<ChannelsKickRequest.ChannelsKickRequestBuilder?>): ChannelsKickResponse {
         return channelsKick(req.configure(ChannelsKickRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsLeave(req: ChannelsLeaveRequest): ChannelsLeaveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -574,12 +574,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsLeave(req: RequestConfigurator<ChannelsLeaveRequest.ChannelsLeaveRequestBuilder?>): ChannelsLeaveResponse {
         return channelsLeave(req.configure(ChannelsLeaveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsMark(req: ChannelsMarkRequest): ChannelsMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -589,12 +589,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsMark(req: RequestConfigurator<ChannelsMarkRequest.ChannelsMarkRequestBuilder?>): ChannelsMarkResponse {
         return channelsMark(req.configure(ChannelsMarkRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsRename(req: ChannelsRenameRequest): ChannelsRenameResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -604,12 +604,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsRename(req: RequestConfigurator<ChannelsRenameRequest.ChannelsRenameRequestBuilder?>): ChannelsRenameResponse {
         return channelsRename(req.configure(ChannelsRenameRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsSetPurpose(req: ChannelsSetPurposeRequest): ChannelsSetPurposeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -619,12 +619,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsSetPurpose(req: RequestConfigurator<ChannelsSetPurposeRequest.ChannelsSetPurposeRequestBuilder?>): ChannelsSetPurposeResponse {
         return channelsSetPurpose(req.configure(ChannelsSetPurposeRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsSetTopic(req: ChannelsSetTopicRequest): ChannelsSetTopicResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -634,12 +634,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsSetTopic(req: RequestConfigurator<ChannelsSetTopicRequest.ChannelsSetTopicRequestBuilder?>): ChannelsSetTopicResponse {
         return channelsSetTopic(req.configure(ChannelsSetTopicRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsUnarchive(req: ChannelsUnarchiveRequest): ChannelsUnarchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -649,12 +649,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun channelsUnarchive(req: RequestConfigurator<ChannelsUnarchiveRequest.ChannelsUnarchiveRequestBuilder?>): ChannelsUnarchiveResponse {
         return channelsUnarchive(req.configure(ChannelsUnarchiveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatGetPermalink(req: ChatGetPermalinkRequest): ChatGetPermalinkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -664,12 +664,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatGetPermalink(req: RequestConfigurator<ChatGetPermalinkRequest.ChatGetPermalinkRequestBuilder?>): ChatGetPermalinkResponse {
         return chatGetPermalink(req.configure(ChatGetPermalinkRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatDelete(req: ChatDeleteRequest): ChatDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -679,12 +679,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatDelete(req: RequestConfigurator<ChatDeleteRequest.ChatDeleteRequestBuilder?>): ChatDeleteResponse {
         return chatDelete(req.configure(ChatDeleteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatDeleteScheduledMessage(req: ChatDeleteScheduledMessageRequest): ChatDeleteScheduledMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -694,12 +694,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatDeleteScheduledMessage(req: RequestConfigurator<ChatDeleteScheduledMessageRequest.ChatDeleteScheduledMessageRequestBuilder?>): ChatDeleteScheduledMessageResponse {
         return chatDeleteScheduledMessage(req.configure(ChatDeleteScheduledMessageRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatMeMessage(req: ChatMeMessageRequest): ChatMeMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -709,12 +709,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatMeMessage(req: RequestConfigurator<ChatMeMessageRequest.ChatMeMessageRequestBuilder?>): ChatMeMessageResponse {
         return chatMeMessage(req.configure(ChatMeMessageRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatPostEphemeral(req: ChatPostEphemeralRequest): ChatPostEphemeralResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -724,12 +724,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatPostEphemeral(req: RequestConfigurator<ChatPostEphemeralRequest.ChatPostEphemeralRequestBuilder?>): ChatPostEphemeralResponse {
         return chatPostEphemeral(req.configure(ChatPostEphemeralRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatPostMessage(req: ChatPostMessageRequest): ChatPostMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -739,12 +739,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatPostMessage(req: RequestConfigurator<ChatPostMessageRequest.ChatPostMessageRequestBuilder?>): ChatPostMessageResponse {
         return chatPostMessage(req.configure(ChatPostMessageRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatScheduleMessage(req: ChatScheduleMessageRequest): ChatScheduleMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -754,12 +754,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatScheduleMessage(req: RequestConfigurator<ChatScheduleMessageRequest.ChatScheduleMessageRequestBuilder?>): ChatScheduleMessageResponse {
         return chatScheduleMessage(req.configure(ChatScheduleMessageRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatUpdate(req: ChatUpdateRequest): ChatUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -769,12 +769,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatUpdate(req: RequestConfigurator<ChatUpdateRequest.ChatUpdateRequestBuilder?>): ChatUpdateResponse {
         return chatUpdate(req.configure(ChatUpdateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatUnfurl(req: ChatUnfurlRequest): ChatUnfurlResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -784,12 +784,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatUnfurl(req: RequestConfigurator<ChatUnfurlRequest.ChatUnfurlRequestBuilder?>): ChatUnfurlResponse {
         return chatUnfurl(req.configure(ChatUnfurlRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatScheduleMessagesListMessage(req: ChatScheduleMessagesListRequest): ChatScheduleMessagesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -799,12 +799,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun chatScheduleMessagesListMessage(req: RequestConfigurator<ChatScheduleMessagesListRequest.ChatScheduleMessagesListRequestBuilder?>): ChatScheduleMessagesListResponse {
         return chatScheduleMessagesListMessage(req.configure(ChatScheduleMessagesListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsArchive(req: ConversationsArchiveRequest): ConversationsArchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -814,12 +814,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsArchive(req: RequestConfigurator<ConversationsArchiveRequest.ConversationsArchiveRequestBuilder?>): ConversationsArchiveResponse {
         return conversationsArchive(req.configure(ConversationsArchiveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsClose(req: ConversationsCloseRequest): ConversationsCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -829,12 +829,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsClose(req: RequestConfigurator<ConversationsCloseRequest.ConversationsCloseRequestBuilder?>): ConversationsCloseResponse {
         return conversationsClose(req.configure(ConversationsCloseRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsCreate(req: ConversationsCreateRequest): ConversationsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -844,12 +844,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsCreate(req: RequestConfigurator<ConversationsCreateRequest.ConversationsCreateRequestBuilder?>): ConversationsCreateResponse {
         return conversationsCreate(req.configure(ConversationsCreateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsHistory(req: ConversationsHistoryRequest): ConversationsHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -859,12 +859,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsHistory(req: RequestConfigurator<ConversationsHistoryRequest.ConversationsHistoryRequestBuilder?>): ConversationsHistoryResponse {
         return conversationsHistory(req.configure(ConversationsHistoryRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsInfo(req: ConversationsInfoRequest): ConversationsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -874,12 +874,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsInfo(req: RequestConfigurator<ConversationsInfoRequest.ConversationsInfoRequestBuilder?>): ConversationsInfoResponse {
         return conversationsInfo(req.configure(ConversationsInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsInvite(req: ConversationsInviteRequest): ConversationsInviteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -889,12 +889,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsInvite(req: RequestConfigurator<ConversationsInviteRequest.ConversationsInviteRequestBuilder?>): ConversationsInviteResponse {
         return conversationsInvite(req.configure(ConversationsInviteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsJoin(req: ConversationsJoinRequest): ConversationsJoinResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -904,12 +904,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsJoin(req: RequestConfigurator<ConversationsJoinRequest.ConversationsJoinRequestBuilder?>): ConversationsJoinResponse {
         return conversationsJoin(req.configure(ConversationsJoinRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsKick(req: ConversationsKickRequest): ConversationsKickResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -919,12 +919,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsKick(req: RequestConfigurator<ConversationsKickRequest.ConversationsKickRequestBuilder?>): ConversationsKickResponse {
         return conversationsKick(req.configure(ConversationsKickRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsLeave(req: ConversationsLeaveRequest): ConversationsLeaveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -934,12 +934,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsLeave(req: RequestConfigurator<ConversationsLeaveRequest.ConversationsLeaveRequestBuilder?>): ConversationsLeaveResponse {
         return conversationsLeave(req.configure(ConversationsLeaveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsList(req: ConversationsListRequest): ConversationsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -949,12 +949,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsList(req: RequestConfigurator<ConversationsListRequest.ConversationsListRequestBuilder?>): ConversationsListResponse {
         return conversationsList(req.configure(ConversationsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsMembers(req: ConversationsMembersRequest): ConversationsMembersResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -964,12 +964,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsMembers(req: RequestConfigurator<ConversationsMembersRequest.ConversationsMembersRequestBuilder?>): ConversationsMembersResponse {
         return conversationsMembers(req.configure(ConversationsMembersRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsOpen(req: ConversationsOpenRequest): ConversationsOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -979,12 +979,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsOpen(req: RequestConfigurator<ConversationsOpenRequest.ConversationsOpenRequestBuilder?>): ConversationsOpenResponse {
         return conversationsOpen(req.configure(ConversationsOpenRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsRename(req: ConversationsRenameRequest): ConversationsRenameResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -994,12 +994,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsRename(req: RequestConfigurator<ConversationsRenameRequest.ConversationsRenameRequestBuilder?>): ConversationsRenameResponse {
         return conversationsRename(req.configure(ConversationsRenameRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsReplies(req: ConversationsRepliesRequest): ConversationsRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1009,12 +1009,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsReplies(req: RequestConfigurator<ConversationsRepliesRequest.ConversationsRepliesRequestBuilder?>): ConversationsRepliesResponse {
         return conversationsReplies(req.configure(ConversationsRepliesRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsSetPurpose(req: ConversationsSetPurposeRequest): ConversationsSetPurposeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1024,12 +1024,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsSetPurpose(req: RequestConfigurator<ConversationsSetPurposeRequest.ConversationsSetPurposeRequestBuilder?>): ConversationsSetPurposeResponse {
         return conversationsSetPurpose(req.configure(ConversationsSetPurposeRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsSetTopic(req: ConversationsSetTopicRequest): ConversationsSetTopicResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1039,12 +1039,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsSetTopic(req: RequestConfigurator<ConversationsSetTopicRequest.ConversationsSetTopicRequestBuilder?>): ConversationsSetTopicResponse {
         return conversationsSetTopic(req.configure(ConversationsSetTopicRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsUnarchive(req: ConversationsUnarchiveRequest): ConversationsUnarchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1054,12 +1054,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun conversationsUnarchive(req: RequestConfigurator<ConversationsUnarchiveRequest.ConversationsUnarchiveRequestBuilder?>): ConversationsUnarchiveResponse {
         return conversationsUnarchive(req.configure(ConversationsUnarchiveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dialogOpen(req: DialogOpenRequest): DialogOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1069,12 +1069,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dialogOpen(req: RequestConfigurator<DialogOpenRequest.DialogOpenRequestBuilder?>): DialogOpenResponse {
         return dialogOpen(req.configure(DialogOpenRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndEndDnd(req: DndEndDndRequest): DndEndDndResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1084,12 +1084,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndEndDnd(req: RequestConfigurator<DndEndDndRequest.DndEndDndRequestBuilder?>): DndEndDndResponse {
         return dndEndDnd(req.configure(DndEndDndRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndEndSnooze(req: DndEndSnoozeRequest): DndEndSnoozeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1099,12 +1099,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndEndSnooze(req: RequestConfigurator<DndEndSnoozeRequest.DndEndSnoozeRequestBuilder?>): DndEndSnoozeResponse {
         return dndEndSnooze(req.configure(DndEndSnoozeRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndInfo(req: DndInfoRequest): DndInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1114,12 +1114,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndInfo(req: RequestConfigurator<DndInfoRequest.DndInfoRequestBuilder?>): DndInfoResponse {
         return dndInfo(req.configure(DndInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndSetSnooze(req: DndSetSnoozeRequest): DndSetSnoozeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1129,12 +1129,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndSetSnooze(req: RequestConfigurator<DndSetSnoozeRequest.DndSetSnoozeRequestBuilder?>): DndSetSnoozeResponse {
         return dndSetSnooze(req.configure(DndSetSnoozeRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndTeamInfo(req: DndTeamInfoRequest): DndTeamInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1144,12 +1144,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun dndTeamInfo(req: RequestConfigurator<DndTeamInfoRequest.DndTeamInfoRequestBuilder?>): DndTeamInfoResponse {
         return dndTeamInfo(req.configure(DndTeamInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun emojiList(req: EmojiListRequest): EmojiListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1159,12 +1159,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun emojiList(req: RequestConfigurator<EmojiListRequest.EmojiListRequestBuilder?>): EmojiListResponse {
         return emojiList(req.configure(EmojiListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesDelete(req: FilesDeleteRequest): FilesDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1174,12 +1174,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesDelete(req: RequestConfigurator<FilesDeleteRequest.FilesDeleteRequestBuilder?>): FilesDeleteResponse {
         return filesDelete(req.configure(FilesDeleteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesInfo(req: FilesInfoRequest): FilesInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1189,12 +1189,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesInfo(req: RequestConfigurator<FilesInfoRequest.FilesInfoRequestBuilder?>): FilesInfoResponse {
         return filesInfo(req.configure(FilesInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesList(req: FilesListRequest): FilesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1204,12 +1204,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesList(req: RequestConfigurator<FilesListRequest.FilesListRequestBuilder?>): FilesListResponse {
         return filesList(req.configure(FilesListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRevokePublicURL(req: FilesRevokePublicURLRequest): FilesRevokePublicURLResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1219,12 +1219,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRevokePublicURL(req: RequestConfigurator<FilesRevokePublicURLRequest.FilesRevokePublicURLRequestBuilder?>): FilesRevokePublicURLResponse {
         return filesRevokePublicURL(req.configure(FilesRevokePublicURLRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesSharedPublicURL(req: FilesSharedPublicURLRequest): FilesSharedPublicURLResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1234,12 +1234,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesSharedPublicURL(req: RequestConfigurator<FilesSharedPublicURLRequest.FilesSharedPublicURLRequestBuilder?>): FilesSharedPublicURLResponse {
         return filesSharedPublicURL(req.configure(FilesSharedPublicURLRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesUpload(req: FilesUploadRequest): FilesUploadResponse {
         return if (req.getFile() != null || req.getFilestream() != null) {
             postMultipartAndParseResponse(
@@ -1258,12 +1258,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         }
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesUpload(req: RequestConfigurator<FilesUploadRequest.FilesUploadRequestBuilder?>): FilesUploadResponse {
         return filesUpload(req.configure(FilesUploadRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesCommentsAdd(req: FilesCommentsAddRequest): FilesCommentsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1273,7 +1273,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesCommentsDelete(req: FilesCommentsDeleteRequest): FilesCommentsDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1283,7 +1283,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesCommentEdit(req: FilesCommentsEditRequest): FilesCommentsEditResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1293,18 +1293,18 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteAdd(req: FilesRemoteAddRequest?): FilesRemoteAddResponse {
 //        return postMultipartAndParseResponse(RequestFormBuilder.toMultipartBody(req), Methods.FILES_REMOTE_ADD, getToken(req), FilesRemoteAddResponse.class);
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteAdd(req: RequestConfigurator<FilesRemoteAddRequest.FilesRemoteAddRequestBuilder?>): FilesRemoteAddResponse {
         return filesRemoteAdd(req.configure(FilesRemoteAddRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteInfo(req: FilesRemoteInfoRequest): FilesRemoteInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1314,12 +1314,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteInfo(req: RequestConfigurator<FilesRemoteInfoRequest.FilesRemoteInfoRequestBuilder?>): FilesRemoteInfoResponse {
         return filesRemoteInfo(req.configure(FilesRemoteInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteList(req: FilesRemoteListRequest): FilesRemoteListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1329,12 +1329,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteList(req: RequestConfigurator<FilesRemoteListRequest.FilesRemoteListRequestBuilder?>): FilesRemoteListResponse {
         return filesRemoteList(req.configure(FilesRemoteListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteRemove(req: FilesRemoteRemoveRequest): FilesRemoteRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1344,12 +1344,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteRemove(req: RequestConfigurator<FilesRemoteRemoveRequest.FilesRemoteRemoveRequestBuilder?>): FilesRemoteRemoveResponse {
         return filesRemoteRemove(req.configure(FilesRemoteRemoveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteShare(req: FilesRemoteShareRequest): FilesRemoteShareResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1359,23 +1359,23 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteShare(req: RequestConfigurator<FilesRemoteShareRequest.FilesRemoteShareRequestBuilder?>): FilesRemoteShareResponse {
         return filesRemoteShare(req.configure(FilesRemoteShareRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteUpdate(req: FilesRemoteUpdateRequest?): FilesRemoteUpdateResponse {
 //        return postMultipartAndParseResponse(toMultipartBody(req), Methods.FILES_REMOTE_UPDATE, getToken(req), FilesRemoteUpdateResponse.class);
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun filesRemoteUpdate(req: RequestConfigurator<FilesRemoteUpdateRequest.FilesRemoteUpdateRequestBuilder?>): FilesRemoteUpdateResponse {
         return filesRemoteUpdate(req.configure(FilesRemoteUpdateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsArchive(req: GroupsArchiveRequest): GroupsArchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1385,12 +1385,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsArchive(req: RequestConfigurator<GroupsArchiveRequest.GroupsArchiveRequestBuilder?>): GroupsArchiveResponse {
         return groupsArchive(req.configure(GroupsArchiveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsClose(req: GroupsCloseRequest): GroupsCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1400,7 +1400,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsCreateChild(req: GroupsCreateChildRequest): GroupsCreateChildResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1410,12 +1410,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsCreateChild(req: RequestConfigurator<GroupsCreateChildRequest.GroupsCreateChildRequestBuilder?>): GroupsCreateChildResponse {
         return groupsCreateChild(req.configure(GroupsCreateChildRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsCreate(req: GroupsCreateRequest): GroupsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1425,12 +1425,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsCreate(req: RequestConfigurator<GroupsCreateRequest.GroupsCreateRequestBuilder?>): GroupsCreateResponse {
         return groupsCreate(req.configure(GroupsCreateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsHistory(req: GroupsHistoryRequest): GroupsHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1440,12 +1440,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsHistory(req: RequestConfigurator<GroupsHistoryRequest.GroupsHistoryRequestBuilder?>): GroupsHistoryResponse {
         return groupsHistory(req.configure(GroupsHistoryRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsReplies(req: GroupsRepliesRequest): GroupsRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1455,12 +1455,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsReplies(req: RequestConfigurator<GroupsRepliesRequest.GroupsRepliesRequestBuilder?>): GroupsRepliesResponse {
         return groupsReplies(req.configure(GroupsRepliesRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsInfo(req: GroupsInfoRequest): GroupsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1470,12 +1470,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsInfo(req: RequestConfigurator<GroupsInfoRequest.GroupsInfoRequestBuilder?>): GroupsInfoResponse {
         return groupsInfo(req.configure(GroupsInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsInvite(req: GroupsInviteRequest): GroupsInviteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1485,12 +1485,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsInvite(req: RequestConfigurator<GroupsInviteRequest.GroupsInviteRequestBuilder?>): GroupsInviteResponse {
         return groupsInvite(req.configure(GroupsInviteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsKick(req: GroupsKickRequest): GroupsKickResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1500,12 +1500,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsKick(req: RequestConfigurator<GroupsKickRequest.GroupsKickRequestBuilder?>): GroupsKickResponse {
         return groupsKick(req.configure(GroupsKickRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsLeave(req: GroupsLeaveRequest): GroupsLeaveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1515,12 +1515,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsLeave(req: RequestConfigurator<GroupsLeaveRequest.GroupsLeaveRequestBuilder?>): GroupsLeaveResponse {
         return groupsLeave(req.configure(GroupsLeaveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsList(req: GroupsListRequest): GroupsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1530,12 +1530,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsList(req: RequestConfigurator<GroupsListRequest.GroupsListRequestBuilder?>): GroupsListResponse {
         return groupsList(req.configure(GroupsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsMark(req: GroupsMarkRequest): GroupsMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1545,12 +1545,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsMark(req: RequestConfigurator<GroupsMarkRequest.GroupsMarkRequestBuilder?>): GroupsMarkResponse {
         return groupsMark(req.configure(GroupsMarkRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsOpen(req: GroupsOpenRequest): GroupsOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1560,12 +1560,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsOpen(req: RequestConfigurator<GroupsOpenRequest.GroupsOpenRequestBuilder?>): GroupsOpenResponse {
         return groupsOpen(req.configure(GroupsOpenRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsRename(req: GroupsRenameRequest): GroupsRenameResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1575,12 +1575,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsRename(req: RequestConfigurator<GroupsRenameRequest.GroupsRenameRequestBuilder?>): GroupsRenameResponse {
         return groupsRename(req.configure(GroupsRenameRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsSetPurpose(req: GroupsSetPurposeRequest): GroupsSetPurposeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1590,12 +1590,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsSetPurpose(req: RequestConfigurator<GroupsSetPurposeRequest.GroupsSetPurposeRequestBuilder?>): GroupsSetPurposeResponse {
         return groupsSetPurpose(req.configure(GroupsSetPurposeRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsSetTopic(req: GroupsSetTopicRequest): GroupsSetTopicResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1605,12 +1605,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsSetTopic(req: RequestConfigurator<GroupsSetTopicRequest.GroupsSetTopicRequestBuilder?>): GroupsSetTopicResponse {
         return groupsSetTopic(req.configure(GroupsSetTopicRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsUnarchive(req: GroupsUnarchiveRequest): GroupsUnarchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1620,12 +1620,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun groupsUnarchive(req: RequestConfigurator<GroupsUnarchiveRequest.GroupsUnarchiveRequestBuilder?>): GroupsUnarchiveResponse {
         return groupsUnarchive(req.configure(GroupsUnarchiveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imClose(req: ImCloseRequest): ImCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1635,12 +1635,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imClose(req: RequestConfigurator<ImCloseRequest.ImCloseRequestBuilder?>): ImCloseResponse {
         return imClose(req.configure(ImCloseRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imHistory(req: ImHistoryRequest): ImHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1650,12 +1650,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imHistory(req: RequestConfigurator<ImHistoryRequest.ImHistoryRequestBuilder?>): ImHistoryResponse {
         return imHistory(req.configure(ImHistoryRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imList(req: ImListRequest): ImListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1665,12 +1665,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imList(req: RequestConfigurator<ImListRequest.ImListRequestBuilder?>): ImListResponse {
         return imList(req.configure(ImListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imMark(req: ImMarkRequest): ImMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1680,12 +1680,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imMark(req: RequestConfigurator<ImMarkRequest.ImMarkRequestBuilder?>): ImMarkResponse {
         return imMark(req.configure(ImMarkRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imOpen(req: ImOpenRequest): ImOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1695,12 +1695,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imOpen(req: RequestConfigurator<ImOpenRequest.ImOpenRequestBuilder?>): ImOpenResponse {
         return imOpen(req.configure(ImOpenRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imReplies(req: ImRepliesRequest): ImRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1710,12 +1710,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun imReplies(req: RequestConfigurator<ImRepliesRequest.ImRepliesRequestBuilder?>): ImRepliesResponse {
         return imReplies(req.configure(ImRepliesRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun migrationExchange(req: MigrationExchangeRequest): MigrationExchangeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1725,12 +1725,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun migrationExchange(req: RequestConfigurator<MigrationExchangeRequest.MigrationExchangeRequestBuilder?>): MigrationExchangeResponse {
         return migrationExchange(req.configure(MigrationExchangeRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimClose(req: MpimCloseRequest): MpimCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1740,12 +1740,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimClose(req: RequestConfigurator<MpimCloseRequest.MpimCloseRequestBuilder?>): MpimCloseResponse {
         return mpimClose(req.configure(MpimCloseRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimHistory(req: MpimHistoryRequest): MpimHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1755,12 +1755,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimHistory(req: RequestConfigurator<MpimHistoryRequest.MpimHistoryRequestBuilder?>): MpimHistoryResponse {
         return mpimHistory(req.configure(MpimHistoryRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimList(req: MpimListRequest): MpimListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1770,12 +1770,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimList(req: RequestConfigurator<MpimListRequest.MpimListRequestBuilder?>): MpimListResponse {
         return mpimList(req.configure(MpimListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimReplies(req: MpimRepliesRequest): MpimRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1785,12 +1785,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimReplies(req: RequestConfigurator<MpimRepliesRequest.MpimRepliesRequestBuilder?>): MpimRepliesResponse {
         return mpimReplies(req.configure(MpimRepliesRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimMark(req: MpimMarkRequest): MpimMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1800,12 +1800,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimMark(req: RequestConfigurator<MpimMarkRequest.MpimMarkRequestBuilder?>): MpimMarkResponse {
         return mpimMark(req.configure(MpimMarkRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimOpen(req: MpimOpenRequest): MpimOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1815,22 +1815,22 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun mpimOpen(req: RequestConfigurator<MpimOpenRequest.MpimOpenRequestBuilder?>): MpimOpenResponse {
         return mpimOpen(req.configure(MpimOpenRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun oauthAccess(req: OAuthAccessRequest?): OAuthAccessResponse {
         return postFormAndParseResponse(toForm(req), Methods.OAUTH_ACCESS, OAuthAccessResponse::class.java)
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun oauthAccess(req: RequestConfigurator<OAuthAccessRequest.OAuthAccessRequestBuilder?>): OAuthAccessResponse {
         return oauthAccess(req.configure(OAuthAccessRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun oauthV2Access(req: OAuthV2AccessRequest?): OAuthV2AccessResponse {
 //        FormBody.Builder form = new FormBody.Builder();
 //        form.add("code", req.getCode());
@@ -1840,22 +1840,22 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun oauthV2Access(req: RequestConfigurator<OAuthV2AccessRequest.OAuthV2AccessRequestBuilder?>): OAuthV2AccessResponse {
         return oauthV2Access(req.configure(OAuthV2AccessRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun oauthToken(req: OAuthTokenRequest?): OAuthTokenResponse {
         return postFormAndParseResponse(toForm(req), Methods.OAUTH_TOKEN, OAuthTokenResponse::class.java)
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun oauthToken(req: RequestConfigurator<OAuthTokenRequest.OAuthTokenRequestBuilder?>): OAuthTokenResponse {
         return oauthToken(req.configure(OAuthTokenRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun pinsAdd(req: PinsAddRequest): PinsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1865,12 +1865,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun pinsAdd(req: RequestConfigurator<PinsAddRequest.PinsAddRequestBuilder?>): PinsAddResponse {
         return pinsAdd(req.configure(PinsAddRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun pinsList(req: PinsListRequest): PinsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1880,12 +1880,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun pinsList(req: RequestConfigurator<PinsListRequest.PinsListRequestBuilder?>): PinsListResponse {
         return pinsList(req.configure(PinsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun pinsRemove(req: PinsRemoveRequest): PinsRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1895,12 +1895,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun pinsRemove(req: RequestConfigurator<PinsRemoveRequest.PinsRemoveRequestBuilder?>): PinsRemoveResponse {
         return pinsRemove(req.configure(PinsRemoveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsAdd(req: ReactionsAddRequest): ReactionsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1910,12 +1910,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsAdd(req: RequestConfigurator<ReactionsAddRequest.ReactionsAddRequestBuilder?>): ReactionsAddResponse {
         return reactionsAdd(req.configure(ReactionsAddRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsGet(req: ReactionsGetRequest): ReactionsGetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1925,12 +1925,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsGet(req: RequestConfigurator<ReactionsGetRequest.ReactionsGetRequestBuilder?>): ReactionsGetResponse {
         return reactionsGet(req.configure(ReactionsGetRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsList(req: ReactionsListRequest): ReactionsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1940,12 +1940,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsList(req: RequestConfigurator<ReactionsListRequest.ReactionsListRequestBuilder?>): ReactionsListResponse {
         return reactionsList(req.configure(ReactionsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsRemove(req: ReactionsRemoveRequest): ReactionsRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1955,12 +1955,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun reactionsRemove(req: RequestConfigurator<ReactionsRemoveRequest.ReactionsRemoveRequestBuilder?>): ReactionsRemoveResponse {
         return reactionsRemove(req.configure(ReactionsRemoveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersAdd(req: RemindersAddRequest): RemindersAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1970,12 +1970,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersAdd(req: RequestConfigurator<RemindersAddRequest.RemindersAddRequestBuilder?>): RemindersAddResponse {
         return remindersAdd(req.configure(RemindersAddRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersComplete(req: RemindersCompleteRequest): RemindersCompleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1985,12 +1985,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersComplete(req: RequestConfigurator<RemindersCompleteRequest.RemindersCompleteRequestBuilder?>): RemindersCompleteResponse {
         return remindersComplete(req.configure(RemindersCompleteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersDelete(req: RemindersDeleteRequest): RemindersDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2000,12 +2000,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersDelete(req: RequestConfigurator<RemindersDeleteRequest.RemindersDeleteRequestBuilder?>): RemindersDeleteResponse {
         return remindersDelete(req.configure(RemindersDeleteRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersInfo(req: RemindersInfoRequest): RemindersInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2015,12 +2015,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersInfo(req: RequestConfigurator<RemindersInfoRequest.RemindersInfoRequestBuilder?>): RemindersInfoResponse {
         return remindersInfo(req.configure(RemindersInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersList(req: RemindersListRequest): RemindersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2030,12 +2030,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun remindersList(req: RequestConfigurator<RemindersListRequest.RemindersListRequestBuilder?>): RemindersListResponse {
         return remindersList(req.configure(RemindersListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun rtmConnect(req: RTMConnectRequest): RTMConnectResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2045,12 +2045,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun rtmConnect(req: RequestConfigurator<RTMConnectRequest.RTMConnectRequestBuilder?>): RTMConnectResponse {
         return rtmConnect(req.configure(RTMConnectRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun rtmStart(req: RTMStartRequest): RTMStartResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2060,12 +2060,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun rtmStart(req: RequestConfigurator<RTMStartRequest.RTMStartRequestBuilder?>): RTMStartResponse {
         return rtmStart(req.configure(RTMStartRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun searchAll(req: SearchAllRequest): SearchAllResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2075,12 +2075,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun searchAll(req: RequestConfigurator<SearchAllRequest.SearchAllRequestBuilder?>): SearchAllResponse {
         return searchAll(req.configure(SearchAllRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun searchMessages(req: SearchMessagesRequest): SearchMessagesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2090,12 +2090,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun searchMessages(req: RequestConfigurator<SearchMessagesRequest.SearchMessagesRequestBuilder?>): SearchMessagesResponse {
         return searchMessages(req.configure(SearchMessagesRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun searchFiles(req: SearchFilesRequest): SearchFilesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2105,12 +2105,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun searchFiles(req: RequestConfigurator<SearchFilesRequest.SearchFilesRequestBuilder?>): SearchFilesResponse {
         return searchFiles(req.configure(SearchFilesRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun starsAdd(req: StarsAddRequest): StarsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2120,12 +2120,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun starsAdd(req: RequestConfigurator<StarsAddRequest.StarsAddRequestBuilder?>): StarsAddResponse {
         return starsAdd(req.configure(StarsAddRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun starsList(req: StarsListRequest): StarsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2135,12 +2135,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun starsList(req: RequestConfigurator<StarsListRequest.StarsListRequestBuilder?>): StarsListResponse {
         return starsList(req.configure(StarsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun starsRemove(req: StarsRemoveRequest): StarsRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2150,12 +2150,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun starsRemove(req: RequestConfigurator<StarsRemoveRequest.StarsRemoveRequestBuilder?>): StarsRemoveResponse {
         return starsRemove(req.configure(StarsRemoveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamAccessLogs(req: TeamAccessLogsRequest): TeamAccessLogsResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2165,12 +2165,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamAccessLogs(req: RequestConfigurator<TeamAccessLogsRequest.TeamAccessLogsRequestBuilder?>): TeamAccessLogsResponse {
         return teamAccessLogs(req.configure(TeamAccessLogsRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamBillableInfo(req: TeamBillableInfoRequest): TeamBillableInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2180,12 +2180,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamBillableInfo(req: RequestConfigurator<TeamBillableInfoRequest.TeamBillableInfoRequestBuilder?>): TeamBillableInfoResponse {
         return teamBillableInfo(req.configure(TeamBillableInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamInfo(req: TeamInfoRequest): TeamInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2195,12 +2195,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamInfo(req: RequestConfigurator<TeamInfoRequest.TeamInfoRequestBuilder?>): TeamInfoResponse {
         return teamInfo(req.configure(TeamInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamIntegrationLogs(req: TeamIntegrationLogsRequest): TeamIntegrationLogsResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2210,12 +2210,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamIntegrationLogs(req: RequestConfigurator<TeamIntegrationLogsRequest.TeamIntegrationLogsRequestBuilder?>): TeamIntegrationLogsResponse {
         return teamIntegrationLogs(req.configure(TeamIntegrationLogsRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamProfileGet(req: TeamProfileGetRequest): TeamProfileGetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2225,12 +2225,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun teamProfileGet(req: RequestConfigurator<TeamProfileGetRequest.TeamProfileGetRequestBuilder?>): TeamProfileGetResponse {
         return teamProfileGet(req.configure(TeamProfileGetRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsCreate(req: UsergroupsCreateRequest): UsergroupsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2240,12 +2240,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsCreate(req: RequestConfigurator<UsergroupsCreateRequest.UsergroupsCreateRequestBuilder?>): UsergroupsCreateResponse {
         return usergroupsCreate(req.configure(UsergroupsCreateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsDisable(req: UsergroupsDisableRequest): UsergroupsDisableResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2255,12 +2255,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsDisable(req: RequestConfigurator<UsergroupsDisableRequest.UsergroupsDisableRequestBuilder?>): UsergroupsDisableResponse {
         return usergroupsDisable(req.configure(UsergroupsDisableRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsEnable(req: UsergroupsEnableRequest): UsergroupsEnableResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2270,12 +2270,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsEnable(req: RequestConfigurator<UsergroupsEnableRequest.UsergroupsEnableRequestBuilder?>): UsergroupsEnableResponse {
         return usergroupsEnable(req.configure(UsergroupsEnableRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsList(req: UsergroupsListRequest): UsergroupsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2285,12 +2285,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsList(req: RequestConfigurator<UsergroupsListRequest.UsergroupsListRequestBuilder?>): UsergroupsListResponse {
         return usergroupsList(req.configure(UsergroupsListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsUpdate(req: UsergroupsUpdateRequest): UsergroupsUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2300,12 +2300,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupsUpdate(req: RequestConfigurator<UsergroupsUpdateRequest.UsergroupsUpdateRequestBuilder?>): UsergroupsUpdateResponse {
         return usergroupsUpdate(req.configure(UsergroupsUpdateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupUsersList(req: UsergroupUsersListRequest): UsergroupUsersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2315,12 +2315,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupUsersList(req: RequestConfigurator<UsergroupUsersListRequest.UsergroupUsersListRequestBuilder?>): UsergroupUsersListResponse {
         return usergroupUsersList(req.configure(UsergroupUsersListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupUsersUpdate(req: UsergroupUsersUpdateRequest): UsergroupUsersUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2330,12 +2330,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usergroupUsersUpdate(req: RequestConfigurator<UsergroupUsersUpdateRequest.UsergroupUsersUpdateRequestBuilder?>): UsergroupUsersUpdateResponse {
         return usergroupUsersUpdate(req.configure(UsergroupUsersUpdateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersConversations(req: UsersConversationsRequest): UsersConversationsResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2345,12 +2345,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersConversations(req: RequestConfigurator<UsersConversationsRequest.UsersConversationsRequestBuilder?>): UsersConversationsResponse {
         return usersConversations(req.configure(UsersConversationsRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersDeletePhoto(req: UsersDeletePhotoRequest): UsersDeletePhotoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2360,12 +2360,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersDeletePhoto(req: RequestConfigurator<UsersDeletePhotoRequest.UsersDeletePhotoRequestBuilder?>): UsersDeletePhotoResponse {
         return usersDeletePhoto(req.configure(UsersDeletePhotoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersGetPresence(req: UsersGetPresenceRequest): UsersGetPresenceResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2375,12 +2375,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersGetPresence(req: RequestConfigurator<UsersGetPresenceRequest.UsersGetPresenceRequestBuilder?>): UsersGetPresenceResponse {
         return usersGetPresence(req.configure(UsersGetPresenceRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersIdentity(req: UsersIdentityRequest): UsersIdentityResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2390,12 +2390,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersIdentity(req: RequestConfigurator<UsersIdentityRequest.UsersIdentityRequestBuilder?>): UsersIdentityResponse {
         return usersIdentity(req.configure(UsersIdentityRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersInfo(req: UsersInfoRequest): UsersInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2405,12 +2405,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersInfo(req: RequestConfigurator<UsersInfoRequest.UsersInfoRequestBuilder?>): UsersInfoResponse {
         return usersInfo(req.configure(UsersInfoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersList(req: UsersListRequest): UsersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2420,12 +2420,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersList(req: RequestConfigurator<UsersListRequest.UsersListRequestBuilder?>): UsersListResponse {
         return usersList(req.configure(UsersListRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersLookupByEmail(req: UsersLookupByEmailRequest): UsersLookupByEmailResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2435,12 +2435,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersLookupByEmail(req: RequestConfigurator<UsersLookupByEmailRequest.UsersLookupByEmailRequestBuilder?>): UsersLookupByEmailResponse {
         return usersLookupByEmail(req.configure(UsersLookupByEmailRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersSetActive(req: UsersSetActiveRequest): UsersSetActiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2450,23 +2450,23 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersSetActive(req: RequestConfigurator<UsersSetActiveRequest.UsersSetActiveRequestBuilder?>): UsersSetActiveResponse {
         return usersSetActive(req.configure(UsersSetActiveRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersSetPhoto(req: UsersSetPhotoRequest?): UsersSetPhotoResponse {
         // return postMultipartAndParseResponse(toMultipartBody(req), Methods.USERS_SET_PHOTO, getToken(req), UsersSetPhotoResponse.class);
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersSetPhoto(req: RequestConfigurator<UsersSetPhotoRequest.UsersSetPhotoRequestBuilder?>): UsersSetPhotoResponse {
         return usersSetPhoto(req.configure(UsersSetPhotoRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersSetPresence(req: UsersSetPresenceRequest): UsersSetPresenceResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2476,12 +2476,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersSetPresence(req: RequestConfigurator<UsersSetPresenceRequest.UsersSetPresenceRequestBuilder?>): UsersSetPresenceResponse {
         return usersSetPresence(req.configure(UsersSetPresenceRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersProfileGet(req: UsersProfileGetRequest): UsersProfileGetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2491,12 +2491,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersProfileGet(req: RequestConfigurator<UsersProfileGetRequest.UsersProfileGetRequestBuilder?>): UsersProfileGetResponse {
         return usersProfileGet(req.configure(UsersProfileGetRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersProfileSet(req: UsersProfileSetRequest): UsersProfileSetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2506,12 +2506,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun usersProfileSet(req: RequestConfigurator<UsersProfileSetRequest.UsersProfileSetRequestBuilder?>): UsersProfileSetResponse {
         return usersProfileSet(req.configure(UsersProfileSetRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsOpen(req: ViewsOpenRequest): ViewsOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2521,12 +2521,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsOpen(req: RequestConfigurator<ViewsOpenRequest.ViewsOpenRequestBuilder?>): ViewsOpenResponse {
         return viewsOpen(req.configure(ViewsOpenRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsPush(req: ViewsPushRequest): ViewsPushResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2536,12 +2536,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsPush(req: RequestConfigurator<ViewsPushRequest.ViewsPushRequestBuilder?>): ViewsPushResponse {
         return viewsPush(req.configure(ViewsPushRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsUpdate(req: ViewsUpdateRequest): ViewsUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2551,12 +2551,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsUpdate(req: RequestConfigurator<ViewsUpdateRequest.ViewsUpdateRequestBuilder?>): ViewsUpdateResponse {
         return viewsUpdate(req.configure(ViewsUpdateRequest.builder()).build())
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsPublish(req: ViewsPublishRequest): ViewsPublishResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2566,7 +2566,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun viewsPublish(req: RequestConfigurator<ViewsPublishRequest.ViewsPublishRequestBuilder?>): ViewsPublishResponse {
         return viewsPublish(req.configure(ViewsPublishRequest.builder()).build())
     }
@@ -2592,7 +2592,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
     // ----------------------------------------------
     //  Methods to send requests and parse responses
     // ----------------------------------------------
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun <T> postFormAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2605,7 +2605,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun <T> postFormWithAuthorizationHeaderAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2620,7 +2620,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun <T> postFormWithTokenAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2635,7 +2635,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     fun <T> postMultipartAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2651,7 +2651,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     protected fun <T> postFormAndParseResponse(
         form: FormBody.Builder?,
         endpoint: String?,
@@ -2661,7 +2661,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return parseJsonResponseAndRunListeners(response, clazz)
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     protected fun <T> postFormWithAuthorizationHeaderAndParseResponse(
         form: FormBody.Builder,
         endpoint: String?,
@@ -2673,7 +2673,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return parseJsonResponseAndRunListeners(response, clazz)
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     protected fun <T> postFormWithTokenAndParseResponse(
         form: FormBody.Builder?,
         endpoint: String?,
@@ -2684,7 +2684,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return parseJsonResponseAndRunListeners(response, clazz)
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     protected fun <T> postMultipartAndParseResponse(
         form: FormBody.Builder?,
         endpoint: String?,
@@ -2715,7 +2715,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         }
     }
 
-    @Throws(java.io.IOException::class, SlackApiException::class)
+    
     private fun <T> parseJsonResponseAndRunListeners(response: HttpResponse?, clazz: java.lang.Class<T>): T {
 //        String body = response.body().string();
 //        slackHttpClient.runHttpResponseListeners(response, body);

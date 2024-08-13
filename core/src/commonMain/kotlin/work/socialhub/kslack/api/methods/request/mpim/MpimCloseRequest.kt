@@ -3,41 +3,8 @@ package work.socialhub.kslack.api.methods.request.mpim
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class MpimCloseRequest(
-    /**
-     * Authentication token. Requires scope: `mpim:write`
-     */
+    /** Authentication token. Requires scope: `mpim:write` */
     override var token: String?,
-    /**
-     * MPIM to close.
-     */
+    /** MPIM to close. */
     var channel: String?
-) : SlackApiRequest {
-    class MpimCloseRequestBuilder() {
-        private var token: String? = null
-        private var channel: String? = null
-
-        fun token(token: String?): MpimCloseRequestBuilder {
-            this.token = token
-            return this
-        }
-
-        fun channel(channel: String?): MpimCloseRequestBuilder {
-            this.channel = channel
-            return this
-        }
-
-        fun build(): MpimCloseRequest {
-            return MpimCloseRequest(token, channel)
-        }
-
-        override fun toString(): String {
-            return "MpimCloseRequest.MpimCloseRequestBuilder(token=" + this.token + ", channel=" + this.channel + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): MpimCloseRequestBuilder {
-            return MpimCloseRequestBuilder()
-        }
-    }
-}
+) : SlackApiRequest

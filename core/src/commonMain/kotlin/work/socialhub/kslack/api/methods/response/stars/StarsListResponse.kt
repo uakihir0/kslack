@@ -60,7 +60,7 @@ class StarsListResponse : SlackApiResponse {
         var lastRead: String? = null
         var reactions: Array<Reaction>? = null
 
-        /**
+
          * A reply message information in a MessageRoot.
          */
         class MessageRootReply {
