@@ -29,10 +29,13 @@ class File {
 
     @SerialName("is_external")
     var isExternal: Boolean = false
+
     @SerialName("external_type")
     var externalType: String? = null
+
     @SerialName("external_id")
     var externalId: String? = null
+
     @SerialName("external_url")
     var externalUrl: String? = null
 

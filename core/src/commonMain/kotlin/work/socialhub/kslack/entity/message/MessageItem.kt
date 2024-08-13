@@ -2,8 +2,6 @@ package work.socialhub.kslack.entity.message
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import work.socialhub.kslack.entity.file.File
-import work.socialhub.kslack.entity.file.FileComment
 import kotlin.js.JsExport
 
 @JsExport

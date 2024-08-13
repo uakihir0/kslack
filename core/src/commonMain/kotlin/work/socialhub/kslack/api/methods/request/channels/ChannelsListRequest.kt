@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.channels
+package work.socialhub.kslack.api.methods.request.channels
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ChannelsListRequest internal constructor(
+class ChannelsListRequest(
     /**
      * Authentication token. Requires scope: `channels:read`
      */
@@ -26,51 +26,4 @@ class ChannelsListRequest internal constructor(
      * Exclude archived channels from the list
      */
     var isExcludeArchived: Boolean
-) : SlackApiRequest {
-    class ChannelsListRequestBuilder internal constructor() {
-        private var token: String? = null
-        private var excludeMembers = false
-        private var cursor: String? = null
-        private var limit: Int? = null
-        private var excludeArchived = false
-
-        fun token(token: String?): ChannelsListRequestBuilder {
-            this.token = token
-            return this
-        }
-
-        fun excludeMembers(excludeMembers: Boolean): ChannelsListRequestBuilder {
-            this.excludeMembers = excludeMembers
-            return this
-        }
-
-        fun cursor(cursor: String?): ChannelsListRequestBuilder {
-            this.cursor = cursor
-            return this
-        }
-
-        fun limit(limit: Int?): ChannelsListRequestBuilder {
-            this.limit = limit
-            return this
-        }
-
-        fun excludeArchived(excludeArchived: Boolean): ChannelsListRequestBuilder {
-            this.excludeArchived = excludeArchived
-            return this
-        }
-
-        fun build(): ChannelsListRequest {
-            return ChannelsListRequest(token, excludeMembers, cursor, limit, excludeArchived)
-        }
-
-        override fun toString(): String {
-            return "ChannelsListRequest.ChannelsListRequestBuilder(token=" + this.token + ", excludeMembers=" + this.excludeMembers + ", cursor=" + this.cursor + ", limit=" + this.limit + ", excludeArchived=" + this.excludeArchived + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): ChannelsListRequestBuilder {
-            return ChannelsListRequestBuilder()
-        }
-    }
-}
+) : SlackApiRequest

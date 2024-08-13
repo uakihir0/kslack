@@ -8,11 +8,7 @@ import work.socialhub.kmastodon.api.request.notifications.NotificationsNotificat
 import work.socialhub.kmastodon.api.request.notifications.NotificationsPostSubscriptionRequest
 import work.socialhub.kmastodon.api.response.Response
 import work.socialhub.kmastodon.api.response.ResponseUnit
-import work.socialhub.kmastodon.api.response.notifications.NotificationsEditSubscriptionResponse
-import work.socialhub.kmastodon.api.response.notifications.NotificationsNotificationResponse
-import work.socialhub.kmastodon.api.response.notifications.NotificationsNotificationsResponse
-import work.socialhub.kmastodon.api.response.notifications.NotificationsPostSubscriptionResponse
-import work.socialhub.kmastodon.api.response.notifications.NotificationsSubscriptionResponse
+import work.socialhub.kmastodon.api.response.notifications.*
 import work.socialhub.kmastodon.domain.Service
 import work.socialhub.kmastodon.util.Headers.AUTHORIZATION
 import work.socialhub.kmastodon.util.MediaType

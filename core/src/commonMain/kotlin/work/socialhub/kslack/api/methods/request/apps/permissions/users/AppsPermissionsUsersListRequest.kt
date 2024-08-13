@@ -2,7 +2,7 @@ package work.socialhub.kslack.api.methods.request.apps.permissions.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class AppsPermissionsUsersListRequest (
+class AppsPermissionsUsersListRequest(
     override var token: String?,
 
     /**

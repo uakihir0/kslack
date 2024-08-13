@@ -2,7 +2,6 @@ package work.socialhub.kmastodon.internal
 
 import work.socialhub.khttpclient.HttpRequest
 import work.socialhub.khttpclient.HttpResponse
-import work.socialhub.kmastodon.Mastodon
 import work.socialhub.kmastodon.MastodonException
 import work.socialhub.kmastodon.api.request.Range
 import work.socialhub.kmastodon.api.response.Response

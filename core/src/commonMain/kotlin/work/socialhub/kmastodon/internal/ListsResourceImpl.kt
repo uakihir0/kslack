@@ -2,21 +2,10 @@ package work.socialhub.kmastodon.internal
 
 import work.socialhub.khttpclient.HttpRequest
 import work.socialhub.kmastodon.api.ListsResource
-import work.socialhub.kmastodon.api.request.lists.ListsAddAccountsToListRequest
-import work.socialhub.kmastodon.api.request.lists.ListsCreateListRequest
-import work.socialhub.kmastodon.api.request.lists.ListsDeleteAccountsToListRequest
-import work.socialhub.kmastodon.api.request.lists.ListsDeleteListRequest
-import work.socialhub.kmastodon.api.request.lists.ListsListAccountsRequest
-import work.socialhub.kmastodon.api.request.lists.ListsListRequest
-import work.socialhub.kmastodon.api.request.lists.ListsListsRequest
-import work.socialhub.kmastodon.api.request.lists.ListsUpdateListRequest
+import work.socialhub.kmastodon.api.request.lists.*
 import work.socialhub.kmastodon.api.response.Response
 import work.socialhub.kmastodon.api.response.ResponseUnit
-import work.socialhub.kmastodon.api.response.lists.ListsCreateListResponse
-import work.socialhub.kmastodon.api.response.lists.ListsListAccountsResponse
-import work.socialhub.kmastodon.api.response.lists.ListsListResponse
-import work.socialhub.kmastodon.api.response.lists.ListsListsResponse
-import work.socialhub.kmastodon.api.response.lists.ListsUpdateListResponse
+import work.socialhub.kmastodon.api.response.lists.*
 import work.socialhub.kmastodon.util.Headers.AUTHORIZATION
 import work.socialhub.kmastodon.util.MediaType
 

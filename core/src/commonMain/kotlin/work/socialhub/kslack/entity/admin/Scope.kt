@@ -13,6 +13,7 @@ class Scope {
 
     @SerialName("is_sensitive")
     var isSensitive = false
+
     @SerialName("token_type")
     var tokenType: String? = null
 }

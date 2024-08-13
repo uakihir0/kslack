@@ -1,7 +1,6 @@
 package work.socialhub.kslack.entity.message
 
 import kotlinx.serialization.Serializable
-import work.socialhub.kslack.entity.message.Message.MessageRootReply
 import kotlin.js.JsExport
 
 /**

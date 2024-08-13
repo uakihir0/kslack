@@ -1,33 +1,8 @@
 package work.socialhub.kmastodon.api
 
-import work.socialhub.kmastodon.api.request.accounts.AccountsAccountRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsBlockRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsFollowRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsFollowersRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsFollowingRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsMuteRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsRelationshipsRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsSearchRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsStatusesRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsUnblockRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsUnfollowRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsUnmuteRequest
-import work.socialhub.kmastodon.api.request.accounts.AccountsUpdateCredentialsRequest
+import work.socialhub.kmastodon.api.request.accounts.*
 import work.socialhub.kmastodon.api.response.Response
-import work.socialhub.kmastodon.api.response.accounts.AccountsAccountResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsBlockResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsFollowResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsFollowersResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsFollowingResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsMuteResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsRelationshipsResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsSearchResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsStatusesResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsUnblockResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsUnfollowResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsUnmuteResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsUpdateCredentialsResponse
-import work.socialhub.kmastodon.api.response.accounts.AccountsVerifyCredentialsResponse
+import work.socialhub.kmastodon.api.response.accounts.*
 import kotlin.js.JsExport
 
 @JsExport

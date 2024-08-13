@@ -1,16 +1,8 @@
 package work.socialhub.kmastodon.api
 
-import work.socialhub.kmastodon.api.request.timelines.TimelinesConversationsRequest
-import work.socialhub.kmastodon.api.request.timelines.TimelinesHashTagTimelineRequest
-import work.socialhub.kmastodon.api.request.timelines.TimelinesHomeTimelineRequest
-import work.socialhub.kmastodon.api.request.timelines.TimelinesListTimelineRequest
-import work.socialhub.kmastodon.api.request.timelines.TimelinesPublicTimelineRequest
+import work.socialhub.kmastodon.api.request.timelines.*
 import work.socialhub.kmastodon.api.response.Response
-import work.socialhub.kmastodon.api.response.timelines.TimelinesConversationsResponse
-import work.socialhub.kmastodon.api.response.timelines.TimelinesHashTagTimelineResponse
-import work.socialhub.kmastodon.api.response.timelines.TimelinesHomeTimelineResponse
-import work.socialhub.kmastodon.api.response.timelines.TimelinesListTimelineResponse
-import work.socialhub.kmastodon.api.response.timelines.TimelinesPublicTimelineResponse
+import work.socialhub.kmastodon.api.response.timelines.*
 import kotlin.js.JsExport
 
 @JsExport

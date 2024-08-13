@@ -7,7 +7,7 @@ import kotlin.js.JsExport
 
 @JsExport
 @Serializable
-class Attachment  {
+class Attachment {
 
     @SerialName("id")
     var id: String? = null

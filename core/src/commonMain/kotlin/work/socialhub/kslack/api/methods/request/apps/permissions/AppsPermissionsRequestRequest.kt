@@ -2,7 +2,7 @@ package work.socialhub.kslack.api.methods.request.apps.permissions
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class AppsPermissionsRequestRequest (
+class AppsPermissionsRequestRequest(
     /** Authentication token. Requires scope: `none` */
     override var token: String?,
     /** Token used to trigger the permissions API */

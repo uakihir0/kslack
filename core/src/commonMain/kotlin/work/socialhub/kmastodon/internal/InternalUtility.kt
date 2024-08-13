@@ -1,6 +1,5 @@
 package work.socialhub.kmastodon.internal
 
-import io.ktor.http.*
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

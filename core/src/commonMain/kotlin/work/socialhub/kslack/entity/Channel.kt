@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity
 
-import com.google.gson.annotations.SerialName
+import kotlinx.serialization.SerialName
 
 class Channel {
     var enterpriseId: String? = null

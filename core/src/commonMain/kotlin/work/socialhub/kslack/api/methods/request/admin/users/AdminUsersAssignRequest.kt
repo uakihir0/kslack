@@ -5,7 +5,7 @@ import work.socialhub.kslack.api.methods.SlackApiRequest
 /**
  * https://api.slack.com/methods/admin.users.assign
  */
-class AdminUsersAssignRequest (
+class AdminUsersAssignRequest(
     /** Authentication token bearing required scopes. */
     override var token: String?,
     /** Workspace Id. */

@@ -1,7 +1,5 @@
 package work.socialhub.kslack.entity.block
 
-import com.github.seratch.jslack.api.model.block.composition.TextObject
-import com.github.seratch.jslack.api.model.block.element.BlockElement
 import work.socialhub.kslack.entity.block.composition.TextObject
 import work.socialhub.kslack.entity.block.element.BlockElement
 

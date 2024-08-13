@@ -2,26 +2,11 @@ package work.socialhub.kslack.api.methods
 
 import com.github.seratch.jslack.api.methods.FormBody
 import com.github.seratch.jslack.api.methods.SlackApiException
-import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
-import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
-import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
 import com.github.seratch.jslack.api.methods.request.admin.invite_requests.*
 import com.github.seratch.jslack.api.methods.request.admin.teams.*
 import com.github.seratch.jslack.api.methods.request.admin.users.*
-import work.socialhub.kslack.api.methods.request.api.ApiTestRequest
-import work.socialhub.kslack.api.methods.request.apps.AppsUninstallRequest
-import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsInfoRequest
-import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsRequestRequest
-import work.socialhub.kslack.api.methods.request.apps.permissions.resources.AppsPermissionsResourcesListRequest
-import work.socialhub.kslack.api.methods.request.apps.permissions.scopes.AppsPermissionsScopesListRequest
-import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersListRequest
-import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersRequestRequest
-import work.socialhub.kslack.api.methods.request.auth.AuthRevokeRequest
-import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
-import work.socialhub.kslack.api.methods.request.bots.BotsInfoRequest
 import com.github.seratch.jslack.api.methods.request.channels.*
 import com.github.seratch.jslack.api.methods.request.chat.*
-import com.github.seratch.jslack.api.methods.request.chat.scheduled_messages.ChatScheduleMessagesListRequest
 import com.github.seratch.jslack.api.methods.request.conversations.*
 import com.github.seratch.jslack.api.methods.request.dialog.DialogOpenRequest
 import com.github.seratch.jslack.api.methods.request.dnd.*
@@ -71,7 +56,6 @@ import com.github.seratch.jslack.api.methods.request.views.ViewsPushRequest
 import com.github.seratch.jslack.api.methods.request.views.ViewsUpdateRequest
 import com.github.seratch.jslack.api.methods.response.admin.apps.AdminAppsApproveResponse
 import com.github.seratch.jslack.api.methods.response.admin.apps.AdminAppsRequestsListResponse
-import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsRestrictResponse
 import com.github.seratch.jslack.api.methods.response.admin.invite_requests.*
 import com.github.seratch.jslack.api.methods.response.admin.teams.*
 import com.github.seratch.jslack.api.methods.response.admin.users.*
@@ -110,7 +94,6 @@ import com.github.seratch.jslack.api.methods.response.pins.PinsListResponse
 import com.github.seratch.jslack.api.methods.response.pins.PinsRemoveResponse
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsAddResponse
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsGetResponse
-import work.socialhub.kslack.api.methods.response.reactions.ReactionsListResponse
 import com.github.seratch.jslack.api.methods.response.reactions.ReactionsRemoveResponse
 import com.github.seratch.jslack.api.methods.response.reminders.*
 import com.github.seratch.jslack.api.methods.response.rtm.RTMConnectResponse
@@ -137,12 +120,31 @@ import com.github.seratch.jslack.api.methods.response.views.ViewsPublishResponse
 import com.github.seratch.jslack.api.methods.response.views.ViewsPushResponse
 import com.github.seratch.jslack.api.methods.response.views.ViewsUpdateResponse
 import work.socialhub.khttpclient.HttpResponse
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
 import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsApproveRequest
 import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsApprovedListRequest
 import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsDeniedListRequest
 import work.socialhub.kslack.api.methods.request.admin.invite_requests.AdminInviteRequestsDenyRequest
 import work.socialhub.kslack.api.methods.request.admin.teams.*
 import work.socialhub.kslack.api.methods.request.admin.users.*
+import work.socialhub.kslack.api.methods.request.api.ApiTestRequest
+import work.socialhub.kslack.api.methods.request.apps.AppsUninstallRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsInfoRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.AppsPermissionsRequestRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.resources.AppsPermissionsResourcesListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.scopes.AppsPermissionsScopesListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersListRequest
+import work.socialhub.kslack.api.methods.request.apps.permissions.users.AppsPermissionsUsersRequestRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthRevokeRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
+import work.socialhub.kslack.api.methods.request.bots.BotsInfoRequest
+import work.socialhub.kslack.api.methods.request.channels.*
+import work.socialhub.kslack.api.methods.request.chat.ChatDeleteRequest
+import work.socialhub.kslack.api.methods.request.chat.scheduled_messages.ChatScheduleMessagesListRequest
+import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsRestrictResponse
+import work.socialhub.kslack.api.methods.response.reactions.ReactionsListResponse
 
 /**
  * API Methods.

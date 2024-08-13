@@ -14,6 +14,7 @@ class Filter {
 
     @SerialName("expires_at")
     var expiresAt: String? = null
+
     @SerialName("filter_action")
     var filterAction: String? = null
 

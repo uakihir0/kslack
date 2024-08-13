@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.methods.request.chat
+package work.socialhub.kslack.api.methods.request.chat
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 

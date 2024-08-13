@@ -5,7 +5,7 @@ import work.socialhub.kslack.api.methods.SlackApiRequest
 /**
  * https://api.slack.com/methods/admin.users.session.reset
  */
-class AdminUsersSessionResetRequest (
+class AdminUsersSessionResetRequest(
     /** Authentication token bearing required scopes. (admin.users:write) */
     override var token: String?,
     /** The ID of the user to wipe sessions for */

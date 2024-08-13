@@ -9,10 +9,13 @@ import com.google.gson.annotations.SerialName
 enum class DialogSubType(private val value: String) {
     @SerialName("email")
     EMAIL("email"),
+
     @SerialName("number")
     NUMBER("number"),
+
     @SerialName("tel")
     TEL("tel"),
+
     @SerialName("url")
     URL("url");
 

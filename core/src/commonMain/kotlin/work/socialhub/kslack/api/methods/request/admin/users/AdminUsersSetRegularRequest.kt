@@ -5,7 +5,7 @@ import work.socialhub.kslack.api.methods.SlackApiRequest
 /**
  * https://api.slack.com/methods/admin.users.setRegular
  */
-class AdminUsersSetRegularRequest (
+class AdminUsersSetRegularRequest(
     /** Authentication token bearing required scopes. */
     override var token: String?,
     /** Workspace Id */

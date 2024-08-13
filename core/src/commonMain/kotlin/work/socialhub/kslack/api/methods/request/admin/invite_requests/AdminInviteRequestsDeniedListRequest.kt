@@ -5,7 +5,7 @@ import work.socialhub.kslack.api.methods.SlackApiRequest
 /**
  * https://api.slack.com/methods/admin.inviteRequests.denied.list
  */
-class AdminInviteRequestsDeniedListRequest (
+class AdminInviteRequestsDeniedListRequest(
     /** Authentication token bearing required scopes. */
     override var token: String?,
     /** Set cursor to next_cursor returned by the previous call to list items in the next page */
