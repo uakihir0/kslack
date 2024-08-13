@@ -1,11 +1,11 @@
-package com.github.seratch.jslack.api.methods.request.files.remote
+package work.socialhub.kslack.api.methods.request.files.remote
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * https://api.slack.com/methods/files.remote.list
  */
-class FilesRemoteListRequest internal constructor(
+class FilesRemoteListRequest(
     /**
      * Authentication token. Requires scope: `remote_files:read`
      */
@@ -34,7 +34,7 @@ class FilesRemoteListRequest internal constructor(
      */
     var tsTo: String?
 ) : SlackApiRequest {
-    class FilesRemoteListRequestBuilder internal constructor() {
+    class FilesRemoteListRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var cursor: String? = null

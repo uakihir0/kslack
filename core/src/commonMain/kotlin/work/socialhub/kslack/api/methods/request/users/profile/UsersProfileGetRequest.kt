@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.users.profile
+package work.socialhub.kslack.api.methods.request.users.profile
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersProfileGetRequest internal constructor(
+class UsersProfileGetRequest(
     /**
      * Authentication token. Requires scope: `users.profile:read`
      */
@@ -16,7 +16,7 @@ class UsersProfileGetRequest internal constructor(
      */
     var isIncludeLabels: Boolean
 ) : SlackApiRequest {
-    class UsersProfileGetRequestBuilder internal constructor() {
+    class UsersProfileGetRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
         private var includeLabels = false

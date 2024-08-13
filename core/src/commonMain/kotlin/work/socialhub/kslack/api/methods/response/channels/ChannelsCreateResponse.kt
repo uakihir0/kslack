@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.channels
+package work.socialhub.kslack.api.methods.response.channels
 
-import com.github.seratch.jslack.api.model.Channel
+import work.socialhub.kslack.api.model.Channel
 
 class ChannelsCreateResponse : SlackApiResponse {
     var isOk: Boolean = false

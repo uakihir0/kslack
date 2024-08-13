@@ -1,14 +1,14 @@
-package com.github.seratch.jslack.api.methods.request.dnd
+package work.socialhub.kslack.api.methods.request.dnd
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class DndEndSnoozeRequest internal constructor(
+class DndEndSnoozeRequest(
     /**
      * Authentication token. Requires scope: `dnd:write`
      */
     override var token: String?
 ) : SlackApiRequest {
-    class DndEndSnoozeRequestBuilder internal constructor() {
+    class DndEndSnoozeRequestBuilder() {
         private var token: String? = null
 
         fun token(token: String?): DndEndSnoozeRequestBuilder {

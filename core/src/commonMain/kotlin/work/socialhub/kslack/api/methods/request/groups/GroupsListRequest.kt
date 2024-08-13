@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.groups
+package work.socialhub.kslack.api.methods.request.groups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class GroupsListRequest internal constructor(
+class GroupsListRequest(
     /**
      * Authentication token. Requires scope: `groups:read`
      */
@@ -16,7 +16,7 @@ class GroupsListRequest internal constructor(
      */
     var isExcludeArchived: Boolean
 ) : SlackApiRequest {
-    class GroupsListRequestBuilder internal constructor() {
+    class GroupsListRequestBuilder() {
         private var token: String? = null
         private var excludeMembers = false
         private var excludeArchived = false

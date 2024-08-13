@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.users.profile
+package work.socialhub.kslack.api.methods.response.users.profile
 
-import com.github.seratch.jslack.api.model.User
+import work.socialhub.kslack.api.model.User
 
 class UsersProfileGetResponse : SlackApiResponse {
     var isOk: Boolean = false

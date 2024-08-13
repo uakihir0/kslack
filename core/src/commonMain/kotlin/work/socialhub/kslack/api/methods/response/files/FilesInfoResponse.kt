@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.files
+package work.socialhub.kslack.api.methods.response.files
 
-import com.github.seratch.jslack.api.model.File
+import work.socialhub.kslack.api.model.File
 
 class FilesInfoResponse : SlackApiResponse {
     var isOk: Boolean = false

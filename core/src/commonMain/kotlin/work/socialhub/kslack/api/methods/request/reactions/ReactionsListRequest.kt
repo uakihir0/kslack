@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.reactions
+package work.socialhub.kslack.api.methods.request.reactions
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ReactionsListRequest internal constructor(
+class ReactionsListRequest(
     /**
      * Authentication token. Requires scope: `reactions:read`
      */
@@ -16,7 +16,7 @@ class ReactionsListRequest internal constructor(
      */
     var isFull: Boolean, var count: Int?, var page: Int?
 ) : SlackApiRequest {
-    class ReactionsListRequestBuilder internal constructor() {
+    class ReactionsListRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
         private var full = false

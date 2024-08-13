@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.status.v2
+package work.socialhub.kslack.api.status.v2
 
 import net.socialhub.http.HttpResponse
 

@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.view
 
-import com.github.seratch.jslack.api.model.block.composition.PlainTextObject
+import work.socialhub.kslack.api.model.block.composition.PlainTextObject
 
 class ViewState {
     // block_id, action_id
@@ -32,7 +32,7 @@ class ViewState {
         var value: String? = null
     }
 
-    class ViewStateBuilder internal constructor() {
+    class ViewStateBuilder() {
         private var values: Map<String, Map<String, Value>>? = null
 
         fun values(values: Map<String, Map<String, Value>>?): ViewStateBuilder {

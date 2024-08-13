@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.methods.response.usergroups.users
+package work.socialhub.kslack.api.methods.response.usergroups.users
 
 import work.socialhub.kslack.api.methods.SlackApiResponse
 

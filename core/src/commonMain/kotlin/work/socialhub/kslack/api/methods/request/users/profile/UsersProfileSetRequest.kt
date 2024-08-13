@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.users.profile
+package work.socialhub.kslack.api.methods.request.users.profile
 
-import com.github.seratch.jslack.api.model.User
+import work.socialhub.kslack.api.model.User
 
-class UsersProfileSetRequest internal constructor(
+class UsersProfileSetRequest(
     /**
      * Authentication token. Requires scope: `users.profile:write`
      */
@@ -41,7 +41,7 @@ class UsersProfileSetRequest internal constructor(
         this.profile = profile
     }
 
-    class UsersProfileSetRequestBuilder internal constructor() {
+    class UsersProfileSetRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
         private var profile: User.Profile? = null

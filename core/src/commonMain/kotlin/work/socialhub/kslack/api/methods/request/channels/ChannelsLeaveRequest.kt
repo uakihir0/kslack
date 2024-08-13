@@ -2,7 +2,7 @@ package work.socialhub.kslack.api.methods.request.channels
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ChannelsLeaveRequest internal constructor(
+class ChannelsLeaveRequest(
     /**
      * Authentication token. Requires scope: `channels:write`
      */

@@ -98,7 +98,7 @@ class DialogTextAreaElement : DialogElement {
         this.subtype = subtype
     }
 
-    class DialogTextAreaElementBuilder internal constructor() {
+    class DialogTextAreaElementBuilder() {
         private var label: String? = null
         private var name: String? = null
         private var value: String? = null

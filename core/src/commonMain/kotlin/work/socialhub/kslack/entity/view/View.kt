@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.view
 
-import com.github.seratch.jslack.api.model.block.LayoutBlock
+import work.socialhub.kslack.api.model.block.LayoutBlock
 
 /**
  * Represents a Slack Modal View
@@ -109,7 +109,7 @@ class View {
         this.state = state
     }
 
-    class ViewBuilder internal constructor() {
+    class ViewBuilder() {
         private var id: String? = null
         private var teamId: String? = null
         private var type: String? = null

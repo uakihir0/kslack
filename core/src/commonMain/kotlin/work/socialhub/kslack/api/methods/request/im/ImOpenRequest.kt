@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.im
+package work.socialhub.kslack.api.methods.request.im
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ImOpenRequest internal constructor(
+class ImOpenRequest(
     /**
      * Authentication token. Requires scope: `im:write`
      */
@@ -20,7 +20,7 @@ class ImOpenRequest internal constructor(
      */
     var isIncludeLocale: Boolean
 ) : SlackApiRequest {
-    class ImOpenRequestBuilder internal constructor() {
+    class ImOpenRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
         private var returnIm = false

@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.users
+package work.socialhub.kslack.api.methods.response.users
 
-import com.github.seratch.jslack.api.model.ResponseMetadata
+import work.socialhub.kslack.api.model.ResponseMetadata
 
 class UsersListResponse : SlackApiResponse {
     var isOk: Boolean = false

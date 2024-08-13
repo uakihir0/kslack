@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersInfoRequest internal constructor(
+class UsersInfoRequest(
     /**
      * Authentication token. Requires scope: `users:read`
      */
@@ -16,7 +16,7 @@ class UsersInfoRequest internal constructor(
      */
     var isIncludeLocale: Boolean
 ) : SlackApiRequest {
-    class UsersInfoRequestBuilder internal constructor() {
+    class UsersInfoRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
         private var includeLocale = false

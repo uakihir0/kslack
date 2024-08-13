@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.methods.response.reminders
+package work.socialhub.kslack.api.methods.response.reminders
 
 import work.socialhub.kslack.api.methods.SlackApiResponse
 

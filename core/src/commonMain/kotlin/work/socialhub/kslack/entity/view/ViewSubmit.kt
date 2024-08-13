@@ -13,7 +13,7 @@ class ViewSubmit {
 
     constructor()
 
-    class ViewSubmitBuilder internal constructor() {
+    class ViewSubmitBuilder() {
         private var type: String? = null
         private var text: String? = null
         private var emoji = false

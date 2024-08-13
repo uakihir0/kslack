@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.methods.response.conversations
+package work.socialhub.kslack.api.methods.response.conversations
 
 import work.socialhub.kslack.api.methods.SlackApiResponse
 

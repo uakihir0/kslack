@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.pins
+package work.socialhub.kslack.api.methods.response.pins
 
-import com.github.seratch.jslack.api.model.File
+import work.socialhub.kslack.api.model.File
 
 class PinsListResponse : SlackApiResponse {
     var isOk: Boolean = false

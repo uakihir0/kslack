@@ -1,9 +1,9 @@
-package com.github.seratch.jslack.api.methods
+package work.socialhub.kslack.api.methods
 
 import net.socialhub.http.HttpParameter
 import kotlin.jvm.JvmOverloads
 
-class FormBody internal constructor(private val names: Array<String>, private val values: Array<Any>) {
+class FormBody(private val names: Array<String>, private val values: Array<Any>) {
     fun size(): Int {
         return names.size
     }

@@ -1,9 +1,9 @@
-package com.github.seratch.jslack.api.methods
+package work.socialhub.kslack.api.methods
 
-import com.github.seratch.jslack.SlackConfig
-import com.github.seratch.jslack.common.json.GsonFactory
 import net.socialhub.http.HttpResponse
 import net.socialhub.logger.Logger
+import work.socialhub.kslack.SlackConfig
+import work.socialhub.kslack.common.json.GsonFactory
 
 class SlackApiException(config: SlackConfig?, response: HttpResponse?, val responseBody: String) :
     java.lang.Exception() {

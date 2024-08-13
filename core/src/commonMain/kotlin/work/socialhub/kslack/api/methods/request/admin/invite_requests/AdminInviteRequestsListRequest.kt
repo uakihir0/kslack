@@ -1,11 +1,11 @@
-package com.github.seratch.jslack.api.methods.request.admin.invite_requests
+package work.socialhub.kslack.api.methods.request.admin.invite_requests
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * https://api.slack.com/methods/admin.inviteRequests.list
  */
-class AdminInviteRequestsListRequest internal constructor(
+class AdminInviteRequestsListRequest(
     /**
      * Authentication token bearing required scopes.
      */
@@ -23,7 +23,7 @@ class AdminInviteRequestsListRequest internal constructor(
      */
     var teamId: String?
 ) : SlackApiRequest {
-    class AdminInviteRequestsListRequestBuilder internal constructor() {
+    class AdminInviteRequestsListRequestBuilder() {
         private var token: String? = null
         private var cursor: String? = null
         private var limit: Int? = null

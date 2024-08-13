@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.reactions
+package work.socialhub.kslack.api.methods.request.reactions
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ReactionsGetRequest internal constructor(
+class ReactionsGetRequest(
     /**
      * Authentication token. Requires scope: `reactions:read`
      */
@@ -28,7 +28,7 @@ class ReactionsGetRequest internal constructor(
      */
     var isFull: Boolean
 ) : SlackApiRequest {
-    class ReactionsGetRequestBuilder internal constructor() {
+    class ReactionsGetRequestBuilder() {
         private var token: String? = null
         private var file: String? = null
         private var fileComment: String? = null

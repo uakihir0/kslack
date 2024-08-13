@@ -68,7 +68,7 @@ class Dialog {
         this.elements = elements
     }
 
-    class DialogBuilder internal constructor() {
+    class DialogBuilder() {
         private var title: String? = null
         private var callbackId: String? = null
         private var elements: Array<DialogElement>? = null

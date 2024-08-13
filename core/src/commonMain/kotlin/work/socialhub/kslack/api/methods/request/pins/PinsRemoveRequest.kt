@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.pins
+package work.socialhub.kslack.api.methods.request.pins
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class PinsRemoveRequest internal constructor(
+class PinsRemoveRequest(
     /**
      * Authentication token. Requires scope: `pins:write`
      */
@@ -24,7 +24,7 @@ class PinsRemoveRequest internal constructor(
      */
     var timestamp: String?
 ) : SlackApiRequest {
-    class PinsRemoveRequestBuilder internal constructor() {
+    class PinsRemoveRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var file: String? = null

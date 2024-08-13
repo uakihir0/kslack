@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.im
+package work.socialhub.kslack.api.methods.response.im
 
-import com.github.seratch.jslack.api.model.Channel
+import work.socialhub.kslack.api.model.Channel
 
 class ImOpenResponse : SlackApiResponse {
     var isOk: Boolean = false

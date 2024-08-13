@@ -1,65 +1,19 @@
-package com.github.seratch.jslack.api.methods.request.conversations
+package work.socialhub.kslack.api.methods.request.conversations
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ConversationsOpenRequest internal constructor(
-    /**
-     * Authentication token. Requires scope: `conversations:write`
-     */
+class ConversationsOpenRequest(
+    /** Authentication token. Requires scope: `conversations:write` */
     override var token: String?,
-    /**
-     * Resume a conversation by supplying an `im` or `mpim`'s ID. Or provide the `users` field instead.
-     */
+    /** Resume a conversation by supplying an `im` or `mpim`'s ID. Or provide the `users` field instead. */
     var channel: String?,
-    /**
-     * Boolean, indicates you want the full IM channel definition in the response.
-     */
+    /** Boolean, indicates you want the full IM channel definition in the response. */
     var isReturnIm: Boolean,
+
     /**
      * Comma separated lists of users. If only one user is included, this creates a 1:1 DM.
      * The ordering of the users is preserved whenever a multi-person direct message is returned.
      * Supply a `channel` when not supplying `users`.
      */
     var users: Array<String>?
-) : SlackApiRequest {
-    class ConversationsOpenRequestBuilder internal constructor() {
-        private var token: String? = null
-        private var channel: String? = null
-        private var returnIm = false
-        private var users: Array<String>? = null
-
-        fun token(token: String?): ConversationsOpenRequestBuilder {
-            this.token = token
-            return this
-        }
-
-        fun channel(channel: String?): ConversationsOpenRequestBuilder {
-            this.channel = channel
-            return this
-        }
-
-        fun returnIm(returnIm: Boolean): ConversationsOpenRequestBuilder {
-            this.returnIm = returnIm
-            return this
-        }
-
-        fun users(users: Array<String>?): ConversationsOpenRequestBuilder {
-            this.users = users
-            return this
-        }
-
-        fun build(): ConversationsOpenRequest {
-            return ConversationsOpenRequest(token, channel, returnIm, users)
-        }
-
-        override fun toString(): String {
-            return "ConversationsOpenRequest.ConversationsOpenRequestBuilder(token=" + this.token + ", channel=" + this.channel + ", returnIm=" + this.returnIm + ", users=" + this.users + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): ConversationsOpenRequestBuilder {
-            return ConversationsOpenRequestBuilder()
-        }
-    }
-}
+) : SlackApiRequest

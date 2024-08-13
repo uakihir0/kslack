@@ -1,11 +1,11 @@
-package com.github.seratch.jslack.api.methods.request.oauth
+package work.socialhub.kslack.api.methods.request.oauth
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * https://api.slack.com/docs/oauth
  */
-class OAuthAccessRequest internal constructor(
+class OAuthAccessRequest(
     /**
      * Issued when you created your application.
      */
@@ -30,7 +30,7 @@ class OAuthAccessRequest internal constructor(
     override val token: String?
         get() = null
 
-    class OAuthAccessRequestBuilder internal constructor() {
+    class OAuthAccessRequestBuilder() {
         private var clientId: String? = null
         private var clientSecret: String? = null
         private var code: String? = null

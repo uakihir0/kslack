@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.team.profile
+package work.socialhub.kslack.api.methods.request.team.profile
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class TeamProfileGetRequest internal constructor(
+class TeamProfileGetRequest(
     /**
      * Authentication token. Requires scope: `users.profile:read`
      */
@@ -12,7 +12,7 @@ class TeamProfileGetRequest internal constructor(
      */
     var visibility: String?
 ) : SlackApiRequest {
-    class TeamProfileGetRequestBuilder internal constructor() {
+    class TeamProfileGetRequestBuilder() {
         private var token: String? = null
         private var visibility: String? = null
 

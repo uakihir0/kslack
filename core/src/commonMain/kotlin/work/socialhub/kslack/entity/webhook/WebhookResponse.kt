@@ -1,7 +1,7 @@
-package com.github.seratch.jslack.api.webhook
+package work.socialhub.kslack.api.webhook
 
-class WebhookResponse internal constructor(var code: Int?, var message: String?, var body: String?) {
-    class WebhookResponseBuilder internal constructor() {
+class WebhookResponse(var code: Int?, var message: String?, var body: String?) {
+    class WebhookResponseBuilder() {
         private var code: Int? = null
         private var message: String? = null
         private var body: String? = null

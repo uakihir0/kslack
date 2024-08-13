@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.block.element
 
-import com.github.seratch.jslack.api.model.block.composition.ConfirmationDialogObject
+import work.socialhub.kslack.api.model.block.composition.ConfirmationDialogObject
 
 /**
  * https://api.slack.com/reference/messaging/block-elements#button
@@ -110,7 +110,7 @@ class ButtonElement : BlockElement {
         return result
     }
 
-    class ButtonElementBuilder internal constructor() {
+    class ButtonElementBuilder() {
         private var fallback: String? = null
         private var text: PlainTextObject? = null
         private var actionId: String? = null

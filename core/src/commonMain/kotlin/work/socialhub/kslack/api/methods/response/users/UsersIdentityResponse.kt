@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.methods.response.users
+package work.socialhub.kslack.api.methods.response.users
 
 import com.google.gson.annotations.SerialName
 

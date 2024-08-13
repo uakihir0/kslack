@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.github.seratch.jslack.api.model.Attachment
+import work.socialhub.kslack.api.model.Attachment
 
 /**
  * A message is delivered from several sources:

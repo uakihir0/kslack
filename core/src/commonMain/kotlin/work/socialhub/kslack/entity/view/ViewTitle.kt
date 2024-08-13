@@ -13,7 +13,7 @@ class ViewTitle {
 
     constructor()
 
-    class ViewTitleBuilder internal constructor() {
+    class ViewTitleBuilder() {
         private var type: String? = null
         private var text: String? = null
         private var emoji = false

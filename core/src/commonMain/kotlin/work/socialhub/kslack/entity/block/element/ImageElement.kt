@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.block.element
 
-import com.github.seratch.jslack.api.model.block.ContextBlockElement
+import work.socialhub.kslack.api.model.block.ContextBlockElement
 
 /**
  * https://api.slack.com/reference/messaging/block-elements#image
@@ -86,7 +86,7 @@ class ImageElement : BlockElement, ContextBlockElement {
         return result
     }
 
-    class ImageElementBuilder internal constructor() {
+    class ImageElementBuilder() {
         private var fallback: String? = null
         private var imageUrl: String? = null
         private var imageWidth: Int? = null

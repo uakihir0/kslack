@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.reminders
+package work.socialhub.kslack.api.methods.response.reminders
 
-import com.github.seratch.jslack.api.model.Reminder
+import work.socialhub.kslack.api.model.Reminder
 
 class RemindersAddResponse : SlackApiResponse {
     var isOk: Boolean = false

@@ -2,7 +2,7 @@ package work.socialhub.kslack.api.methods.request.chat
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ChatDeleteRequest internal constructor(
+class ChatDeleteRequest(
     /**
      * Authentication token. Requires scope: `chat:write`
      */
@@ -22,7 +22,7 @@ class ChatDeleteRequest internal constructor(
      */
     var isAsUser: Boolean
 ) : SlackApiRequest {
-    class ChatDeleteRequestBuilder internal constructor() {
+    class ChatDeleteRequestBuilder() {
         private var token: String? = null
         private var ts: String? = null
         private var channel: String? = null

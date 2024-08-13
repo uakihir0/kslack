@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.channels
+package work.socialhub.kslack.api.methods.response.channels
 
-import com.github.seratch.jslack.api.model.User
+import work.socialhub.kslack.api.model.User
 
 class UsersLookupByEmailResponse : SlackApiResponse {
     var isOk: Boolean = false

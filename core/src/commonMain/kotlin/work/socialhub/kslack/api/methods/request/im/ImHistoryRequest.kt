@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.im
+package work.socialhub.kslack.api.methods.request.im
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ImHistoryRequest internal constructor(
+class ImHistoryRequest(
     /**
      * Authentication token. Requires scope: `im:history`
      */
@@ -32,7 +32,7 @@ class ImHistoryRequest internal constructor(
      */
     var isUnreads: Boolean
 ) : SlackApiRequest {
-    class ImHistoryRequestBuilder internal constructor() {
+    class ImHistoryRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var oldest: String? = null

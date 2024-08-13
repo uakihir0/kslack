@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.conversations
+package work.socialhub.kslack.api.methods.response.conversations
 
-import com.github.seratch.jslack.api.model.Message
+import work.socialhub.kslack.api.model.Message
 
 class ConversationsRepliesResponse : SlackApiResponse {
     var isOk: Boolean = false

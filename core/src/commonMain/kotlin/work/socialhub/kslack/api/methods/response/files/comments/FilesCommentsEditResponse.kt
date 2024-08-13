@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.files.comments
+package work.socialhub.kslack.api.methods.response.files.comments
 
-import com.github.seratch.jslack.api.model.FileComment
+import work.socialhub.kslack.api.model.FileComment
 
 class FilesCommentsEditResponse : SlackApiResponse {
     var isOk: Boolean = false

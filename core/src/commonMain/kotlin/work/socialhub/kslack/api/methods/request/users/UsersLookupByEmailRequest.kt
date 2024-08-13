@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersLookupByEmailRequest internal constructor(
+class UsersLookupByEmailRequest(
     /**
      * Authentication token. Requires scope: `users:read.email`
      */
@@ -12,7 +12,7 @@ class UsersLookupByEmailRequest internal constructor(
      */
     var email: String?
 ) : SlackApiRequest {
-    class UsersLookupByEmailRequestBuilder internal constructor() {
+    class UsersLookupByEmailRequestBuilder() {
         private var token: String? = null
         private var email: String? = null
 

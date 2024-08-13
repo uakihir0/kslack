@@ -14,7 +14,7 @@ class DialogOption {
 
     constructor()
 
-    class DialogOptionBuilder internal constructor() {
+    class DialogOptionBuilder() {
         private var label: String? = null
         private var value: String? = null
 

@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.view
 
-import com.github.seratch.jslack.api.model.ModelConfigurator
+import work.socialhub.kslack.api.model.ModelConfigurator
 
 object Views {
     fun view(configurator: ModelConfigurator<View.ViewBuilder?>): View {

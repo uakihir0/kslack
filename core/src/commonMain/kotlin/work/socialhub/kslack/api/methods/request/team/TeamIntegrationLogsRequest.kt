@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.team
+package work.socialhub.kslack.api.methods.request.team
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class TeamIntegrationLogsRequest internal constructor(
+class TeamIntegrationLogsRequest(
     /**
      * Authentication token. Requires scope: `admin`
      */
@@ -24,7 +24,7 @@ class TeamIntegrationLogsRequest internal constructor(
      */
     var changeType: String?, var count: Int?, var page: Int?
 ) : SlackApiRequest {
-    class TeamIntegrationLogsRequestBuilder internal constructor() {
+    class TeamIntegrationLogsRequestBuilder() {
         private var token: String? = null
         private var serviceId: String? = null
         private var user: String? = null

@@ -1,9 +1,9 @@
-package com.github.seratch.jslack.api.methods.request.groups
+package work.socialhub.kslack.api.methods.request.groups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class GroupsCloseRequest internal constructor(override var token: String?, var channel: String?) : SlackApiRequest {
-    class GroupsCloseRequestBuilder internal constructor() {
+class GroupsCloseRequest(override var token: String?, var channel: String?) : SlackApiRequest {
+    class GroupsCloseRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
 

@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.usergroups
+package work.socialhub.kslack.api.methods.request.usergroups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsergroupsDisableRequest internal constructor(
+class UsergroupsDisableRequest(
     /**
      * Authentication token. Requires scope: `usergroups:write`
      */
@@ -16,7 +16,7 @@ class UsergroupsDisableRequest internal constructor(
      */
     var isIncludeCount: Boolean
 ) : SlackApiRequest {
-    class UsergroupsDisableRequestBuilder internal constructor() {
+    class UsergroupsDisableRequestBuilder() {
         private var token: String? = null
         private var usergroup: String? = null
         private var includeCount = false

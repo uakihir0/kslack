@@ -91,7 +91,7 @@ class Action {
 
         constructor()
 
-        class OptionGroupBuilder internal constructor() {
+        class OptionGroupBuilder() {
             private var text: String? = null
             private var options: Array<Option>? = null
 
@@ -132,7 +132,7 @@ class Action {
 
         constructor()
 
-        class OptionBuilder internal constructor() {
+        class OptionBuilder() {
             private var text: String? = null
             private var value: String? = null
 
@@ -162,7 +162,7 @@ class Action {
         }
     }
 
-    class ActionBuilder internal constructor() {
+    class ActionBuilder() {
         private var id: String? = null
         private var name: String? = null
         private var text: String? = null

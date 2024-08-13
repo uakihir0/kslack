@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.mpim
+package work.socialhub.kslack.api.methods.request.mpim
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class MpimMarkRequest internal constructor(
+class MpimMarkRequest(
     /**
      * Authentication token. Requires scope: `mpim:write`
      */
@@ -16,7 +16,7 @@ class MpimMarkRequest internal constructor(
      */
     var ts: String?
 ) : SlackApiRequest {
-    class MpimMarkRequestBuilder internal constructor() {
+    class MpimMarkRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var ts: String? = null

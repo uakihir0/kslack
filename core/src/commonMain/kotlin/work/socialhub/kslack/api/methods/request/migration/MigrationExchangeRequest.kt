@@ -1,11 +1,11 @@
-package com.github.seratch.jslack.api.methods.request.migration
+package work.socialhub.kslack.api.methods.request.migration
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * For Enterprise Grid workspaces, map local user IDs to global user IDs
  */
-class MigrationExchangeRequest internal constructor(
+class MigrationExchangeRequest(
     /**
      * Authentication token. Requires scope: `tokens.basic`
      */
@@ -19,7 +19,7 @@ class MigrationExchangeRequest internal constructor(
      */
     var users: Array<String>?
 ) : SlackApiRequest {
-    class MigrationExchangeRequestBuilder internal constructor() {
+    class MigrationExchangeRequestBuilder() {
         private var token: String? = null
         private var toOld = false
         private var users: Array<String>? = null

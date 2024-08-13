@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersSetPresenceRequest internal constructor(
+class UsersSetPresenceRequest(
     /**
      * Authentication token. Requires scope: `users:write`
      */
@@ -12,7 +12,7 @@ class UsersSetPresenceRequest internal constructor(
      */
     var presence: String?
 ) : SlackApiRequest {
-    class UsersSetPresenceRequestBuilder internal constructor() {
+    class UsersSetPresenceRequestBuilder() {
         private var token: String? = null
         private var presence: String? = null
 

@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.methods.response.im
+package work.socialhub.kslack.api.methods.response.im
 
 class ImRepliesResponse : SlackApiResponse {
     var isOk: Boolean = false

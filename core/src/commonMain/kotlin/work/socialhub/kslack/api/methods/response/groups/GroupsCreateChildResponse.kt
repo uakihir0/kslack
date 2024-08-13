@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.groups
+package work.socialhub.kslack.api.methods.response.groups
 
-import com.github.seratch.jslack.api.model.Group
+import work.socialhub.kslack.api.model.Group
 
 class GroupsCreateChildResponse : SlackApiResponse {
     var isOk: Boolean = false

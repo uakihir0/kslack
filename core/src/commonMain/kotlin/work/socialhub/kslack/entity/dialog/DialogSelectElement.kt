@@ -78,7 +78,7 @@ class DialogSelectElement : DialogElement {
         this.options = options
     }
 
-    class DialogSelectElementBuilder internal constructor() {
+    class DialogSelectElementBuilder() {
         private var label: String? = null
         private var name: String? = null
         private var value: String? = null

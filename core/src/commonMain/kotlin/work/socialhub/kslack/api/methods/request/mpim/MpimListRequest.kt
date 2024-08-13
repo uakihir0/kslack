@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.mpim
+package work.socialhub.kslack.api.methods.request.mpim
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class MpimListRequest internal constructor(
+class MpimListRequest(
     /**
      * Authentication token. Requires scope: `mpim:read`
      */
@@ -19,7 +19,7 @@ class MpimListRequest internal constructor(
      */
     var limit: Int?, var getLatest: Boolean?
 ) : SlackApiRequest {
-    class MpimListRequestBuilder internal constructor() {
+    class MpimListRequestBuilder() {
         private var token: String? = null
         private var cursor: String? = null
         private var limit: Int? = null

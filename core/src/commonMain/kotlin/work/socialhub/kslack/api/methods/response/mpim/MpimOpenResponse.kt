@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.mpim
+package work.socialhub.kslack.api.methods.response.mpim
 
-import com.github.seratch.jslack.api.model.Group
+import work.socialhub.kslack.api.model.Group
 
 class MpimOpenResponse : SlackApiResponse {
     var isOk: Boolean = false

@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.views
+package work.socialhub.kslack.api.methods.request.views
 
-import com.github.seratch.jslack.api.model.view.View
+import work.socialhub.kslack.api.model.view.View
 
-class ViewsPublishRequest internal constructor(
+class ViewsPublishRequest(
     var token: String?,
     view: View?,
     viewAsString: String?,
@@ -29,7 +29,7 @@ class ViewsPublishRequest internal constructor(
         this.view = view
     }
 
-    class ViewsPublishRequestBuilder internal constructor() {
+    class ViewsPublishRequestBuilder() {
         private var token: String? = null
         private var view: View? = null
         private var viewAsString: String? = null

@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.status.v2.model
+package work.socialhub.kslack.api.status.v2.model
 
 class CurrentStatus {
     var status: String? = null

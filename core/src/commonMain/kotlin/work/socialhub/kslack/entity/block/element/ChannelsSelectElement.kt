@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.block.element
 
-import com.github.seratch.jslack.api.model.block.composition.ConfirmationDialogObject
+import work.socialhub.kslack.api.model.block.composition.ConfirmationDialogObject
 
 /**
  * https://api.slack.com/reference/messaging/block-elements#channels-select
@@ -94,7 +94,7 @@ class ChannelsSelectElement : BlockElement {
         return result
     }
 
-    class ChannelsSelectElementBuilder internal constructor() {
+    class ChannelsSelectElementBuilder() {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null

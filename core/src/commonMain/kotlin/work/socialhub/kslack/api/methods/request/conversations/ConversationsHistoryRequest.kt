@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.conversations
+package work.socialhub.kslack.api.methods.request.conversations
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ConversationsHistoryRequest internal constructor(
+class ConversationsHistoryRequest(
     /**
      * Authentication token. Requires scope: `conversations:history`
      */
@@ -37,7 +37,7 @@ class ConversationsHistoryRequest internal constructor(
      */
     var isInclusive: Boolean
 ) : SlackApiRequest {
-    class ConversationsHistoryRequestBuilder internal constructor() {
+    class ConversationsHistoryRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var cursor: String? = null

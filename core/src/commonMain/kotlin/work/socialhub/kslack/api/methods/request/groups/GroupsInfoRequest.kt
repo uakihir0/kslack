@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.groups
+package work.socialhub.kslack.api.methods.request.groups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class GroupsInfoRequest internal constructor(
+class GroupsInfoRequest(
     /**
      * Authentication token. Requires scope: `groups:read`
      */
@@ -16,7 +16,7 @@ class GroupsInfoRequest internal constructor(
      */
     var isIncludeLocale: Boolean
 ) : SlackApiRequest {
-    class GroupsInfoRequestBuilder internal constructor() {
+    class GroupsInfoRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var includeLocale = false

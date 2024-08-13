@@ -65,7 +65,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class TextBuilder internal constructor() {
+        class TextBuilder() {
             private var text: String? = null
             private var style: TextStyle? = null
 
@@ -108,7 +108,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class ChannelBuilder internal constructor() {
+        class ChannelBuilder() {
             private var channelId: String? = null
             private var style: TextStyle? = null
 
@@ -151,7 +151,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class UserBuilder internal constructor() {
+        class UserBuilder() {
             private var userId: String? = null
             private var style: TextStyle? = null
 
@@ -192,7 +192,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class EmojiBuilder internal constructor() {
+        class EmojiBuilder() {
             private var name: String? = null
 
             fun name(name: String?): EmojiBuilder {
@@ -231,7 +231,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class LinkBuilder internal constructor() {
+        class LinkBuilder() {
             private var url: String? = null
             private var text: String? = null
             private var style: TextStyle? = null
@@ -280,7 +280,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class TeamBuilder internal constructor() {
+        class TeamBuilder() {
             private var teamId: String? = null
             private var style: TextStyle? = null
 
@@ -321,7 +321,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class UserGroupBuilder internal constructor() {
+        class UserGroupBuilder() {
             private var usergroupId: String? = null
 
             fun usergroupId(usergroupId: String?): UserGroupBuilder {
@@ -356,7 +356,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class DateBuilder internal constructor() {
+        class DateBuilder() {
             private var timestamp: String? = null
 
             fun timestamp(timestamp: String?): DateBuilder {
@@ -391,7 +391,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class BroadcastBuilder internal constructor() {
+        class BroadcastBuilder() {
             private var range: String? = null
 
             fun range(range: String?): BroadcastBuilder {
@@ -430,7 +430,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
 
         constructor()
 
-        class TextStyleBuilder internal constructor() {
+        class TextStyleBuilder() {
             private var bold = false
             private var italic = false
             private var strike = false
@@ -466,7 +466,7 @@ class RichTextSectionElement : BlockElement, RichTextElement {
         }
     }
 
-    class RichTextSectionElementBuilder internal constructor() {
+    class RichTextSectionElementBuilder() {
         private var elements: Array<RichTextElement>? = null
 
         fun elements(elements: Array<RichTextElement>?): RichTextSectionElementBuilder {

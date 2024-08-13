@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.block.element
 
-import com.github.seratch.jslack.api.model.block.composition.PlainTextObject
+import work.socialhub.kslack.api.model.block.composition.PlainTextObject
 
 /**
  * https://api.slack.com/reference/block-kit/block-elements#input
@@ -91,7 +91,7 @@ class PlainTextInputElement : BlockElement {
         return result
     }
 
-    class PlainTextInputElementBuilder internal constructor() {
+    class PlainTextInputElementBuilder() {
         private var actionId: String? = null
         private var placeholder: PlainTextObject? = null
         private var initialValue: String? = null

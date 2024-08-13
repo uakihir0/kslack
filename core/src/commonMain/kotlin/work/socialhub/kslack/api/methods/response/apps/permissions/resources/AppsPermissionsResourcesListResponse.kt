@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.apps.permissions.resources
+package work.socialhub.kslack.api.methods.response.apps.permissions.resources
 
-import com.github.seratch.jslack.api.model.ResponseMetadata
+import work.socialhub.kslack.api.model.ResponseMetadata
 
 class AppsPermissionsResourcesListResponse : SlackApiResponse {
     var isOk: Boolean = false

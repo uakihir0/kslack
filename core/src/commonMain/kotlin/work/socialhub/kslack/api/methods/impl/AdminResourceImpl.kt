@@ -1,9 +1,9 @@
 package work.socialhub.kslack.api.methods.impl
 
-import com.github.seratch.jslack.api.methods.response.admin.apps.AdminAppsApproveResponse
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
+import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsApproveResponse
 import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsRestrictResponse
 
 class AdminResourceImpl : AbstractResourceImpl() {

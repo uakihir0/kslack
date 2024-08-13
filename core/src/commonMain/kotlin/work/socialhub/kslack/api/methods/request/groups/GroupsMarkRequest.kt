@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.groups
+package work.socialhub.kslack.api.methods.request.groups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class GroupsMarkRequest internal constructor(
+class GroupsMarkRequest(
     /**
      * Authentication token. Requires scope: `groups:write`
      */
@@ -16,7 +16,7 @@ class GroupsMarkRequest internal constructor(
      */
     var ts: String?
 ) : SlackApiRequest {
-    class GroupsMarkRequestBuilder internal constructor() {
+    class GroupsMarkRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var ts: String? = null

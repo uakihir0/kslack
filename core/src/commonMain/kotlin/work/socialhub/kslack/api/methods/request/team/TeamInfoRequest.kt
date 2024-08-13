@@ -1,14 +1,14 @@
-package com.github.seratch.jslack.api.methods.request.team
+package work.socialhub.kslack.api.methods.request.team
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class TeamInfoRequest internal constructor(
+class TeamInfoRequest(
     /**
      * Authentication token. Requires scope: `team:read`
      */
     override var token: String?
 ) : SlackApiRequest {
-    class TeamInfoRequestBuilder internal constructor() {
+    class TeamInfoRequestBuilder() {
         private var token: String? = null
 
         fun token(token: String?): TeamInfoRequestBuilder {

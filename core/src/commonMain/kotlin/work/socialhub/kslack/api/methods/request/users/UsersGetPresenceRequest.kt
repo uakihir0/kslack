@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersGetPresenceRequest internal constructor(
+class UsersGetPresenceRequest(
     /**
      * Authentication token. Requires scope: `users:read`
      */
@@ -12,7 +12,7 @@ class UsersGetPresenceRequest internal constructor(
      */
     var user: String?
 ) : SlackApiRequest {
-    class UsersGetPresenceRequestBuilder internal constructor() {
+    class UsersGetPresenceRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
 

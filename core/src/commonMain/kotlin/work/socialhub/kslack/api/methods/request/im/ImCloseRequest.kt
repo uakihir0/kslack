@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.im
+package work.socialhub.kslack.api.methods.request.im
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ImCloseRequest internal constructor(
+class ImCloseRequest(
     /**
      * Authentication token. Requires scope: `im:write`
      */
@@ -12,7 +12,7 @@ class ImCloseRequest internal constructor(
      */
     var channel: String?
 ) : SlackApiRequest {
-    class ImCloseRequestBuilder internal constructor() {
+    class ImCloseRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
 

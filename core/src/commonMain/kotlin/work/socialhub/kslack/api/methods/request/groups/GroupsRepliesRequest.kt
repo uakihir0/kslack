@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.groups
+package work.socialhub.kslack.api.methods.request.groups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class GroupsRepliesRequest internal constructor(
+class GroupsRepliesRequest(
     /**
      * Authentication token. Requires scope: `groups:history`
      */
@@ -16,7 +16,7 @@ class GroupsRepliesRequest internal constructor(
      */
     var threadTs: String?
 ) : SlackApiRequest {
-    class GroupsRepliesRequestBuilder internal constructor() {
+    class GroupsRepliesRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var threadTs: String? = null

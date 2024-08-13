@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.reminders
+package work.socialhub.kslack.api.methods.request.reminders
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class RemindersInfoRequest internal constructor(
+class RemindersInfoRequest(
     /**
      * Authentication token. Requires scope: `reminders:read`
      */
@@ -12,7 +12,7 @@ class RemindersInfoRequest internal constructor(
      */
     var reminder: String?
 ) : SlackApiRequest {
-    class RemindersInfoRequestBuilder internal constructor() {
+    class RemindersInfoRequestBuilder() {
         private var token: String? = null
         private var reminder: String? = null
 

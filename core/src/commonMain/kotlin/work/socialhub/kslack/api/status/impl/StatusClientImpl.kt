@@ -1,10 +1,10 @@
-package com.github.seratch.jslack.api.status.v2.impl
+package work.socialhub.kslack.api.status.v2.impl
 
-import com.github.seratch.jslack.api.status.v2.StatusApiException
-import com.github.seratch.jslack.api.status.v2.StatusClient
-import com.github.seratch.jslack.api.status.v2.model.CurrentStatus
-import com.github.seratch.jslack.api.status.v2.model.SlackIssue
-import com.github.seratch.jslack.common.http.SlackHttpClient
+import work.socialhub.kslack.api.status.v2.StatusApiException
+import work.socialhub.kslack.api.status.v2.StatusClient
+import work.socialhub.kslack.api.status.v2.model.CurrentStatus
+import work.socialhub.kslack.api.status.v2.model.SlackIssue
+import work.socialhub.kslack.common.http.SlackHttpClient
 
 class StatusClientImpl(slackHttpClient: SlackHttpClient) : StatusClient {
     var endpointUrlPrefix: String = ENDPOINT_URL_PREFIX

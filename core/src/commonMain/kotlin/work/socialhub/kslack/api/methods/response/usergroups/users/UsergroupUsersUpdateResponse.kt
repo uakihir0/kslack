@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.usergroups.users
+package work.socialhub.kslack.api.methods.response.usergroups.users
 
-import com.github.seratch.jslack.api.model.Usergroup
+import work.socialhub.kslack.api.model.Usergroup
 
 class UsergroupUsersUpdateResponse : SlackApiResponse {
     var isOk: Boolean = false

@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.block.element
 
-import com.github.seratch.jslack.api.model.block.composition.ConfirmationDialogObject
+import work.socialhub.kslack.api.model.block.composition.ConfirmationDialogObject
 
 /**
  * https://api.slack.com/reference/block-kit/block-elements#multi_select
@@ -103,7 +103,7 @@ class MultiUsersSelectElement : BlockElement {
         return result
     }
 
-    class MultiUsersSelectElementBuilder internal constructor() {
+    class MultiUsersSelectElementBuilder() {
         private var fallback: String? = null
         private var placeholder: PlainTextObject? = null
         private var actionId: String? = null

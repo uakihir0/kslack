@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.github.seratch.jslack.api.model.User
+import work.socialhub.kslack.api.model.User
 
 /**
  * The team_join event is sent to all connections for a workspace when a new member joins.

@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.conversations
+package work.socialhub.kslack.api.methods.request.conversations
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ConversationsCreateRequest internal constructor(
+class ConversationsCreateRequest(
     /**
      * Authentication token. Requires scope: `conversations:write`
      */
@@ -16,7 +16,7 @@ class ConversationsCreateRequest internal constructor(
      */
     var isPrivate: Boolean
 ) : SlackApiRequest {
-    class ConversationsCreateRequestBuilder internal constructor() {
+    class ConversationsCreateRequestBuilder() {
         private var token: String? = null
         private var name: String? = null
         private var isPrivate = false

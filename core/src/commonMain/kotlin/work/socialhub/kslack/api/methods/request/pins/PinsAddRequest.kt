@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.pins
+package work.socialhub.kslack.api.methods.request.pins
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class PinsAddRequest internal constructor(
+class PinsAddRequest(
     /**
      * Authentication token. Requires scope: `pins:write`
      */
@@ -24,7 +24,7 @@ class PinsAddRequest internal constructor(
      */
     var timestamp: String?
 ) : SlackApiRequest {
-    class PinsAddRequestBuilder internal constructor() {
+    class PinsAddRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var file: String? = null

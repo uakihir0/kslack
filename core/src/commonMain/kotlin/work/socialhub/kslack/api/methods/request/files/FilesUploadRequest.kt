@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.files
+package work.socialhub.kslack.api.methods.request.files
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class FilesUploadRequest internal constructor(
+class FilesUploadRequest(
     /**
      * Authentication token. Requires scope: `files:write:user`
      */
@@ -86,7 +86,7 @@ class FilesUploadRequest internal constructor(
         this.filestream = filestream
     }
 
-    class FilesUploadRequestBuilder internal constructor() {
+    class FilesUploadRequestBuilder() {
         private var token: String? = null
         private var file: java.io.File? = null
         private var filestream: java.io.InputStream? = null

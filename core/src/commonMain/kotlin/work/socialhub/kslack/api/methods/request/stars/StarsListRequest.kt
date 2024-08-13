@@ -1,14 +1,14 @@
-package com.github.seratch.jslack.api.methods.request.stars
+package work.socialhub.kslack.api.methods.request.stars
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class StarsListRequest internal constructor(
+class StarsListRequest(
     /**
      * Authentication token. Requires scope: `stars:read`
      */
     override var token: String?, var count: Int?, var page: Int?
 ) : SlackApiRequest {
-    class StarsListRequestBuilder internal constructor() {
+    class StarsListRequestBuilder() {
         private var token: String? = null
         private var count: Int? = null
         private var page: Int? = null

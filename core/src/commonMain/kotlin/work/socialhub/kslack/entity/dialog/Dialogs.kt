@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.dialog
 
-import com.github.seratch.jslack.api.model.ModelConfigurator
+import work.socialhub.kslack.api.model.ModelConfigurator
 
 object Dialogs {
     fun asElements(vararg elements: DialogElement?): Array<DialogElement> {

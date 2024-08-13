@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.team
+package work.socialhub.kslack.api.methods.request.team
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class TeamBillableInfoRequest internal constructor(
+class TeamBillableInfoRequest(
     /**
      * Authentication token. Requires scope: `admin`
      */
@@ -12,7 +12,7 @@ class TeamBillableInfoRequest internal constructor(
      */
     var user: String?
 ) : SlackApiRequest {
-    class TeamBillableInfoRequestBuilder internal constructor() {
+    class TeamBillableInfoRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
 

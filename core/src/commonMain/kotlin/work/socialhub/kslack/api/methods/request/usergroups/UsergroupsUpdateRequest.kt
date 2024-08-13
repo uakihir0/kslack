@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.usergroups
+package work.socialhub.kslack.api.methods.request.usergroups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsergroupsUpdateRequest internal constructor(
+class UsergroupsUpdateRequest(
     /**
      * Authentication token. Requires scope: `usergroups:write`
      */
@@ -32,7 +32,7 @@ class UsergroupsUpdateRequest internal constructor(
      */
     var isIncludeCount: Boolean
 ) : SlackApiRequest {
-    class UsergroupsUpdateRequestBuilder internal constructor() {
+    class UsergroupsUpdateRequestBuilder() {
         private var token: String? = null
         private var usergroup: String? = null
         private var name: String? = null

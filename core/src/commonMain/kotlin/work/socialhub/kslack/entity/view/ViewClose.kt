@@ -13,7 +13,7 @@ class ViewClose {
 
     constructor()
 
-    class ViewCloseBuilder internal constructor() {
+    class ViewCloseBuilder() {
         private var type: String? = null
         private var text: String? = null
         private var emoji = false

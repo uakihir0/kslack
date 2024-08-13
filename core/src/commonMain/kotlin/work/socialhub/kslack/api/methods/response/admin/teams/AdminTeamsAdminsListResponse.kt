@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.admin.teams
+package work.socialhub.kslack.api.methods.response.admin.teams
 
-import com.github.seratch.jslack.api.model.ResponseMetadata
+import work.socialhub.kslack.api.model.ResponseMetadata
 
 class AdminTeamsAdminsListResponse : SlackApiResponse {
     var isOk: Boolean = false

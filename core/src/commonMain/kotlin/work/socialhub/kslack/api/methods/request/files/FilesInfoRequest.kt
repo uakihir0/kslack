@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.files
+package work.socialhub.kslack.api.methods.request.files
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class FilesInfoRequest internal constructor(
+class FilesInfoRequest(
     /**
      * Authentication token. Requires scope: `files:read`
      */
@@ -12,7 +12,7 @@ class FilesInfoRequest internal constructor(
      */
     var file: String?, var count: Int?, var page: Int?
 ) : SlackApiRequest {
-    class FilesInfoRequestBuilder internal constructor() {
+    class FilesInfoRequestBuilder() {
         private var token: String? = null
         private var file: String? = null
         private var count: Int? = null

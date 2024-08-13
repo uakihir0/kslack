@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.team
+package work.socialhub.kslack.api.methods.response.team
 
-import com.github.seratch.jslack.api.model.BillableInfo
+import work.socialhub.kslack.api.model.BillableInfo
 
 class TeamBillableInfoResponse : SlackApiResponse {
     var isOk: Boolean = false

@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.stars
+package work.socialhub.kslack.api.methods.response.stars
 
-import com.github.seratch.jslack.api.model.Attachment
+import work.socialhub.kslack.api.model.Attachment
 
 class StarsListResponse : SlackApiResponse {
     var isOk: Boolean = false

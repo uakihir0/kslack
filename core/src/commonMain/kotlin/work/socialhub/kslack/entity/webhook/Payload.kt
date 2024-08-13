@@ -1,7 +1,7 @@
-package com.github.seratch.jslack.api.webhook
+package work.socialhub.kslack.api.webhook
 
-import com.github.seratch.jslack.api.model.Attachment
-import com.github.seratch.jslack.api.model.block.LayoutBlock
+import work.socialhub.kslack.api.model.Attachment
+import work.socialhub.kslack.api.model.block.LayoutBlock
 
 /**
  * https://api.slack.com/incoming-webhooks
@@ -9,7 +9,7 @@ import com.github.seratch.jslack.api.model.block.LayoutBlock
  *
  * Implementation of [RTMMessage Payloads](https://api.slack.com/reference/messaging/payload)
  */
-class Payload internal constructor(
+class Payload(
     /**
      * You can add the thread_ts parameter to your POST request
      * in order to make your message appear as a reply in a thread.
@@ -96,7 +96,7 @@ class Payload internal constructor(
         this.attachments = attachments
     }
 
-    class PayloadBuilder internal constructor() {
+    class PayloadBuilder() {
         private var threadTs: String? = null
         private var text: String? = null
         private var channel: String? = null

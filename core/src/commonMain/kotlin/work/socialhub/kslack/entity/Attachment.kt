@@ -1,8 +1,8 @@
 package work.socialhub.kslack.entity
 
-import com.github.seratch.jslack.api.model.block.LayoutBlock
 import kotlinx.serialization.Serializable
 import work.socialhub.kmastodon.entity.Attachment
+import work.socialhub.kslack.api.model.block.LayoutBlock
 import kotlin.js.JsExport
 
 /**
@@ -410,7 +410,7 @@ class Attachment {
 
         constructor()
 
-        class AttachmentMetadataBuilder internal constructor() {
+        class AttachmentMetadataBuilder() {
             private var thumb64: Boolean? = null
             private var thumb80: Boolean? = null
             private var thumb160: Boolean? = null
@@ -506,7 +506,7 @@ class Attachment {
         }
     }
 
-    class AttachmentBuilder internal constructor() {
+    class AttachmentBuilder() {
         private var msgSubtype: String? = null
         private var fallback: String? = null
         private var callbackId: String? = null

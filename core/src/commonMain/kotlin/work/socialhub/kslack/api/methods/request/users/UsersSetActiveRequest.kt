@@ -1,14 +1,14 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersSetActiveRequest internal constructor(
+class UsersSetActiveRequest(
     /**
      * Authentication token. Requires scope: `users:write`
      */
     override var token: String?
 ) : SlackApiRequest {
-    class UsersSetActiveRequestBuilder internal constructor() {
+    class UsersSetActiveRequestBuilder() {
         private var token: String? = null
 
         fun token(token: String?): UsersSetActiveRequestBuilder {

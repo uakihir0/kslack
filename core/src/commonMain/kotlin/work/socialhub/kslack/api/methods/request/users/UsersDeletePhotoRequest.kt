@@ -1,17 +1,17 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * Delete the user profile photo
  */
-class UsersDeletePhotoRequest internal constructor(
+class UsersDeletePhotoRequest(
     /**
      * Authentication token. Requires scope: `users.profile:write`
      */
     override var token: String?
 ) : SlackApiRequest {
-    class UsersDeletePhotoRequestBuilder internal constructor() {
+    class UsersDeletePhotoRequestBuilder() {
         private var token: String? = null
 
         fun token(token: String?): UsersDeletePhotoRequestBuilder {

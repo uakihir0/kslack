@@ -1,7 +1,7 @@
 package work.socialhub.kslack.entity.search
 
-import com.github.seratch.jslack.api.model.block.LayoutBlock
 import work.socialhub.kmastodon.entity.Attachment
+import work.socialhub.kslack.api.model.block.LayoutBlock
 import work.socialhub.kslack.entity.Channel
 import work.socialhub.kslack.entity.file.File
 

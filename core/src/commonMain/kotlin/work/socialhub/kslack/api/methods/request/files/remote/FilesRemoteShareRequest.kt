@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.files.remote
+package work.socialhub.kslack.api.methods.request.files.remote
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class FilesRemoteShareRequest internal constructor(
+class FilesRemoteShareRequest(
     /**
      * Authentication token. Requires scope: `remote_files:write`
      */
@@ -20,7 +20,7 @@ class FilesRemoteShareRequest internal constructor(
      */
     var channels: Array<String>?
 ) : SlackApiRequest {
-    class FilesRemoteShareRequestBuilder internal constructor() {
+    class FilesRemoteShareRequestBuilder() {
         private var token: String? = null
         private var externalId: String? = null
         private var file: String? = null

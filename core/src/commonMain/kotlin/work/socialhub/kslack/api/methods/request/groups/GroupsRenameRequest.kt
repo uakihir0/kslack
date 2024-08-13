@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.groups
+package work.socialhub.kslack.api.methods.request.groups
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class GroupsRenameRequest internal constructor(
+class GroupsRenameRequest(
     /**
      * Authentication token. Requires scope: `groups:write`
      */
@@ -20,7 +20,7 @@ class GroupsRenameRequest internal constructor(
      */
     var isValidate: Boolean
 ) : SlackApiRequest {
-    class GroupsRenameRequestBuilder internal constructor() {
+    class GroupsRenameRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var name: String? = null

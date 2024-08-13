@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.dialog
+package work.socialhub.kslack.api.methods.response.dialog
 
-import com.github.seratch.jslack.api.model.dialog.DialogResponseMetadata
+import work.socialhub.kslack.api.model.dialog.DialogResponseMetadata
 
 class DialogOpenResponse : SlackApiResponse {
     var isOk: Boolean = false

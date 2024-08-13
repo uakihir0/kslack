@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.search
+package work.socialhub.kslack.api.methods.response.search
 
-import com.github.seratch.jslack.api.model.SearchResult
+import work.socialhub.kslack.api.model.SearchResult
 
 class SearchFilesResponse : SlackApiResponse {
     var isOk: Boolean = false

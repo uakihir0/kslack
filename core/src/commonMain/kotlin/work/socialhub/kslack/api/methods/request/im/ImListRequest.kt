@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.im
+package work.socialhub.kslack.api.methods.request.im
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ImListRequest internal constructor(
+class ImListRequest(
     /**
      * Authentication token. Requires scope: `im:read`
      */
@@ -19,7 +19,7 @@ class ImListRequest internal constructor(
      */
     var limit: Int?, var getLatest: Boolean?
 ) : SlackApiRequest {
-    class ImListRequestBuilder internal constructor() {
+    class ImListRequestBuilder() {
         private var token: String? = null
         private var cursor: String? = null
         private var limit: Int? = null

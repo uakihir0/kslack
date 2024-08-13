@@ -1,11 +1,11 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
-import com.github.seratch.jslack.api.model.ConversationType
+import work.socialhub.kslack.api.model.ConversationType
 
 /**
  * List conversations the calling user may access.
  */
-class UsersConversationsRequest internal constructor(
+class UsersConversationsRequest(
     /**
      * Authentication token. Requires scope: `conversations:read`
      */
@@ -49,7 +49,7 @@ class UsersConversationsRequest internal constructor(
         this.types = types
     }
 
-    class UsersConversationsRequestBuilder internal constructor() {
+    class UsersConversationsRequestBuilder() {
         private var token: String? = null
         private var user: String? = null
         private var cursor: String? = null

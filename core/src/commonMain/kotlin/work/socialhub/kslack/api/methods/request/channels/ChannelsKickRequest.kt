@@ -2,7 +2,7 @@ package work.socialhub.kslack.api.methods.request.channels
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ChannelsKickRequest internal constructor(
+class ChannelsKickRequest(
     /**
      * Authentication token. Requires scope: `channels:write`
      */
@@ -16,7 +16,7 @@ class ChannelsKickRequest internal constructor(
      */
     var user: String?
 ) : SlackApiRequest {
-    class ChannelsKickRequestBuilder internal constructor() {
+    class ChannelsKickRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var user: String? = null

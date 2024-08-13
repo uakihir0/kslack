@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.bots
+package work.socialhub.kslack.api.methods.response.bots
 
-import com.github.seratch.jslack.api.model.BotIcons
+import work.socialhub.kslack.api.model.BotIcons
 
 class BotsInfoResponse : SlackApiResponse {
     class Bot {

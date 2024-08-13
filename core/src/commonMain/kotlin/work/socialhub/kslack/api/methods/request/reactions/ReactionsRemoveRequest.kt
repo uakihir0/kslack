@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.reactions
+package work.socialhub.kslack.api.methods.request.reactions
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ReactionsRemoveRequest internal constructor(
+class ReactionsRemoveRequest(
     /**
      * Authentication token. Requires scope: `reactions:write`
      */
@@ -28,7 +28,7 @@ class ReactionsRemoveRequest internal constructor(
      */
     var timestamp: String?
 ) : SlackApiRequest {
-    class ReactionsRemoveRequestBuilder internal constructor() {
+    class ReactionsRemoveRequestBuilder() {
         private var token: String? = null
         private var name: String? = null
         private var file: String? = null

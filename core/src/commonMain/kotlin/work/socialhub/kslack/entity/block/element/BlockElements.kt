@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.block.element
 
-import com.github.seratch.jslack.api.model.ModelConfigurator
+import work.socialhub.kslack.api.model.ModelConfigurator
 
 object BlockElements {
     fun asElements(vararg elements: BlockElement?): Array<BlockElement> {

@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.github.seratch.jslack.api.model.Attachment
+import work.socialhub.kslack.api.model.Attachment
 
 /**
  * When an item is starred, the star_added event is sent to all connected clients for the authenticated user who starred the item.

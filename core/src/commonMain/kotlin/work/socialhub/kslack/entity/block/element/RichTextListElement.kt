@@ -64,7 +64,7 @@ class RichTextListElement : BlockElement, RichTextElement {
         return result
     }
 
-    class RichTextListElementBuilder internal constructor() {
+    class RichTextListElementBuilder() {
         private var elements: Array<RichTextElement>? = null
         private var style: String? = null
         private var indent: Int? = null

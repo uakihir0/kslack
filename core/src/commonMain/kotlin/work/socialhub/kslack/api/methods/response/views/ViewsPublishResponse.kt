@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.views
+package work.socialhub.kslack.api.methods.response.views
 
-import com.github.seratch.jslack.api.model.view.View
+import work.socialhub.kslack.api.model.view.View
 
 class ViewsPublishResponse : SlackApiResponse {
     var isOk: Boolean = false

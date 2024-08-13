@@ -50,7 +50,7 @@ class RichTextQuoteElement : BlockElement, RichTextElement {
         return result
     }
 
-    class RichTextQuoteElementBuilder internal constructor() {
+    class RichTextQuoteElementBuilder() {
         private var elements: Array<RichTextElement>? = null
 
         fun elements(elements: Array<RichTextElement>?): RichTextQuoteElementBuilder {

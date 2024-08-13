@@ -1,11 +1,11 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
  * Set the user profile photo
  */
-class UsersSetPhotoRequest internal constructor(
+class UsersSetPhotoRequest(
     /**
      * Authentication token. Requires scope: `users.profile:write`
      */
@@ -48,7 +48,7 @@ class UsersSetPhotoRequest internal constructor(
         this.image = image
     }
 
-    class UsersSetPhotoRequestBuilder internal constructor() {
+    class UsersSetPhotoRequestBuilder() {
         private var token: String? = null
         private var image: java.io.File? = null
         private var imageData: ByteArray

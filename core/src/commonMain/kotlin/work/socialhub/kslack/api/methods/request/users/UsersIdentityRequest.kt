@@ -1,14 +1,14 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersIdentityRequest internal constructor(
+class UsersIdentityRequest(
     /**
      * Authentication token. Requires scope: `identity.basic`
      */
     override var token: String?
 ) : SlackApiRequest {
-    class UsersIdentityRequestBuilder internal constructor() {
+    class UsersIdentityRequestBuilder() {
         private var token: String? = null
 
         fun token(token: String?): UsersIdentityRequestBuilder {

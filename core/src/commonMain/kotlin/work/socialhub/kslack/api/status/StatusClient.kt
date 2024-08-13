@@ -1,7 +1,7 @@
-package com.github.seratch.jslack.api.status.v2
+package work.socialhub.kslack.api.status.v2
 
-import com.github.seratch.jslack.api.status.v2.model.CurrentStatus
-import com.github.seratch.jslack.api.status.v2.model.SlackIssue
+import work.socialhub.kslack.api.status.v2.model.CurrentStatus
+import work.socialhub.kslack.api.status.v2.model.SlackIssue
 
 /**
  * https://api.slack.com/docs/slack-status

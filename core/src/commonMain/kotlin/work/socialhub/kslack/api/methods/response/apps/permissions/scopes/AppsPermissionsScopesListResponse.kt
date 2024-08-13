@@ -1,4 +1,4 @@
-package com.github.seratch.jslack.api.methods.response.apps.permissions.scopes
+package work.socialhub.kslack.api.methods.response.apps.permissions.scopes
 
 import work.socialhub.kslack.api.methods.SlackApiResponse
 

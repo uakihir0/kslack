@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.stars
+package work.socialhub.kslack.api.methods.request.stars
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class StarsAddRequest internal constructor(
+class StarsAddRequest(
     /**
      * Authentication token. Requires scope: `stars:write`
      */
@@ -24,7 +24,7 @@ class StarsAddRequest internal constructor(
      */
     var timestamp: String?
 ) : SlackApiRequest {
-    class StarsAddRequestBuilder internal constructor() {
+    class StarsAddRequestBuilder() {
         private var token: String? = null
         private var file: String? = null
         private var fileComment: String? = null

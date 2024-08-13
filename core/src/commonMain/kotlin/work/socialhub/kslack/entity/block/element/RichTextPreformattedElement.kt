@@ -50,7 +50,7 @@ class RichTextPreformattedElement : BlockElement, RichTextElement {
         return result
     }
 
-    class RichTextPreformattedElementBuilder internal constructor() {
+    class RichTextPreformattedElementBuilder() {
         private var elements: Array<RichTextElement>? = null
 
         fun elements(elements: Array<RichTextElement>?): RichTextPreformattedElementBuilder {

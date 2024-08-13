@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.im
+package work.socialhub.kslack.api.methods.request.im
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ImRepliesRequest internal constructor(
+class ImRepliesRequest(
     /**
      * Authentication token. Requires scope: `im:history`
      */
@@ -16,7 +16,7 @@ class ImRepliesRequest internal constructor(
      */
     var threadTs: String?
 ) : SlackApiRequest {
-    class ImRepliesRequestBuilder internal constructor() {
+    class ImRepliesRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var threadTs: String? = null

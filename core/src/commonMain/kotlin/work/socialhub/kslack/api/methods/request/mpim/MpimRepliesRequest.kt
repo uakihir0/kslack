@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.mpim
+package work.socialhub.kslack.api.methods.request.mpim
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class MpimRepliesRequest internal constructor(
+class MpimRepliesRequest(
     /**
      * Authentication token. Requires scope: `mpim:history`
      */
@@ -16,7 +16,7 @@ class MpimRepliesRequest internal constructor(
      */
     var threadTs: String?
 ) : SlackApiRequest {
-    class MpimRepliesRequestBuilder internal constructor() {
+    class MpimRepliesRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var threadTs: String? = null

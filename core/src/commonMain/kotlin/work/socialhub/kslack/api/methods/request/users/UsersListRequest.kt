@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.users
+package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class UsersListRequest internal constructor(
+class UsersListRequest(
     /**
      * Authentication token. Requires scope: `users:read`
      */
@@ -28,7 +28,7 @@ class UsersListRequest internal constructor(
      */
     :Deprecated("") @set:Deprecated("") @get:Deprecated("") var isPresence: Boolean
 ) : SlackApiRequest {
-    class UsersListRequestBuilder internal constructor() {
+    class UsersListRequestBuilder() {
         private var token: String? = null
         private var cursor: String? = null
         private var limit: Int? = null

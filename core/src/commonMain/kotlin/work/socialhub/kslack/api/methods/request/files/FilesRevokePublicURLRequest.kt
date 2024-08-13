@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.files
+package work.socialhub.kslack.api.methods.request.files
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class FilesRevokePublicURLRequest internal constructor(
+class FilesRevokePublicURLRequest(
     /**
      * Authentication token. Requires scope: `files:write:user`
      */
@@ -12,7 +12,7 @@ class FilesRevokePublicURLRequest internal constructor(
      */
     var file: String?
 ) : SlackApiRequest {
-    class FilesRevokePublicURLRequestBuilder internal constructor() {
+    class FilesRevokePublicURLRequestBuilder() {
         private var token: String? = null
         private var file: String? = null
 

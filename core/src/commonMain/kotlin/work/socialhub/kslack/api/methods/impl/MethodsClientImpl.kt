@@ -1,7 +1,7 @@
-package com.github.seratch.jslack.api.methods.impl
+package work.socialhub.kslack.api.methods.impl
 
-import com.github.seratch.jslack.api.RequestConfigurator
-import com.github.seratch.jslack.api.methods.FormBody
+import work.socialhub.kslack.api.RequestConfigurator
+import work.socialhub.kslack.api.methods.FormBody
 import work.socialhub.kslack.api.methods.Methods
 
 class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : MethodsClient {

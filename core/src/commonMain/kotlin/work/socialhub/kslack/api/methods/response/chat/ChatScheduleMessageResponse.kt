@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.methods.response.chat
+package work.socialhub.kslack.api.methods.response.chat
 
-import com.github.seratch.jslack.api.model.Attachment
+import work.socialhub.kslack.api.model.Attachment
 
 class ChatScheduleMessageResponse : SlackApiResponse {
     var isOk: Boolean = false

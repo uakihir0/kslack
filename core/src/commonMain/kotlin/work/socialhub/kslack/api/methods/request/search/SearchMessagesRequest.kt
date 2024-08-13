@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.search
+package work.socialhub.kslack.api.methods.request.search
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class SearchMessagesRequest internal constructor(
+class SearchMessagesRequest(
     /**
      * Authentication token. Requires scope: `search:read`
      */
@@ -24,7 +24,7 @@ class SearchMessagesRequest internal constructor(
      */
     var isHighlight: Boolean, var count: Int?, var page: Int?
 ) : SlackApiRequest {
-    class SearchMessagesRequestBuilder internal constructor() {
+    class SearchMessagesRequestBuilder() {
         private var token: String? = null
         private var sortDir: String? = null
         private var query: String? = null

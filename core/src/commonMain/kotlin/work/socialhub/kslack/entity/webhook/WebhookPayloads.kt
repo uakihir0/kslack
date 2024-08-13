@@ -1,6 +1,6 @@
-package com.github.seratch.jslack.api.webhook
+package work.socialhub.kslack.api.webhook
 
-import com.github.seratch.jslack.api.model.ModelConfigurator
+import work.socialhub.kslack.api.model.ModelConfigurator
 
 object WebhookPayloads {
     fun payload(configurator: ModelConfigurator<Payload.PayloadBuilder?>): Payload {

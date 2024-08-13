@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.files
+package work.socialhub.kslack.api.methods.request.files
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class FilesDeleteRequest internal constructor(
+class FilesDeleteRequest(
     /**
      * Authentication token. Requires scope: `files:write:user`
      */
@@ -12,7 +12,7 @@ class FilesDeleteRequest internal constructor(
      */
     var file: String?
 ) : SlackApiRequest {
-    class FilesDeleteRequestBuilder internal constructor() {
+    class FilesDeleteRequestBuilder() {
         private var token: String? = null
         private var file: String? = null
 

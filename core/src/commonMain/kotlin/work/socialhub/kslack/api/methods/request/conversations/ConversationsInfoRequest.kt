@@ -1,8 +1,8 @@
-package com.github.seratch.jslack.api.methods.request.conversations
+package work.socialhub.kslack.api.methods.request.conversations
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
-class ConversationsInfoRequest internal constructor(
+class ConversationsInfoRequest(
     /**
      * Authentication token. Requires scope: `conversations:read`
      */
@@ -20,7 +20,7 @@ class ConversationsInfoRequest internal constructor(
      */
     var isIncludeNumMembers: Boolean
 ) : SlackApiRequest {
-    class ConversationsInfoRequestBuilder internal constructor() {
+    class ConversationsInfoRequestBuilder() {
         private var token: String? = null
         private var channel: String? = null
         private var includeLocale = false
