@@ -1,11 +1,14 @@
 package work.socialhub.kslack.api.methods
 
-interface SlackApiResponse {
-    var isOk: Boolean
-    var warning: String?
-    var error: String?
+import kotlinx.serialization.Serializable
+
+@Serializable
+open class SlackApiResponse {
+    var isOk: Boolean = false
+    var warning: String? = null
+    var error: String? = null
 
     // only when having a permission error
-    var needed: String?
-    var provided: String?
+    var needed: String? = null
+    var provided: String? = null
 }

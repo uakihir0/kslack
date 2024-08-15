@@ -1,13 +1,10 @@
 package work.socialhub.kslack.api.methods.response.channels
 
-import work.socialhub.kslack.api.model.User
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.user.User
 
-class UsersLookupByEmailResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@Serializable
+class UsersLookupByEmailResponse : SlackApiResponse() {
     var user: User? = null
 }

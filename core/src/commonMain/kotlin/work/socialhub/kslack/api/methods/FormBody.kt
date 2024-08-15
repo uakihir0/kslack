@@ -15,23 +15,27 @@ class FormBody(
 
             for (i in 0 until size) {
                 if (values[i] is String) {
-                    result.add(HttpParameter.param(
-                        names[i],
-                        values[i] as String)
+                    result.add(
+                        HttpParameter.param(
+                            names[i],
+                            values[i] as String
+                        )
                     )
                 }
                 if (values[i] is BytesFile) {
-                    result.add(HttpParameter.file(
-                        names[i],
-                        (values[i] as BytesFile).name,
-                        (values[i] as BytesFile).bytes
-                    ))
+                    result.add(
+                        HttpParameter.file(
+                            names[i],
+                            (values[i] as BytesFile).name,
+                            (values[i] as BytesFile).bytes
+                        )
+                    )
                 }
             }
             return result
         }
 
-    class BytesFile (
+    class BytesFile(
         var bytes: ByteArray,
         var name: String,
     )

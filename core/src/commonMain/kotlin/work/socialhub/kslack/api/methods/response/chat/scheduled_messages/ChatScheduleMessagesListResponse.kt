@@ -1,17 +1,15 @@
 package work.socialhub.kslack.api.methods.response.chat.scheduled_messages
 
-import work.socialhub.kslack.api.model.ResponseMetadata
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.ResponseMetadata
 
-class ChatScheduleMessagesListResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@Serializable
+class ChatScheduleMessagesListResponse : SlackApiResponse() {
     var scheduledMessages: Array<ScheduledMessage>? = null
     var responseMetadata: ResponseMetadata? = null
 
+    @Serializable
     class ScheduledMessage {
         var id: String? = null
         var channelId: String? = null

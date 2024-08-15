@@ -1,17 +1,15 @@
 package work.socialhub.kslack.api.methods.response.apps.permissions.users
 
-import work.socialhub.kslack.api.model.ResponseMetadata
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.ResponseMetadata
 
-class AppsPermissionsUsersListResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@Serializable
+class AppsPermissionsUsersListResponse : SlackApiResponse() {
     var resources: Array<Resource>? = null
     var responseMetadata: ResponseMetadata? = null
 
+    @Serializable
     class Resource {
         var id: String? = null
         var type: String? = null

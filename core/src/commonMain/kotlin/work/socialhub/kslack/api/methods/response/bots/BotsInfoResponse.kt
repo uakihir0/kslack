@@ -1,8 +1,14 @@
 package work.socialhub.kslack.api.methods.response.bots
 
-import work.socialhub.kslack.api.model.BotIcons
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.bot.BotIcons
 
-class BotsInfoResponse : SlackApiResponse {
+@Serializable
+class BotsInfoResponse : SlackApiResponse() {
+    var bot: Bot? = null
+
+    @Serializable
     class Bot {
         var id: String? = null
         var appId: String? = null
@@ -12,12 +18,4 @@ class BotsInfoResponse : SlackApiResponse {
         var updated: Int? = null
         var icons: BotIcons? = null
     }
-
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
-    var bot: Bot? = null
 }

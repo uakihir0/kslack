@@ -294,12 +294,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return postFormAndParseResponse(toForm(req), Methods.API_TEST, ApiTestResponse::class.java)
     }
 
-    
+
     fun apiTest(req: RequestConfigurator<ApiTestRequest.ApiTestRequestBuilder?>): ApiTestResponse {
         return apiTest(req.configure(ApiTestRequest.builder()).build())
     }
 
-    
+
     fun appsUninstall(req: AppsUninstallRequest): AppsUninstallResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -309,12 +309,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun appsUninstall(req: RequestConfigurator<AppsUninstallRequest.AppsUninstallRequestBuilder?>): AppsUninstallResponse {
         return appsUninstall(req.configure(AppsUninstallRequest.builder()).build())
     }
 
-    
+
     fun appsPermissionsInfo(req: AppsPermissionsInfoRequest): AppsPermissionsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -324,12 +324,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun appsPermissionsInfo(req: RequestConfigurator<AppsPermissionsInfoRequest.AppsPermissionsInfoRequestBuilder?>): AppsPermissionsInfoResponse {
         return appsPermissionsInfo(req.configure(AppsPermissionsInfoRequest.builder()).build())
     }
 
-    
+
     fun appsPermissionsRequest(req: AppsPermissionsRequestRequest): AppsPermissionsRequestResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -339,12 +339,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun appsPermissionsRequest(req: RequestConfigurator<AppsPermissionsRequestRequest.AppsPermissionsRequestRequestBuilder?>): AppsPermissionsRequestResponse {
         return appsPermissionsRequest(req.configure(AppsPermissionsRequestRequest.builder()).build())
     }
 
-    
+
     fun appsPermissionsResourcesList(req: AppsPermissionsResourcesListRequest): AppsPermissionsResourcesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -354,7 +354,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun appsPermissionsScopesList(req: AppsPermissionsScopesListRequest): AppsPermissionsScopesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -364,7 +364,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun appsPermissionsUsersList(req: AppsPermissionsUsersListRequest): AppsPermissionsUsersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -374,7 +374,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun appsPermissionsUsersRequest(req: AppsPermissionsUsersRequestRequest): AppsPermissionsUsersRequestResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -384,7 +384,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun authRevoke(req: AuthRevokeRequest): AuthRevokeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -394,12 +394,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun authRevoke(req: RequestConfigurator<AuthRevokeRequest.AuthRevokeRequestBuilder?>): AuthRevokeResponse {
         return authRevoke(req.configure(AuthRevokeRequest.builder()).build())
     }
 
-    
+
     fun authTest(req: AuthTestRequest): AuthTestResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -409,12 +409,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun authTest(req: RequestConfigurator<AuthTestRequest.AuthTestRequestBuilder?>): AuthTestResponse {
         return authTest(req.configure(AuthTestRequest.builder()).build())
     }
 
-    
+
     fun botsInfo(req: BotsInfoRequest): BotsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -424,12 +424,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun botsInfo(req: RequestConfigurator<BotsInfoRequest.BotsInfoRequestBuilder?>): BotsInfoResponse {
         return botsInfo(req.configure(BotsInfoRequest.builder()).build())
     }
 
-    
+
     fun channelsArchive(req: ChannelsArchiveRequest): ChannelsArchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -439,12 +439,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsArchive(req: RequestConfigurator<ChannelsArchiveRequest.ChannelsArchiveRequestBuilder?>): ChannelsArchiveResponse {
         return channelsArchive(req.configure(ChannelsArchiveRequest.builder()).build())
     }
 
-    
+
     fun channelsCreate(req: ChannelsCreateRequest): ChannelsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -454,12 +454,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsCreate(req: RequestConfigurator<ChannelsCreateRequest.ChannelsCreateRequestBuilder?>): ChannelsCreateResponse {
         return channelsCreate(req.configure(ChannelsCreateRequest.builder()).build())
     }
 
-    
+
     fun channelsHistory(req: ChannelsHistoryRequest): ChannelsHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -469,12 +469,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsHistory(req: RequestConfigurator<ChannelsHistoryRequest.ChannelsHistoryRequestBuilder?>): ChannelsHistoryResponse {
         return channelsHistory(req.configure(ChannelsHistoryRequest.builder()).build())
     }
 
-    
+
     fun channelsReplies(req: ChannelsRepliesRequest): ChannelsRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -484,12 +484,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsReplies(req: RequestConfigurator<ChannelsRepliesRequest.ChannelsRepliesRequestBuilder?>): ChannelsRepliesResponse {
         return channelsReplies(req.configure(ChannelsRepliesRequest.builder()).build())
     }
 
-    
+
     fun channelsInfo(req: ChannelsInfoRequest): ChannelsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -499,12 +499,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsInfo(req: RequestConfigurator<ChannelsInfoRequest.ChannelsInfoRequestBuilder?>): ChannelsInfoResponse {
         return channelsInfo(req.configure(ChannelsInfoRequest.builder()).build())
     }
 
-    
+
     fun channelsList(req: ChannelsListRequest): ChannelsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -514,12 +514,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsList(req: RequestConfigurator<ChannelsListRequest.ChannelsListRequestBuilder?>): ChannelsListResponse {
         return channelsList(req.configure(ChannelsListRequest.builder()).build())
     }
 
-    
+
     fun channelsInvite(req: ChannelsInviteRequest): ChannelsInviteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -529,12 +529,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsInvite(req: RequestConfigurator<ChannelsInviteRequest.ChannelsInviteRequestBuilder?>): ChannelsInviteResponse {
         return channelsInvite(req.configure(ChannelsInviteRequest.builder()).build())
     }
 
-    
+
     fun channelsJoin(req: ChannelsJoinRequest): ChannelsJoinResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -544,12 +544,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsJoin(req: RequestConfigurator<ChannelsJoinRequest.ChannelsJoinRequestBuilder?>): ChannelsJoinResponse {
         return channelsJoin(req.configure(ChannelsJoinRequest.builder()).build())
     }
 
-    
+
     fun channelsKick(req: ChannelsKickRequest): ChannelsKickResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -559,12 +559,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsKick(req: RequestConfigurator<ChannelsKickRequest.ChannelsKickRequestBuilder?>): ChannelsKickResponse {
         return channelsKick(req.configure(ChannelsKickRequest.builder()).build())
     }
 
-    
+
     fun channelsLeave(req: ChannelsLeaveRequest): ChannelsLeaveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -574,12 +574,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsLeave(req: RequestConfigurator<ChannelsLeaveRequest.ChannelsLeaveRequestBuilder?>): ChannelsLeaveResponse {
         return channelsLeave(req.configure(ChannelsLeaveRequest.builder()).build())
     }
 
-    
+
     fun channelsMark(req: ChannelsMarkRequest): ChannelsMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -589,12 +589,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsMark(req: RequestConfigurator<ChannelsMarkRequest.ChannelsMarkRequestBuilder?>): ChannelsMarkResponse {
         return channelsMark(req.configure(ChannelsMarkRequest.builder()).build())
     }
 
-    
+
     fun channelsRename(req: ChannelsRenameRequest): ChannelsRenameResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -604,12 +604,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsRename(req: RequestConfigurator<ChannelsRenameRequest.ChannelsRenameRequestBuilder?>): ChannelsRenameResponse {
         return channelsRename(req.configure(ChannelsRenameRequest.builder()).build())
     }
 
-    
+
     fun channelsSetPurpose(req: ChannelsSetPurposeRequest): ChannelsSetPurposeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -619,12 +619,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsSetPurpose(req: RequestConfigurator<ChannelsSetPurposeRequest.ChannelsSetPurposeRequestBuilder?>): ChannelsSetPurposeResponse {
         return channelsSetPurpose(req.configure(ChannelsSetPurposeRequest.builder()).build())
     }
 
-    
+
     fun channelsSetTopic(req: ChannelsSetTopicRequest): ChannelsSetTopicResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -634,12 +634,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsSetTopic(req: RequestConfigurator<ChannelsSetTopicRequest.ChannelsSetTopicRequestBuilder?>): ChannelsSetTopicResponse {
         return channelsSetTopic(req.configure(ChannelsSetTopicRequest.builder()).build())
     }
 
-    
+
     fun channelsUnarchive(req: ChannelsUnarchiveRequest): ChannelsUnarchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -649,12 +649,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun channelsUnarchive(req: RequestConfigurator<ChannelsUnarchiveRequest.ChannelsUnarchiveRequestBuilder?>): ChannelsUnarchiveResponse {
         return channelsUnarchive(req.configure(ChannelsUnarchiveRequest.builder()).build())
     }
 
-    
+
     fun chatGetPermalink(req: ChatGetPermalinkRequest): ChatGetPermalinkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -664,12 +664,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatGetPermalink(req: RequestConfigurator<ChatGetPermalinkRequest.ChatGetPermalinkRequestBuilder?>): ChatGetPermalinkResponse {
         return chatGetPermalink(req.configure(ChatGetPermalinkRequest.builder()).build())
     }
 
-    
+
     fun chatDelete(req: ChatDeleteRequest): ChatDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -679,12 +679,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatDelete(req: RequestConfigurator<ChatDeleteRequest.ChatDeleteRequestBuilder?>): ChatDeleteResponse {
         return chatDelete(req.configure(ChatDeleteRequest.builder()).build())
     }
 
-    
+
     fun chatDeleteScheduledMessage(req: ChatDeleteScheduledMessageRequest): ChatDeleteScheduledMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -694,12 +694,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatDeleteScheduledMessage(req: RequestConfigurator<ChatDeleteScheduledMessageRequest.ChatDeleteScheduledMessageRequestBuilder?>): ChatDeleteScheduledMessageResponse {
         return chatDeleteScheduledMessage(req.configure(ChatDeleteScheduledMessageRequest.builder()).build())
     }
 
-    
+
     fun chatMeMessage(req: ChatMeMessageRequest): ChatMeMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -709,12 +709,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatMeMessage(req: RequestConfigurator<ChatMeMessageRequest.ChatMeMessageRequestBuilder?>): ChatMeMessageResponse {
         return chatMeMessage(req.configure(ChatMeMessageRequest.builder()).build())
     }
 
-    
+
     fun chatPostEphemeral(req: ChatPostEphemeralRequest): ChatPostEphemeralResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -724,12 +724,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatPostEphemeral(req: RequestConfigurator<ChatPostEphemeralRequest.ChatPostEphemeralRequestBuilder?>): ChatPostEphemeralResponse {
         return chatPostEphemeral(req.configure(ChatPostEphemeralRequest.builder()).build())
     }
 
-    
+
     fun chatPostMessage(req: ChatPostMessageRequest): ChatPostMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -739,12 +739,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatPostMessage(req: RequestConfigurator<ChatPostMessageRequest.ChatPostMessageRequestBuilder?>): ChatPostMessageResponse {
         return chatPostMessage(req.configure(ChatPostMessageRequest.builder()).build())
     }
 
-    
+
     fun chatScheduleMessage(req: ChatScheduleMessageRequest): ChatScheduleMessageResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -754,12 +754,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatScheduleMessage(req: RequestConfigurator<ChatScheduleMessageRequest.ChatScheduleMessageRequestBuilder?>): ChatScheduleMessageResponse {
         return chatScheduleMessage(req.configure(ChatScheduleMessageRequest.builder()).build())
     }
 
-    
+
     fun chatUpdate(req: ChatUpdateRequest): ChatUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -769,12 +769,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatUpdate(req: RequestConfigurator<ChatUpdateRequest.ChatUpdateRequestBuilder?>): ChatUpdateResponse {
         return chatUpdate(req.configure(ChatUpdateRequest.builder()).build())
     }
 
-    
+
     fun chatUnfurl(req: ChatUnfurlRequest): ChatUnfurlResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -784,12 +784,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatUnfurl(req: RequestConfigurator<ChatUnfurlRequest.ChatUnfurlRequestBuilder?>): ChatUnfurlResponse {
         return chatUnfurl(req.configure(ChatUnfurlRequest.builder()).build())
     }
 
-    
+
     fun chatScheduleMessagesListMessage(req: ChatScheduleMessagesListRequest): ChatScheduleMessagesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -799,12 +799,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun chatScheduleMessagesListMessage(req: RequestConfigurator<ChatScheduleMessagesListRequest.ChatScheduleMessagesListRequestBuilder?>): ChatScheduleMessagesListResponse {
         return chatScheduleMessagesListMessage(req.configure(ChatScheduleMessagesListRequest.builder()).build())
     }
 
-    
+
     fun conversationsArchive(req: ConversationsArchiveRequest): ConversationsArchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -814,12 +814,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsArchive(req: RequestConfigurator<ConversationsArchiveRequest.ConversationsArchiveRequestBuilder?>): ConversationsArchiveResponse {
         return conversationsArchive(req.configure(ConversationsArchiveRequest.builder()).build())
     }
 
-    
+
     fun conversationsClose(req: ConversationsCloseRequest): ConversationsCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -829,12 +829,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsClose(req: RequestConfigurator<ConversationsCloseRequest.ConversationsCloseRequestBuilder?>): ConversationsCloseResponse {
         return conversationsClose(req.configure(ConversationsCloseRequest.builder()).build())
     }
 
-    
+
     fun conversationsCreate(req: ConversationsCreateRequest): ConversationsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -844,12 +844,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsCreate(req: RequestConfigurator<ConversationsCreateRequest.ConversationsCreateRequestBuilder?>): ConversationsCreateResponse {
         return conversationsCreate(req.configure(ConversationsCreateRequest.builder()).build())
     }
 
-    
+
     fun conversationsHistory(req: ConversationsHistoryRequest): ConversationsHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -859,12 +859,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsHistory(req: RequestConfigurator<ConversationsHistoryRequest.ConversationsHistoryRequestBuilder?>): ConversationsHistoryResponse {
         return conversationsHistory(req.configure(ConversationsHistoryRequest.builder()).build())
     }
 
-    
+
     fun conversationsInfo(req: ConversationsInfoRequest): ConversationsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -874,12 +874,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsInfo(req: RequestConfigurator<ConversationsInfoRequest.ConversationsInfoRequestBuilder?>): ConversationsInfoResponse {
         return conversationsInfo(req.configure(ConversationsInfoRequest.builder()).build())
     }
 
-    
+
     fun conversationsInvite(req: ConversationsInviteRequest): ConversationsInviteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -889,12 +889,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsInvite(req: RequestConfigurator<ConversationsInviteRequest.ConversationsInviteRequestBuilder?>): ConversationsInviteResponse {
         return conversationsInvite(req.configure(ConversationsInviteRequest.builder()).build())
     }
 
-    
+
     fun conversationsJoin(req: ConversationsJoinRequest): ConversationsJoinResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -904,12 +904,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsJoin(req: RequestConfigurator<ConversationsJoinRequest.ConversationsJoinRequestBuilder?>): ConversationsJoinResponse {
         return conversationsJoin(req.configure(ConversationsJoinRequest.builder()).build())
     }
 
-    
+
     fun conversationsKick(req: ConversationsKickRequest): ConversationsKickResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -919,12 +919,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsKick(req: RequestConfigurator<ConversationsKickRequest.ConversationsKickRequestBuilder?>): ConversationsKickResponse {
         return conversationsKick(req.configure(ConversationsKickRequest.builder()).build())
     }
 
-    
+
     fun conversationsLeave(req: ConversationsLeaveRequest): ConversationsLeaveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -934,12 +934,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsLeave(req: RequestConfigurator<ConversationsLeaveRequest.ConversationsLeaveRequestBuilder?>): ConversationsLeaveResponse {
         return conversationsLeave(req.configure(ConversationsLeaveRequest.builder()).build())
     }
 
-    
+
     fun conversationsList(req: ConversationsListRequest): ConversationsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -949,12 +949,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsList(req: RequestConfigurator<ConversationsListRequest.ConversationsListRequestBuilder?>): ConversationsListResponse {
         return conversationsList(req.configure(ConversationsListRequest.builder()).build())
     }
 
-    
+
     fun conversationsMembers(req: ConversationsMembersRequest): ConversationsMembersResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -964,12 +964,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsMembers(req: RequestConfigurator<ConversationsMembersRequest.ConversationsMembersRequestBuilder?>): ConversationsMembersResponse {
         return conversationsMembers(req.configure(ConversationsMembersRequest.builder()).build())
     }
 
-    
+
     fun conversationsOpen(req: ConversationsOpenRequest): ConversationsOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -979,12 +979,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsOpen(req: RequestConfigurator<ConversationsOpenRequest.ConversationsOpenRequestBuilder?>): ConversationsOpenResponse {
         return conversationsOpen(req.configure(ConversationsOpenRequest.builder()).build())
     }
 
-    
+
     fun conversationsRename(req: ConversationsRenameRequest): ConversationsRenameResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -994,12 +994,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsRename(req: RequestConfigurator<ConversationsRenameRequest.ConversationsRenameRequestBuilder?>): ConversationsRenameResponse {
         return conversationsRename(req.configure(ConversationsRenameRequest.builder()).build())
     }
 
-    
+
     fun conversationsReplies(req: ConversationsRepliesRequest): ConversationsRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1009,12 +1009,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsReplies(req: RequestConfigurator<ConversationsRepliesRequest.ConversationsRepliesRequestBuilder?>): ConversationsRepliesResponse {
         return conversationsReplies(req.configure(ConversationsRepliesRequest.builder()).build())
     }
 
-    
+
     fun conversationsSetPurpose(req: ConversationsSetPurposeRequest): ConversationsSetPurposeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1024,12 +1024,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsSetPurpose(req: RequestConfigurator<ConversationsSetPurposeRequest.ConversationsSetPurposeRequestBuilder?>): ConversationsSetPurposeResponse {
         return conversationsSetPurpose(req.configure(ConversationsSetPurposeRequest.builder()).build())
     }
 
-    
+
     fun conversationsSetTopic(req: ConversationsSetTopicRequest): ConversationsSetTopicResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1039,12 +1039,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsSetTopic(req: RequestConfigurator<ConversationsSetTopicRequest.ConversationsSetTopicRequestBuilder?>): ConversationsSetTopicResponse {
         return conversationsSetTopic(req.configure(ConversationsSetTopicRequest.builder()).build())
     }
 
-    
+
     fun conversationsUnarchive(req: ConversationsUnarchiveRequest): ConversationsUnarchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1054,12 +1054,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun conversationsUnarchive(req: RequestConfigurator<ConversationsUnarchiveRequest.ConversationsUnarchiveRequestBuilder?>): ConversationsUnarchiveResponse {
         return conversationsUnarchive(req.configure(ConversationsUnarchiveRequest.builder()).build())
     }
 
-    
+
     fun dialogOpen(req: DialogOpenRequest): DialogOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1069,12 +1069,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun dialogOpen(req: RequestConfigurator<DialogOpenRequest.DialogOpenRequestBuilder?>): DialogOpenResponse {
         return dialogOpen(req.configure(DialogOpenRequest.builder()).build())
     }
 
-    
+
     fun dndEndDnd(req: DndEndDndRequest): DndEndDndResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1084,12 +1084,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun dndEndDnd(req: RequestConfigurator<DndEndDndRequest.DndEndDndRequestBuilder?>): DndEndDndResponse {
         return dndEndDnd(req.configure(DndEndDndRequest.builder()).build())
     }
 
-    
+
     fun dndEndSnooze(req: DndEndSnoozeRequest): DndEndSnoozeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1099,12 +1099,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun dndEndSnooze(req: RequestConfigurator<DndEndSnoozeRequest.DndEndSnoozeRequestBuilder?>): DndEndSnoozeResponse {
         return dndEndSnooze(req.configure(DndEndSnoozeRequest.builder()).build())
     }
 
-    
+
     fun dndInfo(req: DndInfoRequest): DndInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1114,12 +1114,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun dndInfo(req: RequestConfigurator<DndInfoRequest.DndInfoRequestBuilder?>): DndInfoResponse {
         return dndInfo(req.configure(DndInfoRequest.builder()).build())
     }
 
-    
+
     fun dndSetSnooze(req: DndSetSnoozeRequest): DndSetSnoozeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1129,12 +1129,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun dndSetSnooze(req: RequestConfigurator<DndSetSnoozeRequest.DndSetSnoozeRequestBuilder?>): DndSetSnoozeResponse {
         return dndSetSnooze(req.configure(DndSetSnoozeRequest.builder()).build())
     }
 
-    
+
     fun dndTeamInfo(req: DndTeamInfoRequest): DndTeamInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1144,12 +1144,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun dndTeamInfo(req: RequestConfigurator<DndTeamInfoRequest.DndTeamInfoRequestBuilder?>): DndTeamInfoResponse {
         return dndTeamInfo(req.configure(DndTeamInfoRequest.builder()).build())
     }
 
-    
+
     fun emojiList(req: EmojiListRequest): EmojiListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1159,12 +1159,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun emojiList(req: RequestConfigurator<EmojiListRequest.EmojiListRequestBuilder?>): EmojiListResponse {
         return emojiList(req.configure(EmojiListRequest.builder()).build())
     }
 
-    
+
     fun filesDelete(req: FilesDeleteRequest): FilesDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1174,12 +1174,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesDelete(req: RequestConfigurator<FilesDeleteRequest.FilesDeleteRequestBuilder?>): FilesDeleteResponse {
         return filesDelete(req.configure(FilesDeleteRequest.builder()).build())
     }
 
-    
+
     fun filesInfo(req: FilesInfoRequest): FilesInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1189,12 +1189,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesInfo(req: RequestConfigurator<FilesInfoRequest.FilesInfoRequestBuilder?>): FilesInfoResponse {
         return filesInfo(req.configure(FilesInfoRequest.builder()).build())
     }
 
-    
+
     fun filesList(req: FilesListRequest): FilesListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1204,12 +1204,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesList(req: RequestConfigurator<FilesListRequest.FilesListRequestBuilder?>): FilesListResponse {
         return filesList(req.configure(FilesListRequest.builder()).build())
     }
 
-    
+
     fun filesRevokePublicURL(req: FilesRevokePublicURLRequest): FilesRevokePublicURLResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1219,12 +1219,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesRevokePublicURL(req: RequestConfigurator<FilesRevokePublicURLRequest.FilesRevokePublicURLRequestBuilder?>): FilesRevokePublicURLResponse {
         return filesRevokePublicURL(req.configure(FilesRevokePublicURLRequest.builder()).build())
     }
 
-    
+
     fun filesSharedPublicURL(req: FilesSharedPublicURLRequest): FilesSharedPublicURLResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1234,12 +1234,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesSharedPublicURL(req: RequestConfigurator<FilesSharedPublicURLRequest.FilesSharedPublicURLRequestBuilder?>): FilesSharedPublicURLResponse {
         return filesSharedPublicURL(req.configure(FilesSharedPublicURLRequest.builder()).build())
     }
 
-    
+
     fun filesUpload(req: FilesUploadRequest): FilesUploadResponse {
         return if (req.getFile() != null || req.getFilestream() != null) {
             postMultipartAndParseResponse(
@@ -1258,12 +1258,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         }
     }
 
-    
+
     fun filesUpload(req: RequestConfigurator<FilesUploadRequest.FilesUploadRequestBuilder?>): FilesUploadResponse {
         return filesUpload(req.configure(FilesUploadRequest.builder()).build())
     }
 
-    
+
     fun filesCommentsAdd(req: FilesCommentsAddRequest): FilesCommentsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1273,7 +1273,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesCommentsDelete(req: FilesCommentsDeleteRequest): FilesCommentsDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1283,7 +1283,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesCommentEdit(req: FilesCommentsEditRequest): FilesCommentsEditResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1293,18 +1293,18 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesRemoteAdd(req: FilesRemoteAddRequest?): FilesRemoteAddResponse {
 //        return postMultipartAndParseResponse(RequestFormBuilder.toMultipartBody(req), Methods.FILES_REMOTE_ADD, getToken(req), FilesRemoteAddResponse.class);
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    
+
     fun filesRemoteAdd(req: RequestConfigurator<FilesRemoteAddRequest.FilesRemoteAddRequestBuilder?>): FilesRemoteAddResponse {
         return filesRemoteAdd(req.configure(FilesRemoteAddRequest.builder()).build())
     }
 
-    
+
     fun filesRemoteInfo(req: FilesRemoteInfoRequest): FilesRemoteInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1314,12 +1314,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesRemoteInfo(req: RequestConfigurator<FilesRemoteInfoRequest.FilesRemoteInfoRequestBuilder?>): FilesRemoteInfoResponse {
         return filesRemoteInfo(req.configure(FilesRemoteInfoRequest.builder()).build())
     }
 
-    
+
     fun filesRemoteList(req: FilesRemoteListRequest): FilesRemoteListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1329,12 +1329,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesRemoteList(req: RequestConfigurator<FilesRemoteListRequest.FilesRemoteListRequestBuilder?>): FilesRemoteListResponse {
         return filesRemoteList(req.configure(FilesRemoteListRequest.builder()).build())
     }
 
-    
+
     fun filesRemoteRemove(req: FilesRemoteRemoveRequest): FilesRemoteRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1344,12 +1344,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesRemoteRemove(req: RequestConfigurator<FilesRemoteRemoveRequest.FilesRemoteRemoveRequestBuilder?>): FilesRemoteRemoveResponse {
         return filesRemoteRemove(req.configure(FilesRemoteRemoveRequest.builder()).build())
     }
 
-    
+
     fun filesRemoteShare(req: FilesRemoteShareRequest): FilesRemoteShareResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1359,23 +1359,23 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun filesRemoteShare(req: RequestConfigurator<FilesRemoteShareRequest.FilesRemoteShareRequestBuilder?>): FilesRemoteShareResponse {
         return filesRemoteShare(req.configure(FilesRemoteShareRequest.builder()).build())
     }
 
-    
+
     fun filesRemoteUpdate(req: FilesRemoteUpdateRequest?): FilesRemoteUpdateResponse {
 //        return postMultipartAndParseResponse(toMultipartBody(req), Methods.FILES_REMOTE_UPDATE, getToken(req), FilesRemoteUpdateResponse.class);
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    
+
     fun filesRemoteUpdate(req: RequestConfigurator<FilesRemoteUpdateRequest.FilesRemoteUpdateRequestBuilder?>): FilesRemoteUpdateResponse {
         return filesRemoteUpdate(req.configure(FilesRemoteUpdateRequest.builder()).build())
     }
 
-    
+
     fun groupsArchive(req: GroupsArchiveRequest): GroupsArchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1385,12 +1385,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsArchive(req: RequestConfigurator<GroupsArchiveRequest.GroupsArchiveRequestBuilder?>): GroupsArchiveResponse {
         return groupsArchive(req.configure(GroupsArchiveRequest.builder()).build())
     }
 
-    
+
     fun groupsClose(req: GroupsCloseRequest): GroupsCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1400,7 +1400,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsCreateChild(req: GroupsCreateChildRequest): GroupsCreateChildResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1410,12 +1410,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsCreateChild(req: RequestConfigurator<GroupsCreateChildRequest.GroupsCreateChildRequestBuilder?>): GroupsCreateChildResponse {
         return groupsCreateChild(req.configure(GroupsCreateChildRequest.builder()).build())
     }
 
-    
+
     fun groupsCreate(req: GroupsCreateRequest): GroupsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1425,12 +1425,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsCreate(req: RequestConfigurator<GroupsCreateRequest.GroupsCreateRequestBuilder?>): GroupsCreateResponse {
         return groupsCreate(req.configure(GroupsCreateRequest.builder()).build())
     }
 
-    
+
     fun groupsHistory(req: GroupsHistoryRequest): GroupsHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1440,12 +1440,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsHistory(req: RequestConfigurator<GroupsHistoryRequest.GroupsHistoryRequestBuilder?>): GroupsHistoryResponse {
         return groupsHistory(req.configure(GroupsHistoryRequest.builder()).build())
     }
 
-    
+
     fun groupsReplies(req: GroupsRepliesRequest): GroupsRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1455,12 +1455,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsReplies(req: RequestConfigurator<GroupsRepliesRequest.GroupsRepliesRequestBuilder?>): GroupsRepliesResponse {
         return groupsReplies(req.configure(GroupsRepliesRequest.builder()).build())
     }
 
-    
+
     fun groupsInfo(req: GroupsInfoRequest): GroupsInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1470,12 +1470,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsInfo(req: RequestConfigurator<GroupsInfoRequest.GroupsInfoRequestBuilder?>): GroupsInfoResponse {
         return groupsInfo(req.configure(GroupsInfoRequest.builder()).build())
     }
 
-    
+
     fun groupsInvite(req: GroupsInviteRequest): GroupsInviteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1485,12 +1485,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsInvite(req: RequestConfigurator<GroupsInviteRequest.GroupsInviteRequestBuilder?>): GroupsInviteResponse {
         return groupsInvite(req.configure(GroupsInviteRequest.builder()).build())
     }
 
-    
+
     fun groupsKick(req: GroupsKickRequest): GroupsKickResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1500,12 +1500,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsKick(req: RequestConfigurator<GroupsKickRequest.GroupsKickRequestBuilder?>): GroupsKickResponse {
         return groupsKick(req.configure(GroupsKickRequest.builder()).build())
     }
 
-    
+
     fun groupsLeave(req: GroupsLeaveRequest): GroupsLeaveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1515,12 +1515,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsLeave(req: RequestConfigurator<GroupsLeaveRequest.GroupsLeaveRequestBuilder?>): GroupsLeaveResponse {
         return groupsLeave(req.configure(GroupsLeaveRequest.builder()).build())
     }
 
-    
+
     fun groupsList(req: GroupsListRequest): GroupsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1530,12 +1530,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsList(req: RequestConfigurator<GroupsListRequest.GroupsListRequestBuilder?>): GroupsListResponse {
         return groupsList(req.configure(GroupsListRequest.builder()).build())
     }
 
-    
+
     fun groupsMark(req: GroupsMarkRequest): GroupsMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1545,12 +1545,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsMark(req: RequestConfigurator<GroupsMarkRequest.GroupsMarkRequestBuilder?>): GroupsMarkResponse {
         return groupsMark(req.configure(GroupsMarkRequest.builder()).build())
     }
 
-    
+
     fun groupsOpen(req: GroupsOpenRequest): GroupsOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1560,12 +1560,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsOpen(req: RequestConfigurator<GroupsOpenRequest.GroupsOpenRequestBuilder?>): GroupsOpenResponse {
         return groupsOpen(req.configure(GroupsOpenRequest.builder()).build())
     }
 
-    
+
     fun groupsRename(req: GroupsRenameRequest): GroupsRenameResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1575,12 +1575,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsRename(req: RequestConfigurator<GroupsRenameRequest.GroupsRenameRequestBuilder?>): GroupsRenameResponse {
         return groupsRename(req.configure(GroupsRenameRequest.builder()).build())
     }
 
-    
+
     fun groupsSetPurpose(req: GroupsSetPurposeRequest): GroupsSetPurposeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1590,12 +1590,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsSetPurpose(req: RequestConfigurator<GroupsSetPurposeRequest.GroupsSetPurposeRequestBuilder?>): GroupsSetPurposeResponse {
         return groupsSetPurpose(req.configure(GroupsSetPurposeRequest.builder()).build())
     }
 
-    
+
     fun groupsSetTopic(req: GroupsSetTopicRequest): GroupsSetTopicResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1605,12 +1605,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsSetTopic(req: RequestConfigurator<GroupsSetTopicRequest.GroupsSetTopicRequestBuilder?>): GroupsSetTopicResponse {
         return groupsSetTopic(req.configure(GroupsSetTopicRequest.builder()).build())
     }
 
-    
+
     fun groupsUnarchive(req: GroupsUnarchiveRequest): GroupsUnarchiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1620,12 +1620,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun groupsUnarchive(req: RequestConfigurator<GroupsUnarchiveRequest.GroupsUnarchiveRequestBuilder?>): GroupsUnarchiveResponse {
         return groupsUnarchive(req.configure(GroupsUnarchiveRequest.builder()).build())
     }
 
-    
+
     fun imClose(req: ImCloseRequest): ImCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1635,12 +1635,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun imClose(req: RequestConfigurator<ImCloseRequest.ImCloseRequestBuilder?>): ImCloseResponse {
         return imClose(req.configure(ImCloseRequest.builder()).build())
     }
 
-    
+
     fun imHistory(req: ImHistoryRequest): ImHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1650,12 +1650,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun imHistory(req: RequestConfigurator<ImHistoryRequest.ImHistoryRequestBuilder?>): ImHistoryResponse {
         return imHistory(req.configure(ImHistoryRequest.builder()).build())
     }
 
-    
+
     fun imList(req: ImListRequest): ImListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1665,12 +1665,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun imList(req: RequestConfigurator<ImListRequest.ImListRequestBuilder?>): ImListResponse {
         return imList(req.configure(ImListRequest.builder()).build())
     }
 
-    
+
     fun imMark(req: ImMarkRequest): ImMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1680,12 +1680,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun imMark(req: RequestConfigurator<ImMarkRequest.ImMarkRequestBuilder?>): ImMarkResponse {
         return imMark(req.configure(ImMarkRequest.builder()).build())
     }
 
-    
+
     fun imOpen(req: ImOpenRequest): ImOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1695,12 +1695,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun imOpen(req: RequestConfigurator<ImOpenRequest.ImOpenRequestBuilder?>): ImOpenResponse {
         return imOpen(req.configure(ImOpenRequest.builder()).build())
     }
 
-    
+
     fun imReplies(req: ImRepliesRequest): ImRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1710,12 +1710,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun imReplies(req: RequestConfigurator<ImRepliesRequest.ImRepliesRequestBuilder?>): ImRepliesResponse {
         return imReplies(req.configure(ImRepliesRequest.builder()).build())
     }
 
-    
+
     fun migrationExchange(req: MigrationExchangeRequest): MigrationExchangeResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1725,12 +1725,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun migrationExchange(req: RequestConfigurator<MigrationExchangeRequest.MigrationExchangeRequestBuilder?>): MigrationExchangeResponse {
         return migrationExchange(req.configure(MigrationExchangeRequest.builder()).build())
     }
 
-    
+
     fun mpimClose(req: MpimCloseRequest): MpimCloseResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1740,12 +1740,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun mpimClose(req: RequestConfigurator<MpimCloseRequest.MpimCloseRequestBuilder?>): MpimCloseResponse {
         return mpimClose(req.configure(MpimCloseRequest.builder()).build())
     }
 
-    
+
     fun mpimHistory(req: MpimHistoryRequest): MpimHistoryResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1755,12 +1755,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun mpimHistory(req: RequestConfigurator<MpimHistoryRequest.MpimHistoryRequestBuilder?>): MpimHistoryResponse {
         return mpimHistory(req.configure(MpimHistoryRequest.builder()).build())
     }
 
-    
+
     fun mpimList(req: MpimListRequest): MpimListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1770,12 +1770,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun mpimList(req: RequestConfigurator<MpimListRequest.MpimListRequestBuilder?>): MpimListResponse {
         return mpimList(req.configure(MpimListRequest.builder()).build())
     }
 
-    
+
     fun mpimReplies(req: MpimRepliesRequest): MpimRepliesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1785,12 +1785,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun mpimReplies(req: RequestConfigurator<MpimRepliesRequest.MpimRepliesRequestBuilder?>): MpimRepliesResponse {
         return mpimReplies(req.configure(MpimRepliesRequest.builder()).build())
     }
 
-    
+
     fun mpimMark(req: MpimMarkRequest): MpimMarkResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1800,12 +1800,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun mpimMark(req: RequestConfigurator<MpimMarkRequest.MpimMarkRequestBuilder?>): MpimMarkResponse {
         return mpimMark(req.configure(MpimMarkRequest.builder()).build())
     }
 
-    
+
     fun mpimOpen(req: MpimOpenRequest): MpimOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1815,22 +1815,22 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun mpimOpen(req: RequestConfigurator<MpimOpenRequest.MpimOpenRequestBuilder?>): MpimOpenResponse {
         return mpimOpen(req.configure(MpimOpenRequest.builder()).build())
     }
 
-    
+
     fun oauthAccess(req: OAuthAccessRequest?): OAuthAccessResponse {
         return postFormAndParseResponse(toForm(req), Methods.OAUTH_ACCESS, OAuthAccessResponse::class.java)
     }
 
-    
+
     fun oauthAccess(req: RequestConfigurator<OAuthAccessRequest.OAuthAccessRequestBuilder?>): OAuthAccessResponse {
         return oauthAccess(req.configure(OAuthAccessRequest.builder()).build())
     }
 
-    
+
     fun oauthV2Access(req: OAuthV2AccessRequest?): OAuthV2AccessResponse {
 //        FormBody.Builder form = new FormBody.Builder();
 //        form.add("code", req.getCode());
@@ -1840,22 +1840,22 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    
+
     fun oauthV2Access(req: RequestConfigurator<OAuthV2AccessRequest.OAuthV2AccessRequestBuilder?>): OAuthV2AccessResponse {
         return oauthV2Access(req.configure(OAuthV2AccessRequest.builder()).build())
     }
 
-    
+
     fun oauthToken(req: OAuthTokenRequest?): OAuthTokenResponse {
         return postFormAndParseResponse(toForm(req), Methods.OAUTH_TOKEN, OAuthTokenResponse::class.java)
     }
 
-    
+
     fun oauthToken(req: RequestConfigurator<OAuthTokenRequest.OAuthTokenRequestBuilder?>): OAuthTokenResponse {
         return oauthToken(req.configure(OAuthTokenRequest.builder()).build())
     }
 
-    
+
     fun pinsAdd(req: PinsAddRequest): PinsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1865,12 +1865,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun pinsAdd(req: RequestConfigurator<PinsAddRequest.PinsAddRequestBuilder?>): PinsAddResponse {
         return pinsAdd(req.configure(PinsAddRequest.builder()).build())
     }
 
-    
+
     fun pinsList(req: PinsListRequest): PinsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1880,12 +1880,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun pinsList(req: RequestConfigurator<PinsListRequest.PinsListRequestBuilder?>): PinsListResponse {
         return pinsList(req.configure(PinsListRequest.builder()).build())
     }
 
-    
+
     fun pinsRemove(req: PinsRemoveRequest): PinsRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1895,12 +1895,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun pinsRemove(req: RequestConfigurator<PinsRemoveRequest.PinsRemoveRequestBuilder?>): PinsRemoveResponse {
         return pinsRemove(req.configure(PinsRemoveRequest.builder()).build())
     }
 
-    
+
     fun reactionsAdd(req: ReactionsAddRequest): ReactionsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1910,12 +1910,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun reactionsAdd(req: RequestConfigurator<ReactionsAddRequest.ReactionsAddRequestBuilder?>): ReactionsAddResponse {
         return reactionsAdd(req.configure(ReactionsAddRequest.builder()).build())
     }
 
-    
+
     fun reactionsGet(req: ReactionsGetRequest): ReactionsGetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1925,12 +1925,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun reactionsGet(req: RequestConfigurator<ReactionsGetRequest.ReactionsGetRequestBuilder?>): ReactionsGetResponse {
         return reactionsGet(req.configure(ReactionsGetRequest.builder()).build())
     }
 
-    
+
     fun reactionsList(req: ReactionsListRequest): ReactionsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1940,12 +1940,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun reactionsList(req: RequestConfigurator<ReactionsListRequest.ReactionsListRequestBuilder?>): ReactionsListResponse {
         return reactionsList(req.configure(ReactionsListRequest.builder()).build())
     }
 
-    
+
     fun reactionsRemove(req: ReactionsRemoveRequest): ReactionsRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1955,12 +1955,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun reactionsRemove(req: RequestConfigurator<ReactionsRemoveRequest.ReactionsRemoveRequestBuilder?>): ReactionsRemoveResponse {
         return reactionsRemove(req.configure(ReactionsRemoveRequest.builder()).build())
     }
 
-    
+
     fun remindersAdd(req: RemindersAddRequest): RemindersAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1970,12 +1970,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun remindersAdd(req: RequestConfigurator<RemindersAddRequest.RemindersAddRequestBuilder?>): RemindersAddResponse {
         return remindersAdd(req.configure(RemindersAddRequest.builder()).build())
     }
 
-    
+
     fun remindersComplete(req: RemindersCompleteRequest): RemindersCompleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -1985,12 +1985,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun remindersComplete(req: RequestConfigurator<RemindersCompleteRequest.RemindersCompleteRequestBuilder?>): RemindersCompleteResponse {
         return remindersComplete(req.configure(RemindersCompleteRequest.builder()).build())
     }
 
-    
+
     fun remindersDelete(req: RemindersDeleteRequest): RemindersDeleteResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2000,12 +2000,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun remindersDelete(req: RequestConfigurator<RemindersDeleteRequest.RemindersDeleteRequestBuilder?>): RemindersDeleteResponse {
         return remindersDelete(req.configure(RemindersDeleteRequest.builder()).build())
     }
 
-    
+
     fun remindersInfo(req: RemindersInfoRequest): RemindersInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2015,12 +2015,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun remindersInfo(req: RequestConfigurator<RemindersInfoRequest.RemindersInfoRequestBuilder?>): RemindersInfoResponse {
         return remindersInfo(req.configure(RemindersInfoRequest.builder()).build())
     }
 
-    
+
     fun remindersList(req: RemindersListRequest): RemindersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2030,12 +2030,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun remindersList(req: RequestConfigurator<RemindersListRequest.RemindersListRequestBuilder?>): RemindersListResponse {
         return remindersList(req.configure(RemindersListRequest.builder()).build())
     }
 
-    
+
     fun rtmConnect(req: RTMConnectRequest): RTMConnectResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2045,12 +2045,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun rtmConnect(req: RequestConfigurator<RTMConnectRequest.RTMConnectRequestBuilder?>): RTMConnectResponse {
         return rtmConnect(req.configure(RTMConnectRequest.builder()).build())
     }
 
-    
+
     fun rtmStart(req: RTMStartRequest): RTMStartResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2060,12 +2060,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun rtmStart(req: RequestConfigurator<RTMStartRequest.RTMStartRequestBuilder?>): RTMStartResponse {
         return rtmStart(req.configure(RTMStartRequest.builder()).build())
     }
 
-    
+
     fun searchAll(req: SearchAllRequest): SearchAllResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2075,12 +2075,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun searchAll(req: RequestConfigurator<SearchAllRequest.SearchAllRequestBuilder?>): SearchAllResponse {
         return searchAll(req.configure(SearchAllRequest.builder()).build())
     }
 
-    
+
     fun searchMessages(req: SearchMessagesRequest): SearchMessagesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2090,12 +2090,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun searchMessages(req: RequestConfigurator<SearchMessagesRequest.SearchMessagesRequestBuilder?>): SearchMessagesResponse {
         return searchMessages(req.configure(SearchMessagesRequest.builder()).build())
     }
 
-    
+
     fun searchFiles(req: SearchFilesRequest): SearchFilesResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2105,12 +2105,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun searchFiles(req: RequestConfigurator<SearchFilesRequest.SearchFilesRequestBuilder?>): SearchFilesResponse {
         return searchFiles(req.configure(SearchFilesRequest.builder()).build())
     }
 
-    
+
     fun starsAdd(req: StarsAddRequest): StarsAddResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2120,12 +2120,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun starsAdd(req: RequestConfigurator<StarsAddRequest.StarsAddRequestBuilder?>): StarsAddResponse {
         return starsAdd(req.configure(StarsAddRequest.builder()).build())
     }
 
-    
+
     fun starsList(req: StarsListRequest): StarsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2135,12 +2135,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun starsList(req: RequestConfigurator<StarsListRequest.StarsListRequestBuilder?>): StarsListResponse {
         return starsList(req.configure(StarsListRequest.builder()).build())
     }
 
-    
+
     fun starsRemove(req: StarsRemoveRequest): StarsRemoveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2150,12 +2150,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun starsRemove(req: RequestConfigurator<StarsRemoveRequest.StarsRemoveRequestBuilder?>): StarsRemoveResponse {
         return starsRemove(req.configure(StarsRemoveRequest.builder()).build())
     }
 
-    
+
     fun teamAccessLogs(req: TeamAccessLogsRequest): TeamAccessLogsResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2165,12 +2165,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun teamAccessLogs(req: RequestConfigurator<TeamAccessLogsRequest.TeamAccessLogsRequestBuilder?>): TeamAccessLogsResponse {
         return teamAccessLogs(req.configure(TeamAccessLogsRequest.builder()).build())
     }
 
-    
+
     fun teamBillableInfo(req: TeamBillableInfoRequest): TeamBillableInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2180,12 +2180,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun teamBillableInfo(req: RequestConfigurator<TeamBillableInfoRequest.TeamBillableInfoRequestBuilder?>): TeamBillableInfoResponse {
         return teamBillableInfo(req.configure(TeamBillableInfoRequest.builder()).build())
     }
 
-    
+
     fun teamInfo(req: TeamInfoRequest): TeamInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2195,12 +2195,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun teamInfo(req: RequestConfigurator<TeamInfoRequest.TeamInfoRequestBuilder?>): TeamInfoResponse {
         return teamInfo(req.configure(TeamInfoRequest.builder()).build())
     }
 
-    
+
     fun teamIntegrationLogs(req: TeamIntegrationLogsRequest): TeamIntegrationLogsResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2210,12 +2210,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun teamIntegrationLogs(req: RequestConfigurator<TeamIntegrationLogsRequest.TeamIntegrationLogsRequestBuilder?>): TeamIntegrationLogsResponse {
         return teamIntegrationLogs(req.configure(TeamIntegrationLogsRequest.builder()).build())
     }
 
-    
+
     fun teamProfileGet(req: TeamProfileGetRequest): TeamProfileGetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2225,12 +2225,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun teamProfileGet(req: RequestConfigurator<TeamProfileGetRequest.TeamProfileGetRequestBuilder?>): TeamProfileGetResponse {
         return teamProfileGet(req.configure(TeamProfileGetRequest.builder()).build())
     }
 
-    
+
     fun usergroupsCreate(req: UsergroupsCreateRequest): UsergroupsCreateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2240,12 +2240,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usergroupsCreate(req: RequestConfigurator<UsergroupsCreateRequest.UsergroupsCreateRequestBuilder?>): UsergroupsCreateResponse {
         return usergroupsCreate(req.configure(UsergroupsCreateRequest.builder()).build())
     }
 
-    
+
     fun usergroupsDisable(req: UsergroupsDisableRequest): UsergroupsDisableResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2255,12 +2255,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usergroupsDisable(req: RequestConfigurator<UsergroupsDisableRequest.UsergroupsDisableRequestBuilder?>): UsergroupsDisableResponse {
         return usergroupsDisable(req.configure(UsergroupsDisableRequest.builder()).build())
     }
 
-    
+
     fun usergroupsEnable(req: UsergroupsEnableRequest): UsergroupsEnableResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2270,12 +2270,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usergroupsEnable(req: RequestConfigurator<UsergroupsEnableRequest.UsergroupsEnableRequestBuilder?>): UsergroupsEnableResponse {
         return usergroupsEnable(req.configure(UsergroupsEnableRequest.builder()).build())
     }
 
-    
+
     fun usergroupsList(req: UsergroupsListRequest): UsergroupsListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2285,12 +2285,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usergroupsList(req: RequestConfigurator<UsergroupsListRequest.UsergroupsListRequestBuilder?>): UsergroupsListResponse {
         return usergroupsList(req.configure(UsergroupsListRequest.builder()).build())
     }
 
-    
+
     fun usergroupsUpdate(req: UsergroupsUpdateRequest): UsergroupsUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2300,12 +2300,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usergroupsUpdate(req: RequestConfigurator<UsergroupsUpdateRequest.UsergroupsUpdateRequestBuilder?>): UsergroupsUpdateResponse {
         return usergroupsUpdate(req.configure(UsergroupsUpdateRequest.builder()).build())
     }
 
-    
+
     fun usergroupUsersList(req: UsergroupUsersListRequest): UsergroupUsersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2315,12 +2315,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usergroupUsersList(req: RequestConfigurator<UsergroupUsersListRequest.UsergroupUsersListRequestBuilder?>): UsergroupUsersListResponse {
         return usergroupUsersList(req.configure(UsergroupUsersListRequest.builder()).build())
     }
 
-    
+
     fun usergroupUsersUpdate(req: UsergroupUsersUpdateRequest): UsergroupUsersUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2330,12 +2330,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usergroupUsersUpdate(req: RequestConfigurator<UsergroupUsersUpdateRequest.UsergroupUsersUpdateRequestBuilder?>): UsergroupUsersUpdateResponse {
         return usergroupUsersUpdate(req.configure(UsergroupUsersUpdateRequest.builder()).build())
     }
 
-    
+
     fun usersConversations(req: UsersConversationsRequest): UsersConversationsResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2345,12 +2345,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersConversations(req: RequestConfigurator<UsersConversationsRequest.UsersConversationsRequestBuilder?>): UsersConversationsResponse {
         return usersConversations(req.configure(UsersConversationsRequest.builder()).build())
     }
 
-    
+
     fun usersDeletePhoto(req: UsersDeletePhotoRequest): UsersDeletePhotoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2360,12 +2360,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersDeletePhoto(req: RequestConfigurator<UsersDeletePhotoRequest.UsersDeletePhotoRequestBuilder?>): UsersDeletePhotoResponse {
         return usersDeletePhoto(req.configure(UsersDeletePhotoRequest.builder()).build())
     }
 
-    
+
     fun usersGetPresence(req: UsersGetPresenceRequest): UsersGetPresenceResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2375,12 +2375,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersGetPresence(req: RequestConfigurator<UsersGetPresenceRequest.UsersGetPresenceRequestBuilder?>): UsersGetPresenceResponse {
         return usersGetPresence(req.configure(UsersGetPresenceRequest.builder()).build())
     }
 
-    
+
     fun usersIdentity(req: UsersIdentityRequest): UsersIdentityResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2390,12 +2390,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersIdentity(req: RequestConfigurator<UsersIdentityRequest.UsersIdentityRequestBuilder?>): UsersIdentityResponse {
         return usersIdentity(req.configure(UsersIdentityRequest.builder()).build())
     }
 
-    
+
     fun usersInfo(req: UsersInfoRequest): UsersInfoResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2405,12 +2405,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersInfo(req: RequestConfigurator<UsersInfoRequest.UsersInfoRequestBuilder?>): UsersInfoResponse {
         return usersInfo(req.configure(UsersInfoRequest.builder()).build())
     }
 
-    
+
     fun usersList(req: UsersListRequest): UsersListResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2420,12 +2420,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersList(req: RequestConfigurator<UsersListRequest.UsersListRequestBuilder?>): UsersListResponse {
         return usersList(req.configure(UsersListRequest.builder()).build())
     }
 
-    
+
     fun usersLookupByEmail(req: UsersLookupByEmailRequest): UsersLookupByEmailResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2435,12 +2435,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersLookupByEmail(req: RequestConfigurator<UsersLookupByEmailRequest.UsersLookupByEmailRequestBuilder?>): UsersLookupByEmailResponse {
         return usersLookupByEmail(req.configure(UsersLookupByEmailRequest.builder()).build())
     }
 
-    
+
     fun usersSetActive(req: UsersSetActiveRequest): UsersSetActiveResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2450,23 +2450,23 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersSetActive(req: RequestConfigurator<UsersSetActiveRequest.UsersSetActiveRequestBuilder?>): UsersSetActiveResponse {
         return usersSetActive(req.configure(UsersSetActiveRequest.builder()).build())
     }
 
-    
+
     fun usersSetPhoto(req: UsersSetPhotoRequest?): UsersSetPhotoResponse {
         // return postMultipartAndParseResponse(toMultipartBody(req), Methods.USERS_SET_PHOTO, getToken(req), UsersSetPhotoResponse.class);
         throw java.lang.IllegalStateException("Not supported")
     }
 
-    
+
     fun usersSetPhoto(req: RequestConfigurator<UsersSetPhotoRequest.UsersSetPhotoRequestBuilder?>): UsersSetPhotoResponse {
         return usersSetPhoto(req.configure(UsersSetPhotoRequest.builder()).build())
     }
 
-    
+
     fun usersSetPresence(req: UsersSetPresenceRequest): UsersSetPresenceResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2476,12 +2476,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersSetPresence(req: RequestConfigurator<UsersSetPresenceRequest.UsersSetPresenceRequestBuilder?>): UsersSetPresenceResponse {
         return usersSetPresence(req.configure(UsersSetPresenceRequest.builder()).build())
     }
 
-    
+
     fun usersProfileGet(req: UsersProfileGetRequest): UsersProfileGetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2491,12 +2491,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersProfileGet(req: RequestConfigurator<UsersProfileGetRequest.UsersProfileGetRequestBuilder?>): UsersProfileGetResponse {
         return usersProfileGet(req.configure(UsersProfileGetRequest.builder()).build())
     }
 
-    
+
     fun usersProfileSet(req: UsersProfileSetRequest): UsersProfileSetResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2506,12 +2506,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun usersProfileSet(req: RequestConfigurator<UsersProfileSetRequest.UsersProfileSetRequestBuilder?>): UsersProfileSetResponse {
         return usersProfileSet(req.configure(UsersProfileSetRequest.builder()).build())
     }
 
-    
+
     fun viewsOpen(req: ViewsOpenRequest): ViewsOpenResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2521,12 +2521,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun viewsOpen(req: RequestConfigurator<ViewsOpenRequest.ViewsOpenRequestBuilder?>): ViewsOpenResponse {
         return viewsOpen(req.configure(ViewsOpenRequest.builder()).build())
     }
 
-    
+
     fun viewsPush(req: ViewsPushRequest): ViewsPushResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2536,12 +2536,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun viewsPush(req: RequestConfigurator<ViewsPushRequest.ViewsPushRequestBuilder?>): ViewsPushResponse {
         return viewsPush(req.configure(ViewsPushRequest.builder()).build())
     }
 
-    
+
     fun viewsUpdate(req: ViewsUpdateRequest): ViewsUpdateResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2551,12 +2551,12 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun viewsUpdate(req: RequestConfigurator<ViewsUpdateRequest.ViewsUpdateRequestBuilder?>): ViewsUpdateResponse {
         return viewsUpdate(req.configure(ViewsUpdateRequest.builder()).build())
     }
 
-    
+
     fun viewsPublish(req: ViewsPublishRequest): ViewsPublishResponse {
         return postFormWithTokenAndParseResponse(
             toForm(req),
@@ -2566,7 +2566,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun viewsPublish(req: RequestConfigurator<ViewsPublishRequest.ViewsPublishRequestBuilder?>): ViewsPublishResponse {
         return viewsPublish(req.configure(ViewsPublishRequest.builder()).build())
     }
@@ -2592,7 +2592,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
     // ----------------------------------------------
     //  Methods to send requests and parse responses
     // ----------------------------------------------
-    
+
     fun <T> postFormAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2605,7 +2605,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun <T> postFormWithAuthorizationHeaderAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2620,7 +2620,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun <T> postFormWithTokenAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2635,7 +2635,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     fun <T> postMultipartAndParseResponse(
         form: RequestConfigurator<FormBody.Builder?>,
         endpoint: String?,
@@ -2651,7 +2651,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         )
     }
 
-    
+
     protected fun <T> postFormAndParseResponse(
         form: FormBody.Builder?,
         endpoint: String?,
@@ -2661,7 +2661,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return parseJsonResponseAndRunListeners(response, clazz)
     }
 
-    
+
     protected fun <T> postFormWithAuthorizationHeaderAndParseResponse(
         form: FormBody.Builder,
         endpoint: String?,
@@ -2673,7 +2673,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return parseJsonResponseAndRunListeners(response, clazz)
     }
 
-    
+
     protected fun <T> postFormWithTokenAndParseResponse(
         form: FormBody.Builder?,
         endpoint: String?,
@@ -2684,7 +2684,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         return parseJsonResponseAndRunListeners(response, clazz)
     }
 
-    
+
     protected fun <T> postMultipartAndParseResponse(
         form: FormBody.Builder?,
         endpoint: String?,
@@ -2715,7 +2715,7 @@ class MethodsClientImpl(slackHttpClient: SlackHttpClient, token: String?) : Meth
         }
     }
 
-    
+
     private fun <T> parseJsonResponseAndRunListeners(response: HttpResponse?, clazz: java.lang.Class<T>): T {
 //        String body = response.body().string();
 //        slackHttpClient.runHttpResponseListeners(response, body);

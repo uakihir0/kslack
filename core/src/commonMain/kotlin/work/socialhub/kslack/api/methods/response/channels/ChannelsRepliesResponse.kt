@@ -1,14 +1,12 @@
 package work.socialhub.kslack.api.methods.response.channels
 
-import work.socialhub.kslack.api.model.Message
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.ThreadInfo
+import work.socialhub.kslack.entity.message.Message
 
-class ChannelsRepliesResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@Serializable
+class ChannelsRepliesResponse : SlackApiResponse() {
     var messages: Array<Message>? = null
     var threadInfo: ThreadInfo? = null
     var isHasMore: Boolean = false

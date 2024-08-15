@@ -1,19 +1,20 @@
 package work.socialhub.kslack.api.methods.response.chat
 
-import work.socialhub.kslack.api.model.Attachment
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.Attachment
+import work.socialhub.kslack.entity.block.LayoutBlock
+import work.socialhub.kslack.entity.bot.BotProfile
 
-class ChatScheduleMessageResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
+@Serializable
+class ChatScheduleMessageResponse : SlackApiResponse() {
 
     var scheduledMessageId: String? = null
     var channel: String? = null
     var postAt: Int? = null
     var message: ScheduledMessage? = null
 
+    @Serializable
     class ScheduledMessage {
         var botId: String? = null
         var botProfile: BotProfile? = null

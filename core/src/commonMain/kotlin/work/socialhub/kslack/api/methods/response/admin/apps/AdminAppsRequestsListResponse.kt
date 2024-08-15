@@ -1,14 +1,12 @@
 package work.socialhub.kslack.api.methods.response.admin.apps
 
-import work.socialhub.kslack.api.model.ResponseMetadata
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.ResponseMetadata
+import work.socialhub.kslack.entity.admin.AppRequest
 
-class AdminAppsRequestsListResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@Serializable
+class AdminAppsRequestsListResponse : SlackApiResponse() {
     var appRequests: Array<AppRequest>? = null
     var responseMetadata: ResponseMetadata? = null
 }

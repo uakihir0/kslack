@@ -61,8 +61,8 @@ class StarsListResponse : SlackApiResponse {
         var reactions: Array<Reaction>? = null
 
 
-         * A reply message information in a MessageRoot.
-         */
+        * A reply message information in a MessageRoot.
+        */
         class MessageRootReply {
             var user: String? = null
             var ts: String? = null

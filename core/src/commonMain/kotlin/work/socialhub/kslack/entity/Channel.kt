@@ -1,7 +1,11 @@
 package work.socialhub.kslack.entity
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
+@JsExport
+@Serializable
 class Channel {
     var enterpriseId: String? = null
     var id: String? = null

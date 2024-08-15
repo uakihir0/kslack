@@ -1,11 +1,11 @@
 package work.socialhub.kslack.api.methods.response.conversations
 
-import work.socialhub.kslack.api.model.Conversation
+import kotlinx.serialization.Serializable
+import work.socialhub.kmastodon.entity.Conversation
+import work.socialhub.kslack.api.methods.SlackApiResponse
 
-class ConversationsCreateResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
+@Serializable
+class ConversationsCreateResponse : SlackApiResponse() {
 
     // {
     //   "ok": false,
@@ -13,9 +13,6 @@ class ConversationsCreateResponse : SlackApiResponse {
     //   "detail": "Value passed for `name` exceeded max length."
     // }
     var detail: String? = null
-
-    var needed: String? = null
-    var provided: String? = null
 
     var channel: Conversation? = null
 }
