@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.conversations
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ConversationsHistoryRequest(
@@ -36,63 +37,16 @@ class ConversationsHistoryRequest(
      * Include messages with latest or oldest timestamp in results only when either timestamp is specified.
      */
     var isInclusive: Boolean
-) : SlackApiRequest {
-    class ConversationsHistoryRequestBuilder() {
-        private var token: String? = null
-        private var channel: String? = null
-        private var cursor: String? = null
-        private var oldest: String? = null
-        private var latest: String? = null
-        private var limit: Int? = null
-        private var inclusive = false
+) : SlackApiRequest, FormRequest {
 
-        fun token(token: String?): ConversationsHistoryRequestBuilder {
-            this.token = token
-            return this
-        }
-
-        fun channel(channel: String?): ConversationsHistoryRequestBuilder {
-            this.channel = channel
-            return this
-        }
-
-        fun cursor(cursor: String?): ConversationsHistoryRequestBuilder {
-            this.cursor = cursor
-            return this
-        }
-
-        fun oldest(oldest: String?): ConversationsHistoryRequestBuilder {
-            this.oldest = oldest
-            return this
-        }
-
-        fun latest(latest: String?): ConversationsHistoryRequestBuilder {
-            this.latest = latest
-            return this
-        }
-
-        fun limit(limit: Int?): ConversationsHistoryRequestBuilder {
-            this.limit = limit
-            return this
-        }
-
-        fun inclusive(inclusive: Boolean): ConversationsHistoryRequestBuilder {
-            this.inclusive = inclusive
-            return this
-        }
-
-        fun build(): ConversationsHistoryRequest {
-            return ConversationsHistoryRequest(token, channel, cursor, oldest, latest, limit, inclusive)
-        }
-
-        override fun toString(): String {
-            return "ConversationsHistoryRequest.ConversationsHistoryRequestBuilder(token=" + this.token + ", channel=" + this.channel + ", cursor=" + this.cursor + ", oldest=" + this.oldest + ", latest=" + this.latest + ", limit=" + this.limit + ", inclusive=" + this.inclusive + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): ConversationsHistoryRequestBuilder {
-            return ConversationsHistoryRequestBuilder()
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("cursor", cursor)
+            it.addParam("latest", latest)
+            it.addParam("limit", limit)
+            it.addParam("oldest", oldest)
+            it.addParam("inclusive", isInclusive)
         }
     }
 }

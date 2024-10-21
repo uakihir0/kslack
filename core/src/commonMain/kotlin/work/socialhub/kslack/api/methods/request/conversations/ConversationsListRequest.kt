@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.conversations
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.entity.ConversationType
 
@@ -29,4 +30,19 @@ class ConversationsListRequest(
      */
     var types: Array<ConversationType>?
 
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+
+            it.addParam("cursor", cursor)
+            it.addParam("exclude_archived", isExcludeArchived)
+            it.addParam("limit", limit)
+
+            if (types != null) {
+                val typeValues = types!!.map { t -> t.value }
+                it.addParam("types", typeValues.joinToString(","))
+            }
+        }
+    }
+}

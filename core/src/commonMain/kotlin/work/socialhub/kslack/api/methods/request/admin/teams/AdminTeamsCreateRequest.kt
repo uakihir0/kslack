@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.admin.teams
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -16,4 +17,14 @@ class AdminTeamsCreateRequest(
     var teamDescription: String?,
     /** Who can join the team. A team's discoverability can be open, closed, invite_only, or unlisted.*/
     var teamDiscoverability: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("team_domain", teamDomain)
+            it.addParam("team_name", teamName)
+            it.addParam("team_description", teamDescription)
+            it.addParam("team_discoverability", teamDiscoverability)
+        }
+    }
+}

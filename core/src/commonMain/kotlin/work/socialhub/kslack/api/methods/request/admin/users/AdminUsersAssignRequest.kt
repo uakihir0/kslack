@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.admin.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -16,4 +17,12 @@ class AdminUsersAssignRequest(
     var isRestricted: Boolean,
     /** True if user should be added to the workspace as a single-channel guest. */
     var isUltraRestricted: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("team_id", teamId)
+            it.addParam("user_id", userId)
+        }
+    }
+}

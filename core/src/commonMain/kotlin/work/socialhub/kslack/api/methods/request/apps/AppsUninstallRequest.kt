@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.apps
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -12,4 +13,12 @@ class AppsUninstallRequest(
     var clientId: String?,
     /** Issued when you created your application. */
     var clientSecret: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("client_id", clientId)
+            it.addParam("client_secret", clientSecret)
+        }
+    }
+}

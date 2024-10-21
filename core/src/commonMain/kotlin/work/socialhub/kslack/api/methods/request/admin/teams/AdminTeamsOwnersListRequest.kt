@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.admin.teams
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -14,4 +15,13 @@ class AdminTeamsOwnersListRequest(
     var limit: Int?,
     /** Workspace Id. */
     var teamId: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("cursor", cursor)
+            it.addParam("limit", limit)
+            it.addParam("team_id", teamId)
+        }
+    }
+}

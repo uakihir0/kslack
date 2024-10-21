@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.admin.apps
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -14,4 +15,13 @@ class AdminAppsRestrictRequest(
     var requestId: String?,
     /** Workspace Id */
     var teamId: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("app_id", appId)
+            it.addParam("request_id", requestId)
+            it.addParam("team_id", teamId)
+        }
+    }
+}

@@ -1,6 +1,8 @@
 package work.socialhub.kslack.api.methods.request.chat
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.block.LayoutBlock
 
@@ -52,5 +54,38 @@ class ChatScheduleMessageRequest(
     var isUnfurlLinks: Boolean,
     /** Pass false to disable unfurling of media content. */
     var isUnfurlMedia: Boolean,
+) : SlackApiRequest, FormRequest {
 
-    ) : SlackApiRequest
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("post_at", postAt)
+            it.addParam("text", text)
+            it.addParam("as_user", isAsUser)
+
+            if (blocksAsString != null) {
+                it.addParam("blocks", blocksAsString)
+            } else if (blocks != null) {
+                val json = JsonHelper.toJson(blocks)
+                it.addParam("blocks", json)
+            }
+            if (blocksAsString != null && blocks != null) {
+                TODO("Although you set both blocksAsString and blocks, only blocksAsString was used.")
+            }
+
+            if (attachmentsAsString != null) {
+                it.addParam("attachments", attachmentsAsString)
+            } else if (attachments != null) {
+                val json = JsonHelper.toJson(attachments)
+                it.addParam("attachments", json)
+            }
+
+            it.addParam("link_names", isLinkNames)
+            it.addParam("parse", parse)
+            it.addParam("reply_broadcast", isReplyBroadcast)
+            it.addParam("thread_ts", threadTs)
+            it.addParam("unfurl_links", isUnfurlLinks)
+            it.addParam("unfurl_media", isUnfurlMedia)
+        }
+    }
+}

@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.admin.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -14,4 +15,13 @@ class AdminUsersSessionResetRequest(
     var isMobileOnly: Boolean,
     /** Only expire web sessions (default: false) */
     var isWebOnly: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("user_id", userId)
+            it.addParam("mobile_only", isMobileOnly)
+            it.addParam("web_only", isWebOnly)
+        }
+    }
+}

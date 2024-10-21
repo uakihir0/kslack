@@ -73,715 +73,23 @@ import work.socialhub.kslack.api.methods.request.views.ViewsUpdateRequest
 import work.socialhub.kslack.common.json.GsonFactory
 
 object RequestFormBuilder {
-    private val log: Logger = Logger.getLogger(SlackApiException::class.java)
-
-    fun toForm(req: AdminUsersSessionResetRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("user_id", req.getUserId(), form)
-        setIfNotNull("mobile_only", req.isMobileOnly(), form)
-        setIfNotNull("web_only", req.isWebOnly(), form)
-        return form
-    }
-
-    fun toForm(req: AdminAppsApproveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("app_id", req.getAppId(), form)
-        setIfNotNull("request_id", req.getRequestId(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminAppsRestrictRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("app_id", req.getAppId(), form)
-        setIfNotNull("request_id", req.getRequestId(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminAppsRequestsListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminInviteRequestsApproveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("invite_request_id", req.getInviteRequestId(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminInviteRequestsDenyRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("invite_request_id", req.getInviteRequestId(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminInviteRequestsListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminInviteRequestsApprovedListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminInviteRequestsDeniedListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminTeamsAdminsListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminTeamsOwnersListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminTeamsCreateRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_domain", req.getTeamDomain(), form)
-        setIfNotNull("team_name", req.getTeamName(), form)
-        setIfNotNull("team_description", req.getTeamDescription(), form)
-        setIfNotNull("team_discoverability", req.getTeamDiscoverability(), form)
-        return form
-    }
-
-    fun toForm(req: AdminTeamsSettingsSetDescriptionRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("description", req.getDescription(), form)
-        return form
-    }
-
-    fun toForm(req: AdminTeamsSettingsSetIconRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("image_url", req.getImageUrl(), form)
-        return form
-    }
-
-    fun toForm(req: AdminTeamsSettingsSetNameRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("name", req.getName(), form)
-        return form
-    }
-
-    fun toForm(req: AdminUsersAssignRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("user_id", req.getUserId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminUsersInviteRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull(
-            "channel_ids",
-            req.getChannelIds().stream().collect(java.util.stream.Collectors.joining(",")),
-            form
-        )
-        setIfNotNull("email", req.getEmail(), form)
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("custom_message", req.getCustomMessage(), form)
-        setIfNotNull("guest_expiration_ts", req.getGuestExpirationTs(), form)
-        setIfNotNull("is_restricted", req.isRestricted(), form)
-        setIfNotNull("is_ultra_restricted", req.isUltraRestricted(), form)
-        setIfNotNull("real_name", req.getRealName(), form)
-        setIfNotNull("resend", req.isResend(), form)
-        return form
-    }
-
-    fun toForm(req: AdminUsersRemoveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("user_id", req.getUserId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminUsersSetAdminRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("user_id", req.getUserId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminUsersSetOwnerRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("user_id", req.getUserId(), form)
-        return form
-    }
-
-    fun toForm(req: AdminUsersSetRegularRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("team_id", req.getTeamId(), form)
-        setIfNotNull("user_id", req.getUserId(), form)
-        return form
-    }
-
-    fun toForm(req: ApiTestRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("foo", req.getFoo(), form)
-        setIfNotNull("error", req.getError(), form)
-        return form
-    }
-
-    fun toForm(req: AppsUninstallRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("client_id", req.getClientId(), form)
-        setIfNotNull("client_secret", req.getClientSecret(), form)
-        return form
-    }
-
-    fun toForm(req: AppsPermissionsRequestRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("trigger_id", req.getTriggerId(), form)
-        if (req.getScopes() != null) {
-            setIfNotNull("scopes", req.getScopes().stream().collect(java.util.stream.Collectors.joining(",")), form)
-        }
-        return form
-    }
-
-    fun toForm(req: AppsPermissionsInfoRequest?): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        return form
-    }
-
-    fun toForm(req: AppsPermissionsResourcesListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        return form
-    }
-
-    fun toForm(req: AppsPermissionsScopesListRequest?): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        return form
-    }
-
-    fun toForm(req: AppsPermissionsUsersListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        return form
-    }
-
-    fun toForm(req: AppsPermissionsUsersRequestRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("trigger_id", req.getTriggerId(), form)
-        if (req.getScopes() != null) {
-            setIfNotNull("scopes", req.getScopes().stream().collect(java.util.stream.Collectors.joining(",")), form)
-        }
-        setIfNotNull("user", req.getUser(), form)
-        return form
-    }
-
-    fun toForm(req: AuthRevokeRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("test", req.isTest(), form)
-        return form
-    }
-
-    fun toForm(req: AuthTestRequest?): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        return form
-    }
-
-    fun toForm(req: BotsInfoRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("bot", req.getBot(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsArchiveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsCreateRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("validate", req.isValidate(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsHistoryRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("latest", req.getLatest(), form)
-        setIfNotNull("oldest", req.getOldest(), form)
-        setIfNotNull("inclusive", req.isInclusive(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("unreads", req.isUnreads(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsRepliesRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsInfoRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("include_locale", req.isIncludeLocale(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("exclude_members", req.isExcludeMembers(), form)
-        setIfNotNull("exclude_archived", req.isExcludeArchived(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsInviteRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("user", req.getUser(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsJoinRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("validate", req.isValidate(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsKickRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("user", req.getUser(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsLeaveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsMarkRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("ts", req.getTs(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsRenameRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("validate", req.isValidate(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsSetPurposeRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("purpose", req.getPurpose(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsSetTopicRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("topic", req.getTopic(), form)
-        return form
-    }
-
-    fun toForm(req: ChannelsUnarchiveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: ChatGetPermalinkRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("message_ts", req.getMessageTs(), form)
-        return form
-    }
-
-    fun toForm(req: ChatDeleteRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("ts", req.getTs(), form)
-        return form
-    }
-
-    fun toForm(req: ChatDeleteScheduledMessageRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("scheduled_message_id", req.getScheduledMessageId(), form)
-        return form
-    }
-
-    fun toForm(req: ChatMeMessageRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("text", req.getText(), form)
-        return form
-    }
-
-    fun toForm(req: ChatScheduleMessageRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("post_at", req.getPostAt(), form)
-        setIfNotNull("text", req.getText(), form)
-        setIfNotNull("as_user", req.isAsUser(), form)
-
-        if (req.getBlocksAsString() != null) {
-            form.add("blocks", req.getBlocksAsString())
-        } else if (req.getBlocks() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getBlocks())
-            form.add("blocks", json)
-        }
-        if (req.getBlocksAsString() != null && req.getBlocks() != null) {
-            log.warn("Although you set both blocksAsString and blocks, only blocksAsString was used.")
-        }
-
-        if (req.getAttachmentsAsString() != null) {
-            form.add("attachments", req.getAttachmentsAsString())
-        } else if (req.getAttachments() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getAttachments())
-            form.add("attachments", json)
-        }
-        setIfNotNull("link_names", req.isLinkNames(), form)
-        setIfNotNull("parse", req.getParse(), form)
-        setIfNotNull("reply_broadcast", req.isReplyBroadcast(), form)
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
-        setIfNotNull("unfurl_links", req.isUnfurlLinks(), form)
-        setIfNotNull("unfurl_media", req.isUnfurlMedia(), form)
-        return form
-    }
-
-    fun toForm(req: ChatScheduleMessagesListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("latest", req.getLatest(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("oldest", req.getOldest(), form)
-        return form
-    }
-
-    fun toForm(req: ChatPostEphemeralRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("text", req.getText(), form)
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("as_user", req.isAsUser(), form)
-
-        if (req.getBlocksAsString() != null) {
-            form.add("blocks", req.getBlocksAsString())
-        } else if (req.getBlocks() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getBlocks())
-            form.add("blocks", json)
-        }
-        if (req.getBlocksAsString() != null && req.getBlocks() != null) {
-            log.warn("Although you set both blocksAsString and blocks, only blocksAsString was used.")
-        }
-
-        if (req.getAttachmentsAsString() != null) {
-            form.add("attachments", req.getAttachmentsAsString())
-        } else if (req.getAttachments() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getAttachments())
-            form.add("attachments", json)
-        }
-        setIfNotNull("link_names", req.isLinkNames(), form)
-        setIfNotNull("parse", req.getParse(), form)
-        return form
-    }
-
-    fun toForm(req: ChatPostMessageRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
-        setIfNotNull("text", req.getText(), form)
-        setIfNotNull("parse", req.getParse(), form)
-        setIfNotNull("link_names", req.isLinkNames(), form)
-        setIfNotNull("mrkdwn", req.isMrkdwn(), form)
-
-        if (req.getBlocksAsString() != null) {
-            form.add("blocks", req.getBlocksAsString())
-        } else if (req.getBlocks() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getBlocks())
-            form.add("blocks", json)
-        }
-        if (req.getBlocksAsString() != null && req.getBlocks() != null) {
-            log.warn("Although you set both blocksAsString and blocks, only blocksAsString was used.")
-        }
-
-        if (req.getAttachmentsAsString() != null) {
-            form.add("attachments", req.getAttachmentsAsString())
-        } else if (req.getAttachments() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getAttachments())
-            form.add("attachments", json)
-        }
-        setIfNotNull("unfurl_links", req.isUnfurlLinks(), form)
-        setIfNotNull("unfurl_media", req.isUnfurlMedia(), form)
-        setIfNotNull("username", req.getUsername(), form)
-        setIfNotNull("as_user", req.isAsUser(), form)
-        setIfNotNull("icon_url", req.getIconUrl(), form)
-        setIfNotNull("icon_emoji", req.getIconEmoji(), form)
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
-        setIfNotNull("reply_broadcast", req.isReplyBroadcast(), form)
-        return form
-    }
-
-    fun toForm(req: ChatUpdateRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("ts", req.getTs(), form)
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("text", req.getText(), form)
-        setIfNotNull("parse", req.getParse(), form)
-        setIfNotNull("link_names", req.isLinkNames(), form)
-
-        if (req.getBlocksAsString() != null) {
-            form.add("blocks", req.getBlocksAsString())
-        } else if (req.getBlocks() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getBlocks())
-            form.add("blocks", json)
-        }
-        if (req.getBlocksAsString() != null && req.getBlocks() != null) {
-            log.warn("Although you set both blocksAsString and blocks, only blocksAsString was used.")
-        }
-
-        if (req.getAttachmentsAsString() != null) {
-            form.add("attachments", req.getAttachmentsAsString())
-        } else if (req.getAttachments() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getAttachments())
-            form.add("attachments", json)
-        }
-        setIfNotNull("as_user", req.isAsUser(), form)
-        return form
-    }
-
-    fun toForm(req: ChatUnfurlRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("ts", req.getTs(), form)
-        setIfNotNull("channel", req.getChannel(), form)
-        if (req.getRawUnfurls() != null) {
-            setIfNotNull("unfurls", req.getRawUnfurls(), form)
-        } else {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getUnfurls())
-            setIfNotNull("unfurls", json, form)
-        }
-        setIfNotNull("user_auth_required", req.isUserAuthRequired(), form)
-        setIfNotNull("user_auth_message", req.getUserAuthMessage(), form)
-        setIfNotNull("user_auth_url", req.getUserAuthUrl(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsArchiveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsCloseRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsCreateRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("is_private", req.isPrivate(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsHistoryRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("latest", req.getLatest(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("oldest", req.getOldest(), form)
-        setIfNotNull("inclusive", req.isInclusive(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsInfoRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("include_locale", req.isIncludeLocale(), form)
-        setIfNotNull("include_num_members", req.isIncludeNumMembers(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsInviteRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        if (req.getUsers() != null) {
-            setIfNotNull("users", req.getUsers().stream().collect(java.util.stream.Collectors.joining(",")), form)
-        }
-        return form
-    }
-
-    fun toForm(req: ConversationsJoinRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsKickRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("user", req.getUser(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsLeaveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsListRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("exclude_archived", req.isExcludeArchived(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-
-        if (req.getTypes() != null) {
-            val typeValues: MutableArray<String> = java.util.ArrayArray<String>()
-            for (type in req.getTypes()) {
-                typeValues.add(type.value())
-            }
-            setIfNotNull("types", typeValues.stream().collect(java.util.stream.Collectors.joining(",")), form)
-        }
-        return form
-    }
-
-    fun toForm(req: ConversationsMembersRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsOpenRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("return_im", req.isReturnIm(), form)
-        if (req.getUsers() != null) {
-            setIfNotNull("users", req.getUsers().stream().collect(java.util.stream.Collectors.joining(",")), form)
-        }
-        return form
-    }
-
-    fun toForm(req: ConversationsRenameRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("name", req.getName(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsRepliesRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("inclusive", req.isInclusive(), form)
-        setIfNotNull("ts", req.getTs(), form)
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("oldest", req.getOldest(), form)
-        setIfNotNull("latest", req.getLatest(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsSetPurposeRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("purpose", req.getPurpose(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsSetTopicRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("topic", req.getTopic(), form)
-        return form
-    }
-
-    fun toForm(req: ConversationsUnarchiveRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        return form
-    }
-
-    fun toForm(req: DialogOpenRequest): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        setIfNotNull("trigger_id", req.getTriggerId(), form)
-        if (req.getDialogAsString() != null) {
-            setIfNotNull("dialog", req.getDialogAsString(), form)
-        } else if (req.getDialog() != null) {
-            val json: String = GsonFactory.createSnakeCase().toJson(req.getDialog())
-            setIfNotNull("dialog", json, form)
-        }
-        return form
-    }
-
-    fun toForm(req: DndEndDndRequest?): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        return form
-    }
-
-    fun toForm(req: DndEndSnoozeRequest?): FormBody.Builder {
-        val form: FormBody.Builder = Builder()
-        return form
-    }
 
     fun toForm(req: DndInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
+        it.addParam("user", User)
         return form
     }
 
     fun toForm(req: DndSetSnoozeRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("num_minutes", req.getNumMinutes(), form)
+        it.addParam("num_minutes", NumMinutes)
         return form
     }
 
     fun toForm(req: DndTeamInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        if (req.getUsers() != null) {
-            setIfNotNull("users", req.getUsers().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        if (Users() != null) {
+            it.addParam("users", Users().stream().collect(java.util.stream.Collectors.joining(",")))
         }
         return form
     }
@@ -793,54 +101,54 @@ object RequestFormBuilder {
 
     fun toForm(req: FilesDeleteRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
+        it.addParam("file", File)
         return form
     }
 
     fun toForm(req: FilesInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("file", File)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: FilesListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("ts_from", req.getTsFrom(), form)
-        setIfNotNull("ts_to", req.getTsTo(), form)
-        if (req.getTypes() != null) {
-            setIfNotNull("types", req.getTypes().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        it.addParam("user", User)
+        it.addParam("channel", Channel)
+        it.addParam("ts_from", TsFrom)
+        it.addParam("ts_to", TsTo)
+        if (Types() != null) {
+            it.addParam("types", Types().stream().collect(java.util.stream.Collectors.joining(",")))
         }
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
-        setIfNotNull("show_files_hidden_by_limit", req.isShowFilesHiddenByLimit(), form)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
+        it.addParam("show_files_hidden_by_limit", req.isShowFilesHiddenByLimit)
         return form
     }
 
     fun toForm(req: FilesRevokePublicURLRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
+        it.addParam("file", File)
         return form
     }
 
     fun toForm(req: FilesSharedPublicURLRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
+        it.addParam("file", File)
         return form
     }
 
     fun toForm(req: FilesUploadRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("content", req.getContent(), form)
-        setIfNotNull("filetype", req.getFiletype(), form)
-        setIfNotNull("filename", req.getFilename(), form)
-        setIfNotNull("title", req.getTitle(), form)
-        setIfNotNull("initial_comment", req.getInitialComment(), form)
-        if (req.getChannels() != null) {
-            setIfNotNull("channels", req.getChannels().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        it.addParam("content", Content)
+        it.addParam("filetype", Filetype)
+        it.addParam("filename", Filename)
+        it.addParam("title", Title)
+        it.addParam("initial_comment", InitialComment)
+        if (Channels() != null) {
+            it.addParam("channels", Channels().stream().collect(java.util.stream.Collectors.joining(",")))
         }
         return form
     }
@@ -848,440 +156,424 @@ object RequestFormBuilder {
     fun toMultipartBody(req: FilesUploadRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
 
-        if (req.getFile() != null) {
-            form.addFile("file", req.getFile())
+        if (File() != null) {
+            form.addFile("file", File)
         }
-        if (req.getFilestream() != null) {
-            form.addFile("file", req.getFilestream(), req.getFilename())
+        if (Filestream() != null) {
+            form.addFile("file", Filestream(), Filename)
         }
-        setIfNotNull("filetype", req.getFiletype(), form)
-        setIfNotNull("filename", req.getFilename(), form)
-        setIfNotNull("title", req.getTitle(), form)
-        setIfNotNull("initial_comment", req.getInitialComment(), form)
+        it.addParam("filetype", Filetype)
+        it.addParam("filename", Filename)
+        it.addParam("title", Title)
+        it.addParam("initial_comment", InitialComment)
 
-        if (req.getChannels() != null) {
-            setIfNotNull("channels", req.getChannels().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        if (Channels() != null) {
+            it.addParam("channels", Channels().stream().collect(java.util.stream.Collectors.joining(",")))
         }
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
+        it.addParam("thread_ts", ThreadTs)
         return form
     }
 
     fun toForm(req: FilesCommentsAddRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("comment", req.getComment(), form)
+        it.addParam("file", File)
+        it.addParam("comment", Comment)
         return form
     }
 
     fun toForm(req: FilesCommentsDeleteRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("id", req.getId(), form)
+        it.addParam("file", File)
+        it.addParam("id", Id)
         return form
     }
 
     fun toForm(req: FilesCommentsEditRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("comment", req.getComment(), form)
-        setIfNotNull("id", req.getId(), form)
+        it.addParam("file", File)
+        it.addParam("comment", Comment)
+        it.addParam("id", Id)
         return form
     }
 
     //    public static MultipartBody.Builder toMultipartBody(FilesRemoteAddRequest req) {
     //        MultipartBody.Builder form = new MultipartBody.Builder();
-    //        setIfNotNull("external_id", req.getExternalId(), form);
-    //        setIfNotNull("external_url", req.getExternalUrl(), form);
-    //        setIfNotNull("title", req.getTitle(), form);
-    //        setIfNotNull("filetype", req.getFiletype(), form);
-    //        if (req.getIndexableFileContents() != null) {
-    //            RequestBody indexableFileContents = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getIndexableFileContents());
-    //            form.addFormDataPart("indexable_file_contents", req.getTitle(), indexableFileContents);
+    //        it.addParam("external_id", ExternalId);
+    //        it.addParam("external_url", ExternalUrl);
+    //        it.addParam("title", Title);
+    //        it.addParam("filetype", Filetype);
+    //        if (IndexableFileContents() != null) {
+    //            RequestBody indexableFileContents = RequestBody.create(Filetype() != null ? MediaType.parse(Filetype) : null, IndexableFileContents);
+    //            form.addFormDataPart("indexable_file_contents", Title(), indexableFileContents);
     //        }
-    //        if (req.getPreviewImage() != null) {
-    //            RequestBody previewImage = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getPreviewImage());
-    //            form.addFormDataPart("preview_image", req.getTitle(), previewImage);
+    //        if (PreviewImage() != null) {
+    //            RequestBody previewImage = RequestBody.create(Filetype() != null ? MediaType.parse(Filetype) : null, PreviewImage);
+    //            form.addFormDataPart("preview_image", Title(), previewImage);
     //        }
     //        return form;
     //    }
     fun toForm(req: FilesRemoteInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("external_id", req.getExternalId(), form)
-        setIfNotNull("file", req.getFile(), form)
+        it.addParam("external_id", ExternalId)
+        it.addParam("file", File)
         return form
     }
 
     fun toForm(req: FilesRemoteListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("ts_from", req.getTsFrom(), form)
-        setIfNotNull("ts_to", req.getTsTo(), form)
+        it.addParam("channel", Channel)
+        it.addParam("cursor", Cursor)
+        it.addParam("limit", Limit)
+        it.addParam("ts_from", TsFrom)
+        it.addParam("ts_to", TsTo)
         return form
     }
 
     fun toForm(req: FilesRemoteRemoveRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("external_id", req.getExternalId(), form)
-        setIfNotNull("file", req.getFile(), form)
+        it.addParam("external_id", ExternalId)
+        it.addParam("file", File)
         return form
     }
 
     fun toForm(req: FilesRemoteShareRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("external_id", req.getExternalId(), form)
-        setIfNotNull("file", req.getFile(), form)
-        if (req.getChannels() != null) {
-            setIfNotNull("channels", req.getChannels().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        it.addParam("external_id", ExternalId)
+        it.addParam("file", File)
+        if (Channels() != null) {
+            it.addParam("channels", Channels().stream().collect(java.util.stream.Collectors.joining(",")))
         } else {
             throw java.lang.IllegalArgumentException("channels parameter is required for files.remote.share API")
         }
         return form
     }
 
-    //    public static MultipartBody.Builder toMultipartBody(FilesRemoteUpdateRequest req) {
-    //        MultipartBody.Builder form = new MultipartBody.Builder();
-    //        setIfNotNull("external_id", req.getExternalId(), form);
-    //        setIfNotNull("external_url", req.getExternalUrl(), form);
-    //        setIfNotNull("title", req.getTitle(), form);
-    //        setIfNotNull("filetype", req.getFiletype(), form);
-    //        if (req.getIndexableFileContents() != null) {
-    //            RequestBody indexableFileContents = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getIndexableFileContents());
-    //            form.addFormDataPart("indexable_file_contents", null, indexableFileContents);
-    //        }
-    //        if (req.getPreviewImage() != null) {
-    //            RequestBody previewImage = RequestBody.create(req.getFiletype() != null ? MediaType.parse(req.getFiletype()) : null, req.getPreviewImage());
-    //            form.addFormDataPart("preview_image", null, previewImage);
-    //        }
-    //        return form;
-    //    }
     fun toForm(req: GroupsArchiveRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: GroupsCloseRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: GroupsCreateChildRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: GroupsCreateRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("validate", req.isValidate(), form)
+        it.addParam("name", Name)
+        it.addParam("validate", req.isValidate)
         return form
     }
 
     fun toForm(req: GroupsHistoryRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("latest", req.getLatest(), form)
-        setIfNotNull("oldest", req.getOldest(), form)
-        setIfNotNull("inclusive", req.isInclusive(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("unreads", req.isUnreads(), form)
+        it.addParam("channel", Channel)
+        it.addParam("latest", Latest)
+        it.addParam("oldest", Oldest)
+        it.addParam("inclusive", req.isInclusive)
+        it.addParam("count", Count)
+        it.addParam("unreads", req.isUnreads)
         return form
     }
 
     fun toForm(req: GroupsRepliesRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
+        it.addParam("channel", Channel)
+        it.addParam("thread_ts", ThreadTs)
         return form
     }
 
     fun toForm(req: GroupsInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("include_locale", req.isIncludeLocale(), form)
+        it.addParam("channel", Channel)
+        it.addParam("include_locale", req.isIncludeLocale)
         return form
     }
 
     fun toForm(req: GroupsInviteRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("user", req.getUser(), form)
+        it.addParam("channel", Channel)
+        it.addParam("user", User)
         return form
     }
 
     fun toForm(req: GroupsKickRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("user", req.getUser(), form)
+        it.addParam("channel", Channel)
+        it.addParam("user", User)
         return form
     }
 
     fun toForm(req: GroupsLeaveRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: GroupsListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("exclude_archived", req.isExcludeArchived(), form)
-        setIfNotNull("exclude_members", req.isExcludeMembers(), form)
+        it.addParam("exclude_archived", req.isExcludeArchived)
+        it.addParam("exclude_members", req.isExcludeMembers)
         return form
     }
 
     fun toForm(req: GroupsMarkRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("ts", req.getTs(), form)
+        it.addParam("channel", Channel)
+        it.addParam("ts", Ts)
         return form
     }
 
     fun toForm(req: GroupsOpenRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: GroupsRenameRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("name", req.getName(), form)
+        it.addParam("channel", Channel)
+        it.addParam("name", Name)
         return form
     }
 
     fun toForm(req: GroupsSetPurposeRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("purpose", req.getPurpose(), form)
+        it.addParam("channel", Channel)
+        it.addParam("purpose", Purpose)
         return form
     }
 
     fun toForm(req: GroupsSetTopicRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("topic", req.getTopic(), form)
+        it.addParam("channel", Channel)
+        it.addParam("topic", Topic)
         return form
     }
 
     fun toForm(req: GroupsUnarchiveRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: ImCloseRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: ImHistoryRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("latest", req.getLatest(), form)
-        setIfNotNull("oldest", req.getOldest(), form)
-        setIfNotNull("inclusive", req.isInclusive(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("unreads", req.isUnreads(), form)
+        it.addParam("channel", Channel)
+        it.addParam("latest", Latest)
+        it.addParam("oldest", Oldest)
+        it.addParam("inclusive", req.isInclusive)
+        it.addParam("count", Count)
+        it.addParam("unreads", req.isUnreads)
         return form
     }
 
     fun toForm(req: ImListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("get_latest", req.getGetLatest(), form)
+        it.addParam("cursor", Cursor)
+        it.addParam("limit", Limit)
+        it.addParam("get_latest", GetLatest)
         return form
     }
 
     fun toForm(req: ImMarkRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("ts", req.getTs(), form)
+        it.addParam("channel", Channel)
+        it.addParam("ts", Ts)
         return form
     }
 
     fun toForm(req: ImOpenRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("return_im", req.isReturnIm(), form)
-        setIfNotNull("include_locale", req.isIncludeLocale(), form)
+        it.addParam("user", User)
+        it.addParam("return_im", req.isReturnIm)
+        it.addParam("include_locale", req.isIncludeLocale)
         return form
     }
 
     fun toForm(req: ImRepliesRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
+        it.addParam("channel", Channel)
+        it.addParam("thread_ts", ThreadTs)
         return form
     }
 
     fun toForm(req: MigrationExchangeRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("to_old", req.isToOld(), form)
-        if (req.getUsers() != null) {
-            setIfNotNull("users", req.getUsers().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        it.addParam("to_old", req.isToOld)
+        if (Users() != null) {
+            it.addParam("users", Users().stream().collect(java.util.stream.Collectors.joining(",")))
         }
         return form
     }
 
     fun toForm(req: MpimCloseRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: MpimHistoryRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("latest", req.getLatest(), form)
-        setIfNotNull("oldest", req.getOldest(), form)
-        setIfNotNull("inclusive", req.isInclusive(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("unreads", req.isUnreads(), form)
+        it.addParam("channel", Channel)
+        it.addParam("latest", Latest)
+        it.addParam("oldest", Oldest)
+        it.addParam("inclusive", req.isInclusive)
+        it.addParam("count", Count)
+        it.addParam("unreads", req.isUnreads)
         return form
     }
 
     fun toForm(req: MpimListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("get_latest", req.getGetLatest(), form)
+        it.addParam("cursor", Cursor)
+        it.addParam("limit", Limit)
+        it.addParam("get_latest", GetLatest)
         return form
     }
 
     fun toForm(req: MpimRepliesRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("thread_ts", req.getThreadTs(), form)
+        it.addParam("channel", Channel)
+        it.addParam("thread_ts", ThreadTs)
         return form
     }
 
     fun toForm(req: MpimMarkRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("ts", req.getTs(), form)
+        it.addParam("channel", Channel)
+        it.addParam("ts", Ts)
         return form
     }
 
     fun toForm(req: MpimOpenRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        if (req.getUsers() != null) {
-            setIfNotNull("users", req.getUsers().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        if (Users() != null) {
+            it.addParam("users", Users().stream().collect(java.util.stream.Collectors.joining(",")))
         }
         return form
     }
 
     fun toForm(req: OAuthAccessRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("client_id", req.getClientId(), form)
-        setIfNotNull("client_secret", req.getClientSecret(), form)
-        setIfNotNull("code", req.getCode(), form)
-        setIfNotNull("redirect_uri", req.getRedirectUri(), form)
-        setIfNotNull("single_channel", req.isSingleChannel(), form)
+        it.addParam("client_id", ClientId)
+        it.addParam("client_secret", ClientSecret)
+        it.addParam("code", Code)
+        it.addParam("redirect_uri", RedirectUri)
+        it.addParam("single_channel", req.isSingleChannel)
         return form
     }
 
     fun toForm(req: OAuthTokenRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("client_id", req.getClientId(), form)
-        setIfNotNull("client_secret", req.getClientSecret(), form)
-        setIfNotNull("code", req.getCode(), form)
-        setIfNotNull("redirect_uri", req.getRedirectUri(), form)
-        setIfNotNull("single_channel", req.isSingleChannel(), form)
+        it.addParam("client_id", ClientId)
+        it.addParam("client_secret", ClientSecret)
+        it.addParam("code", Code)
+        it.addParam("redirect_uri", RedirectUri)
+        it.addParam("single_channel", req.isSingleChannel)
         return form
     }
 
     fun toForm(req: PinsAddRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("file_comment", req.getFileComment(), form)
-        setIfNotNull("timestamp", req.getTimestamp(), form)
+        it.addParam("channel", Channel)
+        it.addParam("file", File)
+        it.addParam("file_comment", FileComment)
+        it.addParam("timestamp", Timestamp)
         return form
     }
 
     fun toForm(req: PinsListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
+        it.addParam("channel", Channel)
         return form
     }
 
     fun toForm(req: PinsRemoveRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("file_comment", req.getFileComment(), form)
-        setIfNotNull("timestamp", req.getTimestamp(), form)
+        it.addParam("channel", Channel)
+        it.addParam("file", File)
+        it.addParam("file_comment", FileComment)
+        it.addParam("timestamp", Timestamp)
         return form
     }
 
     fun toForm(req: ReactionsAddRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("file_comment", req.getFileComment(), form)
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("timestamp", req.getTimestamp(), form)
+        it.addParam("name", Name)
+        it.addParam("file", File)
+        it.addParam("file_comment", FileComment)
+        it.addParam("channel", Channel)
+        it.addParam("timestamp", Timestamp)
         return form
     }
 
     fun toForm(req: ReactionsGetRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("file_comment", req.getFileComment(), form)
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("timestamp", req.getTimestamp(), form)
-        setIfNotNull("full", req.isFull(), form)
+        it.addParam("file", File)
+        it.addParam("file_comment", FileComment)
+        it.addParam("channel", Channel)
+        it.addParam("timestamp", Timestamp)
+        it.addParam("full", req.isFull)
         return form
     }
 
     fun toForm(req: ReactionsListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("full", req.isFull(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("user", User)
+        it.addParam("full", req.isFull)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: ReactionsRemoveRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("file_comment", req.getFileComment(), form)
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("timestamp", req.getTimestamp(), form)
+        it.addParam("name", Name)
+        it.addParam("file", File)
+        it.addParam("file_comment", FileComment)
+        it.addParam("channel", Channel)
+        it.addParam("timestamp", Timestamp)
         return form
     }
 
     fun toForm(req: RemindersAddRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("text", req.getText(), form)
-        setIfNotNull("time", req.getTime(), form)
-        setIfNotNull("user", req.getUser(), form)
+        it.addParam("text", Text)
+        it.addParam("time", Time)
+        it.addParam("user", User)
         return form
     }
 
     fun toForm(req: RemindersCompleteRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("reminder", req.getReminder(), form)
+        it.addParam("reminder", Reminder)
         return form
     }
 
     fun toForm(req: RemindersDeleteRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("reminder", req.getReminder(), form)
+        it.addParam("reminder", Reminder)
         return form
     }
 
     fun toForm(req: RemindersInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("reminder", req.getReminder(), form)
+        it.addParam("reminder", Reminder)
         return form
     }
 
@@ -1292,92 +584,92 @@ object RequestFormBuilder {
 
     fun toForm(req: RTMConnectRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("batch_presence_aware", req.isBatchPresenceAware(), form)
-        setIfNotNull("presence_sub", req.isPresenceSub(), form)
+        it.addParam("batch_presence_aware", req.isBatchPresenceAware)
+        it.addParam("presence_sub", req.isPresenceSub)
         return form
     }
 
     fun toForm(req: RTMStartRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("include_locale", req.isIncludeLocale(), form)
-        setIfNotNull("batch_presence_aware", req.isBatchPresenceAware(), form)
-        setIfNotNull("no_latest", req.isNoLatest(), form)
-        setIfNotNull("no_unreads", req.isNoUnreads(), form)
-        setIfNotNull("presence_sub", req.isPresenceSub(), form)
-        setIfNotNull("simple_latest", req.isSimpleLatest(), form)
-        setIfNotNull("mpim_aware", req.isMpimAware(), form)
+        it.addParam("include_locale", req.isIncludeLocale)
+        it.addParam("batch_presence_aware", req.isBatchPresenceAware)
+        it.addParam("no_latest", req.isNoLatest)
+        it.addParam("no_unreads", req.isNoUnreads)
+        it.addParam("presence_sub", req.isPresenceSub)
+        it.addParam("simple_latest", req.isSimpleLatest)
+        it.addParam("mpim_aware", req.isMpimAware)
         return form
     }
 
     fun toForm(req: SearchAllRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("query", req.getQuery(), form)
-        setIfNotNull("sort", req.getSort(), form)
-        setIfNotNull("sort_dir", req.getSortDir(), form)
-        setIfNotNull("highlight", req.isHighlight(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("query", Query)
+        it.addParam("sort", Sort)
+        it.addParam("sort_dir", SortDir)
+        it.addParam("highlight", req.isHighlight)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: SearchMessagesRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("query", req.getQuery(), form)
-        setIfNotNull("sort", req.getSort(), form)
-        setIfNotNull("sort_dir", req.getSortDir(), form)
-        setIfNotNull("highlight", req.isHighlight(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("query", Query)
+        it.addParam("sort", Sort)
+        it.addParam("sort_dir", SortDir)
+        it.addParam("highlight", req.isHighlight)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: SearchFilesRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("query", req.getQuery(), form)
-        setIfNotNull("sort", req.getSort(), form)
-        setIfNotNull("sort_dir", req.getSortDir(), form)
-        setIfNotNull("highlight", req.isHighlight(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("query", Query)
+        it.addParam("sort", Sort)
+        it.addParam("sort_dir", SortDir)
+        it.addParam("highlight", req.isHighlight)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: StarsAddRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("file_comment", req.getFileComment(), form)
-        setIfNotNull("timestamp", req.getTimestamp(), form)
+        it.addParam("channel", Channel)
+        it.addParam("file", File)
+        it.addParam("file_comment", FileComment)
+        it.addParam("timestamp", Timestamp)
         return form
     }
 
     fun toForm(req: StarsListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: StarsRemoveRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("channel", req.getChannel(), form)
-        setIfNotNull("file", req.getFile(), form)
-        setIfNotNull("file_comment", req.getFileComment(), form)
-        setIfNotNull("timestamp", req.getTimestamp(), form)
+        it.addParam("channel", Channel)
+        it.addParam("file", File)
+        it.addParam("file_comment", FileComment)
+        it.addParam("timestamp", Timestamp)
         return form
     }
 
     fun toForm(req: TeamAccessLogsRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("before", req.getBefore(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("before", Before)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: TeamBillableInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
+        it.addParam("user", User)
         return form
     }
 
@@ -1388,97 +680,97 @@ object RequestFormBuilder {
 
     fun toForm(req: TeamIntegrationLogsRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("service_id", req.getServiceId(), form)
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("change_type", req.getChangeType(), form)
-        setIfNotNull("count", req.getCount(), form)
-        setIfNotNull("page", req.getPage(), form)
+        it.addParam("service_id", ServiceId)
+        it.addParam("user", User)
+        it.addParam("change_type", ChangeType)
+        it.addParam("count", Count)
+        it.addParam("page", Page)
         return form
     }
 
     fun toForm(req: TeamProfileGetRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("visibility", req.getVisibility(), form)
+        it.addParam("visibility", Visibility)
         return form
     }
 
     fun toForm(req: UsergroupsCreateRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("handle", req.getHandle(), form)
-        setIfNotNull("description", req.getDescription(), form)
-        if (req.getChannels() != null) {
-            setIfNotNull("channels", req.getChannels().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        it.addParam("name", Name)
+        it.addParam("handle", Handle)
+        it.addParam("description", Description)
+        if (Channels() != null) {
+            it.addParam("channels", Channels().stream().collect(java.util.stream.Collectors.joining(",")))
         }
-        setIfNotNull("include_count", req.isIncludeCount(), form)
+        it.addParam("include_count", req.isIncludeCount)
         return form
     }
 
     fun toForm(req: UsergroupsDisableRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("usergroup", req.getUsergroup(), form)
-        setIfNotNull("include_count", req.isIncludeCount(), form)
+        it.addParam("usergroup", Usergroup)
+        it.addParam("include_count", req.isIncludeCount)
         return form
     }
 
     fun toForm(req: UsergroupsEnableRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("usergroup", req.getUsergroup(), form)
-        setIfNotNull("include_count", req.isIncludeCount(), form)
+        it.addParam("usergroup", Usergroup)
+        it.addParam("include_count", req.isIncludeCount)
         return form
     }
 
     fun toForm(req: UsergroupsListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("include_disabled", req.isIncludeDisabled(), form)
-        setIfNotNull("include_count", req.isIncludeCount(), form)
-        setIfNotNull("include_users", req.isIncludeUsers(), form)
+        it.addParam("include_disabled", req.isIncludeDisabled)
+        it.addParam("include_count", req.isIncludeCount)
+        it.addParam("include_users", req.isIncludeUsers)
         return form
     }
 
     fun toForm(req: UsergroupsUpdateRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("usergroup", req.getUsergroup(), form)
-        setIfNotNull("name", req.getName(), form)
-        setIfNotNull("handle", req.getHandle(), form)
-        setIfNotNull("description", req.getDescription(), form)
-        if (req.getChannels() != null) {
-            setIfNotNull("channels", req.getChannels().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        it.addParam("usergroup", Usergroup)
+        it.addParam("name", Name)
+        it.addParam("handle", Handle)
+        it.addParam("description", Description)
+        if (Channels() != null) {
+            it.addParam("channels", Channels().stream().collect(java.util.stream.Collectors.joining(",")))
         }
-        setIfNotNull("include_count", req.isIncludeCount(), form)
+        it.addParam("include_count", req.isIncludeCount)
         return form
     }
 
     fun toForm(req: UsergroupUsersListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("usergroup", req.getUsergroup(), form)
-        setIfNotNull("include_disabled", req.isIncludeDisabled(), form)
+        it.addParam("usergroup", Usergroup)
+        it.addParam("include_disabled", req.isIncludeDisabled)
         return form
     }
 
     fun toForm(req: UsergroupUsersUpdateRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("usergroup", req.getUsergroup(), form)
-        if (req.getUsers() != null) {
-            setIfNotNull("users", req.getUsers().stream().collect(java.util.stream.Collectors.joining(",")), form)
+        it.addParam("usergroup", Usergroup)
+        if (Users() != null) {
+            it.addParam("users", Users().stream().collect(java.util.stream.Collectors.joining(",")))
         }
-        setIfNotNull("include_count", req.isIncludeCount(), form)
+        it.addParam("include_count", req.isIncludeCount)
         return form
     }
 
     fun toForm(req: UsersConversationsRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("exclude_archived", req.isExcludeArchived(), form)
-        setIfNotNull("limit", req.getLimit(), form)
+        it.addParam("user", User)
+        it.addParam("cursor", Cursor)
+        it.addParam("exclude_archived", req.isExcludeArchived)
+        it.addParam("limit", Limit)
 
-        if (req.getTypes() != null) {
+        if (Types() != null) {
             val typeValues: MutableArray<String> = java.util.ArrayArray<String>()
-            for (type in req.getTypes()) {
-                typeValues.add(type.value())
+            for (type in Types) {
+                typeValues.add(type.value)
             }
-            setIfNotNull("types", typeValues.stream().collect(java.util.stream.Collectors.joining(",")), form)
+            it.addParam("types", typeValues.stream().collect(java.util.stream.Collectors.joining(",")))
         }
         return form
     }
@@ -1490,7 +782,7 @@ object RequestFormBuilder {
 
     fun toForm(req: UsersGetPresenceRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
+        it.addParam("user", User)
         return form
     }
 
@@ -1501,23 +793,23 @@ object RequestFormBuilder {
 
     fun toForm(req: UsersInfoRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("include_locale", req.isIncludeLocale(), form)
+        it.addParam("user", User)
+        it.addParam("include_locale", req.isIncludeLocale)
         return form
     }
 
     fun toForm(req: UsersListRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("cursor", req.getCursor(), form)
-        setIfNotNull("limit", req.getLimit(), form)
-        setIfNotNull("include_locale", req.isIncludeLocale(), form)
-        setIfNotNull("presence", req.isPresence(), form)
+        it.addParam("cursor", Cursor)
+        it.addParam("limit", Limit)
+        it.addParam("include_locale", req.isIncludeLocale)
+        it.addParam("presence", req.isPresence)
         return form
     }
 
     fun toForm(req: UsersLookupByEmailRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("email", req.getEmail(), form)
+        it.addParam("email", Email)
         return form
     }
 
@@ -1528,110 +820,87 @@ object RequestFormBuilder {
 
     //    public static MultipartBody.Builder toMultipartBody(UsersSetPhotoRequest req) {
     //        MultipartBody.Builder form = new MultipartBody.Builder();
-    //        if (req.getImageData() != null) {
-    //            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), req.getImageData());
+    //        if (ImageData() != null) {
+    //            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), ImageData);
     //            form.addFormDataPart("image", "image", image);
-    //        } else if (req.getImage() != null) {
-    //            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), req.getImage());
+    //        } else if (Image() != null) {
+    //            RequestBody image = RequestBody.create(MediaType.parse("imageData/*"), Image);
     //            form.addFormDataPart("image", "image", image);
     //        }
-    //        setIfNotNull("crop_x", req.getCropX(), form);
-    //        setIfNotNull("crop_y", req.getCropY(), form);
-    //        setIfNotNull("crop_w", req.getCropW(), form);
+    //        it.addParam("crop_x", CropX);
+    //        it.addParam("crop_y", CropY);
+    //        it.addParam("crop_w", CropW);
     //        return form;
     //    }
     fun toForm(req: UsersSetPresenceRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("presence", req.getPresence(), form)
+        it.addParam("presence", Presence)
         return form
     }
 
     fun toForm(req: UsersProfileGetRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
-        setIfNotNull("include_labels", req.isIncludeLabels(), form)
+        it.addParam("user", User)
+        it.addParam("include_labels", req.isIncludeLabels)
         return form
     }
 
     fun toForm(req: UsersProfileSetRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user", req.getUser(), form)
-        if (req.getProfile() != null) {
-            setIfNotNull("profile", GsonFactory.createSnakeCase().toJson(req.getProfile()), form)
+        it.addParam("user", User)
+        if (Profile() != null) {
+            it.addParam("profile", GsonFactory.createSnakeCase().toJson(Profile))
         } else {
-            setIfNotNull("name", req.getName(), form)
-            setIfNotNull("value", req.getValue(), form)
+            it.addParam("name", Name)
+            it.addParam("value", Value)
         }
         return form
     }
 
     fun toForm(req: ViewsOpenRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("trigger_id", req.getTriggerId(), form)
-        if (req.getViewAsString() != null) {
-            setIfNotNull("view", req.getViewAsString(), form)
+        it.addParam("trigger_id", TriggerId)
+        if (ViewAsString() != null) {
+            it.addParam("view", ViewAsString)
         } else {
-            setIfNotNull("view", GsonFactory.createSnakeCase().toJson(req.getView()), form)
+            it.addParam("view", GsonFactory.createSnakeCase().toJson(View))
         }
         return form
     }
 
     fun toForm(req: ViewsPushRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("trigger_id", req.getTriggerId(), form)
-        if (req.getViewAsString() != null) {
-            setIfNotNull("view", req.getViewAsString(), form)
+        it.addParam("trigger_id", TriggerId)
+        if (ViewAsString() != null) {
+            it.addParam("view", ViewAsString)
         } else {
-            setIfNotNull("view", GsonFactory.createSnakeCase().toJson(req.getView()), form)
+            it.addParam("view", GsonFactory.createSnakeCase().toJson(View))
         }
         return form
     }
 
     fun toForm(req: ViewsUpdateRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        if (req.getViewAsString() != null) {
-            setIfNotNull("view", req.getViewAsString(), form)
+        if (ViewAsString() != null) {
+            it.addParam("view", ViewAsString)
         } else {
-            setIfNotNull("view", GsonFactory.createSnakeCase().toJson(req.getView()), form)
+            it.addParam("view", GsonFactory.createSnakeCase().toJson(View))
         }
-        setIfNotNull("external_id", req.getExternalId(), form)
-        setIfNotNull("hash", req.getHash(), form)
-        setIfNotNull("view_id", req.getViewId(), form)
+        it.addParam("external_id", ExternalId)
+        it.addParam("hash", Hash)
+        it.addParam("view_id", ViewId)
         return form
     }
 
     fun toForm(req: ViewsPublishRequest): FormBody.Builder {
         val form: FormBody.Builder = Builder()
-        setIfNotNull("user_id", req.getUserId(), form)
-        if (req.getViewAsString() != null) {
-            setIfNotNull("view", req.getViewAsString(), form)
+        it.addParam("user_id", UserId)
+        if (ViewAsString() != null) {
+            it.addParam("view", ViewAsString)
         } else {
-            setIfNotNull("view", GsonFactory.createSnakeCase().toJson(req.getView()), form)
+            it.addParam("view", GsonFactory.createSnakeCase().toJson(View))
         }
-        setIfNotNull("hash", req.getHash(), form)
+        it.addParam("hash", Hash)
         return form
     }
-
-    // ----------------------------------------------------------------------------------
-    // internal methods
-    // ----------------------------------------------------------------------------------
-    private fun setIfNotNull(name: String, value: Any?, form: FormBody.Builder) {
-        if (value != null) {
-            if (value is Boolean) {
-                val numValue = if (value) "1" else "0"
-                form.add(name, numValue)
-            } else {
-                form.add(name, value.toString())
-            }
-        }
-    } //    private static void setIfNotNull(String name, Object value, MultipartBody.Builder form) {
-    //        if (value != null) {
-    //            if (value instanceof Boolean) {
-    //                String numValue = ((Boolean) value) ? "1" : "0";
-    //                form.addFormDataPart(name, numValue);
-    //            } else {
-    //                form.addFormDataPart(name, String.valueOf(value));
-    //            }
-    //        }
-    //    }
 }

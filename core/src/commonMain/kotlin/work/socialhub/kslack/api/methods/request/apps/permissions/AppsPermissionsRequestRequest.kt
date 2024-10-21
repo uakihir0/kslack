@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.apps.permissions
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class AppsPermissionsRequestRequest(
@@ -9,4 +10,14 @@ class AppsPermissionsRequestRequest(
     var triggerId: String?,
     /** A comma separated list of scopes to request for */
     var scopes: Array<String>?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("trigger_id", triggerId)
+            if (scopes != null) {
+                it.addParam("scopes", scopes!!.joinToString(","))
+            }
+        }
+    }
+}

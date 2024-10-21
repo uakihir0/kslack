@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.chat
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -13,4 +14,12 @@ class ChatGetPermalinkRequest(
     var channel: String?,
     /** A message's `ts` value, uniquely identifying it within a channel */
     var messageTs: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("message_ts", messageTs)
+        }
+    }
+}

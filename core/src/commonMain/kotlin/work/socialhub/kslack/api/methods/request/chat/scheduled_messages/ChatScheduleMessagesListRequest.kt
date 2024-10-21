@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.chat.scheduled_messages
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ChatScheduleMessagesListRequest(
@@ -25,4 +26,15 @@ class ChatScheduleMessagesListRequest(
      * A UNIX timestamp of the oldest value in the time range
      */
     var oldest: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("cursor", cursor)
+            it.addParam("latest", latest)
+            it.addParam("limit", limit)
+            it.addParam("oldest", oldest)
+        }
+    }
+}

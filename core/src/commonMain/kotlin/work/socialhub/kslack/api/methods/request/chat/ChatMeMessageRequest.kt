@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.chat
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ChatMeMessageRequest(
@@ -9,4 +10,12 @@ class ChatMeMessageRequest(
     var channel: String?,
     /** Text of the message to send. */
     var text: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("text", text)
+        }
+    }
+}

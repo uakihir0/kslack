@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.conversations
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ConversationsRepliesRequest(
@@ -31,4 +32,17 @@ class ConversationsRepliesRequest(
     /** End of time range of messages to include in results.*/
     var latest: String?
 
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("inclusive", isInclusive)
+            it.addParam("ts", ts)
+            it.addParam("cursor", cursor)
+            it.addParam("limit", limit)
+            it.addParam("channel", channel)
+            it.addParam("oldest", oldest)
+            it.addParam("latest", latest)
+        }
+    }
+}

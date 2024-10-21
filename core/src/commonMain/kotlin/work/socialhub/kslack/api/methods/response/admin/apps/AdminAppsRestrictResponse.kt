@@ -4,5 +4,4 @@ import kotlinx.serialization.Serializable
 import work.socialhub.kslack.api.methods.SlackApiResponse
 
 @Serializable
-class AdminAppsRestrictResponse : SlackApiResponse() {
-}
+class AdminAppsRestrictResponse : SlackApiResponse()

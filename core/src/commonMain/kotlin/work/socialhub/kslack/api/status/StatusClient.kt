@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.status.v2
 
+import work.socialhub.kslack.api.status.StatusApiException
 import work.socialhub.kslack.api.status.v2.model.CurrentStatus
 import work.socialhub.kslack.api.status.v2.model.SlackIssue
 

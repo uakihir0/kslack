@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.conversations
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ConversationsSetTopicRequest(
@@ -9,4 +10,12 @@ class ConversationsSetTopicRequest(
     var channel: String?,
     /** The new topic string. Does not support formatting or linkification. */
     var topic: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("topic", topic)
+        }
+    }
+}

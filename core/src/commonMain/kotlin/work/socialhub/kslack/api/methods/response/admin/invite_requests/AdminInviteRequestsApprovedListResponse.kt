@@ -1,13 +1,9 @@
 package work.socialhub.kslack.api.methods.response.admin.invite_requests
 
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.api.methods.SlackApiResponse
 
-class AdminInviteRequestsApprovedListResponse : SlackApiResponse {
-    override var isOk: Boolean = false
-    override var warning: String? = null
-    override var error: String? = null
-    override var needed: String? = null
-    override var provided: String? = null
-
+@Serializable
+class AdminInviteRequestsApprovedListResponse : SlackApiResponse() {
     var approvedRequests: Array<String>? = null
 }

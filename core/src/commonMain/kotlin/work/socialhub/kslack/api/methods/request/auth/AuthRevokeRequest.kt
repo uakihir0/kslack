@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.auth
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class AuthRevokeRequest(
@@ -10,4 +11,11 @@ class AuthRevokeRequest(
      * where the specified token will not actually be revoked.
      */
     var isTest: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("test", isTest)
+        }
+    }
+}

@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.conversations
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ConversationsMembersRequest(
@@ -21,4 +22,13 @@ class ConversationsMembersRequest(
      * Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached.
      */
     var limit: Int?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("cursor", cursor)
+            it.addParam("limit", limit)
+        }
+    }
+}

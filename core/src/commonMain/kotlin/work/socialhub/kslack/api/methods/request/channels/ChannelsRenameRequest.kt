@@ -1,22 +1,27 @@
 package work.socialhub.kslack.api.methods.request.channels
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ChannelsRenameRequest(
-    /**
-     * Authentication token. Requires scope: `channels:write`
-     */
+    /** Authentication token. Requires scope: `channels:write` */
     override var token: String?,
-    /**
-     * Channel to rename
-     */
+    /** Channel to rename */
     var channel: String?,
-    /**
-     * New name for channel.
-     */
+    /** New name for channel. */
     var name: String?,
     /**
-     * Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria.
+     * Whether to return errors on invalid channel name
+     * instead of modifying it to meet the specified criteria.
      */
     var isValidate: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("name", name)
+            it.addParam("validate", isValidate)
+        }
+    }
+}

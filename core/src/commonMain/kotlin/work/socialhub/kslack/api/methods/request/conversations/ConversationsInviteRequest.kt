@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.conversations
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ConversationsInviteRequest(
@@ -9,4 +10,14 @@ class ConversationsInviteRequest(
     var channel: String?,
     /** A comma separated list of user IDs. Up to 30 users may be listed. */
     var users: Array<String>?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            if (users != null) {
+                it.addParam("users", users!!.joinToString(","))
+            }
+        }
+    }
+}

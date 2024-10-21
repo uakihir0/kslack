@@ -1,26 +1,23 @@
 package work.socialhub.kslack.api.methods
 
-import net.socialhub.http.HttpResponse
-import net.socialhub.logger.Logger
-import work.socialhub.kslack.SlackConfig
-import work.socialhub.kslack.common.json.GsonFactory
+import work.socialhub.khttpclient.HttpResponse
 
-class SlackApiException(config: SlackConfig?, response: HttpResponse?, val responseBody: String) :
-    java.lang.Exception() {
-    private val response: HttpResponse? = response
-    private val error: SlackApiErrorResponse?
+class SlackApiException(
+    val response: HttpResponse,
+) : Exception() {
 
-    constructor(response: HttpResponse?, responseBody: String) : this(SlackConfig.DEFAULT, response, responseBody)
+    var error: SlackApiErrorResponse?
 
     init {
-        var parsedErrorResponse: SlackApiErrorResponse? = null
         try {
-            parsedErrorResponse =
+            error =
                 GsonFactory.createSnakeCase(config).fromJson(responseBody, SlackApiErrorResponse::class.java)
         } catch (e: java.lang.Exception) {
             if (log.isDebugEnabled()) {
-                val responseToPrint = if (responseBody.length > 1000) responseBody.subSequence(0, 1000)
-                    .toString() + " ..." else responseBody
+                val responseToPrint =
+                    if (responseBody.length > 1000)
+                        responseBody.subSequence(0, 1000).toString() + " ..."
+                    else responseBody
                 log.debug("Failed to parse the error response body: $responseToPrint")
             }
         }
@@ -33,9 +30,5 @@ class SlackApiException(config: SlackConfig?, response: HttpResponse?, val respo
 
     fun getError(): SlackApiErrorResponse? {
         return this.error
-    }
-
-    companion object {
-        private val log: Logger = Logger.getLogger(SlackApiException::class.java)
     }
 }

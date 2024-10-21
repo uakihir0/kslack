@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.channels
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ChannelsListRequest(
@@ -26,4 +27,14 @@ class ChannelsListRequest(
      * Exclude archived channels from the list
      */
     var isExcludeArchived: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("limit", limit)
+            it.addParam("cursor", cursor)
+            it.addParam("exclude_members", isExcludeMembers)
+            it.addParam("exclude_archived", isExcludeArchived)
+        }
+    }
+}

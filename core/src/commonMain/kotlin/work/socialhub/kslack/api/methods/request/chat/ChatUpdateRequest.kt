@@ -1,6 +1,8 @@
 package work.socialhub.kslack.api.methods.request.chat
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.block.LayoutBlock
 
@@ -39,4 +41,36 @@ class ChatUpdateRequest(
     var isLinkNames: Boolean,
     /** Change how messages are treated. Defaults to `none`. See [below](#formatting). */
     var parse: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("ts", ts)
+            it.addParam("channel", channel)
+            it.addParam("text", text)
+            it.addParam("parse", parse)
+            it.addParam("link_names", isLinkNames)
+
+            if (blocksAsString != null) {
+                it.addParam("blocks", blocksAsString)
+            } else if (blocks != null) {
+                val json = JsonHelper.toJson(blocks)
+                it.addParam("blocks", json)
+            }
+            if (blocksAsString != null && blocks != null) {
+                TODO("Although you set both blocksAsString and blocks, only blocksAsString was used.")
+            }
+
+            if (attachmentsAsString != null) {
+                it.addParam("attachments", attachmentsAsString)
+            } else if (attachments != null) {
+                val json = JsonHelper.toJson(attachments)
+                it.addParam("attachments", json)
+            }
+
+            it.addParam("as_user", isAsUser)
+        }
+    }
+
+
+}

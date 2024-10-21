@@ -8,7 +8,7 @@ import kotlinx.serialization.SerialName
  * @see [Conversations.list API](https://api.slack.com/methods/conversations.list)
  */
 enum class ConversationType(
-    private val value: String
+    val value: String
 ) {
     @SerialName("public_channel")
     PUBLIC_CHANNEL("public_channel"),

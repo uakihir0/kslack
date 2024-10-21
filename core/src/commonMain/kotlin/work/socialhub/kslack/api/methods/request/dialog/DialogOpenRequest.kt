@@ -1,6 +1,8 @@
 package work.socialhub.kslack.api.methods.request.dialog
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.dialog.Dialog
 
 class DialogOpenRequest(
@@ -23,4 +25,18 @@ class DialogOpenRequest(
      * @see [Implementing dialogs](https://api.slack.com/dialogs.implementation)
      */
     var triggerId: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("trigger_id", triggerId)
+
+            if (dialogAsString != null) {
+                it.addParam("dialog", dialogAsString)
+            } else if (dialog != null) {
+                val json = JsonHelper.toJson(Dialog)
+                it.addParam("dialog", json)
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.admin.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -31,4 +32,19 @@ class AdminUsersInviteRequest(
     var realName: String?,
     /** Allow this invite to be resent in the future if a user has not signed up yet. (default: false) */
     var isResend: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel_ids", channelIds!!.joinToString(","))
+            it.addParam("email", email)
+            it.addParam("team_id", teamId)
+            it.addParam("custom_message", customMessage)
+            it.addParam("guest_expiration_ts", guestExpirationTs)
+            it.addParam("is_restricted", isRestricted)
+            it.addParam("is_ultra_restricted", isUltraRestricted)
+            it.addParam("real_name", realName)
+            it.addParam("resend", isResend)
+        }
+    }
+}

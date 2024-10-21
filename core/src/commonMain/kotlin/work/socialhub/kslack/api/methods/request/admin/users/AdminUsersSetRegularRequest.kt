@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.admin.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -12,4 +13,12 @@ class AdminUsersSetRegularRequest(
     var teamId: String?,
     /** The ID of the user to designate as a regular user. */
     var userId: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("team_id", teamId)
+            it.addParam("user_id", userId)
+        }
+    }
+}

@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.apps.permissions.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class AppsPermissionsUsersListRequest(
@@ -14,4 +15,12 @@ class AppsPermissionsUsersListRequest(
 
     /** The maximum number of items to return. */
     var limit: Int?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("cursor", cursor)
+            it.addParam("limit", limit)
+        }
+    }
+}

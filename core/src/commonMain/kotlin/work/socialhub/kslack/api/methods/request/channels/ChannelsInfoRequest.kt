@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.channels
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ChannelsInfoRequest(
@@ -9,4 +10,12 @@ class ChannelsInfoRequest(
     var isIncludeLocale: Boolean,
     /** Channel to get info on */
     var channel: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("include_locale", isIncludeLocale)
+        }
+    }
+}

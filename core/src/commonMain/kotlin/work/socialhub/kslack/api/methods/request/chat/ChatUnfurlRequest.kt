@@ -1,6 +1,9 @@
 package work.socialhub.kslack.api.methods.request.chat
 
+import kotlinx.serialization.json.Json
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.Action
 import work.socialhub.kslack.entity.block.LayoutBlock
 
@@ -36,7 +39,7 @@ class ChatUnfurlRequest(
     /** Channel ID of the message */
     var channel: String?
 
-) : SlackApiRequest {
+) : SlackApiRequest, FormRequest {
 
     // https://api.slack.com/docs/message-link-unfurling#unfurls_parameter
     class UnfurlDetail {
@@ -47,5 +50,23 @@ class ChatUnfurlRequest(
         var fallback: String? = null
         var actions: Array<Action>? = null
         var blocks: Array<LayoutBlock>? = null
+    }
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("ts", ts)
+            it.addParam("channel", channel)
+
+            if (rawUnfurls != null) {
+                it.addParam("unfurls", rawUnfurls)
+            } else {
+                val json = JsonHelper.toJson(unfurls)
+                it.addParam("unfurls", json)
+            }
+
+            it.addParam("user_auth_required", isUserAuthRequired)
+            it.addParam("user_auth_message", userAuthMessage)
+            it.addParam("user_auth_url", userAuthUrl)
+        }
     }
 }

@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.bots
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class BotsInfoRequest(
@@ -7,4 +8,11 @@ class BotsInfoRequest(
     override var token: String?,
     /** Bot user to get info on */
     var bot: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("bot", bot)
+        }
+    }
+}
