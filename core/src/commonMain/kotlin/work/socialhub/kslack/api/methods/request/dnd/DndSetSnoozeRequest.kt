@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.dnd
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class DndSetSnoozeRequest(
@@ -7,4 +8,11 @@ class DndSetSnoozeRequest(
     override var token: String?,
     /** Number of minutes, from now, to snooze until. */
     var numMinutes: Int?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("num_minutes", numMinutes)
+        }
+    }
+}

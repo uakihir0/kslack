@@ -1,4 +1,4 @@
-package work.socialhub.kslack.api.status.v2.model
+package work.socialhub.kslack.api.status.model
 
 class SlackIssue {
     var id: Int? = null

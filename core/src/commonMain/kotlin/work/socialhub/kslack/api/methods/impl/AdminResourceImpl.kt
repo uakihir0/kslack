@@ -2,208 +2,237 @@ package work.socialhub.kslack.api.methods.impl
 
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
+import work.socialhub.kslack.api.methods.request.admin.invite_requests.*
+import work.socialhub.kslack.api.methods.request.admin.teams.*
+import work.socialhub.kslack.api.methods.request.admin.users.*
 import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsApproveResponse
+import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsRequestsListResponse
 import work.socialhub.kslack.api.methods.response.admin.apps.AdminAppsRestrictResponse
+import work.socialhub.kslack.api.methods.response.admin.invite_requests.*
+import work.socialhub.kslack.api.methods.response.admin.teams.*
+import work.socialhub.kslack.api.methods.response.admin.users.*
 
-class AdminResourceImpl : AbstractResourceImpl() {
+/**
+ * TODO: make interface
+ */
+class AdminResourceImpl(
+    token: String?
+) : AbstractResourceImpl(token) {
 
     // ----------------------------------------------------------------------------------
     // public methods
     // ----------------------------------------------------------------------------------
-    fun adminAppsApprove(
+    suspend fun adminAppsApprove(
         req: AdminAppsApproveRequest
     ): AdminAppsApproveResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_APPS_APPROVE,
             getToken(req),
-            AdminAppsApproveResponse::class.java
         )
     }
 
-    fun adminAppsRestrict(
+    suspend fun adminAppsRestrict(
         req: AdminAppsRestrictRequest
     ): AdminAppsRestrictResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_APPS_RESTRICT,
             getToken(req),
-            AdminAppsRestrictResponse::class.java
         )
     }
 
-
-    fun adminAppsRequestsList(req: AdminAppsRequestsListRequest): AdminAppsRequestsListResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminAppsRequestsList(
+        req: AdminAppsRequestsListRequest
+    ): AdminAppsRequestsListResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_APPS_REQUESTS_LIST,
             getToken(req),
-            AdminAppsRequestsListResponse::class.java
         )
     }
 
-
-    fun adminInviteRequestsApprove(req: AdminInviteRequestsApproveRequest): AdminInviteRequestsApproveResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminInviteRequestsApprove(
+        req: AdminInviteRequestsApproveRequest
+    ): AdminInviteRequestsApproveResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_INVITE_REQUESTS_APPROVE,
             getToken(req),
-            AdminInviteRequestsApproveResponse::class.java
         )
     }
 
-    fun adminInviteRequestsDeny(req: AdminInviteRequestsDenyRequest): AdminInviteRequestsDenyResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminInviteRequestsDeny(
+        req: AdminInviteRequestsDenyRequest
+    ): AdminInviteRequestsDenyResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_INVITE_REQUESTS_DENY,
             getToken(req),
-            AdminInviteRequestsDenyResponse::class.java
         )
     }
 
-    fun adminInviteRequestsList(req: AdminInviteRequestsListRequest): AdminInviteRequestsListResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminInviteRequestsList(
+        req: AdminInviteRequestsListRequest
+    ): AdminInviteRequestsListResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_INVITE_REQUESTS_LIST,
             getToken(req),
-            AdminInviteRequestsListResponse::class.java
-        )
+
+            )
     }
 
-    fun adminInviteRequestsApprovedList(req: AdminInviteRequestsApprovedListRequest): AdminInviteRequestsApprovedListResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminInviteRequestsApprovedList(
+        req: AdminInviteRequestsApprovedListRequest
+    ): AdminInviteRequestsApprovedListResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_INVITE_REQUESTS_APPROVED_LIST,
             getToken(req),
-            AdminInviteRequestsApprovedListResponse::class.java
         )
     }
 
-    fun adminInviteRequestsDeniedList(req: AdminInviteRequestsDeniedListRequest): AdminInviteRequestsDeniedListResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminInviteRequestsDeniedList(
+        req: AdminInviteRequestsDeniedListRequest
+    ): AdminInviteRequestsDeniedListResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_INVITE_REQUESTS_DENIED_LIST,
             getToken(req),
-            AdminInviteRequestsDeniedListResponse::class.java
         )
     }
 
-    fun adminTeamsAdminsList(req: AdminTeamsAdminsListRequest): AdminTeamsAdminsListResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminTeamsAdminsList(
+        req: AdminTeamsAdminsListRequest
+    ): AdminTeamsAdminsListResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_TEAMS_ADMINS_LIST,
             getToken(req),
-            AdminTeamsAdminsListResponse::class.java
         )
     }
 
-    fun adminTeamsCreate(req: AdminTeamsCreateRequest): AdminTeamsCreateResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminTeamsCreate(
+        req: AdminTeamsCreateRequest
+    ): AdminTeamsCreateResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_TEAMS_CREATE,
             getToken(req),
-            AdminTeamsCreateResponse::class.java
         )
     }
 
-    fun adminTeamsOwnersList(req: AdminTeamsOwnersListRequest): AdminTeamsOwnersListResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminTeamsOwnersList(
+        req: AdminTeamsOwnersListRequest
+    ): AdminTeamsOwnersListResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_TEAMS_OWNERS_LIST,
             getToken(req),
-            AdminTeamsOwnersListResponse::class.java
         )
     }
 
 
-    fun adminTeamsSettingsSetDescription(req: AdminTeamsSettingsSetDescriptionRequest): AdminTeamsSettingsSetDescriptionResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminTeamsSettingsSetDescription(
+        req: AdminTeamsSettingsSetDescriptionRequest
+    ): AdminTeamsSettingsSetDescriptionResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_TEAMS_SETTINGS_SET_DESCRIPTION,
             getToken(req),
-            AdminTeamsSettingsSetDescriptionResponse::class.java
         )
     }
 
-    fun adminTeamsSettingsSetIcon(req: AdminTeamsSettingsSetIconRequest): AdminTeamsSettingsSetIconResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminTeamsSettingsSetIcon(
+        req: AdminTeamsSettingsSetIconRequest
+    ): AdminTeamsSettingsSetIconResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_TEAMS_SETTINGS_SET_ICON,
             getToken(req),
-            AdminTeamsSettingsSetIconResponse::class.java
         )
     }
 
-    fun adminTeamsSettingsSetName(req: AdminTeamsSettingsSetNameRequest): AdminTeamsSettingsSetNameResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminTeamsSettingsSetName(
+        req: AdminTeamsSettingsSetNameRequest
+    ): AdminTeamsSettingsSetNameResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_TEAMS_SETTINGS_SET_NAME,
             getToken(req),
-            AdminTeamsSettingsSetNameResponse::class.java
         )
     }
 
-    fun adminUsersAssign(req: AdminUsersAssignRequest): AdminUsersAssignResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminUsersAssign(
+        req: AdminUsersAssignRequest
+    ): AdminUsersAssignResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_USERS_ASSIGN,
             getToken(req),
-            AdminUsersAssignResponse::class.java
         )
     }
 
-    fun adminUsersInvite(req: AdminUsersInviteRequest): AdminUsersInviteResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminUsersInvite(
+        req: AdminUsersInviteRequest
+    ): AdminUsersInviteResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_USERS_INVITE,
             getToken(req),
-            AdminUsersInviteResponse::class.java
         )
     }
 
-    fun adminUsersRemove(req: AdminUsersRemoveRequest): AdminUsersRemoveResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminUsersRemove(
+        req: AdminUsersRemoveRequest
+    ): AdminUsersRemoveResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_USERS_REMOVE,
             getToken(req),
-            AdminUsersRemoveResponse::class.java
         )
     }
 
-    fun adminUsersSetAdmin(req: AdminUsersSetAdminRequest): AdminUsersSetAdminResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminUsersSetAdmin(
+        req: AdminUsersSetAdminRequest
+    ): AdminUsersSetAdminResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_USERS_SET_ADMIN,
             getToken(req),
-            AdminUsersSetAdminResponse::class.java
         )
     }
 
-    fun adminUsersSetOwner(req: AdminUsersSetOwnerRequest): AdminUsersSetOwnerResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminUsersSetOwner(
+        req: AdminUsersSetOwnerRequest
+    ): AdminUsersSetOwnerResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_USERS_SET_OWNER,
             getToken(req),
-            AdminUsersSetOwnerResponse::class.java
         )
     }
 
-    fun adminUsersSetRegular(req: AdminUsersSetRegularRequest): AdminUsersSetRegularResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminUsersSetRegular(
+        req: AdminUsersSetRegularRequest
+    ): AdminUsersSetRegularResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_USERS_SET_REGULAR,
             getToken(req),
-            AdminUsersSetRegularResponse::class.java
         )
     }
 
-    fun adminUsersSessionReset(req: AdminUsersSessionResetRequest): AdminUsersSessionResetResponse {
-        return postFormWithTokenAndParseResponse(
-            toForm(req),
+    suspend fun adminUsersSessionReset(
+        req: AdminUsersSessionResetRequest
+    ): AdminUsersSessionResetResponse {
+        return postFormWithToken(
+            req.toParams(),
             Methods.ADMIN_USERS_SESSION_RESET,
             getToken(req),
-            AdminUsersSessionResetResponse::class.java
         )
     }
 }

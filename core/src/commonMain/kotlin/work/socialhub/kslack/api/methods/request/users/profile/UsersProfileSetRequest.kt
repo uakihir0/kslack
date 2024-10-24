@@ -1,5 +1,7 @@
 package work.socialhub.kslack.api.methods.request.users.profile
 
+import work.socialhub.kmastodon.internal.InternalUtility.toJson
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.entity.user.Profile
 
@@ -14,4 +16,17 @@ class UsersProfileSetRequest(
     var name: String?,
     /** Value to set a single key to. Usable only if profile is not passed. */
     var value: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest{
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("user", user)
+            if (profile != null) {
+                it.addParam("profile", toJson(profile))
+            } else {
+                it.addParam("name", name)
+                it.addParam("value", value)
+            }
+        }
+    }
+}

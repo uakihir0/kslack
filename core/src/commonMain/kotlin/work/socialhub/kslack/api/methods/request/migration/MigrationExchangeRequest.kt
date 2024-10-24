@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.migration
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -12,4 +13,14 @@ class MigrationExchangeRequest(
     var isToOld: Boolean,
     /** A comma-separated list of user ids, up to 400 per request */
     var users: Array<String>?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("to_old", isToOld)
+            if (users != null) {
+                it.addParam("users", users!!.joinToString(","))
+            }
+        }
+    }
+}

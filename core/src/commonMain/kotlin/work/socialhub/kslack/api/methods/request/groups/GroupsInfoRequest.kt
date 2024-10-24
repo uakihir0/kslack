@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.groups
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class GroupsInfoRequest(
@@ -9,4 +10,12 @@ class GroupsInfoRequest(
     var channel: String?,
     /** Set this to `true` to receive the locale for this group. Defaults to `false` */
     var isIncludeLocale: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("include_locale", isIncludeLocale)
+        }
+    }
+}

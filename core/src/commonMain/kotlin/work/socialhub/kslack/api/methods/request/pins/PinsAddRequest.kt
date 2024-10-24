@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.pins
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class PinsAddRequest(
@@ -13,4 +14,14 @@ class PinsAddRequest(
     var fileComment: String?,
     /** Timestamp of the message to pin. */
     var timestamp: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("file", file)
+            it.addParam("file_comment", fileComment)
+            it.addParam("timestamp", timestamp)
+        }
+    }
+}

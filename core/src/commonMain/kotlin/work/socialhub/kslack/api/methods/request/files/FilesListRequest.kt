@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.files
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class FilesListRequest(
@@ -27,7 +28,9 @@ class FilesListRequest(
      * You can pass multiple values in the types argument, like `types=spaces,snippets`.
      * The default value is `all`, which does not filter the list.
      */
-    var types: Array<String>?, var count: Int?, var page: Int?,
+    var types: Array<String>?,
+    var count: Int?,
+    var page: Int?,
 
     /**
      * https://api.slack.com/changelog/2019-03-wild-west-for-files-no-more
@@ -39,4 +42,20 @@ class FilesListRequest(
      */
     var isShowFilesHiddenByLimit: Boolean
 
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("user", user)
+            it.addParam("channel", channel)
+            it.addParam("ts_from", tsFrom)
+            it.addParam("ts_to", tsTo)
+            if (types != null) {
+                it.addParam("types", types!!.joinToString(","))
+            }
+            it.addParam("count", count)
+            it.addParam("page", page)
+            it.addParam("show_files_hidden_by_limit", isShowFilesHiddenByLimit)
+        }
+    }
+}

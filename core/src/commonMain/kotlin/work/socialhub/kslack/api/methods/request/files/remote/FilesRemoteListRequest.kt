@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.files.remote
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -25,4 +26,15 @@ class FilesRemoteListRequest(
     var tsFrom: String?,
     /** Filter files created before this timestamp (inclusive). */
     var tsTo: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("cursor", cursor)
+            it.addParam("limit", limit)
+            it.addParam("ts_from", tsFrom)
+            it.addParam("ts_to", tsTo)
+        }
+    }
+}

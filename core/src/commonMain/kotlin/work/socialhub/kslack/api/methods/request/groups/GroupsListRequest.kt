@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.groups
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class GroupsListRequest(
@@ -9,4 +10,12 @@ class GroupsListRequest(
     var isExcludeMembers: Boolean,
     /** Don't return archived private channels. */
     var isExcludeArchived: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("exclude_archived", isExcludeArchived)
+            it.addParam("exclude_members", isExcludeMembers)
+        }
+    }
+}

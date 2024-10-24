@@ -1,8 +1,7 @@
-package work.socialhub.kslack.api.status.v2
+package work.socialhub.kslack.api.status
 
-import work.socialhub.kslack.api.status.StatusApiException
-import work.socialhub.kslack.api.status.v2.model.CurrentStatus
-import work.socialhub.kslack.api.status.v2.model.SlackIssue
+import work.socialhub.kslack.api.status.model.CurrentStatus
+import work.socialhub.kslack.api.status.model.SlackIssue
 
 /**
  * https://api.slack.com/docs/slack-status
@@ -10,11 +9,9 @@ import work.socialhub.kslack.api.status.v2.model.SlackIssue
 interface StatusClient {
     var endpointUrlPrefix: String?
 
-    @Throws(java.io.IOException::class, StatusApiException::class)
-    fun current(): CurrentStatus?
+    fun current(): CurrentStatus
 
-    @Throws(java.io.IOException::class, StatusApiException::class)
-    fun history(): Array<SlackIssue?>?
+    fun history(): Array<SlackIssue>
 
     companion object {
         const val ENDPOINT_URL_PREFIX: String = "https://status.slack.com/api/v2.0.0/"

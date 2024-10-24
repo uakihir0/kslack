@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.search
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class SearchFilesRequest(
@@ -15,4 +16,16 @@ class SearchFilesRequest(
     var isHighlight: Boolean,
     var count: Int?,
     var page: Int?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("query", query)
+            it.addParam("sort", sort)
+            it.addParam("sort_dir", sortDir)
+            it.addParam("highlight", isHighlight)
+            it.addParam("count", count)
+            it.addParam("page", page)
+        }
+    }
+}

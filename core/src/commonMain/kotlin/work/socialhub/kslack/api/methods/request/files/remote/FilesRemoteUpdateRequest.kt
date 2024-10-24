@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.files.remote
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class FilesRemoteUpdateRequest(
@@ -17,4 +18,9 @@ class FilesRemoteUpdateRequest(
     var indexableFileContents: ByteArray,
     /** Preview of the document via multipart/form-data. */
     var previewImage: ByteArray
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest{
+
+    override fun toMap(): Map<String, Any> {
+        TODO("Not yet implemented")
+    }
+}

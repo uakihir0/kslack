@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.usergroups
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class UsergroupsUpdateRequest(
@@ -17,4 +18,18 @@ class UsergroupsUpdateRequest(
     var channels: Array<String>?,
     /** Include the number of users in the User Group. */
     var isIncludeCount: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest{
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("usergroup", usergroup)
+            it.addParam("name", name)
+            it.addParam("handle", handle)
+            it.addParam("description", description)
+            if (channels != null) {
+                it.addParam("channels", channels!!.joinToString(","))
+            }
+            it.addParam("include_count", isIncludeCount)
+        }
+    }
+}

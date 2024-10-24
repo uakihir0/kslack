@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.mpim
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class MpimHistoryRequest(
@@ -17,4 +18,16 @@ class MpimHistoryRequest(
     var isInclusive: Boolean,
     /** Include `unread_count_display` in the output? */
     var isUnreads: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("latest", latest)
+            it.addParam("oldest", oldest)
+            it.addParam("inclusive", isInclusive)
+            it.addParam("count", count)
+            it.addParam("unreads", isUnreads)
+        }
+    }
+}

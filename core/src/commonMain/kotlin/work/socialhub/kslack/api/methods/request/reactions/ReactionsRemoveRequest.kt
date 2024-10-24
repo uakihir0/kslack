@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.reactions
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ReactionsRemoveRequest(
@@ -15,4 +16,15 @@ class ReactionsRemoveRequest(
     var channel: String?,
     /** Timestamp of the message to remove reaction from. */
     var timestamp: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("name", name)
+            it.addParam("file", file)
+            it.addParam("file_comment", fileComment)
+            it.addParam("channel", channel)
+            it.addParam("timestamp", timestamp)
+        }
+    }
+}

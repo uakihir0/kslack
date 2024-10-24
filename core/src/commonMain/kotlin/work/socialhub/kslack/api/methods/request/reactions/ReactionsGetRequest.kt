@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.reactions
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ReactionsGetRequest(
@@ -15,4 +16,15 @@ class ReactionsGetRequest(
     var timestamp: String?,
     /** If true always return the complete reaction list. */
     var isFull: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("file", file)
+            it.addParam("file_comment", fileComment)
+            it.addParam("channel", channel)
+            it.addParam("timestamp", timestamp)
+            it.addParam("full", isFull)
+        }
+    }
+}

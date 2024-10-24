@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.oauth
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -17,4 +18,15 @@ class OAuthAccessRequest(
     var redirectUri: String?,
     /** Request the user to add your app only to a single channel. */
     var isSingleChannel: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("client_id", clientId)
+            it.addParam("client_secret", clientSecret)
+            it.addParam("code", code)
+            it.addParam("redirect_uri", redirectUri)
+            it.addParam("single_channel", isSingleChannel)
+        }
+    }
+}

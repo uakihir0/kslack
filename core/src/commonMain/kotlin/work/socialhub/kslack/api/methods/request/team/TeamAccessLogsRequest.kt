@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.team
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class TeamAccessLogsRequest(
@@ -9,4 +10,13 @@ class TeamAccessLogsRequest(
     var before: Int?,
     var count: Int?,
     var page: Int?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("before", before)
+            it.addParam("count", count)
+            it.addParam("page", page)
+        }
+    }
+}

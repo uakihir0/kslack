@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class UsersInfoRequest(
@@ -9,4 +10,12 @@ class UsersInfoRequest(
     var user: String?,
     /** Set this to `true` to receive the locale for this user. Defaults to `false` */
     var isIncludeLocale: Boolean
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("user", user)
+            it.addParam("include_locale", isIncludeLocale)
+        }
+    }
+}

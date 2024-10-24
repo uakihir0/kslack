@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.files.remote
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 /**
@@ -20,4 +21,27 @@ class FilesRemoteAddRequest(
     var indexableFileContents: ByteArray,
     /** Preview of the document via multipart/form-data. */
     var previewImage: ByteArray
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+
+            it.addParam("external_id", externalId)
+            it.addParam("external_url", externalUrl)
+            it.addParam("title", title)
+            it.addParam("filetype", filetype)
+
+            /*
+            TODO
+            if (IndexableFileContents() != null) {
+                RequestBody indexableFileContents = RequestBody.create(Filetype() != null ? MediaType.parse(Filetype) : null, IndexableFileContents);
+                form.addFormDataPart("indexable_file_contents", Title(), indexableFileContents);
+            }
+            if (PreviewImage() != null) {
+                RequestBody previewImage = RequestBody.create(Filetype() != null ? MediaType.parse(Filetype) : null, PreviewImage);
+                form.addFormDataPart("preview_image", Title(), previewImage);
+            }
+            */
+        }
+    }
+}

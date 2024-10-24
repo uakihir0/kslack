@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.reactions
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ReactionsListRequest(
@@ -11,4 +12,14 @@ class ReactionsListRequest(
     var isFull: Boolean,
     var count: Int?,
     var page: Int?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("user", user)
+            it.addParam("full", isFull)
+            it.addParam("count", count)
+            it.addParam("page", page)
+        }
+    }
+}

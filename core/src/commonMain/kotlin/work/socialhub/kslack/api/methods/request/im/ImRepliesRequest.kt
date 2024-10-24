@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.im
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ImRepliesRequest(
@@ -9,4 +10,12 @@ class ImRepliesRequest(
     var channel: String?,
     /** Unique identifier of a thread's parent message. */
     var threadTs: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("thread_ts", threadTs)
+        }
+    }
+}

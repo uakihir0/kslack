@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.im
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class ImMarkRequest(
@@ -9,4 +10,12 @@ class ImMarkRequest(
     var channel: String?,
     /** Timestamp of the most recently seen message. */
     var ts: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("ts", ts)
+        }
+    }
+}

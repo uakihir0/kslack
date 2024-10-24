@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.files.comments
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class FilesCommentsAddRequest(
@@ -9,4 +10,12 @@ class FilesCommentsAddRequest(
     var file: String?,
     /** Text of the comment to add. */
     var comment: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("file", file)
+            it.addParam("comment", comment)
+        }
+    }
+}

@@ -2,9 +2,10 @@ package work.socialhub.kslack.api.status
 
 import work.socialhub.khttpclient.HttpResponse
 
-
-class StatusApiException(response: HttpResponse, val responseBody: String) : Exception() {
-    private val response: HttpResponse = response
+class StatusApiException(
+    val response: HttpResponse,
+    val responseBody: String
+) : Exception() {
 
     fun getResponse(): HttpResponse {
         return this.response

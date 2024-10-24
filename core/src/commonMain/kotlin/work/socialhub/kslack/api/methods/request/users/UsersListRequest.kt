@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class UsersListRequest(
@@ -28,4 +29,14 @@ class UsersListRequest(
      */
     @Deprecated("")
     var isPresence: Boolean,
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest{
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("cursor", cursor)
+            it.addParam("limit", limit)
+            it.addParam("include_locale", isIncludeLocale)
+            it.addParam("presence", isPresence)
+        }
+    }
+}

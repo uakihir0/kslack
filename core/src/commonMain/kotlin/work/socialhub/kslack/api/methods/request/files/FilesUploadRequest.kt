@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.files
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class FilesUploadRequest(
@@ -8,7 +9,7 @@ class FilesUploadRequest(
     override var token: String?,
 
     /** File contents via `multipart/form-data`. If omitting this parameter, you must submit `content`. */
-    var file: ByteArray,
+    var file: ByteArray?,
     /** File contents via a POST variable. If omitting this parameter, you must provide a `file`. */
     var content: String?,
 
@@ -25,5 +26,39 @@ class FilesUploadRequest(
     var channels: Array<String>?,
     /** Provide another message's ts value to upload this file as a reply. Never use a reply's ts value; use its parent instead. */
     var threadTs: String?,
+) : SlackApiRequest, FormRequest {
 
-    ) : SlackApiRequest
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+
+            it.addParam("content", content)
+            it.addParam("filetype", filetype)
+            it.addParam("filename", filename)
+            it.addParam("title", title)
+            it.addParam("initial_comment", initialComment)
+            if (channels != null) {
+                it.addParam("channels", channels!!.joinToString(","))
+            }
+        }
+
+
+        /*
+        TODO
+        if (File() != null) {
+            form.addFile("file", File)
+        }
+        if (Filestream() != null) {
+            form.addFile("file", Filestream(), Filename)
+        }
+        it.addParam("filetype", Filetype)
+        it.addParam("filename", Filename)
+        it.addParam("title", Title)
+        it.addParam("initial_comment", InitialComment)
+
+        if (Channels() != null) {
+            it.addParam("channels", Channels().stream().collect(java.util.stream.Collectors.joining(",")))
+        }
+        it.addParam("thread_ts", ThreadTs)
+         */
+    }
+}

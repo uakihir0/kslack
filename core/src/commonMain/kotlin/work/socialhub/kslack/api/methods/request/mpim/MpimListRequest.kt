@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.mpim
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class MpimListRequest(
@@ -19,4 +20,13 @@ class MpimListRequest(
      * Fewer than the requested number of items may be returned, even if the end of the users list hasn't been reached.
      */
     var limit: Int?, var getLatest: Boolean?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("cursor", cursor)
+            it.addParam("limit", limit)
+            it.addParam("get_latest", getLatest)
+        }
+    }
+}

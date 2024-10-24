@@ -1,13 +1,8 @@
 package work.socialhub.kslack.api.methods.response.usergroups
 
-import work.socialhub.kslack.api.model.Usergroup
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.user.UserGroup
 
-class UsergroupsDisableResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
-    var usergroup: Usergroup? = null
+class UsergroupsDisableResponse : SlackApiResponse() {
+    var usergroup: UserGroup? = null
 }

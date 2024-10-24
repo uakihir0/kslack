@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.files
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class FilesRevokePublicURLRequest(
@@ -8,4 +9,11 @@ class FilesRevokePublicURLRequest(
     override var token: String?,
     /** File to revoke */
     var file: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("file", file)
+        }
+    }
+}

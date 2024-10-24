@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.reminders
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class RemindersAddRequest(
@@ -17,4 +18,14 @@ class RemindersAddRequest(
 
     /** The user who will receive the reminder. If no user is specified, the reminder will go to user who created it. */
     var user: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("text", text)
+            it.addParam("time", time)
+            it.addParam("user", user)
+
+        }
+    }
+}

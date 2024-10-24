@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.users
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.entity.ConversationType
 
@@ -37,4 +38,19 @@ class UsersConversationsRequest(
      * any combination of `public_channel`, `private_channel`, `mpim`, `im`
      */
     var types: Array<ConversationType>?,
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest {
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("user", user)
+            it.addParam("cursor", cursor)
+            it.addParam("exclude_archived", isExcludeArchived)
+            it.addParam("limit", limit)
+
+            if (types != null) {
+                val typeValues = types!!.map { it.value }
+                it.addParam("types", typeValues.joinToString(","))
+            }
+        }
+    }
+}

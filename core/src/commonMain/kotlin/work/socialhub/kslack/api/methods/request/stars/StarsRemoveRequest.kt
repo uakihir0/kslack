@@ -1,5 +1,6 @@
 package work.socialhub.kslack.api.methods.request.stars
 
+import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 
 class StarsRemoveRequest(
@@ -13,4 +14,14 @@ class StarsRemoveRequest(
     var channel: String?,
     /** Timestamp of the message to remove star from. */
     var timestamp: String?
-) : SlackApiRequest
+) : SlackApiRequest, FormRequest{
+
+    override fun toMap(): Map<String, Any> {
+        return mutableMapOf<String, Any>().also {
+            it.addParam("channel", channel)
+            it.addParam("file", file)
+            it.addParam("file_comment", fileComment)
+            it.addParam("timestamp", timestamp)
+        }
+    }
+}

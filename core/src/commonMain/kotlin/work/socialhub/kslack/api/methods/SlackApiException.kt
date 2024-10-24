@@ -1,30 +1,27 @@
 package work.socialhub.kslack.api.methods
 
 import work.socialhub.khttpclient.HttpResponse
+import work.socialhub.kmastodon.internal.InternalUtility.fromJson
 
 class SlackApiException(
     val response: HttpResponse,
 ) : Exception() {
 
-    var error: SlackApiErrorResponse?
+    var error: SlackApiErrorResponse? = null
 
     init {
+        val body = response.stringBody
         try {
-            error =
-                GsonFactory.createSnakeCase(config).fromJson(responseBody, SlackApiErrorResponse::class.java)
-        } catch (e: java.lang.Exception) {
-            if (log.isDebugEnabled()) {
-                val responseToPrint =
-                    if (responseBody.length > 1000)
-                        responseBody.subSequence(0, 1000).toString() + " ..."
-                    else responseBody
-                log.debug("Failed to parse the error response body: $responseToPrint")
-            }
+            error = fromJson(body)
+
+        } catch (e: Exception) {
+            val text = if (body.length > 1000)
+                body.subSequence(0, 1000).toString() + " ..." else body
+            println("Failed to parse the error response body: $text")
         }
-        this.error = parsedErrorResponse
     }
 
-    fun getResponse(): HttpResponse? {
+    fun getResponse(): HttpResponse {
         return this.response
     }
 

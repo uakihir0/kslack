@@ -1,16 +1,15 @@
-package work.socialhub.kslack.api.status.v2.impl
+package work.socialhub.kslack.api.status.impl
 
-import work.socialhub.kslack.api.status.StatusApiException
-import work.socialhub.kslack.api.status.v2.StatusClient
-import work.socialhub.kslack.api.status.v2.model.CurrentStatus
-import work.socialhub.kslack.api.status.v2.model.SlackIssue
-import work.socialhub.kslack.common.http.SlackHttpClient
+import work.socialhub.kslack.api.status.StatusClient
+import work.socialhub.kslack.api.status.StatusClient.Companion.ENDPOINT_URL_PREFIX
+import work.socialhub.kslack.api.status.model.CurrentStatus
+import work.socialhub.kslack.api.status.model.SlackIssue
 
-class StatusClientImpl(slackHttpClient: SlackHttpClient) : StatusClient {
-    var endpointUrlPrefix: String = ENDPOINT_URL_PREFIX
-    private val slackHttpClient: SlackHttpClient = slackHttpClient
+class StatusClientImpl : StatusClient {
 
-    fun current(): CurrentStatus {
+    override var endpointUrlPrefix: String? = ENDPOINT_URL_PREFIX
+
+    override fun current(): CurrentStatus {
 //        Response response = slackHttpClient.get(endpointUrlPrefix + "current", null, null);
 //        String body = response.body().string();
 //        slackHttpClient.runHttpResponseListeners(response, body);
@@ -19,10 +18,10 @@ class StatusClientImpl(slackHttpClient: SlackHttpClient) : StatusClient {
 //        } else {
 //            throw new StatusApiException(response, body);
 //        }
-        throw java.lang.IllegalStateException("Not supported.")
+        throw IllegalStateException("Not supported.")
     }
 
-    fun history(): Array<SlackIssue> {
+    override fun history(): Array<SlackIssue> {
 //        Response response = slackHttpClient.get(endpointUrlPrefix + "history", null, null);
 //        Type listType = new TypeToken<ArrayArray<SlackIssue>>() {
 //        }.getType();
@@ -33,6 +32,6 @@ class StatusClientImpl(slackHttpClient: SlackHttpClient) : StatusClient {
 //        } else {
 //            throw new StatusApiException(response, body);
 //        }
-        throw java.lang.IllegalStateException("Not supported.")
+        throw IllegalStateException("Not supported.")
     }
 }

@@ -1,54 +1,36 @@
 package work.socialhub.kslack
 
+import work.socialhub.kslack.api.methods.MethodsClient
+import work.socialhub.kslack.api.methods.impl.AdminResourceImpl
+import work.socialhub.kslack.api.methods.impl.MethodsClientImpl
+import work.socialhub.kslack.api.status.StatusClient
+import work.socialhub.kslack.api.status.impl.StatusClientImpl
+
 /**
  * Slack Integrations
- *
- *
  * https://{your team name}.slack.com/apps/manage/custom-integrations
  */
-class Slack(config: SlackConfig, httpClient: SlackHttpClient) {
-    private val httpClient: SlackHttpClient = httpClient
-    private val config: SlackConfig = config
-
-    constructor() : this(SlackConfig.DEFAULT, SlackHttpClient())
-
-    init {
-        this.httpClient.setConfig(this.config)
-    }
-
-    fun getHttpClient(): SlackHttpClient {
-        return this.httpClient
-    }
-
+class Slack {
 
     fun status(): StatusClient {
-        val client: StatusClientImpl = StatusClientImpl(httpClient)
-        client.setEndpointUrlPrefix(config.getStatusEndpointUrlPrefix())
-        return client
+        return StatusClientImpl()
     }
 
-    /**
-     * Creates a Methods API client.
-     */
-    fun methods(token: String? = null): MethodsClient {
-        val client: MethodsClientImpl = MethodsClientImpl(httpClient, token)
-        client.setEndpointUrlPrefix(config.getMethodsEndpointUrlPrefix())
-        return client
+    fun methods(
+        token: String? = null
+    ): MethodsClient {
+        return MethodsClientImpl(token)
+    }
+
+    fun admin(
+        token: String? = null
+    ): AdminResourceImpl {
+        return AdminResourceImpl(token)
     }
 
     companion object {
-        val instance: Slack = Slack(SlackConfig.DEFAULT, SlackHttpClient())
-
-        fun getInstance(config: SlackConfig): Slack {
-            return Slack(config, SlackHttpClient())
-        }
-
-        fun getInstance(config: SlackConfig, httpClient: SlackHttpClient): Slack {
-            return Slack(config, httpClient)
-        }
-
-        fun getInstance(httpClient: SlackHttpClient): Slack {
-            return Slack(SlackConfig.DEFAULT, httpClient)
+        fun getInstance(): Slack {
+            return Slack()
         }
     }
 }
