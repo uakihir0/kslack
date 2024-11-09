@@ -7,7 +7,7 @@ import work.socialhub.kslack.entity.block.element.BlockElement
  * https://api.slack.com/reference/messaging/blocks#input
  */
 class InputBlock : LayoutBlock {
-    override val type: String = TYPE
+    override val type: String = "input"
 
     var blockId: String? = null
 

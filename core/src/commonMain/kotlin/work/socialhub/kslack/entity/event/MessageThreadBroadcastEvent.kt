@@ -1,6 +1,8 @@
 package work.socialhub.kslack.entity.event
 
-import work.socialhub.kslack.api.model.Attachment
+import work.socialhub.kslack.entity.Attachment
+import work.socialhub.kslack.entity.block.LayoutBlock
+import work.socialhub.kslack.entity.message.MessageRoot
 
 /**
  * https://api.slack.com/events/message/thread_broadcast

@@ -5,6 +5,6 @@ package work.socialhub.kslack.entity.block
  */
 class ContextBlock : LayoutBlock {
     override val type: String = "context"
-    private var elements: Array<ContextBlockElement?>? = arrayOf()
+    var elements: Array<ContextBlockElement?>? = arrayOf()
     var blockId: String? = null
 }

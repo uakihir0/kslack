@@ -1,5 +1,8 @@
 package work.socialhub.kslack.entity.dialog
 
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
+
 /**
  * Represents a [select](https://api.slack.com/dialogs#select_elements)
  * dialog element
@@ -11,6 +14,9 @@ package work.socialhub.kslack.entity.dialog
  * single item from a list. True to web roots, this selection is displayed as a dropdown
  * menu.
  */
+
+@JsExport
+@Serializable
 class DialogSelectElement : DialogElement {
     /**
      * Label displayed to user. Required. No more than 24 characters.
@@ -52,82 +58,4 @@ class DialogSelectElement : DialogElement {
      */
     private var options: Array<DialogOption>? = null
 
-    constructor(
-        label: String?,
-        name: String?,
-        value: String?,
-        placeholder: String?,
-        optional: Boolean,
-        options: Array<DialogOption>?
-    ) {
-        this.label = label
-        this.name = name
-        this.value = value
-        this.placeholder = placeholder
-        this.isOptional = optional
-        this.options = options
-    }
-
-    constructor()
-
-    fun getOptions(): Array<DialogOption>? {
-        return this.options
-    }
-
-    fun setOptions(options: Array<DialogOption>?) {
-        this.options = options
-    }
-
-    class DialogSelectElementBuilder() {
-        private var label: String? = null
-        private var name: String? = null
-        private var value: String? = null
-        private var placeholder: String? = null
-        private var optional = false
-        private var options: Array<DialogOption>? = null
-
-        fun label(label: String?): DialogSelectElementBuilder {
-            this.label = label
-            return this
-        }
-
-        fun name(name: String?): DialogSelectElementBuilder {
-            this.name = name
-            return this
-        }
-
-        fun value(value: String?): DialogSelectElementBuilder {
-            this.value = value
-            return this
-        }
-
-        fun placeholder(placeholder: String?): DialogSelectElementBuilder {
-            this.placeholder = placeholder
-            return this
-        }
-
-        fun optional(optional: Boolean): DialogSelectElementBuilder {
-            this.optional = optional
-            return this
-        }
-
-        fun options(options: Array<DialogOption>?): DialogSelectElementBuilder {
-            this.options = options
-            return this
-        }
-
-        fun build(): DialogSelectElement {
-            return DialogSelectElement(label, name, value, placeholder, optional, options)
-        }
-
-        override fun toString(): String {
-            return "DialogSelectElement.DialogSelectElementBuilder(label=" + this.label + ", name=" + this.name + ", value=" + this.value + ", placeholder=" + this.placeholder + ", optional=" + this.optional + ", options=" + this.options + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): DialogSelectElementBuilder {
-            return DialogSelectElementBuilder()
-        }
-    }
 }

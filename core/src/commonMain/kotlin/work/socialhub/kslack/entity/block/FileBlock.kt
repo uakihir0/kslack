@@ -5,7 +5,7 @@ package work.socialhub.kslack.entity.block
  */
 class FileBlock : LayoutBlock {
     // The type of block. For a context block, type is always file.
-    override val type: String = TYPE
+    override val type: String = "file"
 
     // A string acting as a unique identifier for a block.
     // You can use this block_id when you receive an interaction payload to identify the source of the action.

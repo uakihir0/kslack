@@ -7,7 +7,7 @@ import work.socialhub.kslack.entity.block.element.BlockElement
  * https://api.slack.com/reference/messaging/blocks#section
  */
 class SectionBlock : LayoutBlock {
-    override val type: String = TYPE
+    override val type: String = "section"
 
     var text: TextObject? = null
     var blockId: String? = null

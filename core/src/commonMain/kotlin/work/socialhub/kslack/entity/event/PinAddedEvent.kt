@@ -1,6 +1,10 @@
 package work.socialhub.kslack.entity.event
 
 import work.socialhub.kslack.api.model.Attachment
+import work.socialhub.kslack.entity.Attachment
+import work.socialhub.kslack.entity.block.LayoutBlock
+import work.socialhub.kslack.entity.file.File
+import work.socialhub.kslack.entity.file.FileComment
 
 /**
  * When an item is pinned in a channel, the pin_added event is sent to all members of that channel.

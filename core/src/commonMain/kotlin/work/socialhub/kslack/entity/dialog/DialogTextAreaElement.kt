@@ -1,5 +1,8 @@
 package work.socialhub.kslack.entity.dialog
 
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
+
 /**
  * Represents a [textarea](https://api.slack.com/dialogs#textarea_elements)
  * dialog element
@@ -11,6 +14,8 @@ package work.socialhub.kslack.entity.dialog
  * these on the world wide web. Use this element if you want a relatively long answer from
  * users.
  */
+@JsExport
+@Serializable
 class DialogTextAreaElement : DialogElement {
     /**
      * Label displayed to user. Required. No more than 24 characters.
@@ -65,107 +70,4 @@ class DialogTextAreaElement : DialogElement {
      * Subtype for this text type element (e.g. Number)
      */
     var subtype: DialogSubType? = null
-
-    constructor(
-        label: String?,
-        name: String?,
-        value: String?,
-        placeholder: String?,
-        optional: Boolean,
-        maxLength: Int,
-        minLength: Int,
-        hint: String?,
-        subtype: DialogSubType?
-    ) {
-        this.label = label
-        this.name = name
-        this.value = value
-        this.placeholder = placeholder
-        this.isOptional = optional
-        this.maxLength = maxLength
-        this.minLength = minLength
-        this.hint = hint
-        this.subtype = subtype
-    }
-
-    constructor()
-
-    fun getSubtype(): DialogSubType? {
-        return this.subtype
-    }
-
-    fun setSubtype(subtype: DialogSubType?) {
-        this.subtype = subtype
-    }
-
-    class DialogTextAreaElementBuilder() {
-        private var label: String? = null
-        private var name: String? = null
-        private var value: String? = null
-        private var placeholder: String? = null
-        private var optional = false
-        private var maxLength = 0
-        private var minLength = 0
-        private var hint: String? = null
-        private var subtype: DialogSubType? = null
-
-        fun label(label: String?): DialogTextAreaElementBuilder {
-            this.label = label
-            return this
-        }
-
-        fun name(name: String?): DialogTextAreaElementBuilder {
-            this.name = name
-            return this
-        }
-
-        fun value(value: String?): DialogTextAreaElementBuilder {
-            this.value = value
-            return this
-        }
-
-        fun placeholder(placeholder: String?): DialogTextAreaElementBuilder {
-            this.placeholder = placeholder
-            return this
-        }
-
-        fun optional(optional: Boolean): DialogTextAreaElementBuilder {
-            this.optional = optional
-            return this
-        }
-
-        fun maxLength(maxLength: Int): DialogTextAreaElementBuilder {
-            this.maxLength = maxLength
-            return this
-        }
-
-        fun minLength(minLength: Int): DialogTextAreaElementBuilder {
-            this.minLength = minLength
-            return this
-        }
-
-        fun hint(hint: String?): DialogTextAreaElementBuilder {
-            this.hint = hint
-            return this
-        }
-
-        fun subtype(subtype: DialogSubType?): DialogTextAreaElementBuilder {
-            this.subtype = subtype
-            return this
-        }
-
-        fun build(): DialogTextAreaElement {
-            return DialogTextAreaElement(label, name, value, placeholder, optional, maxLength, minLength, hint, subtype)
-        }
-
-        override fun toString(): String {
-            return "DialogTextAreaElement.DialogTextAreaElementBuilder(label=" + this.label + ", name=" + this.name + ", value=" + this.value + ", placeholder=" + this.placeholder + ", optional=" + this.optional + ", maxLength=" + this.maxLength + ", minLength=" + this.minLength + ", hint=" + this.hint + ", subtype=" + this.subtype + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): DialogTextAreaElementBuilder {
-            return DialogTextAreaElementBuilder()
-        }
-    }
 }

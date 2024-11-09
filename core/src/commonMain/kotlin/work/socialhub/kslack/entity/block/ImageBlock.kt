@@ -6,7 +6,7 @@ import work.socialhub.kslack.entity.block.composition.PlainTextObject
  * https://api.slack.com/reference/messaging/blocks#image
  */
 class ImageBlock : LayoutBlock {
-    override val type: String = TYPE
+    override val type: String = "image"
     var fallback: String? = null
 
     var imageUrl: String? = null

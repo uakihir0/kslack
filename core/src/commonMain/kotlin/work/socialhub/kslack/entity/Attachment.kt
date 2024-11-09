@@ -1,8 +1,10 @@
 package work.socialhub.kslack.entity
 
+import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import work.socialhub.kmastodon.entity.Attachment
 import work.socialhub.kslack.api.model.block.LayoutBlock
+import work.socialhub.kslack.entity.block.LayoutBlock
 import kotlin.js.JsExport
 
 /**
@@ -87,109 +89,6 @@ class Attachment {
 
     var isIndent: Boolean? = null
 
-    constructor(
-        msgSubtype: String?,
-        fallback: String?,
-        callbackId: String?,
-        color: String?,
-        pretext: String?,
-        serviceUrl: String?,
-        serviceName: String?,
-        serviceIcon: String?,
-        authorName: String?,
-        authorLink: String?,
-        authorIcon: String?,
-        fromUrl: String?,
-        originalUrl: String?,
-        authorSubname: String?,
-        channelId: String?,
-        channelName: String?,
-        id: Int?,
-        botId: String?,
-        indent: Boolean?,
-        msgUnfurl: Boolean?,
-        replyUnfurl: Boolean?,
-        threadRootUnfurl: Boolean?,
-        appUnfurl: Boolean?,
-        appUnfurlUrl: String?,
-        title: String?,
-        titleLink: String?,
-        text: String?,
-        fields: Array<Field>?,
-        imageUrl: String?,
-        imageWidth: Int?,
-        imageHeight: Int?,
-        imageBytes: Int?,
-        thumbUrl: String?,
-        thumbWidth: Int?,
-        thumbHeight: Int?,
-        videoHtml: String?,
-        videoHtmlWidth: Int?,
-        videoHtmlHeight: Int?,
-        footer: String?,
-        footerIcon: String?,
-        ts: String?,
-        mrkdwnIn: Array<String>?,
-        actions: Array<Action>?,
-        blocks: Array<LayoutBlock>?,
-        filename: String?,
-        size: Int?,
-        mimetype: String?,
-        url: String?,
-        metadata: AttachmentMetadata?
-    ) {
-        this.msgSubtype = msgSubtype
-        this.fallback = fallback
-        this.callbackId = callbackId
-        this.color = color
-        this.pretext = pretext
-        this.serviceUrl = serviceUrl
-        this.serviceName = serviceName
-        this.serviceIcon = serviceIcon
-        this.authorName = authorName
-        this.authorLink = authorLink
-        this.authorIcon = authorIcon
-        this.fromUrl = fromUrl
-        this.originalUrl = originalUrl
-        this.authorSubname = authorSubname
-        this.channelId = channelId
-        this.channelName = channelName
-        this.id = id
-        this.botId = botId
-        this.isIndent = indent
-        this.isMsgUnfurl = msgUnfurl
-        this.isReplyUnfurl = replyUnfurl
-        this.isThreadRootUnfurl = threadRootUnfurl
-        this.isAppUnfurl = appUnfurl
-        this.appUnfurlUrl = appUnfurlUrl
-        this.title = title
-        this.titleLink = titleLink
-        this.text = text
-        this.fields = fields
-        this.imageUrl = imageUrl
-        this.imageWidth = imageWidth
-        this.imageHeight = imageHeight
-        this.imageBytes = imageBytes
-        this.thumbUrl = thumbUrl
-        this.thumbWidth = thumbWidth
-        this.thumbHeight = thumbHeight
-        this.videoHtml = videoHtml
-        this.videoHtmlWidth = videoHtmlWidth
-        this.videoHtmlHeight = videoHtmlHeight
-        this.footer = footer
-        this.footerIcon = footerIcon
-        this.ts = ts
-        this.mrkdwnIn = mrkdwnIn
-        this.actions = actions
-        this.blocks = blocks
-        this.filename = filename
-        this.size = size
-        this.mimetype = mimetype
-        this.url = url
-        this.metadata = metadata
-    }
-
-    constructor()
 
     // # already exists > "fallback": "[December 28th, 2016 1:22 PM] confused: what was there?",
     // # already exists > "ts": "1482960137.003543",
@@ -241,7 +140,7 @@ class Attachment {
     /**
      * Fields are defined as an array, and hashes contained within it will be displayed in a table inside the message attachment.
      */
-    private var fields: Array<Field>? = java.util.ArrayArray<Field>()
+    var fields: Array<Field>? = null
 
     /**
      * A valid URL to an image file that will be displayed inside a message attachment.
@@ -314,14 +213,14 @@ class Attachment {
  * in attachments](https://api.slack.com/docs/message-formatting#message_formatting) are not formatted. To enable formatting on attachment fields, add the
      * name of the field (as defined in the API) in this list.
      */
-    var mrkdwnIn: Array<String>? = java.util.ArrayArray<String>()
+    var mrkdwnIn: Array<String>? = null
 
     /**
      * Actions are defined as an array, and hashes contained within it will be displayed in as buttons in the message attachment.
      */
-    private var actions: Array<Action>? = java.util.ArrayArray<Action>()
+    var actions: Array<Action>? = null
 
-    private var blocks: Array<LayoutBlock>? = null
+     var blocks: Array<LayoutBlock>? = null
 
     // --------------------------
     // Files
@@ -331,539 +230,35 @@ class Attachment {
     var url: String? = null
     var metadata: AttachmentMetadata? = null
 
-    fun getFields(): Array<Field>? {
-        return this.fields
-    }
 
-    fun getActions(): Array<Action>? {
-        return this.actions
-    }
+}
 
-    fun getBlocks(): Array<LayoutBlock>? {
-        return this.blocks
-    }
+@JsExport
+@Serializable
+class AttachmentMetadata {
+    @SerialName("thumb_64")
+    var thumb64: Boolean? = null
 
-    fun setFields(fields: Array<Field>?) {
-        this.fields = fields
-    }
+    @SerialName("thumb_80")
+    var thumb80: Boolean? = null
 
-    fun setActions(actions: Array<Action>?) {
-        this.actions = actions
-    }
+    @SerialName("thumb_160")
+    var thumb160: Boolean? = null
 
-    fun setBlocks(blocks: Array<LayoutBlock>?) {
-        this.blocks = blocks
-    }
+    @SerialName("original_w")
+    var originalWidth: Int? = null
 
-    class AttachmentMetadata {
-        @SerialName("thumb_64")
-        var thumb64: Boolean? = null
+    @SerialName("original_h")
+    var originalHeight: Int? = null
 
-        @SerialName("thumb_80")
-        var thumb80: Boolean? = null
+    @SerialName("thumb_360_w")
+    var thumb360Width: Int? = null
 
-        @SerialName("thumb_160")
-        var thumb160: Boolean? = null
+    @SerialName("thumb_360_h")
+    var thumb360Height: Int? = null
 
-        @SerialName("original_w")
-        var originalWidth: Int? = null
-
-        @SerialName("original_h")
-        var originalHeight: Int? = null
-
-        @SerialName("thumb_360_w")
-        var thumb360Width: Int? = null
-
-        @SerialName("thumb_360_h")
-        var thumb360Height: Int? = null
-
-        var format: String? = null
-        var extension: String? = null
-        var rotation: Int? = null
-        var thumbTiny: String? = null
-
-        constructor(
-            thumb64: Boolean?,
-            thumb80: Boolean?,
-            thumb160: Boolean?,
-            originalWidth: Int?,
-            originalHeight: Int?,
-            thumb360Width: Int?,
-            thumb360Height: Int?,
-            format: String?,
-            extension: String?,
-            rotation: Int?,
-            thumbTiny: String?
-        ) {
-            this.thumb64 = thumb64
-            this.thumb80 = thumb80
-            this.thumb160 = thumb160
-            this.originalWidth = originalWidth
-            this.originalHeight = originalHeight
-            this.thumb360Width = thumb360Width
-            this.thumb360Height = thumb360Height
-            this.format = format
-            this.extension = extension
-            this.rotation = rotation
-            this.thumbTiny = thumbTiny
-        }
-
-        constructor()
-
-        class AttachmentMetadataBuilder() {
-            private var thumb64: Boolean? = null
-            private var thumb80: Boolean? = null
-            private var thumb160: Boolean? = null
-            private var originalWidth: Int? = null
-            private var originalHeight: Int? = null
-            private var thumb360Width: Int? = null
-            private var thumb360Height: Int? = null
-            private var format: String? = null
-            private var extension: String? = null
-            private var rotation: Int? = null
-            private var thumbTiny: String? = null
-
-            fun thumb64(thumb64: Boolean?): AttachmentMetadataBuilder {
-                this.thumb64 = thumb64
-                return this
-            }
-
-            fun thumb80(thumb80: Boolean?): AttachmentMetadataBuilder {
-                this.thumb80 = thumb80
-                return this
-            }
-
-            fun thumb160(thumb160: Boolean?): AttachmentMetadataBuilder {
-                this.thumb160 = thumb160
-                return this
-            }
-
-            fun originalWidth(originalWidth: Int?): AttachmentMetadataBuilder {
-                this.originalWidth = originalWidth
-                return this
-            }
-
-            fun originalHeight(originalHeight: Int?): AttachmentMetadataBuilder {
-                this.originalHeight = originalHeight
-                return this
-            }
-
-            fun thumb360Width(thumb360Width: Int?): AttachmentMetadataBuilder {
-                this.thumb360Width = thumb360Width
-                return this
-            }
-
-            fun thumb360Height(thumb360Height: Int?): AttachmentMetadataBuilder {
-                this.thumb360Height = thumb360Height
-                return this
-            }
-
-            fun format(format: String?): AttachmentMetadataBuilder {
-                this.format = format
-                return this
-            }
-
-            fun extension(extension: String?): AttachmentMetadataBuilder {
-                this.extension = extension
-                return this
-            }
-
-            fun rotation(rotation: Int?): AttachmentMetadataBuilder {
-                this.rotation = rotation
-                return this
-            }
-
-            fun thumbTiny(thumbTiny: String?): AttachmentMetadataBuilder {
-                this.thumbTiny = thumbTiny
-                return this
-            }
-
-            fun build(): AttachmentMetadata {
-                return AttachmentMetadata(
-                    thumb64,
-                    thumb80,
-                    thumb160,
-                    originalWidth,
-                    originalHeight,
-                    thumb360Width,
-                    thumb360Height,
-                    format,
-                    extension,
-                    rotation,
-                    thumbTiny
-                )
-            }
-
-            override fun toString(): String {
-                return "Attachment.AttachmentMetadata.AttachmentMetadataBuilder(thumb64=" + this.thumb64 + ", thumb80=" + this.thumb80 + ", thumb160=" + this.thumb160 + ", originalWidth=" + this.originalWidth + ", originalHeight=" + this.originalHeight + ", thumb360Width=" + this.thumb360Width + ", thumb360Height=" + this.thumb360Height + ", format=" + this.format + ", extension=" + this.extension + ", rotation=" + this.rotation + ", thumbTiny=" + this.thumbTiny + ")"
-            }
-        }
-
-        companion object {
-            fun builder(): AttachmentMetadataBuilder {
-                return AttachmentMetadataBuilder()
-            }
-        }
-    }
-
-    class AttachmentBuilder() {
-        private var msgSubtype: String? = null
-        private var fallback: String? = null
-        private var callbackId: String? = null
-        private var color: String? = null
-        private var pretext: String? = null
-        private var serviceUrl: String? = null
-        private var serviceName: String? = null
-        private var serviceIcon: String? = null
-        private var authorName: String? = null
-        private var authorLink: String? = null
-        private var authorIcon: String? = null
-        private var fromUrl: String? = null
-        private var originalUrl: String? = null
-        private var authorSubname: String? = null
-        private var channelId: String? = null
-        private var channelName: String? = null
-        private var id: Int? = null
-        private var botId: String? = null
-        private var indent: Boolean? = null
-        private var msgUnfurl: Boolean? = null
-        private var replyUnfurl: Boolean? = null
-        private var threadRootUnfurl: Boolean? = null
-        private var appUnfurl: Boolean? = null
-        private var appUnfurlUrl: String? = null
-        private var title: String? = null
-        private var titleLink: String? = null
-        private var text: String? = null
-        private var fields: Array<Field>? = null
-        private var imageUrl: String? = null
-        private var imageWidth: Int? = null
-        private var imageHeight: Int? = null
-        private var imageBytes: Int? = null
-        private var thumbUrl: String? = null
-        private var thumbWidth: Int? = null
-        private var thumbHeight: Int? = null
-        private var videoHtml: String? = null
-        private var videoHtmlWidth: Int? = null
-        private var videoHtmlHeight: Int? = null
-        private var footer: String? = null
-        private var footerIcon: String? = null
-        private var ts: String? = null
-        private var mrkdwnIn: Array<String>? = null
-        private var actions: Array<Action>? = null
-        private var blocks: Array<LayoutBlock>? = null
-        private var filename: String? = null
-        private var size: Int? = null
-        private var mimetype: String? = null
-        private var url: String? = null
-        private var metadata: AttachmentMetadata? = null
-
-        fun msgSubtype(msgSubtype: String?): AttachmentBuilder {
-            this.msgSubtype = msgSubtype
-            return this
-        }
-
-        fun fallback(fallback: String?): AttachmentBuilder {
-            this.fallback = fallback
-            return this
-        }
-
-        fun callbackId(callbackId: String?): AttachmentBuilder {
-            this.callbackId = callbackId
-            return this
-        }
-
-        fun color(color: String?): AttachmentBuilder {
-            this.color = color
-            return this
-        }
-
-        fun pretext(pretext: String?): AttachmentBuilder {
-            this.pretext = pretext
-            return this
-        }
-
-        fun serviceUrl(serviceUrl: String?): AttachmentBuilder {
-            this.serviceUrl = serviceUrl
-            return this
-        }
-
-        fun serviceName(serviceName: String?): AttachmentBuilder {
-            this.serviceName = serviceName
-            return this
-        }
-
-        fun serviceIcon(serviceIcon: String?): AttachmentBuilder {
-            this.serviceIcon = serviceIcon
-            return this
-        }
-
-        fun authorName(authorName: String?): AttachmentBuilder {
-            this.authorName = authorName
-            return this
-        }
-
-        fun authorLink(authorLink: String?): AttachmentBuilder {
-            this.authorLink = authorLink
-            return this
-        }
-
-        fun authorIcon(authorIcon: String?): AttachmentBuilder {
-            this.authorIcon = authorIcon
-            return this
-        }
-
-        fun fromUrl(fromUrl: String?): AttachmentBuilder {
-            this.fromUrl = fromUrl
-            return this
-        }
-
-        fun originalUrl(originalUrl: String?): AttachmentBuilder {
-            this.originalUrl = originalUrl
-            return this
-        }
-
-        fun authorSubname(authorSubname: String?): AttachmentBuilder {
-            this.authorSubname = authorSubname
-            return this
-        }
-
-        fun channelId(channelId: String?): AttachmentBuilder {
-            this.channelId = channelId
-            return this
-        }
-
-        fun channelName(channelName: String?): AttachmentBuilder {
-            this.channelName = channelName
-            return this
-        }
-
-        fun id(id: Int?): AttachmentBuilder {
-            this.id = id
-            return this
-        }
-
-        fun botId(botId: String?): AttachmentBuilder {
-            this.botId = botId
-            return this
-        }
-
-        fun indent(indent: Boolean?): AttachmentBuilder {
-            this.indent = indent
-            return this
-        }
-
-        fun msgUnfurl(msgUnfurl: Boolean?): AttachmentBuilder {
-            this.msgUnfurl = msgUnfurl
-            return this
-        }
-
-        fun replyUnfurl(replyUnfurl: Boolean?): AttachmentBuilder {
-            this.replyUnfurl = replyUnfurl
-            return this
-        }
-
-        fun threadRootUnfurl(threadRootUnfurl: Boolean?): AttachmentBuilder {
-            this.threadRootUnfurl = threadRootUnfurl
-            return this
-        }
-
-        fun appUnfurl(appUnfurl: Boolean?): AttachmentBuilder {
-            this.appUnfurl = appUnfurl
-            return this
-        }
-
-        fun appUnfurlUrl(appUnfurlUrl: String?): AttachmentBuilder {
-            this.appUnfurlUrl = appUnfurlUrl
-            return this
-        }
-
-        fun title(title: String?): AttachmentBuilder {
-            this.title = title
-            return this
-        }
-
-        fun titleLink(titleLink: String?): AttachmentBuilder {
-            this.titleLink = titleLink
-            return this
-        }
-
-        fun text(text: String?): AttachmentBuilder {
-            this.text = text
-            return this
-        }
-
-        fun fields(fields: Array<Field>?): AttachmentBuilder {
-            this.fields = fields
-            return this
-        }
-
-        fun imageUrl(imageUrl: String?): AttachmentBuilder {
-            this.imageUrl = imageUrl
-            return this
-        }
-
-        fun imageWidth(imageWidth: Int?): AttachmentBuilder {
-            this.imageWidth = imageWidth
-            return this
-        }
-
-        fun imageHeight(imageHeight: Int?): AttachmentBuilder {
-            this.imageHeight = imageHeight
-            return this
-        }
-
-        fun imageBytes(imageBytes: Int?): AttachmentBuilder {
-            this.imageBytes = imageBytes
-            return this
-        }
-
-        fun thumbUrl(thumbUrl: String?): AttachmentBuilder {
-            this.thumbUrl = thumbUrl
-            return this
-        }
-
-        fun thumbWidth(thumbWidth: Int?): AttachmentBuilder {
-            this.thumbWidth = thumbWidth
-            return this
-        }
-
-        fun thumbHeight(thumbHeight: Int?): AttachmentBuilder {
-            this.thumbHeight = thumbHeight
-            return this
-        }
-
-        fun videoHtml(videoHtml: String?): AttachmentBuilder {
-            this.videoHtml = videoHtml
-            return this
-        }
-
-        fun videoHtmlWidth(videoHtmlWidth: Int?): AttachmentBuilder {
-            this.videoHtmlWidth = videoHtmlWidth
-            return this
-        }
-
-        fun videoHtmlHeight(videoHtmlHeight: Int?): AttachmentBuilder {
-            this.videoHtmlHeight = videoHtmlHeight
-            return this
-        }
-
-        fun footer(footer: String?): AttachmentBuilder {
-            this.footer = footer
-            return this
-        }
-
-        fun footerIcon(footerIcon: String?): AttachmentBuilder {
-            this.footerIcon = footerIcon
-            return this
-        }
-
-        fun ts(ts: String?): AttachmentBuilder {
-            this.ts = ts
-            return this
-        }
-
-        fun mrkdwnIn(mrkdwnIn: Array<String>?): AttachmentBuilder {
-            this.mrkdwnIn = mrkdwnIn
-            return this
-        }
-
-        fun actions(actions: Array<Action>?): AttachmentBuilder {
-            this.actions = actions
-            return this
-        }
-
-        fun blocks(blocks: Array<LayoutBlock>?): AttachmentBuilder {
-            this.blocks = blocks
-            return this
-        }
-
-        fun filename(filename: String?): AttachmentBuilder {
-            this.filename = filename
-            return this
-        }
-
-        fun size(size: Int?): AttachmentBuilder {
-            this.size = size
-            return this
-        }
-
-        fun mimetype(mimetype: String?): AttachmentBuilder {
-            this.mimetype = mimetype
-            return this
-        }
-
-        fun url(url: String?): AttachmentBuilder {
-            this.url = url
-            return this
-        }
-
-        fun metadata(metadata: AttachmentMetadata?): AttachmentBuilder {
-            this.metadata = metadata
-            return this
-        }
-
-        fun build(): Attachment {
-            return work.socialhub.kmastodon.entity.Attachment(
-                msgSubtype,
-                fallback,
-                callbackId,
-                color,
-                pretext,
-                serviceUrl,
-                serviceName,
-                serviceIcon,
-                authorName,
-                authorLink,
-                authorIcon,
-                fromUrl,
-                originalUrl,
-                authorSubname,
-                channelId,
-                channelName,
-                id,
-                botId,
-                indent,
-                msgUnfurl,
-                replyUnfurl,
-                threadRootUnfurl,
-                appUnfurl,
-                appUnfurlUrl,
-                title,
-                titleLink,
-                text,
-                fields,
-                imageUrl,
-                imageWidth,
-                imageHeight,
-                imageBytes,
-                thumbUrl,
-                thumbWidth,
-                thumbHeight,
-                videoHtml,
-                videoHtmlWidth,
-                videoHtmlHeight,
-                footer,
-                footerIcon,
-                ts,
-                mrkdwnIn,
-                actions,
-                blocks,
-                filename,
-                size,
-                mimetype,
-                url,
-                metadata
-            )
-        }
-
-        override fun toString(): String {
-            return "Attachment.AttachmentBuilder(msgSubtype=" + this.msgSubtype + ", fallback=" + this.fallback + ", callbackId=" + this.callbackId + ", color=" + this.color + ", pretext=" + this.pretext + ", serviceUrl=" + this.serviceUrl + ", serviceName=" + this.serviceName + ", serviceIcon=" + this.serviceIcon + ", authorName=" + this.authorName + ", authorLink=" + this.authorLink + ", authorIcon=" + this.authorIcon + ", fromUrl=" + this.fromUrl + ", originalUrl=" + this.originalUrl + ", authorSubname=" + this.authorSubname + ", channelId=" + this.channelId + ", channelName=" + this.channelName + ", id=" + this.id + ", botId=" + this.botId + ", indent=" + this.indent + ", msgUnfurl=" + this.msgUnfurl + ", replyUnfurl=" + this.replyUnfurl + ", threadRootUnfurl=" + this.threadRootUnfurl + ", appUnfurl=" + this.appUnfurl + ", appUnfurlUrl=" + this.appUnfurlUrl + ", title=" + this.title + ", titleLink=" + this.titleLink + ", text=" + this.text + ", fields=" + this.fields + ", imageUrl=" + this.imageUrl + ", imageWidth=" + this.imageWidth + ", imageHeight=" + this.imageHeight + ", imageBytes=" + this.imageBytes + ", thumbUrl=" + this.thumbUrl + ", thumbWidth=" + this.thumbWidth + ", thumbHeight=" + this.thumbHeight + ", videoHtml=" + this.videoHtml + ", videoHtmlWidth=" + this.videoHtmlWidth + ", videoHtmlHeight=" + this.videoHtmlHeight + ", footer=" + this.footer + ", footerIcon=" + this.footerIcon + ", ts=" + this.ts + ", mrkdwnIn=" + this.mrkdwnIn + ", actions=" + this.actions + ", blocks=" + this.blocks + ", filename=" + this.filename + ", size=" + this.size + ", mimetype=" + this.mimetype + ", url=" + this.url + ", metadata=" + this.metadata + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): AttachmentBuilder {
-            return AttachmentBuilder()
-        }
-    }
+    var format: String? = null
+    var extension: String? = null
+    var rotation: Int? = null
+    var thumbTiny: String? = null
 }

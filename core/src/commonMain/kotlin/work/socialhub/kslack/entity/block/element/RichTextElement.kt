@@ -1,5 +1,8 @@
 package work.socialhub.kslack.entity.block.element
 
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
+
 /**
  * <pre>
  * {
@@ -30,6 +33,7 @@ package work.socialhub.kslack.entity.block.element
  *
  * https://api.slack.com/changelog/2019-09-what-they-see-is-what-you-get-and-more-and-less
  */
+@JsExport
 interface RichTextElement {
     val type: String?
 }
