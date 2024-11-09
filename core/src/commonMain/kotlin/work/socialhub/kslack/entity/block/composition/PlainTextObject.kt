@@ -1,8 +1,13 @@
 package work.socialhub.kslack.entity.block.composition
 
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
+
 /**
  * https://api.slack.com/reference/messaging/composition-objects#text
  */
+@JsExport
+@Serializable
 class PlainTextObject : TextObject() {
 
     companion object {

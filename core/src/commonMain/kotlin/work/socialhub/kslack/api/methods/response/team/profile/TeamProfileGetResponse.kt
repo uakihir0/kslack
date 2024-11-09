@@ -1,17 +1,12 @@
 package work.socialhub.kslack.api.methods.response.team.profile
 
-import work.socialhub.kslack.api.model.Team
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.team.Profiles
+import kotlin.js.JsExport
 
-class TeamProfileGetResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class TeamProfileGetResponse : SlackApiResponse() {
     var profile: Profiles? = null
-
-    class Profiles {
-        var fields: Array<Team.Profile>? = null
-    }
 }

@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.chat
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class ChatMeMessageRequest(
     /** Authentication token. Requires scope: `chat:write:user` */
     override var token: String?,

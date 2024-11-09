@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.dnd
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class DndInfoRequest(
     /** Authentication token. Requires scope: `dnd:read` */
     override var token: String?,

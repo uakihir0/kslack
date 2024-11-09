@@ -3,10 +3,12 @@ package work.socialhub.kslack.api.methods.request.users
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.entity.ConversationType
+import kotlin.js.JsExport
 
 /**
  * List conversations the calling user may access.
  */
+@JsExport
 class UsersConversationsRequest(
     /** Authentication token. Requires scope: `conversations:read` */
     override var token: String?,

@@ -1,13 +1,12 @@
 package work.socialhub.kslack.api.methods.response.files.remote
 
-import work.socialhub.kslack.api.model.File
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.file.File
+import kotlin.js.JsExport
 
-class FilesRemoteUpdateResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class FilesRemoteUpdateResponse : SlackApiResponse() {
     var file: File? = null
 }

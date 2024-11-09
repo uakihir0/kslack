@@ -1,13 +1,12 @@
 package work.socialhub.kslack.api.methods.response.usergroups
 
-import work.socialhub.kslack.api.model.Usergroup
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.user.UserGroup
+import kotlin.js.JsExport
 
-class UsergroupsEnableResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
-    var usergroup: Usergroup? = null
+@JsExport
+@Serializable
+class UsergroupsEnableResponse : SlackApiResponse() {
+    var usergroup: UserGroup? = null
 }

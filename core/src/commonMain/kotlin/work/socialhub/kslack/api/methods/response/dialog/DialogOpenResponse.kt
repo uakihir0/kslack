@@ -1,13 +1,12 @@
 package work.socialhub.kslack.api.methods.response.dialog
 
-import work.socialhub.kslack.api.model.dialog.DialogResponseMetadata
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.dialog.DialogResponseMetadata
+import kotlin.js.JsExport
 
-class DialogOpenResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class DialogOpenResponse : SlackApiResponse() {
     var responseMetadata: DialogResponseMetadata? = null
 }

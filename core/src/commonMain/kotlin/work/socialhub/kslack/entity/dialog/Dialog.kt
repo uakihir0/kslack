@@ -1,10 +1,15 @@
 package work.socialhub.kslack.entity.dialog
 
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
+
 /**
  * Represents a Slack Modal Dialog
  *
  * @see [Slack Modal Dialog](https://api.slack.com/dialogs)
  */
+@JsExport
+@Serializable
 class Dialog {
     /**
      * User-facing title of this entire dialog. 24 characters to work with and it's required.
@@ -21,7 +26,7 @@ class Dialog {
     /**
      * Up to 5 form elements are allowed per dialog. Required.
      */
-    private var elements: Array<DialogElement>? = null
+    var elements: Array<DialogElement>? = null
 
     /**
      * User-facing string for whichever button-like thing submits the form, depending on
@@ -42,82 +47,4 @@ class Dialog {
      */
     var state: String? = null
 
-    constructor(
-        title: String?,
-        callbackId: String?,
-        elements: Array<DialogElement>?,
-        submitLabel: String?,
-        notifyOnCancel: Boolean,
-        state: String?
-    ) {
-        this.title = title
-        this.callbackId = callbackId
-        this.elements = elements
-        this.submitLabel = submitLabel
-        this.isNotifyOnCancel = notifyOnCancel
-        this.state = state
-    }
-
-    constructor()
-
-    fun getElements(): Array<DialogElement>? {
-        return this.elements
-    }
-
-    fun setElements(elements: Array<DialogElement>?) {
-        this.elements = elements
-    }
-
-    class DialogBuilder() {
-        private var title: String? = null
-        private var callbackId: String? = null
-        private var elements: Array<DialogElement>? = null
-        private var submitLabel: String? = null
-        private var notifyOnCancel = false
-        private var state: String? = null
-
-        fun title(title: String?): DialogBuilder {
-            this.title = title
-            return this
-        }
-
-        fun callbackId(callbackId: String?): DialogBuilder {
-            this.callbackId = callbackId
-            return this
-        }
-
-        fun elements(elements: Array<DialogElement>?): DialogBuilder {
-            this.elements = elements
-            return this
-        }
-
-        fun submitLabel(submitLabel: String?): DialogBuilder {
-            this.submitLabel = submitLabel
-            return this
-        }
-
-        fun notifyOnCancel(notifyOnCancel: Boolean): DialogBuilder {
-            this.notifyOnCancel = notifyOnCancel
-            return this
-        }
-
-        fun state(state: String?): DialogBuilder {
-            this.state = state
-            return this
-        }
-
-        fun build(): Dialog {
-            return Dialog(title, callbackId, elements, submitLabel, notifyOnCancel, state)
-        }
-
-        override fun toString(): String {
-            return "Dialog.DialogBuilder(title=" + this.title + ", callbackId=" + this.callbackId + ", elements=" + this.elements + ", submitLabel=" + this.submitLabel + ", notifyOnCancel=" + this.notifyOnCancel + ", state=" + this.state + ")"
-        }
-    }
-
-    companion object {
-        fun builder(): DialogBuilder {
-            return DialogBuilder()
-        }
-    }
 }

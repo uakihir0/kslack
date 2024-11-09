@@ -1,6 +1,8 @@
 package work.socialhub.kslack.entity
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
 /**
  * Represents a [conversation](https://api.slack.com/types/conversation)
@@ -8,6 +10,8 @@ import kotlinx.serialization.SerialName
  *
  * @see "https://api.slack.com/docs/conversations-api"
  */
+@JsExport
+@Serializable
 class Conversation {
     var enterpriseId: String? = null
     var id: String? = null

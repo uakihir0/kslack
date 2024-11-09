@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.apps.permissions.resources
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class AppsPermissionsResourcesListRequest(
     override var token: String?,
 

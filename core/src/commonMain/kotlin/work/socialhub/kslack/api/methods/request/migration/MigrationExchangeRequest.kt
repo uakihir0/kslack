@@ -2,10 +2,12 @@ package work.socialhub.kslack.api.methods.request.migration
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * For Enterprise Grid workspaces, map local user IDs to global user IDs
  */
+@JsExport
 class MigrationExchangeRequest(
     /** Authentication token. Requires scope: `tokens.basic` */
     override var token: String?,

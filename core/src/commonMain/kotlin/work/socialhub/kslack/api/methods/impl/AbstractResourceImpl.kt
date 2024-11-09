@@ -3,9 +3,9 @@ package work.socialhub.kslack.api.methods.impl
 import work.socialhub.khttpclient.HttpParameter
 import work.socialhub.khttpclient.HttpRequest
 import work.socialhub.khttpclient.HttpResponse
-import work.socialhub.kmastodon.internal.InternalUtility.fromJson
 import work.socialhub.kslack.api.methods.SlackApiException
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper.fromJson
 
 open class AbstractResourceImpl(
     val token: String?

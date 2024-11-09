@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.pins
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class PinsListRequest(
     /** Authentication token. Requires scope: `pins:read` */
     override var token: String?,

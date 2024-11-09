@@ -2,11 +2,13 @@ package work.socialhub.kslack.api.methods.request.chat
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * A request to retrieve a permalink URL for a specific extant message
  * @see [Slack chat.getPermalink API](https://api.slack.com/methods/chat.getPermalink)
  */
+@JsExport
 class ChatGetPermalinkRequest(
     /** Authentication token. Requires scope: `none` */
     override var token: String?,

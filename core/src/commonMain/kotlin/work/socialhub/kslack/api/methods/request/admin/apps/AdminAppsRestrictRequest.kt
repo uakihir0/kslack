@@ -2,10 +2,12 @@ package work.socialhub.kslack.api.methods.request.admin.apps
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/methods/admin.apps.restrict
  */
+@JsExport
 class AdminAppsRestrictRequest(
     /** Authentication token bearing required scopes. */
     override var token: String?,

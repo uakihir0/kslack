@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.search
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class SearchAllRequest(
     /** Authentication token. Requires scope: `search:read` */
     override var token: String?,

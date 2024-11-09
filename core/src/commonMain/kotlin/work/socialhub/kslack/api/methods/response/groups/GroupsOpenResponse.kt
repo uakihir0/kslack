@@ -1,14 +1,12 @@
 package work.socialhub.kslack.api.methods.response.groups
 
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.api.methods.SlackApiResponse
+import kotlin.js.JsExport
 
-class GroupsOpenResponse : SlackApiResponse {
-    override var isOk: Boolean = false
-    override var warning: String? = null
-    override var error: String? = null
-    override var needed: String? = null
-    override var provided: String? = null
-
+@JsExport
+@Serializable
+class GroupsOpenResponse : SlackApiResponse() {
     var isNoOp: Boolean = false
     var isAlreadyOpen: Boolean = false
 }

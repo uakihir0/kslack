@@ -3,6 +3,7 @@ package work.socialhub.kslack.entity.message
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import work.socialhub.kmastodon.entity.Attachment
+import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.Reaction
 import work.socialhub.kslack.entity.block.LayoutBlock
 import work.socialhub.kslack.entity.bot.BotProfile

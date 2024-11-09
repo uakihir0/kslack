@@ -1,13 +1,13 @@
 package work.socialhub.kslack.api.methods.response.team
 
-import work.socialhub.kslack.api.model.BillableInfo
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.BillableInfo
+import kotlin.js.JsExport
 
-class TeamBillableInfoResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
 
+@JsExport
+@Serializable
+class TeamBillableInfoResponse : SlackApiResponse() {
     var billableInfo: Map<String, BillableInfo>? = null
 }

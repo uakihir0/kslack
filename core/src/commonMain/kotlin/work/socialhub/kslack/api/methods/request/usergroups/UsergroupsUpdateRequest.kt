@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.usergroups
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class UsergroupsUpdateRequest(
     /** Authentication token. Requires scope: `usergroups:write` */
     override var token: String?,

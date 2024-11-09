@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.apps.permissions.users
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class AppsPermissionsUsersRequestRequest(
     override var token: String?,
     /** A comma separated list of user scopes to request for */

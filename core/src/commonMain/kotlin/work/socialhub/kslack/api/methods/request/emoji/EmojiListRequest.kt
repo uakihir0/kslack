@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.emoji
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class EmojiListRequest(
     /** Authentication token. Requires scope: `emoji:read` */
     override var token: String?

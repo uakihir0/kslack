@@ -1,7 +1,8 @@
 package work.socialhub.kslack.api.methods.impl
 
+import work.socialhub.kslack.Slack
 import work.socialhub.kslack.api.methods.Methods
-import work.socialhub.kslack.api.methods.MethodsClient
+import work.socialhub.kslack.api.methods.client.MethodsAsyncClient
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
@@ -124,7 +125,7 @@ import work.socialhub.kslack.api.methods.response.team.TeamIntegrationLogsRespon
 import work.socialhub.kslack.api.methods.response.team.profile.TeamProfileGetResponse
 import work.socialhub.kslack.api.methods.response.usergroups.*
 import work.socialhub.kslack.api.methods.response.usergroups.users.UsergroupUsersListResponse
-import work.socialhub.kslack.api.methods.response.usergroups.users.UsergroupUsersUpdateResponse
+import work.socialhub.kslack.api.methods.response.usergroups.users.UserGroupUsersUpdateResponse
 import work.socialhub.kslack.api.methods.response.users.*
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileGetResponse
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileSetResponse
@@ -133,12 +134,12 @@ import work.socialhub.kslack.api.methods.response.views.ViewsPublishResponse
 import work.socialhub.kslack.api.methods.response.views.ViewsPushResponse
 import work.socialhub.kslack.api.methods.response.views.ViewsUpdateResponse
 
-class MethodsClientImpl(
+class MethodsAsyncClientImpl(
     token: String?
 ) : AbstractResourceImpl(token),
-    MethodsClient {
+    MethodsAsyncClient {
 
-    override var endpointUrlPrefix = MethodsClient.ENDPOINT_URL_PREFIX
+    override var endpointUrlPrefix = Slack.ENDPOINT_URL_PREFIX
 
     // ----------------------------------------------------------------------------------
     // public methods
@@ -1813,7 +1814,7 @@ class MethodsClientImpl(
 
     override suspend fun usergroupsCreate(
         req: UsergroupsCreateRequest
-    ): UsergroupsCreateResponse {
+    ): UserGroupsCreateResponse {
         return postFormWithToken(
             req.toParams(),
             Methods.USERGROUPS_CREATE,
@@ -1824,7 +1825,7 @@ class MethodsClientImpl(
 
     override suspend fun usergroupsDisable(
         req: UsergroupsDisableRequest
-    ): UsergroupsDisableResponse {
+    ): UserGroupsDisableResponse {
         return postFormWithToken(
             req.toParams(),
             Methods.USERGROUPS_DISABLE,
@@ -1879,7 +1880,7 @@ class MethodsClientImpl(
 
     override suspend fun usergroupUsersUpdate(
         req: UsergroupUsersUpdateRequest
-    ): UsergroupUsersUpdateResponse {
+    ): UserGroupUsersUpdateResponse {
         return postFormWithToken(
             req.toParams(),
             Methods.USERGROUPS_USERS_UPDATE,

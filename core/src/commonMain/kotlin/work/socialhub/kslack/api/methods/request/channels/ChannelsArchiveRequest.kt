@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.channels
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class ChannelsArchiveRequest(
     /** Authentication token. Requires scope: `channels:write` */
     override var token: String?,

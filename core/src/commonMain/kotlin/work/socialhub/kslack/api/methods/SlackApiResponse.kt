@@ -1,7 +1,9 @@
 package work.socialhub.kslack.api.methods
 
 import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
+@JsExport
 @Serializable
 open class SlackApiResponse {
     var isOk: Boolean = false

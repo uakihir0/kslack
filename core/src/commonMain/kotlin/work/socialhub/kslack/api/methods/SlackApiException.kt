@@ -1,7 +1,7 @@
 package work.socialhub.kslack.api.methods
 
 import work.socialhub.khttpclient.HttpResponse
-import work.socialhub.kmastodon.internal.InternalUtility.fromJson
+import work.socialhub.kslack.api.methods.helper.JsonHelper.fromJson
 
 class SlackApiException(
     val response: HttpResponse,

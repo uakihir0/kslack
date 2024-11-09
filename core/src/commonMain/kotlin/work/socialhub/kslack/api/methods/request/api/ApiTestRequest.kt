@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.api
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class ApiTestRequest(
     /** Authentication token bearing required scopes. */
     override var token: String? = null,

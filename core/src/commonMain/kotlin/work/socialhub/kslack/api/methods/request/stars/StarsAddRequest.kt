@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.stars
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class StarsAddRequest(
     /** Authentication token. Requires scope: `stars:write` */
     override var token: String?,

@@ -1,14 +1,14 @@
 package work.socialhub.kslack.api.methods.response.users
 
-import work.socialhub.kslack.api.model.ResponseMetadata
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.response.entity.ResponseMetadata
+import work.socialhub.kslack.entity.user.User
+import kotlin.js.JsExport
 
-class UsersListResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class UsersListResponse : SlackApiResponse() {
     var offset: String? = null // user id
     var members: Array<User>? = null
     var cacheTs: String? = null

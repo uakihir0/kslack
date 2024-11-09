@@ -1,14 +1,16 @@
 package work.socialhub.kslack.api.methods.response.files
 
-import work.socialhub.kslack.api.model.File
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.Paging
+import work.socialhub.kslack.entity.file.File
+import work.socialhub.kslack.entity.file.FileComment
+import kotlin.js.JsExport
 
-class FilesInfoResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class FilesInfoResponse : SlackApiResponse() {
     var file: File? = null
     var content: String? = null
     var contentHighlightHtml: String? = null

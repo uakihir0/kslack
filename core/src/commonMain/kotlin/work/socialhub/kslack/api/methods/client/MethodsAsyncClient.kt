@@ -1,8 +1,5 @@
-package work.socialhub.kslack.api.methods
+package work.socialhub.kslack.api.methods.client
 
-import work.socialhub.khttpclient.HttpParameter
-import work.socialhub.khttpclient.HttpRequest
-import work.socialhub.khttpclient.HttpResponse
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsApproveRequest
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRequestsListRequest
 import work.socialhub.kslack.api.methods.request.admin.apps.AdminAppsRestrictRequest
@@ -125,7 +122,7 @@ import work.socialhub.kslack.api.methods.response.team.TeamIntegrationLogsRespon
 import work.socialhub.kslack.api.methods.response.team.profile.TeamProfileGetResponse
 import work.socialhub.kslack.api.methods.response.usergroups.*
 import work.socialhub.kslack.api.methods.response.usergroups.users.UsergroupUsersListResponse
-import work.socialhub.kslack.api.methods.response.usergroups.users.UsergroupUsersUpdateResponse
+import work.socialhub.kslack.api.methods.response.usergroups.users.UserGroupUsersUpdateResponse
 import work.socialhub.kslack.api.methods.response.users.*
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileGetResponse
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileSetResponse
@@ -138,7 +135,7 @@ import work.socialhub.kslack.api.methods.response.views.ViewsUpdateResponse
  * API Methods.
  * https://api.slack.com/methods
  */
-interface MethodsClient {
+interface MethodsAsyncClient {
     var endpointUrlPrefix: String
 
     // ------------------------------
@@ -906,11 +903,11 @@ interface MethodsClient {
     // ------------------------------
     suspend fun usergroupsCreate(
         req: UsergroupsCreateRequest
-    ): UsergroupsCreateResponse
+    ): UserGroupsCreateResponse
 
     suspend fun usergroupsDisable(
         req: UsergroupsDisableRequest
-    ): UsergroupsDisableResponse
+    ): UserGroupsDisableResponse
 
     suspend fun usergroupsEnable(
         req: UsergroupsEnableRequest
@@ -930,7 +927,7 @@ interface MethodsClient {
 
     suspend fun usergroupUsersUpdate(
         req: UsergroupUsersUpdateRequest
-    ): UsergroupUsersUpdateResponse
+    ): UserGroupUsersUpdateResponse
 
     // ------------------------------
     // users
@@ -1004,8 +1001,4 @@ interface MethodsClient {
     suspend fun viewsPublish(
         req: ViewsPublishRequest
     ): ViewsPublishResponse
-
-    companion object {
-        const val ENDPOINT_URL_PREFIX: String = "https://slack.com/api/"
-    }
 }

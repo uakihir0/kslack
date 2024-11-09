@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.conversations
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class ConversationsKickRequest(
     /** Authentication token. Requires scope: `conversations:write` */
     override var token: String?,

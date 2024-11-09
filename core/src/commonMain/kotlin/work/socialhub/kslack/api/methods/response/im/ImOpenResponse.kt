@@ -1,16 +1,14 @@
 package work.socialhub.kslack.api.methods.response.im
 
-import work.socialhub.kslack.api.model.Channel
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.Channel
+import kotlin.js.JsExport
 
-class ImOpenResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class ImOpenResponse : SlackApiResponse() {
     var isNoOp: Boolean = false
     var isAlreadyOpen: Boolean = false
-
     var channel: Channel? = null
 }

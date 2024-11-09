@@ -1,13 +1,12 @@
 package work.socialhub.kslack.api.methods.response.files.comments
 
-import work.socialhub.kslack.api.model.FileComment
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.file.FileComment
+import kotlin.js.JsExport
 
-class FilesCommentsEditResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class FilesCommentsEditResponse : SlackApiResponse() {
     var comment: FileComment? = null
 }

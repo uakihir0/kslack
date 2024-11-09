@@ -1,13 +1,12 @@
 package work.socialhub.kslack.api.methods.response.mpim
 
-import work.socialhub.kslack.api.model.Group
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.Group
+import kotlin.js.JsExport
 
-class MpimListResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class MpimListResponse : SlackApiResponse() {
     var groups: Array<Group>? = null
 }

@@ -1,14 +1,14 @@
 package work.socialhub.kslack.api.methods.response.team
 
-import work.socialhub.kslack.api.model.IntegrationLog
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.IntegrationLog
+import work.socialhub.kslack.entity.Paging
+import kotlin.js.JsExport
 
-class TeamIntegrationLogsResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class TeamIntegrationLogsResponse : SlackApiResponse() {
     var logs: Array<IntegrationLog>? = null
     var paging: Paging? = null
 }

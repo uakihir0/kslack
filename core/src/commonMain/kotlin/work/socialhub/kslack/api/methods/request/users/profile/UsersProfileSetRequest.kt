@@ -1,10 +1,12 @@
 package work.socialhub.kslack.api.methods.request.users.profile
 
-import work.socialhub.kmastodon.internal.InternalUtility.toJson
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper.toJson
 import work.socialhub.kslack.entity.user.Profile
+import kotlin.js.JsExport
 
+@JsExport
 class UsersProfileSetRequest(
     /** Authentication token. Requires scope: `users.profile:write` */
     override var token: String?,

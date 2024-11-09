@@ -1,15 +1,16 @@
 package work.socialhub.kslack.api.methods.request.chat
 
-import kotlinx.serialization.json.Json
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.Action
 import work.socialhub.kslack.entity.block.LayoutBlock
+import kotlin.js.JsExport
 
 /**
  * Provide custom unfurl behavior for user-posted URLs
  */
+@JsExport
 class ChatUnfurlRequest(
     /** Authentication token. Requires scope: `links:write`*/
     override var token: String?,

@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.mpim
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class MpimListRequest(
 
     /** Authentication token. Requires scope: `mpim:read` */

@@ -1,10 +1,12 @@
 package work.socialhub.kslack.api.methods.request.views
 
-import work.socialhub.kmastodon.internal.InternalUtility.toJson
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper.toJson
 import work.socialhub.kslack.entity.view.View
+import kotlin.js.JsExport
 
+@JsExport
 class ViewsUpdateRequest(
     override var token: String?,
     var view: View?,
@@ -12,7 +14,7 @@ class ViewsUpdateRequest(
     var externalId: String?,
     var hash: String?,
     var viewId: String?
-) : SlackApiRequest, FormRequest  {
+) : SlackApiRequest, FormRequest {
 
     override fun toMap(): Map<String, Any> {
         return mutableMapOf<String, Any>().also {

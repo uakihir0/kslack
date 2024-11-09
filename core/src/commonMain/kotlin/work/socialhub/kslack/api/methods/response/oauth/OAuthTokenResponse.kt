@@ -1,31 +1,19 @@
 package work.socialhub.kslack.api.methods.response.oauth
 
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.oauth.OAuthBot
+import work.socialhub.kslack.entity.oauth.OAuthIncomingWebhook
+import kotlin.js.JsExport
 
-class OAuthTokenResponse : SlackApiResponse {
-    override var isOk: Boolean = false
-    override var warning: String? = null
-    override var error: String? = null
-    override var needed: String? = null
-    override var provided: String? = null
-
+@JsExport
+@Serializable
+class OAuthTokenResponse : SlackApiResponse() {
     var accessToken: String? = null
     var scope: String? = null
     var teamName: String? = null
     var teamId: String? = null
     var userId: String? = null
-    var incomingWebhook: IncomingWebhook? = null
-    var bot: Bot? = null
-
-    class IncomingWebhook {
-        var url: String? = null
-        var channel: String? = null
-        var channelId: String? = null
-        var configurationUrl: String? = null
-    }
-
-    class Bot {
-        var botUserId: String? = null
-        var botAccessToken: String? = null
-    }
+    var incomingWebhook: OAuthIncomingWebhook? = null
+    var bot: OAuthBot? = null
 }

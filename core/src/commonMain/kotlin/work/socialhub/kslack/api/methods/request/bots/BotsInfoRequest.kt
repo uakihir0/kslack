@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.bots
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class BotsInfoRequest(
     /** Authentication token. Requires scope: `users:read` */
     override var token: String?,

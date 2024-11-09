@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.reminders
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class RemindersCompleteRequest(
     /** Authentication token. Requires scope: `reminders:write` */
     override var token: String?,

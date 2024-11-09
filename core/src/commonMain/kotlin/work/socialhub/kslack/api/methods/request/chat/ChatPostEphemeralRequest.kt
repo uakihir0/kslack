@@ -5,7 +5,9 @@ import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.block.LayoutBlock
+import kotlin.js.JsExport
 
+@JsExport
 class ChatPostEphemeralRequest(
     /** Authentication token. Requires scope: `chat:write` */
     override var token: String?,

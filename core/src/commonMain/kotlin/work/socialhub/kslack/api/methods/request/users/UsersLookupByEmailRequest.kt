@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.users
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class UsersLookupByEmailRequest(
     /** Authentication token. Requires scope: `users:read.email` */
     override var token: String?,

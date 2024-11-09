@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.chat
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class ChatDeleteScheduledMessageRequest(
     override var token: String?,
     /** The channel the scheduled_message is posting to */

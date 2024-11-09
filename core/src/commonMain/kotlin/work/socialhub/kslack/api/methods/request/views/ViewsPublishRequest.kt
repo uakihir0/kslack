@@ -1,17 +1,19 @@
 package work.socialhub.kslack.api.methods.request.views
 
-import work.socialhub.kmastodon.internal.InternalUtility.toJson
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper.toJson
 import work.socialhub.kslack.entity.view.View
+import kotlin.js.JsExport
 
+@JsExport
 class ViewsPublishRequest(
     override var token: String?,
     var view: View?,
     var viewAsString: String?,
     var userId: String?,
     var hash: String?
-) : SlackApiRequest, FormRequest{
+) : SlackApiRequest, FormRequest {
 
     override fun toMap(): Map<String, Any> {
         return mutableMapOf<String, Any>().also {

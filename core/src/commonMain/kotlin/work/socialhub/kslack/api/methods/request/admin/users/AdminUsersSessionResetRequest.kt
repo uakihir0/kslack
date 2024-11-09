@@ -2,10 +2,12 @@ package work.socialhub.kslack.api.methods.request.admin.users
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/methods/admin.users.session.reset
  */
+@JsExport
 class AdminUsersSessionResetRequest(
     /** Authentication token bearing required scopes. (admin.users:write) */
     override var token: String?,

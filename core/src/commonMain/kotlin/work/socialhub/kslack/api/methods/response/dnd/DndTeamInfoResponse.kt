@@ -1,20 +1,13 @@
 package work.socialhub.kslack.api.methods.response.dnd
 
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.dnd.DndTeamMemberInfo
+import kotlin.js.JsExport
 
-class DndTeamInfoResponse : SlackApiResponse {
-    override var isOk: Boolean = false
-    override var warning: String? = null
-    override var error: String? = null
-    override var needed: String? = null
-    override var provided: String? = null
-
+@JsExport
+@Serializable
+class DndTeamInfoResponse : SlackApiResponse() {
     // user.id -> info
     var users: Map<String, DndTeamMemberInfo>? = null
-
-    class DndTeamMemberInfo {
-        var isDndEnabled: Boolean = false
-        var nextDndStartTs: Int? = null
-        var nextDndEndTs: Int? = null
-    }
 }

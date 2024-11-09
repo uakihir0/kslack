@@ -2,10 +2,12 @@ package work.socialhub.kslack.api.methods.request.admin.teams
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/methods/admin.teams.admins.list
  */
+@JsExport
 class AdminTeamsAdminsListRequest(
     /** Authentication token bearing required scopes. */
     override var token: String?,

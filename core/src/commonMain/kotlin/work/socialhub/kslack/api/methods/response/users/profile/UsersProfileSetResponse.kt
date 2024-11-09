@@ -1,14 +1,13 @@
 package work.socialhub.kslack.api.methods.response.users.profile
 
-import work.socialhub.kslack.api.model.User
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.user.Profile
+import kotlin.js.JsExport
 
-class UsersProfileSetResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
-    var profile: User.Profile? = null
+@JsExport
+@Serializable
+class UsersProfileSetResponse : SlackApiResponse() {
+    var profile: Profile? = null
     var username: String? = null
 }

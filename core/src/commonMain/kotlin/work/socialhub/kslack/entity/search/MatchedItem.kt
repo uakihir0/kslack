@@ -1,10 +1,14 @@
 package work.socialhub.kslack.entity.search
 
-import work.socialhub.kmastodon.entity.Attachment
-import work.socialhub.kslack.api.model.block.LayoutBlock
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.Channel
-import work.socialhub.kslack.entity.file.File
+import work.socialhub.kslack.entity.block.LayoutBlock
+import kotlin.js.JsExport
 
+@JsExport
+@Serializable
 class MatchedItem {
     var iid: String? = null
     var id: String? = null
@@ -88,7 +92,8 @@ class MatchedItem {
     @SerialName("next_2")
     var next2: OtherItem? = null
 
-    var shares: File.Shares? = null
+    // TODO: 修正
+    // var shares: File.Shares? = null
     var channels: Array<String>? = null
     var groups: Array<String>? = null
     var ims: Array<String>? = null
@@ -227,25 +232,30 @@ class MatchedItem {
     var channelActionsTs: String? = null
     var channelActionsCount: Int? = null
 
-    class OtherItem {
-        var iid: String? = null
-        var type: String? = null
-        var user: String? = null
-        var username: String? = null
-        var ts: String? = null
-        var text: String? = null
-        var attachments: Array<Attachment>? = null
-        var blocks: Array<LayoutBlock>? = null
-        var permalink: String? = null
-    }
-
     var to: Array<Address>? = null
     var from: Array<Address>? = null
     var cc: Array<Address>? = null
-
-    class Address {
-        var address: String? = null
-        var name: String? = null
-        var original: String? = null
-    }
 }
+
+@JsExport
+@Serializable
+class OtherItem {
+    var iid: String? = null
+    var type: String? = null
+    var user: String? = null
+    var username: String? = null
+    var ts: String? = null
+    var text: String? = null
+    var attachments: Array<Attachment>? = null
+    var blocks: Array<LayoutBlock>? = null
+    var permalink: String? = null
+}
+
+@JsExport
+@Serializable
+class Address {
+    var address: String? = null
+    var name: String? = null
+    var original: String? = null
+}
+

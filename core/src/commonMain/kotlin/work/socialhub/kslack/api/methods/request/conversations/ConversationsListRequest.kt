@@ -3,7 +3,9 @@ package work.socialhub.kslack.api.methods.request.conversations
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.entity.ConversationType
+import kotlin.js.JsExport
 
+@JsExport
 class ConversationsListRequest(
     /** Authentication token. Requires scope: `conversations:read` */
     override var token: String?,

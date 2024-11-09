@@ -1,12 +1,13 @@
 package work.socialhub.kslack.api.methods.response.im
 
-class ImRepliesResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.message.MessageRoot
+import kotlin.js.JsExport
 
+@JsExport
+@Serializable
+class ImRepliesResponse : SlackApiResponse() {
     var messages: Array<MessageRoot>? = null
     var isHasMore: Boolean = false
 }

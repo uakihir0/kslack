@@ -2,10 +2,12 @@ package work.socialhub.kslack.api.methods.request.files.remote
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/methods/files.remote.add
  */
+@JsExport
 class FilesRemoteAddRequest(
     /** Authentication token. Requires scope: `remote_files:write` */
     override var token: String?,

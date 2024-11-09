@@ -1,14 +1,14 @@
 package work.socialhub.kslack.api.methods.response.conversations
 
-import work.socialhub.kslack.api.model.Conversation
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.response.entity.ResponseMetadata
+import work.socialhub.kslack.entity.Conversation
+import kotlin.js.JsExport
 
-class ConversationsListResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class ConversationsListResponse : SlackApiResponse() {
     var channels: Array<Conversation>? = null
     var responseMetadata: ResponseMetadata? = null
 }

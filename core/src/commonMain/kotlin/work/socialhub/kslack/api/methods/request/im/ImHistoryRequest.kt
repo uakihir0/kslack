@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.im
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class ImHistoryRequest(
     /** Authentication token. Requires scope: `im:history` */
     override var token: String?,

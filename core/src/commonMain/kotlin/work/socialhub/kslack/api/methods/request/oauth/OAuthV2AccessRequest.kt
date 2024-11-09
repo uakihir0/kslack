@@ -1,11 +1,13 @@
 package work.socialhub.kslack.api.methods.request.oauth
 
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/authentication/basics
  * https://api.slack.com/methods/oauth.v2.access
  */
+@JsExport
 class OAuthV2AccessRequest(
     override val token: String?,
     /** Issued when you created your application. */

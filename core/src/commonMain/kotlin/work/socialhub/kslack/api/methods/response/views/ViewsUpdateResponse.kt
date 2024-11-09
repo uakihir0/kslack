@@ -1,19 +1,14 @@
 package work.socialhub.kslack.api.methods.response.views
 
-import work.socialhub.kslack.api.model.view.View
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.response.entity.ResponseMetadata
+import work.socialhub.kslack.entity.view.View
+import kotlin.js.JsExport
 
-class ViewsUpdateResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class ViewsUpdateResponse : SlackApiResponse() {
     var view: View? = null
-
     var responseMetadata: ResponseMetadata? = null
-
-    class ResponseMetadata {
-        var messages: Array<String>? = null
-    }
 }

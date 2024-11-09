@@ -1,12 +1,16 @@
 package work.socialhub.kslack.entity
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
 /**
  * Represents a type of conversation such as a public channel or IM.
  *
  * @see [Conversations.list API](https://api.slack.com/methods/conversations.list)
  */
+@JsExport
+@Serializable
 enum class ConversationType(
     val value: String
 ) {

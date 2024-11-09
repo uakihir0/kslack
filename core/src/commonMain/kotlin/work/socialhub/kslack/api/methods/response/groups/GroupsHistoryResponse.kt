@@ -1,14 +1,13 @@
 package work.socialhub.kslack.api.methods.response.groups
 
-import work.socialhub.kslack.api.model.Message
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.message.Message
+import kotlin.js.JsExport
 
-class GroupsHistoryResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class GroupsHistoryResponse : SlackApiResponse() {
     var latest: String? = null
     var messages: Array<Message>? = null
     var isHasMore: Boolean = false

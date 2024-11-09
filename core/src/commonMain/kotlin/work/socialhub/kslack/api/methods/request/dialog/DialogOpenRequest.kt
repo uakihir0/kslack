@@ -4,7 +4,9 @@ import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.dialog.Dialog
+import kotlin.js.JsExport
 
+@JsExport
 class DialogOpenRequest(
 
     /** Authentication token. Requires scope: `none` */

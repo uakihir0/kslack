@@ -2,12 +2,14 @@ package work.socialhub.kslack.api.methods.request.oauth
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
 /**
  * Exchanges a temporary OAuth verifier code for a workspace token.
  *
  * https://api.slack.com/docs/oauth
  */
+@JsExport
 class OAuthTokenRequest(
     override val token: String?,
     /** Issued when you created your application. */

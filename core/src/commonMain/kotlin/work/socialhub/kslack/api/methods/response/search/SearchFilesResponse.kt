@@ -1,14 +1,13 @@
 package work.socialhub.kslack.api.methods.response.search
 
-import work.socialhub.kslack.api.model.SearchResult
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.entity.search.SearchResult
+import kotlin.js.JsExport
 
-class SearchFilesResponse : SlackApiResponse {
-    var isOk: Boolean = false
-    var warning: String? = null
-    var error: String? = null
-    var needed: String? = null
-    var provided: String? = null
-
+@JsExport
+@Serializable
+class SearchFilesResponse : SlackApiResponse() {
     var query: String? = null
     var files: SearchResult? = null
 }

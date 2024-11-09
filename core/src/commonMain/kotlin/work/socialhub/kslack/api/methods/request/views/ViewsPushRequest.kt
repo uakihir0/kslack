@@ -1,10 +1,12 @@
 package work.socialhub.kslack.api.methods.request.views
 
-import work.socialhub.kmastodon.internal.InternalUtility.toJson
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import work.socialhub.kslack.api.methods.helper.JsonHelper.toJson
 import work.socialhub.kslack.entity.view.View
+import kotlin.js.JsExport
 
+@JsExport
 class ViewsPushRequest(
     override var token: String?,
     var triggerId: String?,

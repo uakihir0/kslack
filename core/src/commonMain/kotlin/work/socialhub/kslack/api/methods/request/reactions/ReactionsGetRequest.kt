@@ -2,7 +2,9 @@ package work.socialhub.kslack.api.methods.request.reactions
 
 import work.socialhub.kslack.api.methods.FormRequest
 import work.socialhub.kslack.api.methods.SlackApiRequest
+import kotlin.js.JsExport
 
+@JsExport
 class ReactionsGetRequest(
     /** Authentication token. Requires scope: `reactions:read` */
     override var token: String?,
