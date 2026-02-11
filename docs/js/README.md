@@ -2,7 +2,7 @@
 
 # kslack.js
 
-This repository is the npm repository for [kslack]. [kslack] is a Mastodon client library created using Kotlin Multiplatform.
+This repository is the npm repository for [kslack]. [kslack] is a Slack client library created using Kotlin Multiplatform.
 Therefore, it can also be used in web applications, among others.
 Additionally, this repository is automatically committed by GitHub Actions for [kslack]. Please submit issues or pull requests to [kslack].
 

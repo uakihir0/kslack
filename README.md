@@ -9,7 +9,7 @@
 ![badge][badge-ios]
 ![badge][badge-mac]
 
-**This library is a Mastodon client library that supports [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html).**
+**This library is a Slack client library that supports [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html).**
 It depends on [khttpclient] and internally uses Ktor Client.
 Therefore, this library is available on Kotlin Multiplatform and platforms supported by Ktor Client.
 The behavior on each platform depends on [khttpclient].

@@ -1,6 +1,6 @@
 # kslack.js
 
-本レポジトリは、[kslack] の npm レポジトリです。[kslack] は Kotlin Multiplatform を用いて作成された Mastodon クライアントライブラリです。
+本レポジトリは、[kslack] の npm レポジトリです。[kslack] は Kotlin Multiplatform を用いて作成された Slack クライアントライブラリです。
 そのため、Web アプリケーション等でも使用していただくことができます。
 また、このレポジトリは [kslack] の GitHub Actions によって自動コミットされています。issue や pull request は [kslack] にお願いします。
 
