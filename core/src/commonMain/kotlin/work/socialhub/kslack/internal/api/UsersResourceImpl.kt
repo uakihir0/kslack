@@ -6,7 +6,6 @@ import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
 import work.socialhub.kslack.api.methods.request.users.*
 import work.socialhub.kslack.api.methods.request.users.profile.UsersProfileGetRequest
 import work.socialhub.kslack.api.methods.request.users.profile.UsersProfileSetRequest
-import work.socialhub.kslack.api.methods.response.channels.UsersLookupByEmailResponse
 import work.socialhub.kslack.api.methods.response.users.*
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileGetResponse
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileSetResponse
@@ -129,6 +128,7 @@ class UsersResourceImpl(
         return toBlocking { usersLookupByEmail(req) }
     }
 
+    @Deprecated("Deprecated by Slack.")
     override suspend fun usersSetActive(
         req: UsersSetActiveRequest
     ): UsersSetActiveResponse {
@@ -139,6 +139,7 @@ class UsersResourceImpl(
         )
     }
 
+    @Deprecated("Deprecated by Slack.")
     override fun usersSetActiveBlocking(
         req: UsersSetActiveRequest
     ): UsersSetActiveResponse {

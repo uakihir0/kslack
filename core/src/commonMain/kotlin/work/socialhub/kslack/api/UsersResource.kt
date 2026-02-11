@@ -3,7 +3,6 @@ package work.socialhub.kslack.api
 import work.socialhub.kslack.api.methods.request.users.*
 import work.socialhub.kslack.api.methods.request.users.profile.UsersProfileGetRequest
 import work.socialhub.kslack.api.methods.request.users.profile.UsersProfileSetRequest
-import work.socialhub.kslack.api.methods.response.channels.UsersLookupByEmailResponse
 import work.socialhub.kslack.api.methods.response.users.*
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileGetResponse
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileSetResponse
@@ -75,10 +74,12 @@ interface UsersResource {
         req: UsersLookupByEmailRequest
     ): UsersLookupByEmailResponse
 
+    @Deprecated("Deprecated by Slack.")
     suspend fun usersSetActive(
         req: UsersSetActiveRequest
     ): UsersSetActiveResponse
 
+    @Deprecated("Deprecated by Slack.")
     @JsExport.Ignore
     fun usersSetActiveBlocking(
         req: UsersSetActiveRequest

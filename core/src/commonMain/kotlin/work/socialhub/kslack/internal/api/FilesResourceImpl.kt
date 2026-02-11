@@ -94,28 +94,36 @@ class FilesResourceImpl(
         return toBlocking { filesSharedPublicURL(req) }
     }
 
-    override suspend fun filesUpload(
-        req: FilesUploadRequest
-    ): FilesUploadResponse {
-        return if (req.file != null) {
-            postMultipartWithToken(
-                req.toParams(),
-                Methods.FILES_UPLOAD,
-                getToken(req),
-            )
-        } else {
-            postFormWithToken(
-                req.toParams(),
-                Methods.FILES_UPLOAD,
-                getToken(req),
-            )
-        }
+    override suspend fun filesGetUploadURLExternal(
+        req: FilesGetUploadURLExternalRequest
+    ): FilesGetUploadURLExternalResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.FILES_GET_UPLOAD_URL_EXTERNAL,
+            getToken(req),
+        )
     }
 
-    override fun filesUploadBlocking(
-        req: FilesUploadRequest
-    ): FilesUploadResponse {
-        return toBlocking { filesUpload(req) }
+    override fun filesGetUploadURLExternalBlocking(
+        req: FilesGetUploadURLExternalRequest
+    ): FilesGetUploadURLExternalResponse {
+        return toBlocking { filesGetUploadURLExternal(req) }
+    }
+
+    override suspend fun filesCompleteUploadExternal(
+        req: FilesCompleteUploadExternalRequest
+    ): FilesCompleteUploadExternalResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.FILES_COMPLETE_UPLOAD_EXTERNAL,
+            getToken(req),
+        )
+    }
+
+    override fun filesCompleteUploadExternalBlocking(
+        req: FilesCompleteUploadExternalRequest
+    ): FilesCompleteUploadExternalResponse {
+        return toBlocking { filesCompleteUploadExternal(req) }
     }
 
     override suspend fun filesRemoteAdd(

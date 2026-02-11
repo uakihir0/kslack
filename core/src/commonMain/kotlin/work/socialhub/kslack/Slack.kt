@@ -4,18 +4,15 @@ import work.socialhub.kslack.api.AdminResource
 import work.socialhub.kslack.api.ApiResource
 import work.socialhub.kslack.api.AppsResource
 import work.socialhub.kslack.api.AuthResource
+import work.socialhub.kslack.api.BookmarksResource
 import work.socialhub.kslack.api.BotsResource
-import work.socialhub.kslack.api.ChannelsResource
 import work.socialhub.kslack.api.ChatResource
 import work.socialhub.kslack.api.ConversationsResource
 import work.socialhub.kslack.api.DialogResource
 import work.socialhub.kslack.api.DndResource
 import work.socialhub.kslack.api.EmojiResource
 import work.socialhub.kslack.api.FilesResource
-import work.socialhub.kslack.api.GroupsResource
-import work.socialhub.kslack.api.ImResource
 import work.socialhub.kslack.api.MigrationResource
-import work.socialhub.kslack.api.MpimResource
 import work.socialhub.kslack.api.OAuthResource
 import work.socialhub.kslack.api.PinsResource
 import work.socialhub.kslack.api.ReactionsResource
@@ -40,23 +37,22 @@ interface Slack {
     fun api(): ApiResource
     fun apps(): AppsResource
     fun auth(): AuthResource
+    fun bookmarks(): BookmarksResource
     fun bots(): BotsResource
-    fun channels(): ChannelsResource
     fun chat(): ChatResource
     fun conversations(): ConversationsResource
+    @Deprecated("Use ViewsResource (views.open) for modals instead.")
     fun dialog(): DialogResource
     fun dnd(): DndResource
     fun emoji(): EmojiResource
     fun files(): FilesResource
-    fun groups(): GroupsResource
-    fun im(): ImResource
     fun migration(): MigrationResource
-    fun mpim(): MpimResource
     fun oauth(): OAuthResource
     fun pins(): PinsResource
     fun reactions(): ReactionsResource
     fun reminders(): RemindersResource
     fun search(): SearchResource
+    @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
     fun stars(): StarsResource
     fun status(): StatusResource
     fun team(): TeamResource

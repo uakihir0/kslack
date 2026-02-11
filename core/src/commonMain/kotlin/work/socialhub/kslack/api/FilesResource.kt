@@ -54,14 +54,23 @@ interface FilesResource {
         req: FilesSharedPublicURLRequest
     ): FilesSharedPublicURLResponse
 
-    suspend fun filesUpload(
-        req: FilesUploadRequest
-    ): FilesUploadResponse
+    suspend fun filesGetUploadURLExternal(
+        req: FilesGetUploadURLExternalRequest
+    ): FilesGetUploadURLExternalResponse
 
     @JsExport.Ignore
-    fun filesUploadBlocking(
-        req: FilesUploadRequest
-    ): FilesUploadResponse
+    fun filesGetUploadURLExternalBlocking(
+        req: FilesGetUploadURLExternalRequest
+    ): FilesGetUploadURLExternalResponse
+
+    suspend fun filesCompleteUploadExternal(
+        req: FilesCompleteUploadExternalRequest
+    ): FilesCompleteUploadExternalResponse
+
+    @JsExport.Ignore
+    fun filesCompleteUploadExternalBlocking(
+        req: FilesCompleteUploadExternalRequest
+    ): FilesCompleteUploadExternalResponse
 
     suspend fun filesRemoteAdd(
         req: FilesRemoteAddRequest

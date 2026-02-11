@@ -268,6 +268,22 @@ class ConversationsResourceImpl(
         return toBlocking { conversationsSetTopic(req) }
     }
 
+    override suspend fun conversationsMark(
+        req: ConversationsMarkRequest
+    ): ConversationsMarkResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_MARK,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsMarkBlocking(
+        req: ConversationsMarkRequest
+    ): ConversationsMarkResponse {
+        return toBlocking { conversationsMark(req) }
+    }
+
     override suspend fun conversationsUnarchive(
         req: ConversationsUnarchiveRequest
     ): ConversationsUnarchiveResponse {

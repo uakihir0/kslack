@@ -151,6 +151,15 @@ interface ConversationsResource {
         req: ConversationsSetTopicRequest
     ): ConversationsSetTopicResponse
 
+    suspend fun conversationsMark(
+        req: ConversationsMarkRequest
+    ): ConversationsMarkResponse
+
+    @JsExport.Ignore
+    fun conversationsMarkBlocking(
+        req: ConversationsMarkRequest
+    ): ConversationsMarkResponse
+
     suspend fun conversationsUnarchive(
         req: ConversationsUnarchiveRequest
     ): ConversationsUnarchiveResponse

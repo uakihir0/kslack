@@ -11,10 +11,12 @@ import work.socialhub.kslack.util.toBlocking
 
 class OAuthResourceImpl : OAuthResource {
 
+    @Deprecated("Use oauthV2Access instead.")
     override suspend fun oauthAccess(req: OAuthAccessRequest): OAuthAccessResponse {
         TODO("Not yet implemented")
     }
 
+    @Deprecated("Use oauthV2Access instead.")
     override fun oauthAccessBlocking(req: OAuthAccessRequest): OAuthAccessResponse {
         return toBlocking { oauthAccess(req) }
     }
@@ -27,10 +29,12 @@ class OAuthResourceImpl : OAuthResource {
         return toBlocking { oauthV2Access(req) }
     }
 
+    @Deprecated("Use oauthV2Access instead.")
     override suspend fun oauthToken(req: OAuthTokenRequest): OAuthTokenResponse {
         TODO("Not yet implemented")
     }
 
+    @Deprecated("Use oauthV2Access instead.")
     override fun oauthTokenBlocking(req: OAuthTokenRequest): OAuthTokenResponse {
         return toBlocking { oauthToken(req) }
     }

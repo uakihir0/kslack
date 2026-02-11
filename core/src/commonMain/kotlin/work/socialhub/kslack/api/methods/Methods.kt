@@ -70,29 +70,9 @@ object Methods {
     const val APPS_UNINSTALL: String = "apps.uninstall"
 
     // ------------------------------
-    // apps.permissions
+    // apps.connections
     // ------------------------------
-    // Developer preview has ended
-    // This feature was exclusive to our workspace apps developer preview.
-    // The preview has now ended, but fan-favorite features such as token rotation
-    // and the Conversations API will become available to classic Slack apps over the coming months.
-    @Deprecated("")
-    val APPS_PERMISSIONS_INFO: String = "apps.permissions.info"
-
-    @Deprecated("")
-    val APPS_PERMISSIONS_REQUEST: String = "apps.permissions.request"
-
-    @Deprecated("")
-    val APPS_PERMISSIONS_RESOURCES_LIST: String = "apps.permissions.resources.list"
-
-    @Deprecated("")
-    val APPS_PERMISSIONS_SCOPES_LIST: String = "apps.permissions.scopes.list"
-
-    @Deprecated("")
-    val APPS_PERMISSIONS_USERS_LIST: String = "apps.permissions.users.list"
-
-    @Deprecated("")
-    val APPS_PERMISSIONS_USERS_REQUEST: String = "apps.permissions.users.request"
+    const val APPS_CONNECTIONS_OPEN: String = "apps.connections.open"
 
     // ------------------------------
     // auth
@@ -101,28 +81,17 @@ object Methods {
     const val AUTH_TEST: String = "auth.test"
 
     // ------------------------------
+    // bookmarks
+    // ------------------------------
+    const val BOOKMARKS_ADD: String = "bookmarks.add"
+    const val BOOKMARKS_EDIT: String = "bookmarks.edit"
+    const val BOOKMARKS_LIST: String = "bookmarks.list"
+    const val BOOKMARKS_REMOVE: String = "bookmarks.remove"
+
+    // ------------------------------
     // bots
     // ------------------------------
     const val BOTS_INFO: String = "bots.info"
-
-    // ------------------------------
-    // channels
-    // ------------------------------
-    const val CHANNELS_ARCHIVE: String = "channels.archive"
-    const val CHANNELS_CREATE: String = "channels.create"
-    const val CHANNELS_HISTORY: String = "channels.history"
-    const val CHANNELS_INFO: String = "channels.info"
-    const val CHANNELS_INVITE: String = "channels.invite"
-    const val CHANNELS_JOIN: String = "channels.join"
-    const val CHANNELS_KICK: String = "channels.kick"
-    const val CHANNELS_LEAVE: String = "channels.leave"
-    const val CHANNELS_LIST: String = "channels.list"
-    const val CHANNELS_MARK: String = "channels.mark"
-    const val CHANNELS_RENAME: String = "channels.rename"
-    const val CHANNELS_REPLIES: String = "channels.replies"
-    const val CHANNELS_SET_PURPOSE: String = "channels.setPurpose"
-    const val CHANNELS_SET_TOPIC: String = "channels.setTopic"
-    const val CHANNELS_UNARCHIVE: String = "channels.unarchive"
 
     // ------------------------------
     // chat
@@ -155,6 +124,7 @@ object Methods {
     const val CONVERSATIONS_KICK: String = "conversations.kick"
     const val CONVERSATIONS_LEAVE: String = "conversations.leave"
     const val CONVERSATIONS_LIST: String = "conversations.list"
+    const val CONVERSATIONS_MARK: String = "conversations.mark"
     const val CONVERSATIONS_MEMBERS: String = "conversations.members"
     const val CONVERSATIONS_OPEN: String = "conversations.open"
     const val CONVERSATIONS_RENAME: String = "conversations.rename"
@@ -164,9 +134,10 @@ object Methods {
     const val CONVERSATIONS_UNARCHIVE: String = "conversations.unarchive"
 
     // ------------------------------
-    // dialog
+    // dialog (deprecated: use views.open for modals)
     // ------------------------------
-    const val DIALOG_OPEN: String = "dialog.open"
+    @Deprecated("Use views.open (modals with Block Kit) instead.")
+    val DIALOG_OPEN: String = "dialog.open"
 
     // ------------------------------
     // dnd
@@ -183,18 +154,6 @@ object Methods {
     const val EMOJI_LIST: String = "emoji.list"
 
     // ------------------------------
-    // files.comments
-    // ------------------------------
-    @Deprecated("") // https://api.slack.com/changelog/2018-05-file-threads-soon-tread
-    val FILES_COMMENTS_ADD: String = "files.comments.add"
-
-    @Deprecated("") // https://api.slack.com/changelog/2018-05-file-threads-soon-tread
-    val FILES_COMMENTS_DELETE: String = "files.comments.delete"
-
-    @Deprecated("") // https://api.slack.com/changelog/2018-05-file-threads-soon-tread
-    val FILES_COMMENTS_EDIT: String = "files.comments.edit"
-
-    // ------------------------------
     // files
     // ------------------------------
     const val FILES_DELETE: String = "files.delete"
@@ -202,7 +161,8 @@ object Methods {
     const val FILES_LIST: String = "files.list"
     const val FILES_REVOKE_PUBLIC_URL: String = "files.revokePublicURL"
     const val FILES_SHARED_PUBLIC_URL: String = "files.sharedPublicURL"
-    const val FILES_UPLOAD: String = "files.upload"
+    const val FILES_GET_UPLOAD_URL_EXTERNAL: String = "files.getUploadURLExternal"
+    const val FILES_COMPLETE_UPLOAD_EXTERNAL: String = "files.completeUploadExternal"
 
     // ------------------------------
     // files.remote
@@ -216,59 +176,18 @@ object Methods {
     const val FILES_REMOTE_UPDATE: String = "files.remote.update"
 
     // ------------------------------
-    // groups
-    // ------------------------------
-    const val GROUPS_ARCHIVE: String = "groups.archive"
-
-    @Deprecated("") // https://github.com/slackapi/slack-api-specs/issues/12
-    val GROUPS_CLOSE: String = "groups.close"
-    const val GROUPS_CREATE: String = "groups.create"
-    const val GROUPS_CREATE_CHILD: String = "groups.createChild"
-    const val GROUPS_HISTORY: String = "groups.history"
-    const val GROUPS_INFO: String = "groups.info"
-    const val GROUPS_INVITE: String = "groups.invite"
-    const val GROUPS_KICK: String = "groups.kick"
-    const val GROUPS_LEAVE: String = "groups.leave"
-    const val GROUPS_LIST: String = "groups.list"
-    const val GROUPS_MARK: String = "groups.mark"
-    const val GROUPS_OPEN: String = "groups.open"
-    const val GROUPS_RENAME: String = "groups.rename"
-    const val GROUPS_SET_PURPOSE: String = "groups.setPurpose"
-    const val GROUPS_SET_TOPIC: String = "groups.setTopic"
-    const val GROUPS_UNARCHIVE: String = "groups.unarchive"
-    const val GROUPS_REPLIES: String = "groups.replies"
-
-    // ------------------------------
-    // im
-    // ------------------------------
-    const val IM_CLOSE: String = "im.close"
-    const val IM_HISTORY: String = "im.history"
-    const val IM_LIST: String = "im.list"
-    const val IM_MARK: String = "im.mark"
-    const val IM_OPEN: String = "im.open"
-    const val IM_REPLIES: String = "im.replies"
-
-    // ------------------------------
     // migration
     // ------------------------------
     const val MIGRATION_EXCHANGE: String = "migration.exchange"
 
     // ------------------------------
-    // mpim
-    // ------------------------------
-    const val MPIM_CLOSE: String = "mpim.close"
-    const val MPIM_HISTORY: String = "mpim.history"
-    const val MPIM_LIST: String = "mpim.list"
-    const val MPIM_MARK: String = "mpim.mark"
-    const val MPIM_OPEN: String = "mpim.open"
-    const val MPIM_REPLIES: String = "mpim.replies"
-
-    // ------------------------------
     // oauth
     // ------------------------------
-    const val OAUTH_ACCESS: String = "oauth.access"
+    @Deprecated("Use oauth.v2.access instead.")
+    val OAUTH_ACCESS: String = "oauth.access"
     const val OAUTH_V2_ACCESS: String = "oauth.v2.access"
-    const val OAUTH_TOKEN: String = "oauth.token"
+    @Deprecated("Use oauth.v2.access instead.")
+    val OAUTH_TOKEN: String = "oauth.token"
 
     // ------------------------------
     // pins
@@ -295,12 +214,6 @@ object Methods {
     const val REMINDERS_LIST: String = "reminders.list"
 
     // ------------------------------
-    // rtm
-    // ------------------------------
-    const val RTM_CONNECT: String = "rtm.connect"
-    const val RTM_START: String = "rtm.start"
-
-    // ------------------------------
     // search
     // ------------------------------
     const val SEARCH_ALL: String = "search.all"
@@ -308,11 +221,14 @@ object Methods {
     const val SEARCH_MESSAGES: String = "search.messages"
 
     // ------------------------------
-    // stars
+    // stars (deprecated: replaced by "Later" view)
     // ------------------------------
-    const val STARS_ADD: String = "stars.add"
-    const val STARS_LIST: String = "stars.list"
-    const val STARS_REMOVE: String = "stars.remove"
+    @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
+    val STARS_ADD: String = "stars.add"
+    @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
+    val STARS_LIST: String = "stars.list"
+    @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
+    val STARS_REMOVE: String = "stars.remove"
 
     // ------------------------------
     // team
@@ -352,7 +268,8 @@ object Methods {
     const val USERS_INFO: String = "users.info"
     const val USERS_LIST: String = "users.list"
     const val USERS_LOOKUP_BY_EMAIL: String = "users.lookupByEmail"
-    const val USERS_SET_ACTIVE: String = "users.setActive"
+    @Deprecated("Deprecated by Slack.")
+    val USERS_SET_ACTIVE: String = "users.setActive"
     const val USERS_SET_PHOTO: String = "users.setPhoto"
     const val USERS_SET_PRESENCE: String = "users.setPresence"
 

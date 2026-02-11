@@ -11,10 +11,12 @@ import kotlin.js.JsExport
 @JsExport
 interface OAuthResource {
 
+    @Deprecated("Use oauthV2Access instead.")
     suspend fun oauthAccess(
         req: OAuthAccessRequest
     ): OAuthAccessResponse
 
+    @Deprecated("Use oauthV2Access instead.")
     @JsExport.Ignore
     fun oauthAccessBlocking(
         req: OAuthAccessRequest
@@ -29,10 +31,12 @@ interface OAuthResource {
         req: OAuthV2AccessRequest
     ): OAuthV2AccessResponse
 
+    @Deprecated("Use oauthV2Access instead.")
     suspend fun oauthToken(
         req: OAuthTokenRequest
     ): OAuthTokenResponse
 
+    @Deprecated("Use oauthV2Access instead.")
     @JsExport.Ignore
     fun oauthTokenBlocking(
         req: OAuthTokenRequest
