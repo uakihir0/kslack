@@ -1,5 +1,0 @@
-rootProject.name = 'kslack'
-
-include("core")
-include("stream")
-include("all")
