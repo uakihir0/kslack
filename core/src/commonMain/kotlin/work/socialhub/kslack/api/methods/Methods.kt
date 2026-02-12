@@ -81,6 +81,11 @@ object Methods {
     const val AUTH_TEST: String = "auth.test"
 
     // ------------------------------
+    // auth.teams
+    // ------------------------------
+    const val AUTH_TEAMS_LIST: String = "auth.teams.list"
+
+    // ------------------------------
     // bookmarks
     // ------------------------------
     const val BOOKMARKS_ADD: String = "bookmarks.add"
@@ -94,6 +99,20 @@ object Methods {
     const val BOTS_INFO: String = "bots.info"
 
     // ------------------------------
+    // calls
+    // ------------------------------
+    const val CALLS_ADD: String = "calls.add"
+    const val CALLS_END: String = "calls.end"
+    const val CALLS_INFO: String = "calls.info"
+    const val CALLS_UPDATE: String = "calls.update"
+
+    // ------------------------------
+    // calls.participants
+    // ------------------------------
+    const val CALLS_PARTICIPANTS_ADD: String = "calls.participants.add"
+    const val CALLS_PARTICIPANTS_REMOVE: String = "calls.participants.remove"
+
+    // ------------------------------
     // chat
     // ------------------------------
     const val CHAT_DELETE: String = "chat.delete"
@@ -105,6 +124,9 @@ object Methods {
     const val CHAT_SCHEDULE_MESSAGE: String = "chat.scheduleMessage"
     const val CHAT_UNFURL: String = "chat.unfurl"
     const val CHAT_UPDATE: String = "chat.update"
+    const val CHAT_START_STREAM: String = "chat.startStream"
+    const val CHAT_APPEND_STREAM: String = "chat.appendStream"
+    const val CHAT_STOP_STREAM: String = "chat.stopStream"
 
     // ------------------------------
     // chat.scheduledMessages
@@ -132,6 +154,19 @@ object Methods {
     const val CONVERSATIONS_SET_PURPOSE: String = "conversations.setPurpose"
     const val CONVERSATIONS_SET_TOPIC: String = "conversations.setTopic"
     const val CONVERSATIONS_UNARCHIVE: String = "conversations.unarchive"
+    const val CONVERSATIONS_ACCEPT_SHARED_INVITE: String = "conversations.acceptSharedInvite"
+    const val CONVERSATIONS_APPROVE_SHARED_INVITE: String = "conversations.approveSharedInvite"
+    const val CONVERSATIONS_CANVASES_CREATE: String = "conversations.canvases.create"
+    const val CONVERSATIONS_DECLINE_SHARED_INVITE: String = "conversations.declineSharedInvite"
+    const val CONVERSATIONS_INVITE_SHARED: String = "conversations.inviteShared"
+    const val CONVERSATIONS_LIST_CONNECT_INVITES: String = "conversations.listConnectInvites"
+
+    // ------------------------------
+    // conversations.requestSharedInvite
+    // ------------------------------
+    const val CONVERSATIONS_REQUEST_SHARED_INVITE_APPROVE: String = "conversations.requestSharedInvite.approve"
+    const val CONVERSATIONS_REQUEST_SHARED_INVITE_DENY: String = "conversations.requestSharedInvite.deny"
+    const val CONVERSATIONS_REQUEST_SHARED_INVITE_LIST: String = "conversations.requestSharedInvite.list"
 
     // ------------------------------
     // dialog (deprecated: use views.open for modals)
@@ -186,8 +221,15 @@ object Methods {
     @Deprecated("Use oauth.v2.access instead.")
     val OAUTH_ACCESS: String = "oauth.access"
     const val OAUTH_V2_ACCESS: String = "oauth.v2.access"
+    const val OAUTH_V2_EXCHANGE: String = "oauth.v2.exchange"
     @Deprecated("Use oauth.v2.access instead.")
     val OAUTH_TOKEN: String = "oauth.token"
+
+    // ------------------------------
+    // openid.connect
+    // ------------------------------
+    const val OPENID_CONNECT_TOKEN: String = "openid.connect.token"
+    const val OPENID_CONNECT_USER_INFO: String = "openid.connect.userInfo"
 
     // ------------------------------
     // pins
@@ -239,6 +281,22 @@ object Methods {
     const val TEAM_INTEGRATION_LOGS: String = "team.integrationLogs"
 
     // ------------------------------
+    // team.billing
+    // ------------------------------
+    const val TEAM_BILLING_INFO: String = "team.billing.info"
+
+    // ------------------------------
+    // team.externalTeams
+    // ------------------------------
+    const val TEAM_EXTERNAL_TEAMS_DISCONNECT: String = "team.externalTeams.disconnect"
+    const val TEAM_EXTERNAL_TEAMS_LIST: String = "team.externalTeams.list"
+
+    // ------------------------------
+    // team.preferences
+    // ------------------------------
+    const val TEAM_PREFERENCES_LIST: String = "team.preferences.list"
+
+    // ------------------------------
     // team.profile
     // ------------------------------
     const val TEAM_PROFILE_GET: String = "team.profile.get"
@@ -272,6 +330,11 @@ object Methods {
     val USERS_SET_ACTIVE: String = "users.setActive"
     const val USERS_SET_PHOTO: String = "users.setPhoto"
     const val USERS_SET_PRESENCE: String = "users.setPresence"
+
+    // ------------------------------
+    // users.discoverableContacts
+    // ------------------------------
+    const val USERS_DISCOVERABLE_CONTACTS_LOOKUP: String = "users.discoverableContacts.lookup"
 
     // ------------------------------
     // users.profile

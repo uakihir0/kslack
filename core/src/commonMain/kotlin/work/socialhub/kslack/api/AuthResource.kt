@@ -1,8 +1,10 @@
 package work.socialhub.kslack.api
 
 import work.socialhub.kslack.api.methods.request.auth.AuthRevokeRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthTeamsListRequest
 import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
 import work.socialhub.kslack.api.methods.response.auth.AuthRevokeResponse
+import work.socialhub.kslack.api.methods.response.auth.AuthTeamsListResponse
 import work.socialhub.kslack.api.methods.response.auth.AuthTestResponse
 import kotlin.js.JsExport
 
@@ -26,6 +28,15 @@ interface AuthResource {
     fun authTestBlocking(
         req: AuthTestRequest
     ): AuthTestResponse
+
+    suspend fun authTeamsList(
+        req: AuthTeamsListRequest
+    ): AuthTeamsListResponse
+
+    @JsExport.Ignore
+    fun authTeamsListBlocking(
+        req: AuthTeamsListRequest
+    ): AuthTeamsListResponse
 
     fun authorizationURL(
         clientId: String,

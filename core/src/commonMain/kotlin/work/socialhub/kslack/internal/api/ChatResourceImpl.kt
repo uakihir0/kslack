@@ -173,4 +173,52 @@ class ChatResourceImpl(
     ): ChatScheduleMessagesListResponse {
         return toBlocking { chatScheduleMessagesListMessage(req) }
     }
+
+    override suspend fun chatStartStream(
+        req: ChatStartStreamRequest
+    ): ChatStartStreamResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CHAT_START_STREAM,
+            getToken(req),
+        )
+    }
+
+    override fun chatStartStreamBlocking(
+        req: ChatStartStreamRequest
+    ): ChatStartStreamResponse {
+        return toBlocking { chatStartStream(req) }
+    }
+
+    override suspend fun chatAppendStream(
+        req: ChatAppendStreamRequest
+    ): ChatAppendStreamResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CHAT_APPEND_STREAM,
+            getToken(req),
+        )
+    }
+
+    override fun chatAppendStreamBlocking(
+        req: ChatAppendStreamRequest
+    ): ChatAppendStreamResponse {
+        return toBlocking { chatAppendStream(req) }
+    }
+
+    override suspend fun chatStopStream(
+        req: ChatStopStreamRequest
+    ): ChatStopStreamResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CHAT_STOP_STREAM,
+            getToken(req),
+        )
+    }
+
+    override fun chatStopStreamBlocking(
+        req: ChatStopStreamRequest
+    ): ChatStopStreamResponse {
+        return toBlocking { chatStopStream(req) }
+    }
 }

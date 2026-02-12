@@ -299,4 +299,148 @@ class ConversationsResourceImpl(
     ): ConversationsUnarchiveResponse {
         return toBlocking { conversationsUnarchive(req) }
     }
+
+    override suspend fun conversationsAcceptSharedInvite(
+        req: ConversationsAcceptSharedInviteRequest
+    ): ConversationsAcceptSharedInviteResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_ACCEPT_SHARED_INVITE,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsAcceptSharedInviteBlocking(
+        req: ConversationsAcceptSharedInviteRequest
+    ): ConversationsAcceptSharedInviteResponse {
+        return toBlocking { conversationsAcceptSharedInvite(req) }
+    }
+
+    override suspend fun conversationsApproveSharedInvite(
+        req: ConversationsApproveSharedInviteRequest
+    ): ConversationsApproveSharedInviteResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_APPROVE_SHARED_INVITE,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsApproveSharedInviteBlocking(
+        req: ConversationsApproveSharedInviteRequest
+    ): ConversationsApproveSharedInviteResponse {
+        return toBlocking { conversationsApproveSharedInvite(req) }
+    }
+
+    override suspend fun conversationsCanvasesCreate(
+        req: ConversationsCanvasesCreateRequest
+    ): ConversationsCanvasesCreateResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_CANVASES_CREATE,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsCanvasesCreateBlocking(
+        req: ConversationsCanvasesCreateRequest
+    ): ConversationsCanvasesCreateResponse {
+        return toBlocking { conversationsCanvasesCreate(req) }
+    }
+
+    override suspend fun conversationsDeclineSharedInvite(
+        req: ConversationsDeclineSharedInviteRequest
+    ): ConversationsDeclineSharedInviteResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_DECLINE_SHARED_INVITE,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsDeclineSharedInviteBlocking(
+        req: ConversationsDeclineSharedInviteRequest
+    ): ConversationsDeclineSharedInviteResponse {
+        return toBlocking { conversationsDeclineSharedInvite(req) }
+    }
+
+    override suspend fun conversationsInviteShared(
+        req: ConversationsInviteSharedRequest
+    ): ConversationsInviteSharedResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_INVITE_SHARED,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsInviteSharedBlocking(
+        req: ConversationsInviteSharedRequest
+    ): ConversationsInviteSharedResponse {
+        return toBlocking { conversationsInviteShared(req) }
+    }
+
+    override suspend fun conversationsListConnectInvites(
+        req: ConversationsListConnectInvitesRequest
+    ): ConversationsListConnectInvitesResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_LIST_CONNECT_INVITES,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsListConnectInvitesBlocking(
+        req: ConversationsListConnectInvitesRequest
+    ): ConversationsListConnectInvitesResponse {
+        return toBlocking { conversationsListConnectInvites(req) }
+    }
+
+    override suspend fun conversationsRequestSharedInviteApprove(
+        req: ConversationsRequestSharedInviteApproveRequest
+    ): ConversationsRequestSharedInviteApproveResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_REQUEST_SHARED_INVITE_APPROVE,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsRequestSharedInviteApproveBlocking(
+        req: ConversationsRequestSharedInviteApproveRequest
+    ): ConversationsRequestSharedInviteApproveResponse {
+        return toBlocking { conversationsRequestSharedInviteApprove(req) }
+    }
+
+    override suspend fun conversationsRequestSharedInviteDeny(
+        req: ConversationsRequestSharedInviteDenyRequest
+    ): ConversationsRequestSharedInviteDenyResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_REQUEST_SHARED_INVITE_DENY,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsRequestSharedInviteDenyBlocking(
+        req: ConversationsRequestSharedInviteDenyRequest
+    ): ConversationsRequestSharedInviteDenyResponse {
+        return toBlocking { conversationsRequestSharedInviteDeny(req) }
+    }
+
+    override suspend fun conversationsRequestSharedInviteList(
+        req: ConversationsRequestSharedInviteListRequest
+    ): ConversationsRequestSharedInviteListResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.CONVERSATIONS_REQUEST_SHARED_INVITE_LIST,
+            getToken(req),
+        )
+    }
+
+    override fun conversationsRequestSharedInviteListBlocking(
+        req: ConversationsRequestSharedInviteListRequest
+    ): ConversationsRequestSharedInviteListResponse {
+        return toBlocking { conversationsRequestSharedInviteList(req) }
+    }
 }

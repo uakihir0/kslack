@@ -7,11 +7,19 @@ import work.socialhub.kslack.api.methods.request.team.TeamAccessLogsRequest
 import work.socialhub.kslack.api.methods.request.team.TeamBillableInfoRequest
 import work.socialhub.kslack.api.methods.request.team.TeamInfoRequest
 import work.socialhub.kslack.api.methods.request.team.TeamIntegrationLogsRequest
+import work.socialhub.kslack.api.methods.request.team.billing.TeamBillingInfoRequest
+import work.socialhub.kslack.api.methods.request.team.external_teams.TeamExternalTeamsDisconnectRequest
+import work.socialhub.kslack.api.methods.request.team.external_teams.TeamExternalTeamsListRequest
+import work.socialhub.kslack.api.methods.request.team.preferences.TeamPreferencesListRequest
 import work.socialhub.kslack.api.methods.request.team.profile.TeamProfileGetRequest
 import work.socialhub.kslack.api.methods.response.team.TeamAccessLogsResponse
 import work.socialhub.kslack.api.methods.response.team.TeamBillableInfoResponse
 import work.socialhub.kslack.api.methods.response.team.TeamInfoResponse
 import work.socialhub.kslack.api.methods.response.team.TeamIntegrationLogsResponse
+import work.socialhub.kslack.api.methods.response.team.billing.TeamBillingInfoResponse
+import work.socialhub.kslack.api.methods.response.team.external_teams.TeamExternalTeamsDisconnectResponse
+import work.socialhub.kslack.api.methods.response.team.external_teams.TeamExternalTeamsListResponse
+import work.socialhub.kslack.api.methods.response.team.preferences.TeamPreferencesListResponse
 import work.socialhub.kslack.api.methods.response.team.profile.TeamProfileGetResponse
 import work.socialhub.kslack.util.toBlocking
 
@@ -57,5 +65,37 @@ class TeamResourceImpl(
 
     override fun teamProfileGetBlocking(req: TeamProfileGetRequest): TeamProfileGetResponse {
         return toBlocking { teamProfileGet(req) }
+    }
+
+    override suspend fun teamBillingInfo(req: TeamBillingInfoRequest): TeamBillingInfoResponse {
+        return postFormWithToken(req.toParams(), Methods.TEAM_BILLING_INFO, getToken(req))
+    }
+
+    override fun teamBillingInfoBlocking(req: TeamBillingInfoRequest): TeamBillingInfoResponse {
+        return toBlocking { teamBillingInfo(req) }
+    }
+
+    override suspend fun teamExternalTeamsDisconnect(req: TeamExternalTeamsDisconnectRequest): TeamExternalTeamsDisconnectResponse {
+        return postFormWithToken(req.toParams(), Methods.TEAM_EXTERNAL_TEAMS_DISCONNECT, getToken(req))
+    }
+
+    override fun teamExternalTeamsDisconnectBlocking(req: TeamExternalTeamsDisconnectRequest): TeamExternalTeamsDisconnectResponse {
+        return toBlocking { teamExternalTeamsDisconnect(req) }
+    }
+
+    override suspend fun teamExternalTeamsList(req: TeamExternalTeamsListRequest): TeamExternalTeamsListResponse {
+        return postFormWithToken(req.toParams(), Methods.TEAM_EXTERNAL_TEAMS_LIST, getToken(req))
+    }
+
+    override fun teamExternalTeamsListBlocking(req: TeamExternalTeamsListRequest): TeamExternalTeamsListResponse {
+        return toBlocking { teamExternalTeamsList(req) }
+    }
+
+    override suspend fun teamPreferencesList(req: TeamPreferencesListRequest): TeamPreferencesListResponse {
+        return postFormWithToken(req.toParams(), Methods.TEAM_PREFERENCES_LIST, getToken(req))
+    }
+
+    override fun teamPreferencesListBlocking(req: TeamPreferencesListRequest): TeamPreferencesListResponse {
+        return toBlocking { teamPreferencesList(req) }
     }
 }

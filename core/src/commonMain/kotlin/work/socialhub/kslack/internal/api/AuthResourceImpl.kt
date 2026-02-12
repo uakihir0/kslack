@@ -6,8 +6,10 @@ import work.socialhub.kslack.api.AuthResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
 import work.socialhub.kslack.api.methods.request.auth.AuthRevokeRequest
+import work.socialhub.kslack.api.methods.request.auth.AuthTeamsListRequest
 import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
 import work.socialhub.kslack.api.methods.response.auth.AuthRevokeResponse
+import work.socialhub.kslack.api.methods.response.auth.AuthTeamsListResponse
 import work.socialhub.kslack.api.methods.response.auth.AuthTestResponse
 import work.socialhub.kslack.util.toBlocking
 
@@ -29,6 +31,14 @@ class AuthResourceImpl(
 
     override fun authTestBlocking(req: AuthTestRequest): AuthTestResponse {
         return toBlocking { authTest(req) }
+    }
+
+    override suspend fun authTeamsList(req: AuthTeamsListRequest): AuthTeamsListResponse {
+        return postFormWithToken(req.toParams(), Methods.AUTH_TEAMS_LIST, getToken(req))
+    }
+
+    override fun authTeamsListBlocking(req: AuthTeamsListRequest): AuthTeamsListResponse {
+        return toBlocking { authTeamsList(req) }
     }
 
     override fun authorizationURL(

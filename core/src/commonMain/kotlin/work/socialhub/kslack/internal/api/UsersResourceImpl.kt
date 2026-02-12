@@ -209,4 +209,20 @@ class UsersResourceImpl(
     ): UsersProfileSetResponse {
         return toBlocking { usersProfileSet(req) }
     }
+
+    override suspend fun usersDiscoverableContactsLookup(
+        req: UsersDiscoverableContactsLookupRequest
+    ): UsersDiscoverableContactsLookupResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.USERS_DISCOVERABLE_CONTACTS_LOOKUP,
+            getToken(req),
+        )
+    }
+
+    override fun usersDiscoverableContactsLookupBlocking(
+        req: UsersDiscoverableContactsLookupRequest
+    ): UsersDiscoverableContactsLookupResponse {
+        return toBlocking { usersDiscoverableContactsLookup(req) }
+    }
 }

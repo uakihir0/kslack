@@ -9,6 +9,7 @@ import kotlin.js.JsExport
 @JsExport
 interface AppsResource {
 
+    // TODO: Stream module — Socket Mode WebSocket connection should be implemented in stream/ module.
     suspend fun appsConnectionsOpen(
         req: AppsConnectionsOpenRequest
     ): AppsConnectionsOpenResponse

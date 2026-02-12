@@ -1,10 +1,14 @@
 package work.socialhub.kslack.entity
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import kotlin.js.JsExport
 
 /**
  * https://api.slack.com/docs/message-attachments
  */
+@JsExport
+@Serializable
 class Field {
 
     /**

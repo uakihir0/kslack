@@ -1,6 +1,7 @@
 package work.socialhub.kslack.entity.event
 
-import work.socialhub.kslack.api.model.Attachment
+import work.socialhub.kslack.entity.Attachment
+import work.socialhub.kslack.entity.block.LayoutBlock
 
 /**
  * A message is delivered from several sources:

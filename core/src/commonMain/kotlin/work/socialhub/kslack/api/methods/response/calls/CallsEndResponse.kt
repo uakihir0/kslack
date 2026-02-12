@@ -1,0 +1,9 @@
+package work.socialhub.kslack.api.methods.response.calls
+
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import kotlin.js.JsExport
+
+@JsExport
+@Serializable
+class CallsEndResponse : SlackApiResponse()

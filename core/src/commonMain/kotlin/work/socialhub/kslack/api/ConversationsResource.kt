@@ -168,4 +168,85 @@ interface ConversationsResource {
     fun conversationsUnarchiveBlocking(
         req: ConversationsUnarchiveRequest
     ): ConversationsUnarchiveResponse
+
+    suspend fun conversationsAcceptSharedInvite(
+        req: ConversationsAcceptSharedInviteRequest
+    ): ConversationsAcceptSharedInviteResponse
+
+    @JsExport.Ignore
+    fun conversationsAcceptSharedInviteBlocking(
+        req: ConversationsAcceptSharedInviteRequest
+    ): ConversationsAcceptSharedInviteResponse
+
+    suspend fun conversationsApproveSharedInvite(
+        req: ConversationsApproveSharedInviteRequest
+    ): ConversationsApproveSharedInviteResponse
+
+    @JsExport.Ignore
+    fun conversationsApproveSharedInviteBlocking(
+        req: ConversationsApproveSharedInviteRequest
+    ): ConversationsApproveSharedInviteResponse
+
+    suspend fun conversationsCanvasesCreate(
+        req: ConversationsCanvasesCreateRequest
+    ): ConversationsCanvasesCreateResponse
+
+    @JsExport.Ignore
+    fun conversationsCanvasesCreateBlocking(
+        req: ConversationsCanvasesCreateRequest
+    ): ConversationsCanvasesCreateResponse
+
+    suspend fun conversationsDeclineSharedInvite(
+        req: ConversationsDeclineSharedInviteRequest
+    ): ConversationsDeclineSharedInviteResponse
+
+    @JsExport.Ignore
+    fun conversationsDeclineSharedInviteBlocking(
+        req: ConversationsDeclineSharedInviteRequest
+    ): ConversationsDeclineSharedInviteResponse
+
+    suspend fun conversationsInviteShared(
+        req: ConversationsInviteSharedRequest
+    ): ConversationsInviteSharedResponse
+
+    @JsExport.Ignore
+    fun conversationsInviteSharedBlocking(
+        req: ConversationsInviteSharedRequest
+    ): ConversationsInviteSharedResponse
+
+    suspend fun conversationsListConnectInvites(
+        req: ConversationsListConnectInvitesRequest
+    ): ConversationsListConnectInvitesResponse
+
+    @JsExport.Ignore
+    fun conversationsListConnectInvitesBlocking(
+        req: ConversationsListConnectInvitesRequest
+    ): ConversationsListConnectInvitesResponse
+
+    suspend fun conversationsRequestSharedInviteApprove(
+        req: ConversationsRequestSharedInviteApproveRequest
+    ): ConversationsRequestSharedInviteApproveResponse
+
+    @JsExport.Ignore
+    fun conversationsRequestSharedInviteApproveBlocking(
+        req: ConversationsRequestSharedInviteApproveRequest
+    ): ConversationsRequestSharedInviteApproveResponse
+
+    suspend fun conversationsRequestSharedInviteDeny(
+        req: ConversationsRequestSharedInviteDenyRequest
+    ): ConversationsRequestSharedInviteDenyResponse
+
+    @JsExport.Ignore
+    fun conversationsRequestSharedInviteDenyBlocking(
+        req: ConversationsRequestSharedInviteDenyRequest
+    ): ConversationsRequestSharedInviteDenyResponse
+
+    suspend fun conversationsRequestSharedInviteList(
+        req: ConversationsRequestSharedInviteListRequest
+    ): ConversationsRequestSharedInviteListResponse
+
+    @JsExport.Ignore
+    fun conversationsRequestSharedInviteListBlocking(
+        req: ConversationsRequestSharedInviteListRequest
+    ): ConversationsRequestSharedInviteListResponse
 }

@@ -1,6 +1,6 @@
 package work.socialhub.kslack.entity.event
 
-import com.google.gson.annotations.SerialName
+import kotlinx.serialization.SerialName
 
 /**
  * The subteam_updated event is sent to all connections for a workspace when an existing User Group is updated.

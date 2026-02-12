@@ -120,4 +120,13 @@ interface UsersResource {
     fun usersProfileSetBlocking(
         req: UsersProfileSetRequest
     ): UsersProfileSetResponse
+
+    suspend fun usersDiscoverableContactsLookup(
+        req: UsersDiscoverableContactsLookupRequest
+    ): UsersDiscoverableContactsLookupResponse
+
+    @JsExport.Ignore
+    fun usersDiscoverableContactsLookupBlocking(
+        req: UsersDiscoverableContactsLookupRequest
+    ): UsersDiscoverableContactsLookupResponse
 }

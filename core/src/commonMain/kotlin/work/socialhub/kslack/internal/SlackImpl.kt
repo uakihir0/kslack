@@ -7,6 +7,7 @@ import work.socialhub.kslack.api.AppsResource
 import work.socialhub.kslack.api.AuthResource
 import work.socialhub.kslack.api.BookmarksResource
 import work.socialhub.kslack.api.BotsResource
+import work.socialhub.kslack.api.CallsResource
 import work.socialhub.kslack.api.ChatResource
 import work.socialhub.kslack.api.ConversationsResource
 import work.socialhub.kslack.api.DialogResource
@@ -15,6 +16,7 @@ import work.socialhub.kslack.api.EmojiResource
 import work.socialhub.kslack.api.FilesResource
 import work.socialhub.kslack.api.MigrationResource
 import work.socialhub.kslack.api.OAuthResource
+import work.socialhub.kslack.api.OpenIDConnectResource
 import work.socialhub.kslack.api.PinsResource
 import work.socialhub.kslack.api.ReactionsResource
 import work.socialhub.kslack.api.RemindersResource
@@ -31,6 +33,7 @@ import work.socialhub.kslack.internal.api.AppsResourceImpl
 import work.socialhub.kslack.internal.api.AuthResourceImpl
 import work.socialhub.kslack.internal.api.BookmarksResourceImpl
 import work.socialhub.kslack.internal.api.BotsResourceImpl
+import work.socialhub.kslack.internal.api.CallsResourceImpl
 import work.socialhub.kslack.internal.api.ChatResourceImpl
 import work.socialhub.kslack.internal.api.ConversationsResourceImpl
 import work.socialhub.kslack.internal.api.DialogResourceImpl
@@ -39,6 +42,7 @@ import work.socialhub.kslack.internal.api.EmojiResourceImpl
 import work.socialhub.kslack.internal.api.FilesResourceImpl
 import work.socialhub.kslack.internal.api.MigrationResourceImpl
 import work.socialhub.kslack.internal.api.OAuthResourceImpl
+import work.socialhub.kslack.internal.api.OpenIDConnectResourceImpl
 import work.socialhub.kslack.internal.api.PinsResourceImpl
 import work.socialhub.kslack.internal.api.ReactionsResourceImpl
 import work.socialhub.kslack.internal.api.RemindersResourceImpl
@@ -60,6 +64,7 @@ class SlackImpl(
     private val auth: AuthResource = AuthResourceImpl(token)
     private val bookmarks: BookmarksResource = BookmarksResourceImpl(token)
     private val bots: BotsResource = BotsResourceImpl(token)
+    private val calls: CallsResource = CallsResourceImpl(token)
     private val chat: ChatResource = ChatResourceImpl(token)
     private val conversations: ConversationsResource = ConversationsResourceImpl(token)
     private val dialog: DialogResource = DialogResourceImpl(token)
@@ -68,6 +73,7 @@ class SlackImpl(
     private val files: FilesResource = FilesResourceImpl(token)
     private val migration: MigrationResource = MigrationResourceImpl(token)
     private val oauth: OAuthResource = OAuthResourceImpl()
+    private val openIDConnect: OpenIDConnectResource = OpenIDConnectResourceImpl(token)
     private val pins: PinsResource = PinsResourceImpl(token)
     private val reactions: ReactionsResource = ReactionsResourceImpl(token)
     private val reminders: RemindersResource = RemindersResourceImpl(token)
@@ -85,6 +91,7 @@ class SlackImpl(
     override fun auth() = auth
     override fun bookmarks() = bookmarks
     override fun bots() = bots
+    override fun calls() = calls
     override fun chat() = chat
     override fun conversations() = conversations
     @Deprecated("Use ViewsResource (views.open) for modals instead.")
@@ -94,6 +101,7 @@ class SlackImpl(
     override fun files() = files
     override fun migration() = migration
     override fun oauth() = oauth
+    override fun openIDConnect() = openIDConnect
     override fun pins() = pins
     override fun reactions() = reactions
     override fun reminders() = reminders

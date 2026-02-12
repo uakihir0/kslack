@@ -1,6 +1,9 @@
 package work.socialhub.kslack.entity.event
 
-import work.socialhub.kslack.api.model.Attachment
+import kotlinx.serialization.SerialName
+import work.socialhub.kslack.entity.Attachment
+import work.socialhub.kslack.entity.Reaction
+import work.socialhub.kslack.entity.block.LayoutBlock
 
 /**
  * https://api.slack.com/events/message/message_changed

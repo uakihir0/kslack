@@ -98,4 +98,31 @@ interface ChatResource {
     fun chatScheduleMessagesListMessageBlocking(
         req: ChatScheduleMessagesListRequest
     ): ChatScheduleMessagesListResponse
+
+    suspend fun chatStartStream(
+        req: ChatStartStreamRequest
+    ): ChatStartStreamResponse
+
+    @JsExport.Ignore
+    fun chatStartStreamBlocking(
+        req: ChatStartStreamRequest
+    ): ChatStartStreamResponse
+
+    suspend fun chatAppendStream(
+        req: ChatAppendStreamRequest
+    ): ChatAppendStreamResponse
+
+    @JsExport.Ignore
+    fun chatAppendStreamBlocking(
+        req: ChatAppendStreamRequest
+    ): ChatAppendStreamResponse
+
+    suspend fun chatStopStream(
+        req: ChatStopStreamRequest
+    ): ChatStopStreamResponse
+
+    @JsExport.Ignore
+    fun chatStopStreamBlocking(
+        req: ChatStopStreamRequest
+    ): ChatStopStreamResponse
 }
