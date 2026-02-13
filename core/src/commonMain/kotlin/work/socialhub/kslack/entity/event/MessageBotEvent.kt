@@ -1,6 +1,5 @@
 package work.socialhub.kslack.entity.event
 
-import work.socialhub.kmastodon.entity.Attachment
 import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.block.LayoutBlock
 import work.socialhub.kslack.entity.message.MessageIcons

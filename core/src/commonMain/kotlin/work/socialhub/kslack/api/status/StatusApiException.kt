@@ -7,7 +7,4 @@ class StatusApiException(
     val responseBody: String
 ) : Exception() {
 
-    fun getResponse(): HttpResponse {
-        return this.response
-    }
 }

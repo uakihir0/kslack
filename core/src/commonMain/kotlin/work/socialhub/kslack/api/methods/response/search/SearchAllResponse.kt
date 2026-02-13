@@ -13,6 +13,7 @@ class SearchAllResponse : SlackApiResponse() {
     var files: SearchResult? = null
     var posts: Posts? = null
 
+    @Serializable
     class Posts {
         var total: Int? = null
         var matches: Array<String>? = null

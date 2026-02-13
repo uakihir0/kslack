@@ -2,7 +2,7 @@
 
 # kslack cocoapods
 
-This repository is the Cocoapods repository for [kslack]. [kslack] is a Mastodon client library created using Kotlin Multiplatform.
+This repository is the Cocoapods repository for [kslack]. [kslack] is a Slack client library created using Kotlin Multiplatform.
 Therefore, it can be built and used on Apple devices such as iOS. Here, we distribute the built XCFramework via Cocoapods.
 Additionally, this repository is automatically committed by GitHub Actions for [kslack]. Please submit issues or pull requests to [kslack].
 

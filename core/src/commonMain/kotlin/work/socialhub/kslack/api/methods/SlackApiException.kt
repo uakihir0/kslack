@@ -21,11 +21,4 @@ class SlackApiException(
         }
     }
 
-    fun getResponse(): HttpResponse {
-        return this.response
-    }
-
-    fun getError(): SlackApiErrorResponse? {
-        return this.error
-    }
 }

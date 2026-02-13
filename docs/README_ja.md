@@ -7,7 +7,7 @@
 ![badge][badge-ios]
 ![badge][badge-mac]
 
-**このライブラリは [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) に対応した Mastodon クライアントライブラリです。**
+**このライブラリは [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) に対応した Slack クライアントライブラリです。**
 [khttpclient] を依存関係に持っており、 内部で Ktor Client を使用しています。
 そのため、本ライブラリは、Kotlin Multiplatform かつ Ktor Client がサポートしているプラットフォームであれば利用可能です。
 各プラットフォームでどのような挙動をするのかについては、[khttpclient] に依存します。

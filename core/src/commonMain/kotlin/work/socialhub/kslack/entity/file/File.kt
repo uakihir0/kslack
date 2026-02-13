@@ -2,7 +2,7 @@ package work.socialhub.kslack.entity.file
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import work.socialhub.kmastodon.entity.Attachment
+import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.Reaction
 import work.socialhub.kslack.entity.block.LayoutBlock
 import kotlin.js.JsExport

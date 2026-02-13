@@ -2,7 +2,7 @@ package work.socialhub.kslack.api.methods.response.bots
 
 import kotlinx.serialization.Serializable
 import work.socialhub.kslack.api.methods.SlackApiResponse
-import work.socialhub.kslack.entity.bot.BotIcons
+import work.socialhub.kslack.entity.bot.Bot
 import kotlin.js.JsExport
 
 @JsExport

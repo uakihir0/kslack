@@ -1,65 +1,75 @@
 package work.socialhub.kslack
 
-import io.ktor.http.*
-import work.socialhub.kslack.api.auth.AuthClient
-import work.socialhub.kslack.api.methods.client.MethodsAsyncClient
-import work.socialhub.kslack.api.methods.client.MethodsBlockingClient
-import work.socialhub.kslack.api.methods.impl.AdminResourceImpl
-import work.socialhub.kslack.api.methods.impl.MethodsAsyncClientImpl
-import work.socialhub.kslack.api.methods.impl.MethodsBlockingClientImpl
-import work.socialhub.kslack.api.status.StatusClient
-import work.socialhub.kslack.api.status.impl.StatusClientImpl
+import work.socialhub.kslack.api.AdminResource
+import work.socialhub.kslack.api.ApiResource
+import work.socialhub.kslack.api.AppsResource
+import work.socialhub.kslack.api.AuthResource
+import work.socialhub.kslack.api.BookmarksResource
+import work.socialhub.kslack.api.BotsResource
+import work.socialhub.kslack.api.CallsResource
+import work.socialhub.kslack.api.ChatResource
+import work.socialhub.kslack.api.ConversationsResource
+import work.socialhub.kslack.api.DialogResource
+import work.socialhub.kslack.api.DndResource
+import work.socialhub.kslack.api.EmojiResource
+import work.socialhub.kslack.api.FilesResource
+import work.socialhub.kslack.api.MigrationResource
+import work.socialhub.kslack.api.OAuthResource
+import work.socialhub.kslack.api.OpenIDConnectResource
+import work.socialhub.kslack.api.PinsResource
+import work.socialhub.kslack.api.ReactionsResource
+import work.socialhub.kslack.api.RemindersResource
+import work.socialhub.kslack.api.SearchResource
+import work.socialhub.kslack.api.StarsResource
+import work.socialhub.kslack.api.StatusResource
+import work.socialhub.kslack.api.TeamResource
+import work.socialhub.kslack.api.UsergroupsResource
+import work.socialhub.kslack.api.UsersResource
+import work.socialhub.kslack.api.ViewsResource
 import kotlin.js.JsExport
 
-
 /**
- * Slack Integrations
- * https://{your team name}.slack.com/apps/manage/custom-integrations
+ * Slack API Client
+ * https://api.slack.com/methods
  */
+// TODO: Stream module — Add stream() accessor for Socket Mode event delivery.
 @JsExport
-class Slack {
+interface Slack {
 
-    @JsExport.Ignore
-    fun async() = AsyncClient()
+    fun admin(): AdminResource
+    fun api(): ApiResource
+    fun apps(): AppsResource
+    fun auth(): AuthResource
+    fun bookmarks(): BookmarksResource
+    fun bots(): BotsResource
+    fun calls(): CallsResource
+    fun chat(): ChatResource
+    fun conversations(): ConversationsResource
+    @Deprecated("Use ViewsResource (views.open) for modals instead.")
+    fun dialog(): DialogResource
+    fun dnd(): DndResource
+    fun emoji(): EmojiResource
+    fun files(): FilesResource
+    fun migration(): MigrationResource
+    fun oauth(): OAuthResource
+    fun openIDConnect(): OpenIDConnectResource
+    fun pins(): PinsResource
+    fun reactions(): ReactionsResource
+    fun reminders(): RemindersResource
+    fun search(): SearchResource
+    @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
+    fun stars(): StarsResource
+    fun status(): StatusResource
+    fun team(): TeamResource
+    fun usergroups(): UsergroupsResource
+    fun users(): UsersResource
+    fun views(): ViewsResource
 
-    fun blocking() = BlockingClient()
-
-    fun auth() = AuthClient()
+    val token: String?
 
     companion object {
         const val ENDPOINT_URL_PREFIX = "https://slack.com/api/"
-        const val STATUS_URL_PREFIX = "https://status.slack.com/api/v2.0.0/"
+        const val STATUS_URL_PREFIX = "https://slack-status.com/api/v2.0.0/"
         const val AUTHORIZE_URL = "https://slack.com/oauth/authorize"
-    }
-}
-
-class AsyncClient() {
-
-    fun methods(
-        token: String? = null
-    ): MethodsAsyncClient {
-        return MethodsAsyncClientImpl(token)
-    }
-
-    fun admin(
-        token: String? = null
-    ): AdminResourceImpl {
-        return AdminResourceImpl(token)
-    }
-
-    fun status(): StatusClient {
-        return StatusClientImpl()
-    }
-}
-
-@JsExport
-class BlockingClient() {
-
-    fun methods(
-        token: String? = null
-    ): MethodsBlockingClient {
-        return MethodsBlockingClientImpl(
-            MethodsAsyncClientImpl(token)
-        )
     }
 }

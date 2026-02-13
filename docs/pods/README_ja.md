@@ -1,6 +1,6 @@
 # kslack cocoapods
 
-本レポジトリは、[kslack] の Cocoapods レポジトリです。[kslack] は Kotlin Multiplatform を用いて作成された Mastodon クライアントライブラリです。
+本レポジトリは、[kslack] の Cocoapods レポジトリです。[kslack] は Kotlin Multiplatform を用いて作成された Slack クライアントライブラリです。
 そのため、iOS 等の Apple Device でも使用でもビルドして使用することができます。ここでは、XCFramework としてビルドしたものを Cocoapods 経由で配布しています。
 また、このレポジトリは [kslack] の GitHub Actions によって自動コミットされています。issue や pull request は [kslack] にお願いします。
 
