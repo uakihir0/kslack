@@ -70,6 +70,6 @@ interface Slack {
     companion object {
         const val ENDPOINT_URL_PREFIX = "https://slack.com/api/"
         const val STATUS_URL_PREFIX = "https://slack-status.com/api/v2.0.0/"
-        const val AUTHORIZE_URL = "https://slack.com/oauth/authorize"
+        const val AUTHORIZE_URL = "https://slack.com/oauth/v2/authorize"
     }
 }

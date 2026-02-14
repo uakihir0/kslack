@@ -41,6 +41,7 @@ interface AuthResource {
     fun authorizationURL(
         clientId: String,
         redirectUri: String,
-        scope: String,
+        scope: String? = null,
+        userScope: String? = null,
     ): String
 }
