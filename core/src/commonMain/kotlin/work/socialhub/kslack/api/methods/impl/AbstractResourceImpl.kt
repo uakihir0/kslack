@@ -3,6 +3,7 @@ package work.socialhub.kslack.api.methods.impl
 import work.socialhub.khttpclient.HttpParameter
 import work.socialhub.khttpclient.HttpRequest
 import work.socialhub.khttpclient.HttpResponse
+import work.socialhub.kslack.Slack
 import work.socialhub.kslack.api.methods.SlackApiException
 import work.socialhub.kslack.api.methods.SlackApiRequest
 import work.socialhub.kslack.api.methods.helper.JsonHelper.fromJson
@@ -19,7 +20,7 @@ open class AbstractResourceImpl(
         endpoint: String,
     ): HttpResponse {
         return HttpRequest()
-            .url("http://$endpoint")
+            .url("${Slack.ENDPOINT_URL_PREFIX}$endpoint")
             .also { it.params += params }
             .forceApplicationFormUrlEncoded(true)
             .post()
@@ -31,9 +32,9 @@ open class AbstractResourceImpl(
         token: String,
     ): HttpResponse {
         return HttpRequest()
-            .url("http://$endpoint")
+            .url("${Slack.ENDPOINT_URL_PREFIX}$endpoint")
             .also { it.params += params }
-            .header("", token)
+            .header("Authorization", "Bearer $token")
             .forceApplicationFormUrlEncoded(true)
             .post()
     }
@@ -44,9 +45,9 @@ open class AbstractResourceImpl(
         token: String,
     ): HttpResponse {
         return HttpRequest()
-            .url("http://$endpoint")
+            .url("${Slack.ENDPOINT_URL_PREFIX}$endpoint")
             .also { it.params += params }
-            .header("", token)
+            .header("Authorization", "Bearer $token")
             .forceMultipartFormData(true)
             .post()
     }

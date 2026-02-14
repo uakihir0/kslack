@@ -44,12 +44,18 @@ class AuthResourceImpl(
     override fun authorizationURL(
         clientId: String,
         redirectUri: String,
-        scope: String,
+        scope: String?,
+        userScope: String?,
     ): String {
         val builder = URLBuilder(Slack.AUTHORIZE_URL)
         builder.parameters.append("client_id", clientId)
         builder.parameters.append("redirect_uri", redirectUri)
-        builder.parameters.append("scope", scope)
+        if (scope != null) {
+            builder.parameters.append("scope", scope)
+        }
+        if (userScope != null) {
+            builder.parameters.append("user_scope", userScope)
+        }
         return builder.build().toString()
     }
 }
