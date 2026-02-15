@@ -17,7 +17,7 @@ The behavior on each platform depends on [khttpclient].
 ## Usage
 
 Below is how to use it in Kotlin with Gradle on supported platforms.
-**If you want to use it on Apple platforms, please refer to [kslack-cocoapods](https://github.com/uakihir0/kslack-cocoapods).**
+**If you want to use it on Apple platforms, please refer to [kslack-spm](https://github.com/uakihir0/kslack-spm) or [kslack-cocoapods](https://github.com/uakihir0/kslack-cocoapods).**
 **Also, for usage in JavaScript, please refer to [kslack.js](https://github.com/uakihir0/kslack.js).**
 Please refer to the test code for how to use each API.
 

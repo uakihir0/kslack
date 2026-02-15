@@ -15,7 +15,7 @@
 ## 使い方
 
 以下は対応するプラットフォームにおいて Gradle を用いて Kotlin で使用する際の使い方になります。
-**Apple プラットフォームで使用する場合は、 [kslack-cocoapods](https://github.com/uakihir0/kslack-cocoapods) を参照してください。**
+**Apple プラットフォームで使用する場合は、 [kslack-spm](https://github.com/uakihir0/kslack-spm) または [kslack-cocoapods](https://github.com/uakihir0/kslack-cocoapods) を参照してください。**
 **また、JavaScript で使用する場合は、[kslack.js](https://github.com/uakihir0/kslack.js) を参照してください。**
 各 API の叩き方については、テストコードを参照してください。
 
