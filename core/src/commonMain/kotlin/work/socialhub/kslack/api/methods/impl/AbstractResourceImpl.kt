@@ -87,22 +87,32 @@ open class AbstractResourceImpl(
         if (request.token != null) {
             return request.token!!
         }
-        // TODO: その API では Token が必要かどうかを確認
-        throw IllegalStateException("")
+
+        if (token != null) {
+            return token
+        }
+
+        throw IllegalStateException(
+            "This API requires an access token. Provide it via SlackFactory.instance(token) or request.token."
+        )
     }
 
     inline fun <reified T> parseJsonResponse(
         response: HttpResponse
     ): T {
-        try {
-            if (response.status in 200..299) {
-                val body = response.stringBody
-                return fromJson(body)
-            } else {
-                throw SlackApiException(response)
-            }
+        if (response.status !in 200..299) {
+            throw SlackApiException(response)
+        }
+
+        val body = response.stringBody
+
+        return try {
+            fromJson(body)
         } catch (e: Exception) {
-            throw IllegalStateException()
+            throw IllegalStateException(
+                "Failed to parse Slack API response: $body",
+                e
+            )
         }
     }
 }
