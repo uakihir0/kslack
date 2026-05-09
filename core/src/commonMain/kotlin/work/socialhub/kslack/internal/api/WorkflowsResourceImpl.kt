@@ -1,6 +1,6 @@
 package work.socialhub.kslack.internal.api
 
-import work.socialhub.kslack.api.Methods
+import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.WorkflowsResource
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
 import work.socialhub.kslack.api.methods.request.workflows.steps.WorkflowsStepsCancelRequest

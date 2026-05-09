@@ -55,7 +55,10 @@ import work.socialhub.kslack.internal.api.TeamResourceImpl
 import work.socialhub.kslack.internal.api.UsergroupsResourceImpl
 import work.socialhub.kslack.internal.api.UsersResourceImpl
 import work.socialhub.kslack.internal.api.ViewsResourceImpl
+import work.socialhub.kslack.api.WorkflowsResource
 import work.socialhub.kslack.internal.api.WorkflowsResourceImpl
+import work.socialhub.kslack.stream.SlackStream
+import work.socialhub.kslack.stream.internal.SlackStreamImpl
 
 class SlackImpl(
     override val token: String? = null,

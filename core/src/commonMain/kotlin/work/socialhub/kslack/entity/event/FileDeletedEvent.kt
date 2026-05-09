@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The file_deleted event is sent to all connected clients for a workspace when a file is deleted. Unlike most file events,
  * the file property contains a file ID and not a full file object.

@@ -46,7 +46,7 @@ object SlackEventParser {
             ReactionRemovedEvent.TYPE_NAME -> JsonHelper.fromJson<ReactionRemovedEvent>(jsonString) to jsonString
             FileSharedEvent.TYPE_NAME -> JsonHelper.fromJson<FileSharedEvent>(jsonString) to jsonString
             FileDeletedEvent.TYPE_NAME -> JsonHelper.fromJson<FileDeletedEvent>(jsonString) to jsonString
-            FileChangedEvent.TYPE_NAME -> JsonHelper.fromJson<FileChangedEvent>(jsonString) to jsonString
+            FileChangeEvent.TYPE_NAME -> JsonHelper.fromJson<FileChangeEvent>(jsonString) to jsonString
             FileCreatedEvent.TYPE_NAME -> JsonHelper.fromJson<FileCreatedEvent>(jsonString) to jsonString
             FileUnsharedEvent.TYPE_NAME -> JsonHelper.fromJson<FileUnsharedEvent>(jsonString) to jsonString
             MessageChangedEvent.TYPE_NAME -> JsonHelper.fromJson<MessageChangedEvent>(jsonString) to jsonString

@@ -10,6 +10,7 @@ import work.socialhub.khttpclient.websocket.WebsocketRequest
 import kotlinx.coroutines.*
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.jsonPrimitive
+import kotlinx.serialization.json.jsonObject
 import kotlin.js.JsExport
 
 @JsExport
@@ -64,7 +65,7 @@ class SocketModeClient(
     }
 
     private suspend fun fetchSocketModeUrl(): String {
-        val params = listOf(HttpParameter("token", token))
+        val params = listOf(HttpParameter.param("token", token))
         val response = HttpRequest()
             .url(SOCKET_MODE_ENDPOINT)
             .also { it.params += params }
@@ -107,20 +108,22 @@ class SocketModeClient(
             }
         }
         websocket = ws
-        try {
-            ws.open()
-        } catch (e: Exception) {
-            listener.onError(e)
-            scheduleReconnect()
+        scope.launch {
+            try {
+                ws.open()
+            } catch (e: Exception) {
+                listener.onError(e)
+                scheduleReconnect()
+            }
         }
     }
 
     private fun onMessage(message: String) {
         try {
             val jsonElement = JsonHelper.json.parseToJsonElement(message)
-            val type = jsonElement["type"]?.jsonPrimitive?.content
+            val type = jsonElement.jsonObject["type"]?.jsonPrimitive?.content
             if (type == "socket_mode_enqueue") {
-                sendAck()
+                scope.launch { sendAck() }
                 return
             }
             val wrapper = SlackEventParser.parseEvent(message)
@@ -136,7 +139,7 @@ class SocketModeClient(
         websocket?.sendText("{\"type\":\"ack\"}")
     }
 
-    private fun dispatchEvent(wrapper: SlackEventParser.EventWrapper) {
+    private fun dispatchEvent(wrapper: EventWrapper) {
         val event = wrapper.event
         when (event) {
             is AppMentionEvent -> listener.onAppMention(event)
@@ -156,7 +159,7 @@ class SocketModeClient(
             is ReactionRemovedEvent -> listener.onReactionRemoved(event)
             is FileSharedEvent -> listener.onFileShared(event)
             is FileDeletedEvent -> listener.onFileDeleted(event)
-            is FileChangedEvent -> listener.onFileChanged(event)
+            is FileChangeEvent -> listener.onFileChanged(event)
             is FileCreatedEvent -> listener.onFileCreated(event)
             is FileUnsharedEvent -> listener.onFileUnshared(event)
             is MessageChangedEvent -> listener.onMessageChanged(event)

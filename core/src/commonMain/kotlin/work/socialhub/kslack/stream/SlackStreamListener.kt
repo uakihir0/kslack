@@ -11,7 +11,7 @@ import work.socialhub.kslack.entity.event.ChannelLeftEvent
 import work.socialhub.kslack.entity.event.ChannelMarkedEvent
 import work.socialhub.kslack.entity.event.ChannelRenameEvent
 import work.socialhub.kslack.entity.event.ChannelUnarchiveEvent
-import work.socialhub.kslack.entity.event.FileChangedEvent
+import work.socialhub.kslack.entity.event.FileChangeEvent
 import work.socialhub.kslack.entity.event.FileCreatedEvent
 import work.socialhub.kslack.entity.event.FileDeletedEvent
 import work.socialhub.kslack.entity.event.FileSharedEvent
@@ -51,7 +51,7 @@ interface SlackStreamListener {
 
     fun onChannelUnarchive(event: ChannelUnarchiveEvent) {}
 
-    fun onFileChanged(event: FileChangedEvent) {}
+    fun onFileChanged(event: FileChangeEvent) {}
 
     fun onFileCreated(event: FileCreatedEvent) {}
 

@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The member_left_channel event is sent to all websocket connections and event subscriptions
  * when users leave public or private channels.

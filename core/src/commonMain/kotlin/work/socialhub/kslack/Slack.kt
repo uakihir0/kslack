@@ -2,7 +2,6 @@ package work.socialhub.kslack
 
 import work.socialhub.kslack.api.AdminConversationsResource
 import work.socialhub.kslack.api.AdminResource
-import work.socialhub.kslack.api.AdminConversationsResource
 import work.socialhub.kslack.api.ApiResource
 import work.socialhub.kslack.api.AppsResource
 import work.socialhub.kslack.api.WorkflowsResource

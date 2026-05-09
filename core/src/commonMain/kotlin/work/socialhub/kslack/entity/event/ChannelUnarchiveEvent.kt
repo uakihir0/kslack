@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The channel_unarchive event is sent to all connections for a workspace when a channel is unarchived.
  * Clients can use this to update their local list of channels.

@@ -5,7 +5,7 @@ import work.socialhub.kslack.stream.SlackStreamListener
 
 class SlackStreamImpl(
     private val token: String,
-) : SlackStream {
+) : SlackStream, SlackStreamListener {
 
     private val client = SocketModeClient(token, this)
     private val listeners = mutableListOf<SlackStreamListener>()
@@ -76,7 +76,7 @@ class SlackStreamImpl(
         listeners.forEach { it.onChannelUnarchive(event) }
     }
 
-    override fun onFileChanged(event: work.socialhub.kslack.entity.event.FileChangedEvent) {
+    override fun onFileChanged(event: work.socialhub.kslack.entity.event.FileChangeEvent) {
         listeners.forEach { it.onFileChanged(event) }
     }
 
