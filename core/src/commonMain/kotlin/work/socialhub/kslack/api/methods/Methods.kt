@@ -376,4 +376,10 @@ object Methods {
 
     // https://api.slack.com/surfaces/tabs
     const val VIEWS_PUBLISH: String = "views.publish"
+
+    // ------------------------------
+    // views.home
+    // https://api.slack.com/surfaces/tabs
+    // ------------------------------
+    const val VIEWS_HOME_UPDATE: String = "views.home.update"
 }
