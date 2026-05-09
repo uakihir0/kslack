@@ -1,9 +1,11 @@
 package work.socialhub.kslack.api
 
 import work.socialhub.kslack.api.methods.request.pins.PinsAddRequest
+import work.socialhub.kslack.api.methods.request.pins.PinsDeleteRequest
 import work.socialhub.kslack.api.methods.request.pins.PinsListRequest
 import work.socialhub.kslack.api.methods.request.pins.PinsRemoveRequest
 import work.socialhub.kslack.api.methods.response.pins.PinsAddResponse
+import work.socialhub.kslack.api.methods.response.pins.PinsDeleteResponse
 import work.socialhub.kslack.api.methods.response.pins.PinsListResponse
 import work.socialhub.kslack.api.methods.response.pins.PinsRemoveResponse
 import kotlin.js.JsExport
@@ -37,4 +39,13 @@ interface PinsResource {
     fun pinsRemoveBlocking(
         req: PinsRemoveRequest
     ): PinsRemoveResponse
+
+    suspend fun pinsDelete(
+        req: PinsDeleteRequest
+    ): PinsDeleteResponse
+
+    @JsExport.Ignore
+    fun pinsDeleteBlocking(
+        req: PinsDeleteRequest
+    ): PinsDeleteResponse
 }

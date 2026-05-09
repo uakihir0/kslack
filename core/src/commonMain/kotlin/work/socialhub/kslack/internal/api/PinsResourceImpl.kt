@@ -4,9 +4,11 @@ import work.socialhub.kslack.api.PinsResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
 import work.socialhub.kslack.api.methods.request.pins.PinsAddRequest
+import work.socialhub.kslack.api.methods.request.pins.PinsDeleteRequest
 import work.socialhub.kslack.api.methods.request.pins.PinsListRequest
 import work.socialhub.kslack.api.methods.request.pins.PinsRemoveRequest
 import work.socialhub.kslack.api.methods.response.pins.PinsAddResponse
+import work.socialhub.kslack.api.methods.response.pins.PinsDeleteResponse
 import work.socialhub.kslack.api.methods.response.pins.PinsListResponse
 import work.socialhub.kslack.api.methods.response.pins.PinsRemoveResponse
 import work.socialhub.kslack.util.toBlocking
@@ -61,5 +63,21 @@ class PinsResourceImpl(
         req: PinsRemoveRequest
     ): PinsRemoveResponse {
         return toBlocking { pinsRemove(req) }
+    }
+
+    override suspend fun pinsDelete(
+        req: PinsDeleteRequest
+    ): PinsDeleteResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.PINS_DELETE,
+            getToken(req),
+        )
+    }
+
+    override fun pinsDeleteBlocking(
+        req: PinsDeleteRequest
+    ): PinsDeleteResponse {
+        return toBlocking { pinsDelete(req) }
     }
 }

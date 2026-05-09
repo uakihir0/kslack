@@ -116,6 +116,7 @@ object Methods {
     const val BOOKMARKS_EDIT: String = "bookmarks.edit"
     const val BOOKMARKS_LIST: String = "bookmarks.list"
     const val BOOKMARKS_REMOVE: String = "bookmarks.remove"
+    const val BOOKMARKS_DELETE: String = "bookmarks.delete"
 
     // ------------------------------
     // bots
@@ -261,6 +262,7 @@ object Methods {
     const val PINS_ADD: String = "pins.add"
     const val PINS_LIST: String = "pins.list"
     const val PINS_REMOVE: String = "pins.remove"
+    const val PINS_DELETE: String = "pins.delete"
 
     // ------------------------------
     // reactions
@@ -382,4 +384,12 @@ object Methods {
     // https://api.slack.com/surfaces/tabs
     // ------------------------------
     const val VIEWS_HOME_UPDATE: String = "views.home.update"
+
+    // ------------------------------
+    // workflows.steps
+    // https://api.slack.com/workflows
+    // ------------------------------
+    const val WORKFLOWS_STEPS_COMPLETE: String = "workflows.steps.complete"
+    const val WORKFLOWS_STEPS_SKIP: String = "workflows.steps.skip"
+    const val WORKFLOWS_STEPS_CANCEL: String = "workflows.steps.cancel"
 }

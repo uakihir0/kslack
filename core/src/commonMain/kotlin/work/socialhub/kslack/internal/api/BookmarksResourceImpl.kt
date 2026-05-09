@@ -74,4 +74,20 @@ class BookmarksResourceImpl(
     ): BookmarksRemoveResponse {
         return toBlocking { bookmarksRemove(req) }
     }
+
+    override suspend fun bookmarksDelete(
+        req: BookmarksDeleteRequest
+    ): BookmarksDeleteResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.BOOKMARKS_DELETE,
+            getToken(req),
+        )
+    }
+
+    override fun bookmarksDeleteBlocking(
+        req: BookmarksDeleteRequest
+    ): BookmarksDeleteResponse {
+        return toBlocking { bookmarksDelete(req) }
+    }
 }

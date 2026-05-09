@@ -2,8 +2,10 @@ package work.socialhub.kslack
 
 import work.socialhub.kslack.api.AdminConversationsResource
 import work.socialhub.kslack.api.AdminResource
+import work.socialhub.kslack.api.AdminConversationsResource
 import work.socialhub.kslack.api.ApiResource
 import work.socialhub.kslack.api.AppsResource
+import work.socialhub.kslack.api.WorkflowsResource
 import work.socialhub.kslack.api.AuthResource
 import work.socialhub.kslack.api.BookmarksResource
 import work.socialhub.kslack.api.BotsResource
@@ -67,6 +69,7 @@ interface Slack {
     fun usergroups(): UsergroupsResource
     fun users(): UsersResource
     fun views(): ViewsResource
+    fun workflows(): WorkflowsResource
 
     val token: String?
 

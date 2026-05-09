@@ -55,8 +55,7 @@ import work.socialhub.kslack.internal.api.TeamResourceImpl
 import work.socialhub.kslack.internal.api.UsergroupsResourceImpl
 import work.socialhub.kslack.internal.api.UsersResourceImpl
 import work.socialhub.kslack.internal.api.ViewsResourceImpl
-import work.socialhub.kslack.stream.SlackStream
-import work.socialhub.kslack.stream.internal.SlackStreamImpl
+import work.socialhub.kslack.internal.api.WorkflowsResourceImpl
 
 class SlackImpl(
     override val token: String? = null,
@@ -89,6 +88,7 @@ class SlackImpl(
     private val usergroups: UsergroupsResource = UsergroupsResourceImpl(token)
     private val users: UsersResource = UsersResourceImpl(token)
     private val views: ViewsResource = ViewsResourceImpl(token)
+    private val workflows: WorkflowsResource = WorkflowsResourceImpl(token)
 
     private val streamInstance: SlackStream by lazy {
         val t = token ?: throw IllegalStateException("Token is required for streaming. Use SlackFactory.instance(token) to create a Slack instance with a token.")
@@ -124,6 +124,8 @@ class SlackImpl(
     override fun usergroups() = usergroups
     override fun users() = users
     override fun views() = views
+
+    override fun workflows() = workflows
 
     override fun stream() = streamInstance
 }

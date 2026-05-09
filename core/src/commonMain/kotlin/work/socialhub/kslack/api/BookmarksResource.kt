@@ -42,4 +42,13 @@ interface BookmarksResource {
     fun bookmarksRemoveBlocking(
         req: BookmarksRemoveRequest
     ): BookmarksRemoveResponse
+
+    suspend fun bookmarksDelete(
+        req: BookmarksDeleteRequest
+    ): BookmarksDeleteResponse
+
+    @JsExport.Ignore
+    fun bookmarksDeleteBlocking(
+        req: BookmarksDeleteRequest
+    ): BookmarksDeleteResponse
 }
