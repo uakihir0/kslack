@@ -2,6 +2,7 @@ package work.socialhub.kslack.chat
 
 import work.socialhub.kslack.AbstractTest
 import work.socialhub.kslack.SlackFactory
+import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
 import work.socialhub.kslack.api.methods.request.chat.ChatPostEphemeralRequest
 import work.socialhub.kslack.api.methods.response.chat.ChatPostEphemeralResponse
 import kotlin.test.Test
@@ -13,6 +14,13 @@ class ChatPostEphemeralTest : AbstractTest() {
     @Test
     fun postEphemeralMessage() {
         val slack = SlackFactory.instance(userToken!!)
+
+        val authResponse = slack.auth().authTestBlocking(
+            AuthTestRequest(token = userToken)
+        )
+        assertNotNull(authResponse.userId, "userId should not be null from auth.test")
+        val currentUserId = authResponse.userId!!
+
         val configuredChannel = System.getenv("SLACK_TEST_CHANNEL")
             ?: System.getProperty("SLACK_TEST_CHANNEL")
         val channelCandidates = listOfNotNull(configuredChannel, "general").distinct()
@@ -27,7 +35,7 @@ class ChatPostEphemeralTest : AbstractTest() {
                         token = null,
                         channel = channel,
                         text = "kslack ephemeral test at ${System.currentTimeMillis()}",
-                        user = null,
+                        user = currentUserId,
                         isAsUser = false,
                         blocks = null,
                         blocksAsString = null,
