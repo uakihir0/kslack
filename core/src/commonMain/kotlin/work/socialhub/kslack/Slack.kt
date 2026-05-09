@@ -1,5 +1,6 @@
 package work.socialhub.kslack
 
+import work.socialhub.kslack.api.AdminConversationsResource
 import work.socialhub.kslack.api.AdminResource
 import work.socialhub.kslack.api.ApiResource
 import work.socialhub.kslack.api.AppsResource
@@ -33,10 +34,11 @@ import kotlin.js.JsExport
  * Slack API Client
  * https://api.slack.com/methods
  */
-@JsExport
+  @JsExport
 interface Slack {
 
     fun admin(): AdminResource
+    fun adminConversations(): AdminConversationsResource
     fun stream(): SlackStream
     fun api(): ApiResource
     fun apps(): AppsResource

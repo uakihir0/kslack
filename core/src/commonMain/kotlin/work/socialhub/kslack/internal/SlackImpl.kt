@@ -1,6 +1,7 @@
 package work.socialhub.kslack.internal
 
 import work.socialhub.kslack.Slack
+import work.socialhub.kslack.api.AdminConversationsResource
 import work.socialhub.kslack.api.AdminResource
 import work.socialhub.kslack.api.ApiResource
 import work.socialhub.kslack.api.AppsResource
@@ -27,6 +28,7 @@ import work.socialhub.kslack.api.TeamResource
 import work.socialhub.kslack.api.UsergroupsResource
 import work.socialhub.kslack.api.UsersResource
 import work.socialhub.kslack.api.ViewsResource
+import work.socialhub.kslack.internal.api.AdminConversationsResourceImpl
 import work.socialhub.kslack.internal.api.AdminResourceImpl
 import work.socialhub.kslack.internal.api.ApiResourceImpl
 import work.socialhub.kslack.internal.api.AppsResourceImpl
@@ -61,6 +63,7 @@ class SlackImpl(
 ) : Slack {
 
     private val admin: AdminResource = AdminResourceImpl(token)
+    private val adminConversations: AdminConversationsResource = AdminConversationsResourceImpl(token)
     private val api: ApiResource = ApiResourceImpl(token)
     private val apps: AppsResource = AppsResourceImpl(token)
     private val auth: AuthResource = AuthResourceImpl(token)
@@ -93,6 +96,7 @@ class SlackImpl(
     }
 
     override fun admin() = admin
+    override fun adminConversations() = adminConversations
     override fun api() = api
     override fun apps() = apps
     override fun auth() = auth

@@ -45,6 +45,30 @@ object Methods {
     const val ADMIN_TEAMS_SETTINGS_SET_NAME: String = "admin.teams.settings.setName"
 
     // ------------------------------
+    // admin.conversations
+    // ------------------------------
+    const val ADMIN_CONVERSATIONS_CREATE: String = "admin.conversations.create"
+    const val ADMIN_CONVERSATIONS_BAN: String = "admin.conversations.ban"
+    const val ADMIN_CONVERSATIONS_UNBAN: String = "admin.conversations.unban"
+    const val ADMIN_CONVERSATIONS_ARCHIVE: String = "admin.conversations.archive"
+    const val ADMIN_CONVERSATIONS_UNARCHIVE: String = "admin.conversations.unarchive"
+    const val ADMIN_CONVERSATIONS_CONNECT: String = "admin.conversations.connect"
+    const val ADMIN_CONVERSATIONS_DISCONNECT: String = "admin.conversations.disconnect"
+    const val ADMIN_CONVERSATIONS_SEARCH: String = "admin.conversations.search"
+    const val ADMIN_CONVERSATIONS_GET_CUSTOM_RETENTION: String = "admin.conversations.getCustomRetention"
+    const val ADMIN_CONVERSATIONS_SET_CUSTOM_RETENTION: String = "admin.conversations.setCustomRetention"
+    const val ADMIN_CONVERSATIONS_DELETE: String = "admin.conversations.delete"
+    const val ADMIN_CONVERSATIONS_GET_CUSTOM_CLASSIFICATION: String = "admin.conversations.getCustomClassification"
+    const val ADMIN_CONVERSATIONS_SET_CUSTOM_CLASSIFICATION: String = "admin.conversations.setCustomClassification"
+
+    // ------------------------------
+    // admin.conversations.restrictAccess
+    // ------------------------------
+    const val ADMIN_CONVERSATIONS_RESTRICT_ACCESS_ADD: String = "admin.conversations.restrictAccess.add"
+    const val ADMIN_CONVERSATIONS_RESTRICT_ACCESS_LIST: String = "admin.conversations.restrictAccess.list"
+    const val ADMIN_CONVERSATIONS_RESTRICT_ACCESS_REMOVE: String = "admin.conversations.restrictAccess.remove"
+
+    // ------------------------------
     // admin.users
     // ------------------------------
     const val ADMIN_USERS_ASSIGN: String = "admin.users.assign"

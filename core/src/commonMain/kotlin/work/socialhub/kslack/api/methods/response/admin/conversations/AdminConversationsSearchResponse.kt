@@ -1,0 +1,15 @@
+package work.socialhub.kslack.api.methods.response.admin.conversations
+
+import kotlinx.serialization.Serializable
+import work.socialhub.kslack.api.methods.SlackApiResponse
+import work.socialhub.kslack.api.methods.response.entity.ResponseMetadata
+import work.socialhub.kslack.entity.admin.conversation.AdminConversation
+import kotlin.js.JsExport
+
+@JsExport
+@Serializable
+class AdminConversationsSearchResponse : SlackApiResponse() {
+    var conversationCount: Int? = null
+    var conversations: Array<AdminConversation>? = null
+    var responseMetadata: ResponseMetadata? = null
+}
