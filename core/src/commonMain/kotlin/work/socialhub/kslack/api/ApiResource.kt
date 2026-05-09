@@ -1,6 +1,8 @@
 package work.socialhub.kslack.api
 
+import work.socialhub.kslack.api.methods.request.api.ApiRateLimitRequest
 import work.socialhub.kslack.api.methods.request.api.ApiTestRequest
+import work.socialhub.kslack.api.methods.response.api.ApiRateLimitResponse
 import work.socialhub.kslack.api.methods.response.api.ApiTestResponse
 import kotlin.js.JsExport
 
@@ -15,4 +17,13 @@ interface ApiResource {
     fun apiTestBlocking(
         req: ApiTestRequest
     ): ApiTestResponse
+
+    suspend fun apiRateLimit(
+        req: ApiRateLimitRequest
+    ): ApiRateLimitResponse
+
+    @JsExport.Ignore
+    fun apiRateLimitBlocking(
+        req: ApiRateLimitRequest
+    ): ApiRateLimitResponse
 }

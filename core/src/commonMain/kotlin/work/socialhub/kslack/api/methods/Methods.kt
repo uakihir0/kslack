@@ -9,6 +9,16 @@ object Methods {
     const val ADMIN_APPS_RESTRICT: String = "admin.apps.restrict"
 
     // ------------------------------
+    // admin.apps.approved
+    // ------------------------------
+    const val ADMIN_APPS_APPROVED_LIST: String = "admin.apps.approved.list"
+
+    // ------------------------------
+    // admin.apps.restricted
+    // ------------------------------
+    const val ADMIN_APPS_RESTRICTED_LIST: String = "admin.apps.restricted.list"
+
+    // ------------------------------
     // admin.apps.requests
     // ------------------------------
     const val ADMIN_APPS_REQUESTS_LIST: String = "admin.apps.requests.list"
@@ -87,6 +97,7 @@ object Methods {
     // api
     // ------------------------------
     const val API_TEST: String = "api.test"
+    const val API_RATE_LIMIT: String = "api.rateLimit"
 
     // ------------------------------
     // apps
