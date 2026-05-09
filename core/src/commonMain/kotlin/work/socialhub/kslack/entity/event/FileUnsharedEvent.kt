@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The file_unshared event is sent when a file is unshared.
  * It is sent to all connected clients for all users that had permission to see the file.

@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The channel_left event is sometimes sent to all connections for a user when that user leaves a channel.
  * It is sometimes withheld.

@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The channel_joined event is sent to all connections for a user when that user joins a channel.
  *
@@ -17,6 +19,7 @@ class ChannelJoinedEvent : Event {
     var channel: Channel? = null
 
     // TODO: the existence of these attributes has not been verified yet
+    @Serializable
     class Channel {
         var id: String? = null
         var name: String? = null

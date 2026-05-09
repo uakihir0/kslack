@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * This app event allows your app to subscribe to message events that directly mention your bot user.
  *
@@ -23,6 +25,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/app_mention
  */
+@Serializable
 class AppMentionEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null

@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * When a reaction is removed from an item the reaction_removed event is sent to all connected clients
  * for users who can see the content that had the reaction.
@@ -19,6 +21,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/reaction_removed
  */
+@Serializable
 class ReactionRemovedEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null
@@ -27,6 +30,7 @@ class ReactionRemovedEvent : Event {
     var item: Item? = null
     var eventTs: String? = null
 
+    @Serializable
     class Item {
         var type: String? = null
         var channel: String? = null

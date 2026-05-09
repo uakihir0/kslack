@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * When a reaction is added to an item the reaction_added event is sent to all connected clients
  * for users who can see the content that was reacted to.
@@ -18,6 +20,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/reaction_added
  */
+@Serializable
 class ReactionAddedEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null
@@ -26,6 +29,7 @@ class ReactionAddedEvent : Event {
     var item: Item? = null
     var eventTs: String? = null
 
+    @Serializable
     class Item {
         var type: String? = null
         var channel: String? = null

@@ -7,6 +7,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/channel_archive
  */
+@Serializable
 class ChannelArchiveEvent : Event {
     override val type: String = TYPE_NAME
     var channel: String? = null

@@ -1,8 +1,11 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * https://api.slack.com/events/message/me_message
  */
+@Serializable
 class MessageMeEvent : Event {
     override val type: String = TYPE_NAME
     override val subtype: String = SUBTYPE_NAME

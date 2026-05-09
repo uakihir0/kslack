@@ -1,8 +1,11 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * https://api.slack.com/events/app_rate_limited
  */
+@Serializable
 class AppRateLimitedEvent : Event {
     override val type: String = TYPE_NAME
 

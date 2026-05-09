@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * A channel_history_changed event is sent to all clients in a channel when bulk changes have occurred to that channel's history.
  * When clients receive this message they should reload chat history for the channel if they have any cached messages before latest.

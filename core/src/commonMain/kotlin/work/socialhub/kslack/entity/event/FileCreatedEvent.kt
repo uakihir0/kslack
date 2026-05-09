@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The file_created event is sent to all connected clients for a user when that user uploads a file to Slack.
  * The file property includes the file ID, as well as a top-level file_id.

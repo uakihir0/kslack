@@ -7,6 +7,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/file_deleted
  */
+@Serializable
 class FileDeletedEvent : Event {
     override val type: String = TYPE_NAME
     var fileId: String? = null

@@ -28,6 +28,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/member_left_channel
  */
+@Serializable
 class MemberLeftChannelEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null

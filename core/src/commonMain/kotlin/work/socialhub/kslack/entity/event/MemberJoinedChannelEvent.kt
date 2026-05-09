@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The member_joined_channel event is sent to all WebSocket connections
  * and event subscriptions when users join public or private channels.
@@ -49,6 +51,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/member_joined_channel
  */
+@Serializable
 class MemberJoinedChannelEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null
