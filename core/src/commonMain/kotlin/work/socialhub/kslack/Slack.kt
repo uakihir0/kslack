@@ -26,17 +26,18 @@ import work.socialhub.kslack.api.TeamResource
 import work.socialhub.kslack.api.UsergroupsResource
 import work.socialhub.kslack.api.UsersResource
 import work.socialhub.kslack.api.ViewsResource
+import work.socialhub.kslack.stream.SlackStream
 import kotlin.js.JsExport
 
 /**
  * Slack API Client
  * https://api.slack.com/methods
  */
-// TODO: Stream module — Add stream() accessor for Socket Mode event delivery.
 @JsExport
 interface Slack {
 
     fun admin(): AdminResource
+    fun stream(): SlackStream
     fun api(): ApiResource
     fun apps(): AppsResource
     fun auth(): AuthResource
