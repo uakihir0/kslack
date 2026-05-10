@@ -11,6 +11,14 @@ import work.socialhub.kslack.api.methods.response.workflows.steps.WorkflowsSteps
 import work.socialhub.kslack.api.methods.response.workflows.steps.WorkflowsStepsSkipResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [WorkflowsResource] for Slack's `workflows.*steps.*` API methods.
+ *
+ * Handles HTTP POST requests for completing, skipping, and cancelling workflow steps.
+ * These methods are used by third-party integrations in Slack Workflow Builder flows.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class WorkflowsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),

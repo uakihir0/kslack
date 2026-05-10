@@ -14,6 +14,14 @@ import work.socialhub.kslack.api.methods.response.admin.teams.*
 import work.socialhub.kslack.api.methods.response.admin.users.*
 import kotlin.js.JsExport
 
+/**
+ * Resource for Admin APIs (admin.apps, admin.inviteRequests, admin.teams, admin.users).
+ *
+ * Requires an admin-level OAuth token with appropriate admin scopes.
+ * See [Slack.admin()] to access this resource.
+ *
+ * @see <a href="https://api.slack.com/admins">Slack Admin API Docs</a>
+ */
 @JsExport
 interface AdminResource {
 

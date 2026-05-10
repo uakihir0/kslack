@@ -8,9 +8,50 @@ import work.socialhub.kslack.api.methods.response.usergroups.users.UsergroupUser
 import work.socialhub.kslack.api.methods.response.usergroups.users.UserGroupUsersUpdateResponse
 import kotlin.js.JsExport
 
+/**
+ * Resource interface for Slack's `usergroups.*` API methods.
+ *
+ * Provides methods for creating, managing, and updating user groups (formerly
+ * known as "usergroups"). User groups allow organizing users into teams
+ * for easier mention and discovery.
+ *
+ * # Usage Example
+ * ```kotlin
+ * // List all user groups in the workspace
+ * val groups = slack.usergroups.list(UsergroupsListRequest())
+ *
+ * // Update a user group's description
+ * val updated = slack.usergroups.update(
+ *     UsergroupsUpdateRequest(
+ *         id = "S012AB3CD",
+ *         description = "Backend development team"
+ *     )
+ * )
+ *
+ * // Update members in a user group
+ * val membersUpdated = slack.usergroup.users.update(
+ *     UsergroupUsersUpdateRequest(
+ *         id = "S012AB3CD",
+ *         users = arrayOf("U012AB3CD", "U012AB3CE")
+ *     )
+ * )
+ * ```
+ *
+ * @see <a href="https://docs.slack.dev/reference/methods/usergroups.create">usergroups.create</a>
+ * @see <a href="https://docs.slack.dev/reference/methods/usergroups.list">usergroups.list</a>
+ * @see <a href="https://docs.slack.dev/reference/methods/usergroups.update">usergroups.update</a>
+ * @see <a href="https://docs.slack.dev/reference/methods/usergroups.users.list">usergroups.users.list</a>
+ */
 @JsExport
 interface UsergroupsResource {
 
+    /**
+     * Creates a new user group.
+     *
+     * @param req Request containing the group name and optional description/m handles
+     * @return Response with the created group's ID and details
+     * @see <a href="https://docs.slack.dev/reference/methods/usergroups.create">usergroups.create</a>
+     */
     suspend fun usergroupsCreate(
         req: UsergroupsCreateRequest
     ): UserGroupsCreateResponse

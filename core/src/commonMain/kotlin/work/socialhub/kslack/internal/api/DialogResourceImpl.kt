@@ -7,6 +7,16 @@ import work.socialhub.kslack.api.methods.request.dialog.DialogOpenRequest
 import work.socialhub.kslack.api.methods.response.dialog.DialogOpenResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [DialogResource] for Slack's legacy `dialog.open` API method.
+ *
+ * Handles HTTP POST requests for opening dialog forms. Dialogs are the legacy
+ * approach for form-based interactions in Slack, replaced by Block Kit modals.
+ *
+ * @deprecated Use [ViewsResourceImpl] with `views.open` instead.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 @Deprecated("Use ViewsResource (views.open) for modals instead.")
 class DialogResourceImpl(
     token: String?

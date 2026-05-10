@@ -17,6 +17,20 @@ import work.socialhub.kslack.api.methods.response.admin.teams.*
 import work.socialhub.kslack.api.methods.response.admin.users.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [AdminResource] for Slack's `admin.*` API methods.
+ *
+ * Handles HTTP POST requests for workspace administration including:
+ * - App management (approve, restrict, list requests)
+ * - Invite request management (approve, deny, list)
+ * - Team settings (description, icon, name)
+ * - User management (assign, invite, remove, set roles)
+ * - Session management (reset sessions)
+ *
+ * All methods require `admin` OAuth scope and Enterprise Grid workspace.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class AdminResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),

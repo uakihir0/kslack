@@ -9,6 +9,24 @@ import work.socialhub.kslack.api.methods.response.chat.*
 import work.socialhub.kslack.api.methods.response.chat.scheduled_messages.ChatScheduleMessagesListResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [ChatResource] for Slack's `chat.*` API methods.
+ *
+ * Handles HTTP POST requests for sending, deleting, updating, and managing
+ * chat messages, ephemeral messages, scheduled messages, and message streaming.
+ * This is the largest resource with the most API methods.
+ *
+ * # Key Methods
+ * - `chatPostMessage` - Send a message to a channel
+ * - `chatDelete` - Delete a message
+ * - `chatUpdate` - Update a previously sent message
+ * - `chatPostEphemeral` - Send a message visible to only one user
+ * - `chatScheduleMessage` - Schedule a message for later delivery
+ * - `chatUnfurl` - Share URLs without unfurling
+ * - `chatStartStream` / `chatAppendStream` / `chatStopStream` - Stream message responses
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class ChatResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),

@@ -7,6 +7,14 @@ import work.socialhub.kslack.api.methods.request.bookmarks.*
 import work.socialhub.kslack.api.methods.response.bookmarks.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [BookmarksResource] for Slack's `bookmarks.*` API methods.
+ *
+ * Handles HTTP POST requests for managing bookmarks (links) in channels.
+ * Bookmarks appear in the channel's bookmarks tab for easy reference.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class BookmarksResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), BookmarksResource {

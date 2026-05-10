@@ -9,6 +9,17 @@ import work.socialhub.kslack.api.methods.response.admin.conversations.*
 import work.socialhub.kslack.api.methods.response.admin.conversations.restrict_access.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [AdminConversationsResource] for Slack's `admin.conversations.*` API methods.
+ *
+ * Handles HTTP POST requests for Enterprise Grid admin operations on conversations
+ * including creation, banning, archiving, deletion, custom retention, custom
+ * classification, and shared workspace management.
+ *
+ * All methods require `admin` OAuth scope and Enterprise Grid workspace.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class AdminConversationsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),

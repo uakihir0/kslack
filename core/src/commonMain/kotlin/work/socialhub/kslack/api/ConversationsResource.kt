@@ -4,6 +4,39 @@ import work.socialhub.kslack.api.methods.request.conversations.*
 import work.socialhub.kslack.api.methods.response.conversations.*
 import kotlin.js.JsExport
 
+/**
+ * Resource for Conversations APIs - the most comprehensive Slack API resource group.
+ *
+ * Provides methods for creating, listing, managing, and interacting with channels,
+ * groups, direct messages, multi-party DMs, and shared workspace conversations.
+ *
+ * **Channel Management:**
+ * - [conversationsCreate] / [conversationsRename] - Create and rename channels
+ * - [conversationsArchive] / [conversationsUnarchive] - Archive and unarchive channels
+ * - [conversationsJoin] / [conversationsLeave] / [conversationsKick] - Manage membership
+ * - [conversationsInvite] - Invite users to channels
+ * - [conversationsOpen] - Open or create a DM/MPIM with users
+ * - [conversationsClose] - Close a DM channel from your view
+ *
+ * **Channel Listing & History:**
+ * - [conversationsList] - List all channels the bot has access to
+ * - [conversationsHistory] - Get message history from a channel
+ * - [conversationsReplies] - Get thread replies
+ * - [conversationsInfo] - Get channel metadata
+ * - [conversationsMembers] - List members of a channel
+ *
+ * **Channel Configuration:**
+ * - [conversationsSetPurpose] / [conversationsSetTopic] - Set channel metadata
+ * - [conversationsMark] - Set read cursor in a channel
+ *
+ * **Shared Workspace Invitations:**
+ * - [conversationsAcceptSharedInvite] / [conversationsDeclineSharedInvite]
+ * - [conversationsApproveSharedInvite] / [conversationsRequestSharedInviteApprove] / [conversationsRequestSharedInviteDeny]
+ * - [conversationsInviteShared] - Invite external workspace members
+ * - [conversationsListConnectInvites] / [conversationsCanvasesCreate]
+ *
+ * @see <a href="https://api.slack.com/methods/conversations">Conversations API Docs</a>
+ */
 @JsExport
 interface ConversationsResource {
 

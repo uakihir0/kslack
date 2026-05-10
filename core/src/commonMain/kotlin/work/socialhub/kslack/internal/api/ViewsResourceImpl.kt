@@ -15,6 +15,14 @@ import work.socialhub.kslack.api.methods.response.views.ViewsPushResponse
 import work.socialhub.kslack.api.methods.response.views.ViewsUpdateResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [ViewsResource] for Slack's `views.*` API methods.
+ *
+ * Handles HTTP POST requests for managing Block Kit views (modals, home tabs,
+ * and message attachments). All methods use form-encoded request bodies.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class ViewsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), ViewsResource {

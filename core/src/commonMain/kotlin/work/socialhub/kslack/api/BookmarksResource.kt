@@ -4,6 +4,15 @@ import work.socialhub.kslack.api.methods.request.bookmarks.*
 import work.socialhub.kslack.api.methods.response.bookmarks.*
 import kotlin.js.JsExport
 
+/**
+ * Resource for channel bookmark management APIs.
+ *
+ * Provides methods to add, edit, list, remove, and delete bookmarks within channels.
+ * Bookmarks allow users to pin and organize important messages and files.
+ *
+ * @see <a href="https://api.slack.com/methods/bookmarks.add">bookmarks.add</a>
+ * @see <a href="https://api.slack.com/methods/bookmarks.delete">bookmarks.delete</a>
+ */
 @JsExport
 interface BookmarksResource {
 

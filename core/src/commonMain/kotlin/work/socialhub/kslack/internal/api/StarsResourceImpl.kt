@@ -11,6 +11,17 @@ import work.socialhub.kslack.api.methods.response.stars.StarsListResponse
 import work.socialhub.kslack.api.methods.response.stars.StarsRemoveResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [StarsResource] for Slack's `stars.*` API methods.
+ *
+ * Handles HTTP POST requests for adding, listing, and removing stars (bookmarks)
+ * on messages and files. Stars appear in the user's "Stars" view in Slack.
+ *
+ * @deprecated Stars API is functionally deprecated by Slack and replaced by
+ * the "Later" view. This implementation is retained for backward compatibility.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
 class StarsResourceImpl(
     token: String?

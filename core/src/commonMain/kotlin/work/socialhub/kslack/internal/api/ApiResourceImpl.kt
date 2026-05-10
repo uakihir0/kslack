@@ -9,6 +9,15 @@ import work.socialhub.kslack.api.methods.response.api.ApiRateLimitResponse
 import work.socialhub.kslack.api.methods.response.api.ApiTestResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [ApiResource] for Slack's `api.*` utility methods.
+ *
+ * Handles HTTP POST requests for API testing (`api.test`) and rate limit
+ * inspection (`api.rateLimit`). The `api.test` method does not require
+ * a token, while `api.rateLimit` returns detailed rate limit headers.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class ApiResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), ApiResource {

@@ -11,6 +11,14 @@ import work.socialhub.kslack.api.methods.response.usergroups.users.UsergroupUser
 import work.socialhub.kslack.api.methods.response.usergroups.users.UserGroupUsersUpdateResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [UsergroupsResource] for Slack's `usergroups.*` API methods.
+ *
+ * Handles HTTP POST requests for creating, enabling, disabling, listing,
+ * updating user groups and managing their member assignments.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class UsergroupsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), UsergroupsResource {

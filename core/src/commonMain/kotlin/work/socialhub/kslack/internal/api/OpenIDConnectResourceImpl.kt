@@ -7,6 +7,15 @@ import work.socialhub.kslack.api.methods.request.openid.connect.*
 import work.socialhub.kslack.api.methods.response.openid.connect.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [OpenIDConnectResource] for Slack's `openid.connect.*` API methods.
+ *
+ * Handles HTTP POST requests for OpenID Connect token exchange and user info retrieval.
+ * The `openIDConnectToken` method uses form POST without a token (client credentials only),
+ * while `openIDConnectUserInfo` requires a bearer token.
+ *
+ * @param token Optional default token for the userInfo method (token method uses client credentials)
+ */
 class OpenIDConnectResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), OpenIDConnectResource {

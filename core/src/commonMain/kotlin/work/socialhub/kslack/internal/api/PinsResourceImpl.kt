@@ -13,6 +13,14 @@ import work.socialhub.kslack.api.methods.response.pins.PinsListResponse
 import work.socialhub.kslack.api.methods.response.pins.PinsRemoveResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [PinsResource] for Slack's `pins.*` API methods.
+ *
+ * Handles HTTP POST requests for managing pinned messages and files within channels.
+ * All pin operations are channel-scoped.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class PinsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), PinsResource {

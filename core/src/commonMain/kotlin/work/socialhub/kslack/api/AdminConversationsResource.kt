@@ -6,6 +6,17 @@ import work.socialhub.kslack.api.methods.response.admin.conversations.*
 import work.socialhub.kslack.api.methods.response.admin.conversations.restrict_access.*
 import kotlin.js.JsExport
 
+/**
+ * Resource for Admin Conversations APIs (admin.conversations.*, admin.conversations.restrictAccess.*).
+ *
+ * Provides methods for creating, managing, and administering Slack channels and conversations,
+ * including workspace-level operations like ban/unban, archive/unarchive, search, custom retention,
+ * custom classification, and access restriction management.
+ *
+ * Requires an admin-level OAuth token with admin:admin_conversations scopes.
+ *
+ * @see <a href="https://api.slack.com/admins">Slack Admin API Docs</a>
+ */
 @JsExport
 interface AdminConversationsResource {
 

@@ -7,6 +7,14 @@ import work.socialhub.kslack.api.methods.request.emoji.EmojiListRequest
 import work.socialhub.kslack.api.methods.response.emoji.EmojiListResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [EmojiResource] for Slack's `emoji.list` API method.
+ *
+ * Handles HTTP POST requests for listing custom emoji available in a workspace.
+ * Returns a mapping of custom emoji names to their image URLs.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class EmojiResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), EmojiResource {

@@ -6,6 +6,14 @@ import work.socialhub.kslack.api.methods.response.calls.*
 import work.socialhub.kslack.api.methods.response.calls.participants.*
 import kotlin.js.JsExport
 
+/**
+ * Resource for Slack Huddle Calls APIs.
+ *
+ * Provides methods for creating, ending, updating, and managing calls,
+ * as well as adding and removing call participants.
+ *
+ * @see <a href="https://api.slack.com/methods/calls">Calls API Docs</a>
+ */
 @JsExport
 interface CallsResource {
 

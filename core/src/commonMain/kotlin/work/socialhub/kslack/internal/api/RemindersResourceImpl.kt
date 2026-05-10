@@ -7,6 +7,14 @@ import work.socialhub.kslack.api.methods.request.reminders.*
 import work.socialhub.kslack.api.methods.response.reminders.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [RemindersResource] for Slack's `reminders.*` API methods.
+ *
+ * Handles HTTP POST requests for creating, listing, retrieving, completing,
+ * and deleting reminders for the authenticated user.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class RemindersResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), RemindersResource {

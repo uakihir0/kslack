@@ -8,6 +8,18 @@ import work.socialhub.kslack.api.methods.response.auth.AuthTeamsListResponse
 import work.socialhub.kslack.api.methods.response.auth.AuthTestResponse
 import kotlin.js.JsExport
 
+/**
+ * Resource for Authentication APIs and OAuth URL generation.
+ *
+ * Provides:
+ * - [authRevoke] - Revoke an access token
+ * - [authTest] - Test authentication and retrieve workspace/user info
+ * - [authTeamsList] - List teams the authenticated user belongs to
+ * - [authorizationURL] - Generate OAuth 2.0 authorization URL for login flows
+ *
+ * @see <a href="https://api.slack.com/methods/auth.test">auth.test</a>
+ * @see <a href="https://api.slack.com/authentication/oauth-v2">OAuth 2.0 Guide</a>
+ */
 @JsExport
 interface AuthResource {
 

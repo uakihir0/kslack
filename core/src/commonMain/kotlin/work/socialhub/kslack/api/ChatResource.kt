@@ -6,6 +6,25 @@ import work.socialhub.kslack.api.methods.response.chat.*
 import work.socialhub.kslack.api.methods.response.chat.scheduled_messages.ChatScheduleMessagesListResponse
 import kotlin.js.JsExport
 
+/**
+ * Resource for Chat APIs - sending, updating, and managing messages.
+ *
+ * Provides the most frequently used Slack API methods:
+ * - [chatPostMessage] - Send a message to a channel (supports text, blocks, attachments)
+ * - [chatPostEphemeral] - Send an ephemeral message visible only to a specific user
+ * - [chatScheduleMessage] - Schedule a message for future delivery
+ * - [chatUpdate] - Update a previously sent message
+ * - [chatDelete] - Delete a message
+ * - [chatDeleteScheduledMessage] - Delete a scheduled message
+ * - [chatUnfurl] - Add/unfurl links in a message
+ * - [chatGetPermalink] - Get a permanent link to a message
+ * - [chatMeMessage] - Send a "me" message (displays as action)
+ * - [chatScheduleMessagesList] - List scheduled messages in a channel
+ * - [chatStartStream] / [chatAppendStream] / [chatStopStream] - Chat streaming for real-time message chunks
+ *
+ * @see <a href="https://api.slack.com/methods/chat.postMessage">chat.postMessage</a>
+ * @see <a href="https://api.slack.com/methods/chat.delete">chat.delete</a>
+ */
 @JsExport
 interface ChatResource {
 

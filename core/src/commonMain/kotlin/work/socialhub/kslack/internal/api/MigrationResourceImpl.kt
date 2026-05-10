@@ -7,6 +7,14 @@ import work.socialhub.kslack.api.methods.request.migration.MigrationExchangeRequ
 import work.socialhub.kslack.api.methods.response.migration.MigrationExchangeResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [MigrationResource] for Slack's `migration.exchange` API method.
+ *
+ * Handles HTTP POST requests for converting legacy user IDs to newer Bot User OAuth format.
+ * Used during migration from legacy tokens to the Bot Users system.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class MigrationResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), MigrationResource {
