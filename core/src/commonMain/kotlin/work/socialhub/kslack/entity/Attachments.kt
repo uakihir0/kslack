@@ -1,5 +1,12 @@
 package work.socialhub.kslack.entity
 
+/**
+ * Utility object for creating typed arrays of attachment-related models.
+ *
+ * Provides helper functions for constructing arrays of attachments,
+ * actions, fields, option groups, options, and string values.
+ * Useful for Block Kit composition and message building.
+ */
 object Attachments {
     fun asAttachments(vararg attachments: Attachment): Array<Attachment> {
         return arrayOf(*attachments)

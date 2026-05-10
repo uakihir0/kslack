@@ -9,6 +9,16 @@ import work.socialhub.kslack.entity.message.MessageIcons
 import work.socialhub.kslack.entity.message.MessageRoot
 import kotlin.js.JsExport
 
+/**
+ * Represents the latest message in a channel, including its metadata, content,
+ * and associated objects like attachments, blocks, files, and reactions.
+ *
+ * Used in channel listing responses to provide a preview of the most recent
+ * activity. Contains both the message content and flags indicating its type
+ * (bot message, upload, thread, etc.).
+ *
+ * @see <a href="https://api.slack.com/types/message">Message type reference</a>
+ */
 @JsExport
 @Serializable
 class Latest {

@@ -4,6 +4,12 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
+/**
+ * Represents a comment on a file attachment in Slack.
+ *
+ * Contains the comment ID, creation timestamp, user who wrote it,
+ * the comment text, star count, and whether it serves as the intro.
+ */
 @JsExport
 @Serializable
 class Comment {

@@ -4,7 +4,13 @@ import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
 /**
- * https://github.com/slackapi/java-slack-sdk/blob/main/slack-api-model/src/main/java/com/slack/api/model/Login.java
+ * Represents a user login record with authentication details.
+ *
+ * Contains user identification, login timestamps, access count,
+ * IP address, user agent, and geolocation information (ISP, country, region).
+ * Used in `team.accessLogs` responses.
+ *
+ * @see <a href="https://docs.slack.dev/reference/methods/team.accessLogs">team.accessLogs</a>
  */
 @JsExport
 @Serializable

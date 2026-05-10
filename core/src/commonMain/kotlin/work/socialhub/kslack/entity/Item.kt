@@ -5,6 +5,14 @@ import work.socialhub.kslack.entity.file.File
 import work.socialhub.kslack.entity.message.Message
 import kotlin.js.JsExport
 
+/**
+ * Represents a starred item which can be a message or file.
+ *
+ * Used in responses from `stars.list` API method. The `type` field
+ * distinguishes between message and file items.
+ *
+ * @see <a href="https://api.slack.com/methods/stars.list">stars.list</a>
+ */
 @JsExport
 @Serializable
 class Item {
