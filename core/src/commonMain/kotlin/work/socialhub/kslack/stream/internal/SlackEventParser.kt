@@ -22,9 +22,10 @@ object SlackEventParser {
         val jsonObject = JsonHelper.json.parseToJsonElement(jsonString).jsonObject
 
         val payload = jsonObject["payload"]?.jsonObject ?: return null
-        val eventType = payload["type"]?.jsonPrimitive?.content ?: return null
+        val event = payload["event"]?.jsonObject ?: return null
+        val eventType = event["type"]?.jsonPrimitive?.content ?: return null
 
-        return eventType to payload.toString()
+        return eventType to event.toString()
     }
 
     private fun resolveEventType(type: String, jsonString: String): Any? {
