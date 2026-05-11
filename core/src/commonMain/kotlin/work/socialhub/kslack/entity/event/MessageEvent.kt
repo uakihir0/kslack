@@ -1,5 +1,6 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.block.LayoutBlock
 
@@ -15,6 +16,7 @@ import work.socialhub.kslack.entity.block.LayoutBlock
  *
  * https://api.slack.com/events/message
  */
+@Serializable
 class MessageEvent : Event {
     var clientMsgId: String? = null
 
@@ -36,6 +38,7 @@ class MessageEvent : Event {
 
     var edited: Edited? = null
 
+    @Serializable
     class Edited {
         var user: String? = null
         var ts: String? = null

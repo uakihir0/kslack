@@ -12,6 +12,7 @@ import kotlinx.serialization.Serializable
  *
  * https://api.slack.com/events/channel_history_changed
  */
+@Serializable
 class ChannelHistoryChangedEvent : Event {
     override val type: String = TYPE_NAME
     var latest: String? = null

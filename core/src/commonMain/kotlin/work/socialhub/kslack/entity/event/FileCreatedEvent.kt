@@ -14,11 +14,13 @@ import kotlinx.serialization.Serializable
  *
  * https://api.slack.com/events/file_created
  */
+@Serializable
 class FileCreatedEvent : Event {
     override val type: String = TYPE_NAME
     var fileId: String? = null
     var file: File? = null
 
+    @Serializable
     class File {
         var id: String? = null
     }

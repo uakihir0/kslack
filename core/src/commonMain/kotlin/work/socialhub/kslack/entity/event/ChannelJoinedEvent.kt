@@ -14,6 +14,7 @@ import kotlinx.serialization.Serializable
  *
  * https://api.slack.com/events/channel_joined
  */
+@Serializable
 class ChannelJoinedEvent : Event {
     override val type: String = TYPE_NAME
     var channel: Channel? = null
