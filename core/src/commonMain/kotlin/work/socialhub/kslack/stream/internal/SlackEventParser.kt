@@ -2,16 +2,16 @@ package work.socialhub.kslack.stream.internal
 
 import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.event.*
-import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 
 object SlackEventParser {
 
     fun parseEvent(jsonString: String): EventWrapper? {
         return try {
-            val (type, eventJson) = extractEventType(jsonString)
+            val (type, payloadJson) = extractEventType(jsonString)
                 ?: return null
-            val eventClass = resolveEventType(type, eventJson)
+            val eventClass = resolveEventType(type, payloadJson)
             EventWrapper(type, eventClass, jsonString)
         } catch (e: Exception) {
             null
@@ -22,13 +22,9 @@ object SlackEventParser {
         val jsonObject = JsonHelper.json.parseToJsonElement(jsonString).jsonObject
 
         val payload = jsonObject["payload"]?.jsonObject ?: return null
-        val event = payload["event"]?.jsonObject ?: return null
+        val eventType = payload["type"]?.jsonPrimitive?.content ?: return null
 
-        val eventType = event["type"]?.let { it as kotlinx.serialization.json.JsonPrimitive }?.content
-            ?: return null
-
-        val eventJson = JsonHelper.json.encodeToString(event)
-        return eventType to eventJson
+        return eventType to payload.toString()
     }
 
     private fun resolveEventType(type: String, jsonString: String): Any? {
