@@ -3,7 +3,6 @@ package work.socialhub.kslack.stream.internal
 import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.event.*
 import work.socialhub.kslack.stream.SlackStreamListener
-import work.socialhub.khttpclient.HttpParameter
 import work.socialhub.khttpclient.HttpRequest
 import work.socialhub.khttpclient.HttpResponse
 import work.socialhub.khttpclient.websocket.WebsocketRequest
@@ -70,10 +69,9 @@ class SocketModeClient(
     }
 
     private suspend fun fetchSocketModeUrl(): String {
-        val params = listOf(HttpParameter.param("token", token))
         val response = HttpRequest()
             .url(SOCKET_MODE_ENDPOINT)
-            .also { it.params += params }
+            .header("Authorization", "Bearer $token")
             .forceApplicationFormUrlEncoded(true)
             .post()
         return parseConnectionResponse(response)
