@@ -33,7 +33,110 @@ dependencies {
 }
 ```
 
-**WIP**
+### Using as part of a regular Java project
+
+All of the above can be added to and used in regular Java projects, too. All you have to do is to use the suffix `-jvm` when listing the dependency.
+
+Here is a sample Maven configuration:
+
+```xml
+<dependency>
+    <groupId>work.socialhub.kslack</groupId>
+    <artifactId>core-jvm</artifactId>
+    <version>[VERSION]</version>
+</dependency>
+```
+
+### Authentication
+
+Create a client instance with a Slack OAuth access token (`xoxp-...` for user token, `xapp-...` for app token).
+You can also create a tokenless instance and provide the token on a per-request basis.
+
+```kotlin
+val slack = SlackFactory.instance("xoxp-your-access-token")
+
+val response = slack.auth().authTestBlocking(AuthTestRequest(token = null))
+println("ok: ${response.isOk}")
+println("team: ${response.team}")
+println("userId: ${response.userId}")
+```
+
+For OAuth 2.0 authorization URL generation:
+
+```kotlin
+val slack = SlackFactory.instance()
+
+val url = slack.auth().authorizationURL(
+    clientId = "YOUR_CLIENT_ID",
+    redirectUri = "https://your-app.com/callback",
+    scope = "chat:write,channels:read,channels:history",
+    userScope = "users:read",
+)
+
+println("Auth URL: $url")
+```
+
+### Sending a Chat Message
+
+```kotlin
+val slack = SlackFactory.instance("xoxp-your-access-token")
+
+slack.chat().chatPostMessageBlocking(
+    ChatPostMessageRequest(
+        channel = "#general",
+        text = "Hello from kslack!"
+    )
+)
+```
+
+### Get List of Channels
+
+```kotlin
+val slack = SlackFactory.instance("xoxp-your-access-token")
+
+val response = slack.conversations().conversationsListBlocking(
+    ConversationsListRequest(isExcludeArchived = true)
+)
+
+for (channel in response.channels!!) {
+    println("found channel: id=${channel.id} name=${channel.name}")
+}
+```
+
+### Streaming (Socket Mode)
+
+The streaming module uses Socket Mode to receive real-time events from Slack.
+A token is required when creating the Slack instance.
+
+```kotlin
+val slack = SlackFactory.instance("xapp-your-app-token")
+
+val stream = slack.stream()
+
+stream.addEventListener(object : SlackStreamListener {
+    override fun onMessage(event: MessageEvent) {
+        println("Received message: ${event.text}")
+    }
+
+    override fun onOpen() {
+        println("Stream connected")
+    }
+
+    override fun onClose() {
+        println("Stream closed")
+    }
+
+    override fun onError(error: Exception) {
+        println("Stream error: ${error.message}")
+    }
+})
+
+// Start the streaming connection
+stream.start()
+
+// ... later, stop the connection
+stream.stop()
+```
 
 ## License
 
