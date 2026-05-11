@@ -78,7 +78,7 @@ class PinsResourceImpl(
     ): PinsDeleteResponse {
         return postFormWithToken(
             req.toParams(),
-            Methods.PINS_DELETE,
+            Methods.PINS_REMOVE,
             getToken(req),
         )
     }

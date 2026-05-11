@@ -159,7 +159,6 @@ object Methods {
     const val BOOKMARKS_EDIT: String = "bookmarks.edit"
     const val BOOKMARKS_LIST: String = "bookmarks.list"
     const val BOOKMARKS_REMOVE: String = "bookmarks.remove"
-    const val BOOKMARKS_DELETE: String = "bookmarks.delete"
 
     // ------------------------------
     // bots
@@ -312,7 +311,6 @@ object Methods {
     const val PINS_ADD: String = "pins.add"
     const val PINS_LIST: String = "pins.list"
     const val PINS_REMOVE: String = "pins.remove"
-    const val PINS_DELETE: String = "pins.delete"
 
     // ------------------------------
     // reactions

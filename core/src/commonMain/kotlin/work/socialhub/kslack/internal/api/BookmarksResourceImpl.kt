@@ -88,7 +88,7 @@ class BookmarksResourceImpl(
     ): BookmarksDeleteResponse {
         return postFormWithToken(
             req.toParams(),
-            Methods.BOOKMARKS_DELETE,
+            Methods.BOOKMARKS_REMOVE,
             getToken(req),
         )
     }
