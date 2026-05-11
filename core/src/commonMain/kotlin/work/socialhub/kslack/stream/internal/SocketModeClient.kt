@@ -29,11 +29,12 @@ class SocketModeClient(
     private var isIntentionallyClosed: Boolean = false
     private var currentReconnectDelay: Long = INITIAL_RECONNECT_DELAY_MS
     private var reconnectJob: Job? = null
-    private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
+    private var scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
     suspend fun start() {
         if (isConnected) return
         isIntentionallyClosed = false
+        scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
         currentReconnectDelay = INITIAL_RECONNECT_DELAY_MS
         connectWithRetry()
     }
@@ -41,6 +42,7 @@ class SocketModeClient(
     fun stop() {
         isIntentionallyClosed = true
         reconnectJob?.cancel()
+        scope.cancel()
         try {
             websocket?.close()
         } catch (e: Exception) {
