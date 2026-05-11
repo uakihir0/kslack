@@ -130,6 +130,22 @@ class SlackStreamImpl(
         listeners.forEach { it.onReactionRemoved(event) }
     }
 
+    override fun onAppHomeOpened(event: work.socialhub.kslack.entity.event.AppHomeOpenedEvent) {
+        listeners.forEach { it.onAppHomeOpened(event) }
+    }
+
+    override fun onBotAdded(event: work.socialhub.kslack.entity.event.BotAddedEvent) {
+        listeners.forEach { it.onBotAdded(event) }
+    }
+
+    override fun onBotChanged(event: work.socialhub.kslack.entity.event.BotChangedEvent) {
+        listeners.forEach { it.onBotChanged(event) }
+    }
+
+    override fun onAppUninstalled(event: work.socialhub.kslack.entity.event.AppUninstalledEvent) {
+        listeners.forEach { it.onAppUninstalled(event) }
+    }
+
     override fun onError(error: Exception) {
         listeners.forEach { it.onError(error) }
     }

@@ -1,7 +1,11 @@
 package work.socialhub.kslack.stream
 
+import work.socialhub.kslack.entity.event.AppHomeOpenedEvent
 import work.socialhub.kslack.entity.event.AppMentionEvent
 import work.socialhub.kslack.entity.event.AppRateLimitedEvent
+import work.socialhub.kslack.entity.event.AppUninstalledEvent
+import work.socialhub.kslack.entity.event.BotAddedEvent
+import work.socialhub.kslack.entity.event.BotChangedEvent
 import work.socialhub.kslack.entity.event.ChannelArchiveEvent
 import work.socialhub.kslack.entity.event.ChannelCreatedEvent
 import work.socialhub.kslack.entity.event.ChannelDeletedEvent
@@ -76,6 +80,14 @@ interface SlackStreamListener {
     fun onReactionAdded(event: ReactionAddedEvent) {}
 
     fun onReactionRemoved(event: ReactionRemovedEvent) {}
+
+    fun onAppHomeOpened(event: AppHomeOpenedEvent) {}
+
+    fun onBotAdded(event: BotAddedEvent) {}
+
+    fun onBotChanged(event: BotChangedEvent) {}
+
+    fun onAppUninstalled(event: AppUninstalledEvent) {}
 
     fun onError(error: Exception) {}
 

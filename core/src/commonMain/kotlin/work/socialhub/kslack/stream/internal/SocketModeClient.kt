@@ -173,6 +173,10 @@ class SocketModeClient(
             is MessageDeletedEvent -> listener.onMessageDeleted(event)
             is MessageEvent -> listener.onMessage(event)
             is MessageMeEvent -> listener.onMeMessage(event)
+            is AppHomeOpenedEvent -> listener.onAppHomeOpened(event)
+            is BotAddedEvent -> listener.onBotAdded(event)
+            is BotChangedEvent -> listener.onBotChanged(event)
+            is AppUninstalledEvent -> listener.onAppUninstalled(event)
             else -> {}
         }
     }
