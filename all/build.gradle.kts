@@ -18,6 +18,7 @@ kotlin {
         binaries.library()
         compilerOptions {
             generateTypeScriptDefinitions()
+            freeCompilerArgs.add("-Xes-long-as-bigint")
         }
     }
 
