@@ -10,7 +10,7 @@ object SlackStreamFactory {
      * get SlackStream instance
      */
     fun instance(
-        token: String = "",
+        token: String? = null,
     ): SlackStream {
         return SlackStreamImpl(token)
     }

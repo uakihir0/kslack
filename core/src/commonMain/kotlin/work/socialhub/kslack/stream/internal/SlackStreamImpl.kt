@@ -4,13 +4,15 @@ import work.socialhub.kslack.stream.SlackStream
 import work.socialhub.kslack.stream.SlackStreamListener
 
 class SlackStreamImpl(
-    private val token: String,
+    private val token: String?,
 ) : SlackStream, SlackStreamListener {
 
-    private val client = SocketModeClient(token, this)
+    private val client = SocketModeClient(token ?: "", this)
     private val listeners = mutableListOf<SlackStreamListener>()
 
-    override fun token() = token
+    override fun token(): String {
+        return token ?: ""
+    }
 
     override suspend fun start() {
         client.start()

@@ -8,9 +8,8 @@ import work.socialhub.khttpclient.HttpRequest
 import work.socialhub.khttpclient.HttpResponse
 import work.socialhub.khttpclient.websocket.WebsocketRequest
 import kotlinx.coroutines.*
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import kotlin.js.JsExport
 
 @JsExport
@@ -121,22 +120,28 @@ class SocketModeClient(
     private fun onMessage(message: String) {
         try {
             val jsonElement = JsonHelper.json.parseToJsonElement(message)
+            val envelopeId = jsonElement.jsonObject["envelope_id"]?.jsonPrimitive?.content ?: ""
             val type = jsonElement.jsonObject["type"]?.jsonPrimitive?.content
+
             if (type == "socket_mode_enqueue") {
-                scope.launch { sendAck() }
+                scope.launch { sendAck(envelopeId) }
                 return
             }
+
             val wrapper = SlackEventParser.parseEvent(message)
             if (wrapper != null) {
+                scope.launch { sendAck(envelopeId) }
                 dispatchEvent(wrapper)
+            } else if (type != null) {
+                scope.launch { sendAck(envelopeId) }
             }
         } catch (e: Exception) {
             listener.onError(e)
         }
     }
 
-    private suspend fun sendAck() {
-        websocket?.sendText("{\"type\":\"ack\"}")
+    private suspend fun sendAck(envelopeId: String) {
+        websocket?.sendText("""{"type":"ack","envelope_id":"$envelopeId"}""")
     }
 
     private fun dispatchEvent(wrapper: EventWrapper) {
