@@ -9,6 +9,7 @@ class SlackStreamImpl(
 
     private val client = SocketModeClient(token ?: "", this)
     private val listeners = mutableListOf<SlackStreamListener>()
+    private val listenerLock = Any()
 
     override fun token(): String {
         return token ?: ""
@@ -27,134 +28,144 @@ class SlackStreamImpl(
     }
 
     override fun addEventListener(listener: SlackStreamListener) {
-        listeners.add(listener)
+        synchronized(listenerLock) { listeners.add(listener) }
     }
 
     override fun removeEventListener(listener: SlackStreamListener) {
-        listeners.remove(listener)
+        synchronized(listenerLock) { listeners.remove(listener) }
+    }
+
+    private inline fun forEachListener(action: (SlackStreamListener) -> Unit) {
+        val snapshot = synchronized(listenerLock) { listeners.toList() }
+        snapshot.forEach { listener ->
+            try {
+                action(listener)
+            } catch (_: Exception) {
+            }
+        }
     }
 
     override fun onAppMention(event: work.socialhub.kslack.entity.event.AppMentionEvent) {
-        listeners.forEach { it.onAppMention(event) }
+        forEachListener { it.onAppMention(event) }
     }
 
     override fun onAppRateLimited(event: work.socialhub.kslack.entity.event.AppRateLimitedEvent) {
-        listeners.forEach { it.onAppRateLimited(event) }
+        forEachListener { it.onAppRateLimited(event) }
     }
 
     override fun onChannelArchive(event: work.socialhub.kslack.entity.event.ChannelArchiveEvent) {
-        listeners.forEach { it.onChannelArchive(event) }
+        forEachListener { it.onChannelArchive(event) }
     }
 
     override fun onChannelCreated(event: work.socialhub.kslack.entity.event.ChannelCreatedEvent) {
-        listeners.forEach { it.onChannelCreated(event) }
+        forEachListener { it.onChannelCreated(event) }
     }
 
     override fun onChannelDeleted(event: work.socialhub.kslack.entity.event.ChannelDeletedEvent) {
-        listeners.forEach { it.onChannelDeleted(event) }
+        forEachListener { it.onChannelDeleted(event) }
     }
 
     override fun onChannelHistoryChanged(event: work.socialhub.kslack.entity.event.ChannelHistoryChangedEvent) {
-        listeners.forEach { it.onChannelHistoryChanged(event) }
+        forEachListener { it.onChannelHistoryChanged(event) }
     }
 
     override fun onChannelJoined(event: work.socialhub.kslack.entity.event.ChannelJoinedEvent) {
-        listeners.forEach { it.onChannelJoined(event) }
+        forEachListener { it.onChannelJoined(event) }
     }
 
     override fun onChannelLeft(event: work.socialhub.kslack.entity.event.ChannelLeftEvent) {
-        listeners.forEach { it.onChannelLeft(event) }
+        forEachListener { it.onChannelLeft(event) }
     }
 
     override fun onChannelMarked(event: work.socialhub.kslack.entity.event.ChannelMarkedEvent) {
-        listeners.forEach { it.onChannelMarked(event) }
+        forEachListener { it.onChannelMarked(event) }
     }
 
     override fun onChannelRename(event: work.socialhub.kslack.entity.event.ChannelRenameEvent) {
-        listeners.forEach { it.onChannelRename(event) }
+        forEachListener { it.onChannelRename(event) }
     }
 
     override fun onChannelUnarchive(event: work.socialhub.kslack.entity.event.ChannelUnarchiveEvent) {
-        listeners.forEach { it.onChannelUnarchive(event) }
+        forEachListener { it.onChannelUnarchive(event) }
     }
 
     override fun onFileChanged(event: work.socialhub.kslack.entity.event.FileChangeEvent) {
-        listeners.forEach { it.onFileChanged(event) }
+        forEachListener { it.onFileChanged(event) }
     }
 
     override fun onFileCreated(event: work.socialhub.kslack.entity.event.FileCreatedEvent) {
-        listeners.forEach { it.onFileCreated(event) }
+        forEachListener { it.onFileCreated(event) }
     }
 
     override fun onFileDeleted(event: work.socialhub.kslack.entity.event.FileDeletedEvent) {
-        listeners.forEach { it.onFileDeleted(event) }
+        forEachListener { it.onFileDeleted(event) }
     }
 
     override fun onFileShared(event: work.socialhub.kslack.entity.event.FileSharedEvent) {
-        listeners.forEach { it.onFileShared(event) }
+        forEachListener { it.onFileShared(event) }
     }
 
     override fun onFileUnshared(event: work.socialhub.kslack.entity.event.FileUnsharedEvent) {
-        listeners.forEach { it.onFileUnshared(event) }
+        forEachListener { it.onFileUnshared(event) }
     }
 
     override fun onMemberJoinedChannel(event: work.socialhub.kslack.entity.event.MemberJoinedChannelEvent) {
-        listeners.forEach { it.onMemberJoinedChannel(event) }
+        forEachListener { it.onMemberJoinedChannel(event) }
     }
 
     override fun onMemberLeftChannel(event: work.socialhub.kslack.entity.event.MemberLeftChannelEvent) {
-        listeners.forEach { it.onMemberLeftChannel(event) }
+        forEachListener { it.onMemberLeftChannel(event) }
     }
 
     override fun onMessageChanged(event: work.socialhub.kslack.entity.event.MessageChangedEvent) {
-        listeners.forEach { it.onMessageChanged(event) }
+        forEachListener { it.onMessageChanged(event) }
     }
 
     override fun onMessageDeleted(event: work.socialhub.kslack.entity.event.MessageDeletedEvent) {
-        listeners.forEach { it.onMessageDeleted(event) }
+        forEachListener { it.onMessageDeleted(event) }
     }
 
     override fun onMessage(event: work.socialhub.kslack.entity.event.MessageEvent) {
-        listeners.forEach { it.onMessage(event) }
+        forEachListener { it.onMessage(event) }
     }
 
     override fun onMeMessage(event: work.socialhub.kslack.entity.event.MessageMeEvent) {
-        listeners.forEach { it.onMeMessage(event) }
+        forEachListener { it.onMeMessage(event) }
     }
 
     override fun onReactionAdded(event: work.socialhub.kslack.entity.event.ReactionAddedEvent) {
-        listeners.forEach { it.onReactionAdded(event) }
+        forEachListener { it.onReactionAdded(event) }
     }
 
     override fun onReactionRemoved(event: work.socialhub.kslack.entity.event.ReactionRemovedEvent) {
-        listeners.forEach { it.onReactionRemoved(event) }
+        forEachListener { it.onReactionRemoved(event) }
     }
 
     override fun onAppHomeOpened(event: work.socialhub.kslack.entity.event.AppHomeOpenedEvent) {
-        listeners.forEach { it.onAppHomeOpened(event) }
+        forEachListener { it.onAppHomeOpened(event) }
     }
 
     override fun onBotAdded(event: work.socialhub.kslack.entity.event.BotAddedEvent) {
-        listeners.forEach { it.onBotAdded(event) }
+        forEachListener { it.onBotAdded(event) }
     }
 
     override fun onBotChanged(event: work.socialhub.kslack.entity.event.BotChangedEvent) {
-        listeners.forEach { it.onBotChanged(event) }
+        forEachListener { it.onBotChanged(event) }
     }
 
     override fun onAppUninstalled(event: work.socialhub.kslack.entity.event.AppUninstalledEvent) {
-        listeners.forEach { it.onAppUninstalled(event) }
+        forEachListener { it.onAppUninstalled(event) }
     }
 
     override fun onError(error: Exception) {
-        listeners.forEach { it.onError(error) }
+        forEachListener { it.onError(error) }
     }
 
     override fun onOpen() {
-        listeners.forEach { it.onOpen() }
+        forEachListener { it.onOpen() }
     }
 
     override fun onClose() {
-        listeners.forEach { it.onClose() }
+        forEachListener { it.onClose() }
     }
 }

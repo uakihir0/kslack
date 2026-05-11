@@ -10,6 +10,7 @@ import work.socialhub.khttpclient.websocket.WebsocketRequest
 import kotlinx.coroutines.*
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
+import kotlin.concurrent.Volatile
 import kotlin.js.JsExport
 
 @JsExport
@@ -24,8 +25,11 @@ class SocketModeClient(
         private const val SOCKET_MODE_ENDPOINT = "https://slack.com/api/apps.connections.open"
     }
 
+    @Volatile
     private var websocket: WebsocketRequest? = null
+    @Volatile
     private var isConnected: Boolean = false
+    @Volatile
     private var isIntentionallyClosed: Boolean = false
     private var currentReconnectDelay: Long = INITIAL_RECONNECT_DELAY_MS
     private var reconnectJob: Job? = null
