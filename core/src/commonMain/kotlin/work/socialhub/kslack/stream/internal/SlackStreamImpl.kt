@@ -1,5 +1,6 @@
 package work.socialhub.kslack.stream.internal
 
+import kotlin.concurrent.AtomicReference
 import work.socialhub.kslack.stream.SlackStream
 import work.socialhub.kslack.stream.SlackStreamListener
 
@@ -8,8 +9,7 @@ class SlackStreamImpl(
 ) : SlackStream, SlackStreamListener {
 
     private val client = SocketModeClient(token ?: "", this)
-    private val listeners = mutableListOf<SlackStreamListener>()
-    private val listenerLock = Any()
+    private val listenersRef = AtomicReference(emptyList<SlackStreamListener>())
 
     override fun token(): String {
         return token ?: ""
@@ -28,16 +28,21 @@ class SlackStreamImpl(
     }
 
     override fun addEventListener(listener: SlackStreamListener) {
-        synchronized(listenerLock) { listeners.add(listener) }
+        while (true) {
+            val current = listenersRef.load()
+            if (listenersRef.compareAndSet(current, current + listener)) break
+        }
     }
 
     override fun removeEventListener(listener: SlackStreamListener) {
-        synchronized(listenerLock) { listeners.remove(listener) }
+        while (true) {
+            val current = listenersRef.load()
+            if (listenersRef.compareAndSet(current, current - listener)) break
+        }
     }
 
-    private inline fun forEachListener(action: (SlackStreamListener) -> Unit) {
-        val snapshot = synchronized(listenerLock) { listeners.toList() }
-        snapshot.forEach { listener ->
+    private fun forEachListener(action: (SlackStreamListener) -> Unit) {
+        listenersRef.load().forEach { listener ->
             try {
                 action(listener)
             } catch (_: Exception) {
