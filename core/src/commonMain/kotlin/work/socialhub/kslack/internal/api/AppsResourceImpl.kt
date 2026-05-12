@@ -9,6 +9,14 @@ import work.socialhub.kslack.api.methods.response.apps.AppsUninstallResponse
 import work.socialhub.kslack.api.methods.response.apps.connections.AppsConnectionsOpenResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [AppsResource] for Slack's `apps.*` API methods.
+ *
+ * Handles HTTP POST requests for app connection management (WebSocket
+ * connection opening for event subscriptions) and app uninstallation.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class AppsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), AppsResource {

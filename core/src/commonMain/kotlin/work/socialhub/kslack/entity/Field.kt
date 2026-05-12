@@ -5,7 +5,13 @@ import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
 /**
- * https://api.slack.com/docs/message-attachments
+ * Represents a named field in a Slack message attachment.
+ *
+ * Fields are displayed in a table inside the attachment. Short fields
+ * appear side-by-side with other short fields, while long fields take
+ * the full width. Used in `Attachment.fields`.
+ *
+ * @see <a href="https://api.slack.com/docs/message-attachments">Message attachments</a>
  */
 @JsExport
 @Serializable

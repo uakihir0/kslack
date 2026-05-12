@@ -5,7 +5,12 @@ import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
 /**
- * - https://api.slack.com/methods/reminders.add
+ * Represents a Slack reminder created via the `reminders.*` API methods.
+ *
+ * Contains the reminder ID, creator and user IDs, text content,
+ * scheduled time, and completion status.
+ *
+ * @see <a href="https://docs.slack.dev/reference/methods/reminders.add">reminders.add</a>
  */
 @JsExport
 @Serializable

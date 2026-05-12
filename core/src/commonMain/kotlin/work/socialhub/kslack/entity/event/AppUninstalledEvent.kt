@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * This Events API-only event is sent via subscription whenever a Slack app is completely uninstalled.
  *
@@ -14,6 +16,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/app_uninstalled
  */
+@Serializable
 class AppUninstalledEvent : Event {
     override val type: String = TYPE_NAME
 

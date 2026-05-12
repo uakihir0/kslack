@@ -9,6 +9,16 @@ import work.socialhub.kslack.api.methods.response.files.*
 import work.socialhub.kslack.api.methods.response.files.remote.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [FilesResource] for Slack's `files.*` API methods.
+ *
+ * Handles HTTP POST requests for file upload, deletion, listing, and remote file operations.
+ * Uses form-encoded request bodies for most methods and multipart for file uploads.
+ *
+ * Token resolution: request-level token > constructor token > fallback to AbstractResourceImpl default.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class FilesResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),

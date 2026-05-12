@@ -4,7 +4,10 @@ import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
 /**
- * - https://github.com/slackapi/java-slack-sdk/blob/main/slack-api-model/src/main/java/com/slack/api/model/Option.java
+ * Represents an option in a select menu or multi-select menu within a Block Kit composition.
+ *
+ * Each option has display `text` and a `value` that is sent when selected.
+ * Used in `Action.options`, `Action.selectedOptions`, and `ActionOption.options`.
  */
 @JsExport
 @Serializable

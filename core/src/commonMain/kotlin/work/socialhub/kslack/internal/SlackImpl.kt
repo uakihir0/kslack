@@ -1,9 +1,11 @@
 package work.socialhub.kslack.internal
 
 import work.socialhub.kslack.Slack
+import work.socialhub.kslack.api.AdminConversationsResource
 import work.socialhub.kslack.api.AdminResource
 import work.socialhub.kslack.api.ApiResource
 import work.socialhub.kslack.api.AppsResource
+import work.socialhub.kslack.api.WorkflowsResource
 import work.socialhub.kslack.api.AuthResource
 import work.socialhub.kslack.api.BookmarksResource
 import work.socialhub.kslack.api.BotsResource
@@ -27,6 +29,7 @@ import work.socialhub.kslack.api.TeamResource
 import work.socialhub.kslack.api.UsergroupsResource
 import work.socialhub.kslack.api.UsersResource
 import work.socialhub.kslack.api.ViewsResource
+import work.socialhub.kslack.internal.api.AdminConversationsResourceImpl
 import work.socialhub.kslack.internal.api.AdminResourceImpl
 import work.socialhub.kslack.internal.api.ApiResourceImpl
 import work.socialhub.kslack.internal.api.AppsResourceImpl
@@ -53,12 +56,43 @@ import work.socialhub.kslack.internal.api.TeamResourceImpl
 import work.socialhub.kslack.internal.api.UsergroupsResourceImpl
 import work.socialhub.kslack.internal.api.UsersResourceImpl
 import work.socialhub.kslack.internal.api.ViewsResourceImpl
+import work.socialhub.kslack.internal.api.WorkflowsResourceImpl
+import work.socialhub.kslack.stream.SlackStream
+import work.socialhub.kslack.stream.internal.SlackStreamImpl
 
+/**
+ * Concrete implementation of the [Slack] API client interface.
+ *
+ * Eagerly instantiates all 28 resource implementations (admin, chat, users,
+ * conversations, etc.) and passes the optional default token to each. Resources
+ * that don't require authentication (e.g., [StatusResourceImpl], [OAuthResourceImpl])
+ * are instantiated without a token.
+ *
+ * The streaming resource ([SlackStream]) is lazily initialized and requires
+ * a token to be present. If accessed without a token, it throws an
+ * [IllegalStateException].
+ *
+ * This class is the only implementation of [Slack] and should always be
+ * accessed via [SlackFactory.instance] rather than constructed directly.
+ *
+ * @param token Optional default OAuth access token for all API calls
+ * @see SlackFactory
+ * @see Slack
+ */
 class SlackImpl(
+    /**
+     * Default OAuth access token for all API calls.
+     * Can be null if tokens are provided per-request.
+     */
     override val token: String? = null,
 ) : Slack {
 
+    // ----------------------------------------------
+    // Resource implementations (eagerly initialized)
+    // ----------------------------------------------
+
     private val admin: AdminResource = AdminResourceImpl(token)
+    private val adminConversations: AdminConversationsResource = AdminConversationsResourceImpl(token)
     private val api: ApiResource = ApiResourceImpl(token)
     private val apps: AppsResource = AppsResourceImpl(token)
     private val auth: AuthResource = AuthResourceImpl(token)
@@ -84,8 +118,23 @@ class SlackImpl(
     private val usergroups: UsergroupsResource = UsergroupsResourceImpl(token)
     private val users: UsersResource = UsersResourceImpl(token)
     private val views: ViewsResource = ViewsResourceImpl(token)
+    private val workflows: WorkflowsResource = WorkflowsResourceImpl(token)
+
+    // ----------------------------------------------
+    // Streaming resource (lazily initialized)
+    // ----------------------------------------------
+
+    private val streamInstance: SlackStream by lazy {
+        val t = token ?: throw IllegalStateException("Token is required for streaming. Use SlackFactory.instance(token) to create a Slack instance with a token.")
+        SlackStreamImpl(t)
+    }
+
+    // ----------------------------------------------
+    // Resource accessors
+    // ----------------------------------------------
 
     override fun admin() = admin
+    override fun adminConversations() = adminConversations
     override fun api() = api
     override fun apps() = apps
     override fun auth() = auth
@@ -113,4 +162,6 @@ class SlackImpl(
     override fun usergroups() = usergroups
     override fun users() = users
     override fun views() = views
+    override fun workflows() = workflows
+    override fun stream() = streamInstance
 }

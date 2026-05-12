@@ -11,6 +11,14 @@ import work.socialhub.kslack.api.methods.response.search.SearchFilesResponse
 import work.socialhub.kslack.api.methods.response.search.SearchMessagesResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [SearchResource] for Slack's `search.*` API methods.
+ *
+ * Handles HTTP POST requests for searching messages, files, and all content
+ * across a workspace. Requires `search:read` OAuth scope for most methods.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class SearchResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), SearchResource {

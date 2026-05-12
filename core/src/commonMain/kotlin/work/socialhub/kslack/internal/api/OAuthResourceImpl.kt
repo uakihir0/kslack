@@ -11,6 +11,17 @@ import work.socialhub.kslack.api.methods.response.oauth.OAuthV2AccessResponse
 import work.socialhub.kslack.api.methods.response.oauth.OAuthV2ExchangeResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [OAuthResource] for Slack's `oauth.*` API methods.
+ *
+ * Handles OAuth2 authorization code and refresh token exchange.
+ * Note: This implementation has methods marked as TODO - not yet implemented.
+ * Use [AuthResourceImpl] for the OAuth authorization URL generation instead.
+ *
+ * The `oauthAccess` and `oauthToken` methods are deprecated in favor of `oauthV2Access`.
+ *
+ * @param token Not used (OAuth methods use client credentials, not workspace tokens)
+ */
 class OAuthResourceImpl : OAuthResource {
 
     @Deprecated("Use oauthV2Access instead.")

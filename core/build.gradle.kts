@@ -18,6 +18,9 @@ kotlin {
     js(IR) {
         nodejs()
         browser()
+        compilerOptions {
+            freeCompilerArgs.add("-Xes-long-as-bigint")
+        }
     }
 
     if (HostManager.hostIsMac) {

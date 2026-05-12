@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The file_unshared event is sent when a file is unshared.
  * It is sent to all connected clients for all users that had permission to see the file.
@@ -9,11 +11,13 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/file_unshared
  */
+@Serializable
 class FileUnsharedEvent : Event {
     override val type: String = TYPE_NAME
     var fileId: String? = null
     var file: File? = null
 
+    @Serializable
     class File {
         var id: String? = null
     }

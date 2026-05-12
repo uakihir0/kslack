@@ -1,15 +1,27 @@
 package work.socialhub.kslack.api
 
 import work.socialhub.kslack.api.methods.request.admin.apps.*
+import work.socialhub.kslack.api.methods.request.admin.apps.approved.AdminAppsApprovedListRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.restricted.AdminAppsRestrictedListRequest
 import work.socialhub.kslack.api.methods.request.admin.invite_requests.*
 import work.socialhub.kslack.api.methods.request.admin.teams.*
 import work.socialhub.kslack.api.methods.request.admin.users.*
 import work.socialhub.kslack.api.methods.response.admin.apps.*
+import work.socialhub.kslack.api.methods.response.admin.apps.approved.AdminAppsApprovedListResponse
+import work.socialhub.kslack.api.methods.response.admin.apps.restricted.AdminAppsRestrictedListResponse
 import work.socialhub.kslack.api.methods.response.admin.invite_requests.*
 import work.socialhub.kslack.api.methods.response.admin.teams.*
 import work.socialhub.kslack.api.methods.response.admin.users.*
 import kotlin.js.JsExport
 
+/**
+ * Resource for Admin APIs (admin.apps, admin.inviteRequests, admin.teams, admin.users).
+ *
+ * Requires an admin-level OAuth token with appropriate admin scopes.
+ * See [Slack.admin()] to access this resource.
+ *
+ * @see <a href="https://api.slack.com/admins">Slack Admin API Docs</a>
+ */
 @JsExport
 interface AdminResource {
 
@@ -201,4 +213,22 @@ interface AdminResource {
     fun adminUsersSessionResetBlocking(
         req: AdminUsersSessionResetRequest
     ): AdminUsersSessionResetResponse
+
+    suspend fun adminAppsApprovedList(
+        req: AdminAppsApprovedListRequest
+    ): AdminAppsApprovedListResponse
+
+    @JsExport.Ignore
+    fun adminAppsApprovedListBlocking(
+        req: AdminAppsApprovedListRequest
+    ): AdminAppsApprovedListResponse
+
+    suspend fun adminAppsRestrictedList(
+        req: AdminAppsRestrictedListRequest
+    ): AdminAppsRestrictedListResponse
+
+    @JsExport.Ignore
+    fun adminAppsRestrictedListBlocking(
+        req: AdminAppsRestrictedListRequest
+    ): AdminAppsRestrictedListResponse
 }

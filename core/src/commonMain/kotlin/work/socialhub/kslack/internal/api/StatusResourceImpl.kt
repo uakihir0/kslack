@@ -9,6 +9,16 @@ import work.socialhub.kslack.api.status.model.CurrentStatus
 import work.socialhub.kslack.api.status.model.SlackIssue
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [StatusResource] for accessing the Slack Status API.
+ *
+ * Makes direct HTTP GET requests to the public Slack Status page at
+ * https://status.slack.com (redirects to https://slack-status.com).
+ * Does not require authentication or a Slack API token.
+ *
+ * Uses [HttpRequest] directly instead of [AbstractResourceImpl] methods
+ * since this targets an external API endpoint.
+ */
 class StatusResourceImpl : StatusResource {
 
     override suspend fun current(): CurrentStatus {

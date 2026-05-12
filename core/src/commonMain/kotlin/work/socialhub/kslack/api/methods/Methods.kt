@@ -1,12 +1,54 @@
 package work.socialhub.kslack.api.methods
 
+/**
+ * Constants for all Slack Web API method names.
+ *
+ * Each constant holds the exact method string used in Slack API endpoint URLs
+ * (e.g., `chat.postMessage` → `https://slack.com/api/chat.postMessage`).
+ *
+ * Methods are organized by API category, matching the Slack API documentation:
+ * - [Admin APIs](https://api.slack.com/admins) - Workspace administration
+ * - [Apps API](https://api.slack.com/apps) - App configuration
+ * - [Auth API](https://api.slack.com/auth) - Authentication
+ * - [Chat API](https://api.slack.com/methods/chat) - Message management
+ * - [Conversations API](https://api.slack.com/methods/conversations) - Channel management
+ * - [Files API](https://api.slack.com/methods/files) - File management
+ * - [Users API](https://api.slack.com/methods/users) - User information
+ * - [Views API](https://api.slack.com/block-kit/surfaces/modals) - Modal and tab surfaces
+ * - [Workflows API](https://api.slack.com/workflows) - Workflow steps
+ *
+ * Usage in resource implementations:
+ * ```kotlin
+ * suspend fun chatPostMessage(req: ChatPostMessageRequest): ChatPostMessageResponse {
+ *     return postFormWithToken<ChatPostMessageResponse>(
+ *         params = req.toParams(),
+ *         endpoint = Methods.CHAT_POST_MESSAGE,
+ *         token = getToken(req)
+ *     )
+ * }
+ * ```
+ *
+ * @see SlackApiRequest
+ * @see FormRequest
+ */
 object Methods {
 
     // ------------------------------
     // admin.apps
+    // https://api.slack.com/admins
     // ------------------------------
     const val ADMIN_APPS_APPROVE: String = "admin.apps.approve"
     const val ADMIN_APPS_RESTRICT: String = "admin.apps.restrict"
+
+    // ------------------------------
+    // admin.apps.approved
+    // ------------------------------
+    const val ADMIN_APPS_APPROVED_LIST: String = "admin.apps.approved.list"
+
+    // ------------------------------
+    // admin.apps.restricted
+    // ------------------------------
+    const val ADMIN_APPS_RESTRICTED_LIST: String = "admin.apps.restricted.list"
 
     // ------------------------------
     // admin.apps.requests
@@ -45,6 +87,30 @@ object Methods {
     const val ADMIN_TEAMS_SETTINGS_SET_NAME: String = "admin.teams.settings.setName"
 
     // ------------------------------
+    // admin.conversations
+    // ------------------------------
+    const val ADMIN_CONVERSATIONS_CREATE: String = "admin.conversations.create"
+    const val ADMIN_CONVERSATIONS_BAN: String = "admin.conversations.ban"
+    const val ADMIN_CONVERSATIONS_UNBAN: String = "admin.conversations.unban"
+    const val ADMIN_CONVERSATIONS_ARCHIVE: String = "admin.conversations.archive"
+    const val ADMIN_CONVERSATIONS_UNARCHIVE: String = "admin.conversations.unarchive"
+    const val ADMIN_CONVERSATIONS_CONNECT: String = "admin.conversations.connect"
+    const val ADMIN_CONVERSATIONS_DISCONNECT: String = "admin.conversations.disconnect"
+    const val ADMIN_CONVERSATIONS_SEARCH: String = "admin.conversations.search"
+    const val ADMIN_CONVERSATIONS_GET_CUSTOM_RETENTION: String = "admin.conversations.getCustomRetention"
+    const val ADMIN_CONVERSATIONS_SET_CUSTOM_RETENTION: String = "admin.conversations.setCustomRetention"
+    const val ADMIN_CONVERSATIONS_DELETE: String = "admin.conversations.delete"
+    const val ADMIN_CONVERSATIONS_GET_CUSTOM_CLASSIFICATION: String = "admin.conversations.getCustomClassification"
+    const val ADMIN_CONVERSATIONS_SET_CUSTOM_CLASSIFICATION: String = "admin.conversations.setCustomClassification"
+
+    // ------------------------------
+    // admin.conversations.restrictAccess
+    // ------------------------------
+    const val ADMIN_CONVERSATIONS_RESTRICT_ACCESS_ADD: String = "admin.conversations.restrictAccess.add"
+    const val ADMIN_CONVERSATIONS_RESTRICT_ACCESS_LIST: String = "admin.conversations.restrictAccess.list"
+    const val ADMIN_CONVERSATIONS_RESTRICT_ACCESS_REMOVE: String = "admin.conversations.restrictAccess.remove"
+
+    // ------------------------------
     // admin.users
     // ------------------------------
     const val ADMIN_USERS_ASSIGN: String = "admin.users.assign"
@@ -63,6 +129,7 @@ object Methods {
     // api
     // ------------------------------
     const val API_TEST: String = "api.test"
+    const val API_RATE_LIMIT: String = "api.rateLimit"
 
     // ------------------------------
     // apps
@@ -100,6 +167,7 @@ object Methods {
 
     // ------------------------------
     // calls
+    // https://api.slack.com/methods/calls
     // ------------------------------
     const val CALLS_ADD: String = "calls.add"
     const val CALLS_END: String = "calls.end"
@@ -114,6 +182,7 @@ object Methods {
 
     // ------------------------------
     // chat
+    // https://api.slack.com/methods/chat
     // ------------------------------
     const val CHAT_DELETE: String = "chat.delete"
     const val CHAT_DELETE_SCHEDULED_MESSAGE: String = "chat.deleteScheduledMessage"
@@ -135,6 +204,7 @@ object Methods {
 
     // ------------------------------
     // conversations
+    // https://api.slack.com/methods/conversations
     // ------------------------------
     const val CONVERSATIONS_ARCHIVE: String = "conversations.archive"
     const val CONVERSATIONS_CLOSE: String = "conversations.close"
@@ -176,6 +246,7 @@ object Methods {
 
     // ------------------------------
     // dnd
+    // Do Not Disturb
     // ------------------------------
     const val DND_END_DND: String = "dnd.endDnd"
     const val DND_END_SNOOZE: String = "dnd.endSnooze"
@@ -190,6 +261,7 @@ object Methods {
 
     // ------------------------------
     // files
+    // https://api.slack.com/methods/files
     // ------------------------------
     const val FILES_DELETE: String = "files.delete"
     const val FILES_INFO: String = "files.info"
@@ -217,6 +289,7 @@ object Methods {
 
     // ------------------------------
     // oauth
+    // https://api.slack.com/authentication/oauth-v2
     // ------------------------------
     @Deprecated("Use oauth.v2.access instead.")
     val OAUTH_ACCESS: String = "oauth.access"
@@ -227,6 +300,7 @@ object Methods {
 
     // ------------------------------
     // openid.connect
+    // https://api.slack.com/authentication/oauth-v2
     // ------------------------------
     const val OPENID_CONNECT_TOKEN: String = "openid.connect.token"
     const val OPENID_CONNECT_USER_INFO: String = "openid.connect.userInfo"
@@ -240,6 +314,7 @@ object Methods {
 
     // ------------------------------
     // reactions
+    // https://api.slack.com/methods/reactions
     // ------------------------------
     const val REACTIONS_ADD: String = "reactions.add"
     const val REACTIONS_GET: String = "reactions.get"
@@ -257,6 +332,7 @@ object Methods {
 
     // ------------------------------
     // search
+    // https://api.slack.com/methods/search
     // ------------------------------
     const val SEARCH_ALL: String = "search.all"
     const val SEARCH_FILES: String = "search.files"
@@ -274,6 +350,7 @@ object Methods {
 
     // ------------------------------
     // team
+    // https://api.slack.com/methods/team
     // ------------------------------
     const val TEAM_ACCESS_LOGS: String = "team.accessLogs"
     const val TEAM_BILLABLE_INFO: String = "team.billableInfo"
@@ -303,6 +380,7 @@ object Methods {
 
     // ------------------------------
     // usergroups
+    // https://api.slack.com/methods/usergroups
     // ------------------------------
     const val USERGROUPS_CREATE: String = "usergroups.create"
     const val USERGROUPS_DISABLE: String = "usergroups.disable"
@@ -318,6 +396,7 @@ object Methods {
 
     // ------------------------------
     // users
+    // https://api.slack.com/methods/users
     // ------------------------------
     const val USERS_CONVERSATIONS: String = "users.conversations"
     const val USERS_DELETE_PHOTO: String = "users.deletePhoto"
@@ -352,4 +431,18 @@ object Methods {
 
     // https://api.slack.com/surfaces/tabs
     const val VIEWS_PUBLISH: String = "views.publish"
+
+    // ------------------------------
+    // views.home
+    // https://api.slack.com/surfaces/tabs
+    // ------------------------------
+    const val VIEWS_HOME_UPDATE: String = "views.home.update"
+
+    // ------------------------------
+    // workflows.steps
+    // https://api.slack.com/workflows
+    // ------------------------------
+    const val WORKFLOWS_STEPS_COMPLETE: String = "workflows.steps.complete"
+    const val WORKFLOWS_STEPS_SKIP: String = "workflows.steps.skip"
+    const val WORKFLOWS_STEPS_CANCEL: String = "workflows.steps.cancel"
 }

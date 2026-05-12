@@ -13,6 +13,14 @@ import work.socialhub.kslack.api.methods.response.reactions.ReactionsListRespons
 import work.socialhub.kslack.api.methods.response.reactions.ReactionsRemoveResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [ReactionsResource] for Slack's `reactions.*` API methods.
+ *
+ * Handles HTTP POST requests for adding, retrieving, listing, and removing emoji
+ * reactions on messages, files, and file comments.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class ReactionsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), ReactionsResource {

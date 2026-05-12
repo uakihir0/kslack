@@ -23,6 +23,15 @@ import work.socialhub.kslack.api.methods.response.team.preferences.TeamPreferenc
 import work.socialhub.kslack.api.methods.response.team.profile.TeamProfileGetResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [TeamResource] for Slack's `team.*` API methods.
+ *
+ * Handles HTTP POST requests for retrieving team information, access logs,
+ * billable user details, integration logs, profile fields, preferences,
+ * and external team connections.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class TeamResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), TeamResource {

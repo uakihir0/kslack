@@ -4,6 +4,14 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
+/**
+ * Represents a bookmark in a Slack channel.
+ *
+ * Bookmarks are user-created links pinned to a channel for easy reference.
+ * Used in responses from `bookmarks.*` API methods.
+ *
+ * @see <a href="https://docs.slack.dev/reference/methods/bookmarks.add">bookmarks.add</a>
+ */
 @JsExport
 @Serializable
 class Bookmark {

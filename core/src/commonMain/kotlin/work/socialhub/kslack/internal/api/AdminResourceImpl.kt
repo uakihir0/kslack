@@ -4,15 +4,33 @@ import work.socialhub.kslack.api.AdminResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
 import work.socialhub.kslack.api.methods.request.admin.apps.*
+import work.socialhub.kslack.api.methods.request.admin.apps.approved.AdminAppsApprovedListRequest
+import work.socialhub.kslack.api.methods.request.admin.apps.restricted.AdminAppsRestrictedListRequest
 import work.socialhub.kslack.api.methods.request.admin.invite_requests.*
 import work.socialhub.kslack.api.methods.request.admin.teams.*
 import work.socialhub.kslack.api.methods.request.admin.users.*
 import work.socialhub.kslack.api.methods.response.admin.apps.*
+import work.socialhub.kslack.api.methods.response.admin.apps.approved.AdminAppsApprovedListResponse
+import work.socialhub.kslack.api.methods.response.admin.apps.restricted.AdminAppsRestrictedListResponse
 import work.socialhub.kslack.api.methods.response.admin.invite_requests.*
 import work.socialhub.kslack.api.methods.response.admin.teams.*
 import work.socialhub.kslack.api.methods.response.admin.users.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [AdminResource] for Slack's `admin.*` API methods.
+ *
+ * Handles HTTP POST requests for workspace administration including:
+ * - App management (approve, restrict, list requests)
+ * - Invite request management (approve, deny, list)
+ * - Team settings (description, icon, name)
+ * - User management (assign, invite, remove, set roles)
+ * - Session management (reset sessions)
+ *
+ * All methods require `admin` OAuth scope and Enterprise Grid workspace.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class AdminResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),
@@ -352,5 +370,37 @@ class AdminResourceImpl(
         req: AdminUsersSessionResetRequest
     ): AdminUsersSessionResetResponse {
         return toBlocking { adminUsersSessionReset(req) }
+    }
+
+    override suspend fun adminAppsApprovedList(
+        req: AdminAppsApprovedListRequest
+    ): AdminAppsApprovedListResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.ADMIN_APPS_APPROVED_LIST,
+            getToken(req),
+        )
+    }
+
+    override fun adminAppsApprovedListBlocking(
+        req: AdminAppsApprovedListRequest
+    ): AdminAppsApprovedListResponse {
+        return toBlocking { adminAppsApprovedList(req) }
+    }
+
+    override suspend fun adminAppsRestrictedList(
+        req: AdminAppsRestrictedListRequest
+    ): AdminAppsRestrictedListResponse {
+        return postFormWithToken(
+            req.toParams(),
+            Methods.ADMIN_APPS_RESTRICTED_LIST,
+            getToken(req),
+        )
+    }
+
+    override fun adminAppsRestrictedListBlocking(
+        req: AdminAppsRestrictedListRequest
+    ): AdminAppsRestrictedListResponse {
+        return toBlocking { adminAppsRestrictedList(req) }
     }
 }

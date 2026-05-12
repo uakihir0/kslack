@@ -9,6 +9,17 @@ import work.socialhub.kslack.api.methods.response.calls.*
 import work.socialhub.kslack.api.methods.response.calls.participants.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [CallsResource] for Slack's `calls.*` API methods.
+ *
+ * Handles HTTP POST requests for managing Slack Call sessions including
+ * creating calls, ending calls, updating call info, and managing participants.
+ *
+ * These methods are used by video conferencing integrations that connect
+ * to Slack Calls.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class CallsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), CallsResource {

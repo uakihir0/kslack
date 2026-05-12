@@ -11,6 +11,15 @@ import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileGetR
 import work.socialhub.kslack.api.methods.response.users.profile.UsersProfileSetResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [UsersResource] for Slack's `users.*` API methods.
+ *
+ * Handles HTTP POST requests for retrieving user information, managing profiles,
+ * handling user photos, managing presence, and looking up users by email.
+ * Uses multipart POST for photo upload methods.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class UsersResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),

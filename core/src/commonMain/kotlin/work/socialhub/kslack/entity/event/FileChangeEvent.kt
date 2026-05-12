@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The file_change event is sent when any property of a file is changed.
  * It is sent to all connected clients for all users that have permission to see the file.
@@ -11,11 +13,13 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/file_change
  */
+@Serializable
 class FileChangeEvent : Event {
     override val type: String = TYPE_NAME
     var fileId: String? = null
     var file: File? = null
 
+    @Serializable
     class File {
         var id: String? = null
     }

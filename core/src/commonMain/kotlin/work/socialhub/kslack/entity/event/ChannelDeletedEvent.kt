@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The channel_deleted event is sent to all connections for a workspace when a channel is deleted.
  * Clients can use this to update their local cache of non-joined channels.
@@ -7,6 +9,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/channel_deleted
  */
+@Serializable
 class ChannelDeletedEvent : Event {
     override val type: String = TYPE_NAME
     var channel: String? = null

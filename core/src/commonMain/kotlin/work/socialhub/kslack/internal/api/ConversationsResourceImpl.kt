@@ -7,6 +7,23 @@ import work.socialhub.kslack.api.methods.request.conversations.*
 import work.socialhub.kslack.api.methods.response.conversations.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [ConversationsResource] for Slack's `conversations.*` API methods.
+ *
+ * Handles HTTP POST requests for creating, managing, and querying conversations
+ * (channels, DMs, group DMs). This is the most comprehensive resource covering
+ * all conversation lifecycle operations including shared workspace features.
+ *
+ * # Key Methods
+ * - `conversationsList` - List all channels in a workspace
+ * - `conversationsCreate` - Create a public or private channel
+ * - `conversationsInvite` - Invite users to a channel
+ * - `conversationsHistory` - Get message history from a channel
+ * - `conversationsMembers` - Get members of a channel
+ * - `conversationsAcceptSharedInvite` / `conversationsApproveSharedInvite` - Multiworkspace features
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class ConversationsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token),

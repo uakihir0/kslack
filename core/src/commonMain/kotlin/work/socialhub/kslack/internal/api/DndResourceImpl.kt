@@ -7,6 +7,14 @@ import work.socialhub.kslack.api.methods.request.dnd.*
 import work.socialhub.kslack.api.methods.response.dnd.*
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [DndResource] for Slack's `dnd.*` API methods.
+ *
+ * Handles HTTP POST requests for managing Do Not Disturb (DND) settings,
+ * including ending DND/snooze, setting snooze duration, and checking DND status.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class DndResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), DndResource {

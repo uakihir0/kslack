@@ -13,6 +13,20 @@ import work.socialhub.kslack.api.methods.response.auth.AuthTeamsListResponse
 import work.socialhub.kslack.api.methods.response.auth.AuthTestResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [AuthResource] for Slack's `auth.*` API methods.
+ *
+ * Handles HTTP POST requests for authentication validation, revocation,
+ * and team listing. Also builds OAuth authorization URLs.
+ *
+ * # Token Usage
+ * - `auth.test` - Validate a token and get user/team info
+ * - `auth.revoke` - Revoke (deauthorize) a token
+ * - `auth.teamsList` - List teams the token has access to
+ * - `authorizationURL` - Build OAuth authorize URL (no HTTP request)
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class AuthResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), AuthResource {

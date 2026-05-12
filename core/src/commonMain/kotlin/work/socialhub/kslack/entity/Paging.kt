@@ -5,7 +5,11 @@ import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
 /**
- * - https://github.com/slackapi/java-slack-sdk/blob/main/slack-api-model/src/main/java/com/slack/api/model/Paging.java
+ * Represents pagination metadata in Slack API responses.
+ *
+ * Contains page number, total count, per-page count, and total pages
+ * for paginated results. Used in search and list API responses.
+ * The `iid` field is specific to search results.
  */
 @JsExport
 @Serializable

@@ -4,6 +4,15 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
+/**
+ * Represents a Slack channel with its properties, membership status, and configuration.
+ *
+ * This model is used in responses from `conversations.list`, `conversations.info`,
+ * `conversations.members`, and other channel-related API methods. It includes flags
+ * indicating channel type (public, private, DM, group DM, shared, etc.).
+ *
+ * @see <a href="https://api.slack.com/types/channel">Channel type reference</a>
+ */
 @JsExport
 @Serializable
 class Channel {

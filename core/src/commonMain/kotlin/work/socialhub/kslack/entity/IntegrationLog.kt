@@ -3,6 +3,16 @@ package work.socialhub.kslack.entity
 import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
+/**
+ * Represents an integration log entry for a workspace.
+ *
+ * Contains details about app or service integrations including the app ID,
+ * service type, associated user, channel, change type, and resolution details.
+ * Also supports RSS feed integration tracking.
+ * Used in responses from `team.integrationLogs`.
+ *
+ * @see <a href="https://docs.slack.dev/reference/methods/team.integrationLogs">team.integrationLogs</a>
+ */
 @JsExport
 @Serializable
 class IntegrationLog {

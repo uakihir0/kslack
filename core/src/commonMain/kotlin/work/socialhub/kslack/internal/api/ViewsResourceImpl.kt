@@ -3,16 +3,26 @@ package work.socialhub.kslack.internal.api
 import work.socialhub.kslack.api.ViewsResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
+import work.socialhub.kslack.api.methods.request.views.ViewsHomeUpdateRequest
 import work.socialhub.kslack.api.methods.request.views.ViewsOpenRequest
 import work.socialhub.kslack.api.methods.request.views.ViewsPublishRequest
 import work.socialhub.kslack.api.methods.request.views.ViewsPushRequest
 import work.socialhub.kslack.api.methods.request.views.ViewsUpdateRequest
+import work.socialhub.kslack.api.methods.response.views.ViewsHomeUpdateResponse
 import work.socialhub.kslack.api.methods.response.views.ViewsOpenResponse
 import work.socialhub.kslack.api.methods.response.views.ViewsPublishResponse
 import work.socialhub.kslack.api.methods.response.views.ViewsPushResponse
 import work.socialhub.kslack.api.methods.response.views.ViewsUpdateResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [ViewsResource] for Slack's `views.*` API methods.
+ *
+ * Handles HTTP POST requests for managing Block Kit views (modals, home tabs,
+ * and message attachments). All methods use form-encoded request bodies.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class ViewsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), ViewsResource {
@@ -47,5 +57,13 @@ class ViewsResourceImpl(
 
     override fun viewsPublishBlocking(req: ViewsPublishRequest): ViewsPublishResponse {
         return toBlocking { viewsPublish(req) }
+    }
+
+    override suspend fun viewsHomeUpdate(req: ViewsHomeUpdateRequest): ViewsHomeUpdateResponse {
+        return postFormWithToken(req.toParams(), Methods.VIEWS_HOME_UPDATE, getToken(req))
+    }
+
+    override fun viewsHomeUpdateBlocking(req: ViewsHomeUpdateRequest): ViewsHomeUpdateResponse {
+        return toBlocking { viewsHomeUpdate(req) }
     }
 }

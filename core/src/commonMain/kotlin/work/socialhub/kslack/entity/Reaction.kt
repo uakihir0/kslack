@@ -4,8 +4,13 @@ import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
 /**
- * - https://api.slack.com/methods/reactions.get
- * - https://github.com/slackapi/java-slack-sdk/blob/main/slack-api-model/src/main/java/com/slack/api/model/Reaction.java#L17
+ * Represents an emoji reaction on a Slack message, file, or file comment.
+ *
+ * Includes the emoji name, user count, list of user IDs who reacted,
+ * and a URL to the emoji image. Used in responses from `reactions.get`
+ * and `reactions.list`.
+ *
+ * @see <a href="https://api.slack.com/methods/reactions.get">reactions.get</a>
  */
 @JsExport
 @Serializable

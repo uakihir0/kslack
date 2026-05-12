@@ -47,7 +47,6 @@ class ChatPostEphemeralRequest(
             it.addParam("channel", channel)
             it.addParam("text", text)
             it.addParam("user", user)
-            it.addParam("as_user", isAsUser)
 
             if (blocksAsString != null) {
                 it.addParam("blocks", blocksAsString)

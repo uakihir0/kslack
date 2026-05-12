@@ -1,6 +1,7 @@
 package work.socialhub.kslack.entity.event
 
 import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.entity.Attachment
 import work.socialhub.kslack.entity.Reaction
 import work.socialhub.kslack.entity.block.LayoutBlock
@@ -8,6 +9,7 @@ import work.socialhub.kslack.entity.block.LayoutBlock
 /**
  * https://api.slack.com/events/message/message_changed
  */
+@Serializable
 class MessageChangedEvent : Event {
     override val type: String = TYPE_NAME
     override val subtype: String = SUBTYPE_NAME
@@ -22,6 +24,7 @@ class MessageChangedEvent : Event {
     var ts: String? = null
     var channelType: String? = null // app_home, channel, group, im, mpim
 
+    @Serializable
     class Message {
         var clientMsgId: String? = null
 
@@ -47,6 +50,7 @@ class MessageChangedEvent : Event {
         var reactions: Array<Reaction>? = null
     }
 
+    @Serializable
     class Edited {
         var user: String? = null
         var ts: String? = null

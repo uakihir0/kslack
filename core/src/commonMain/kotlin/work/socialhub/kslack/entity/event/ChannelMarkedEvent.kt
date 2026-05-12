@@ -1,5 +1,7 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
+
 /**
  * The channel_marked event is sent to all open connections for a user
  * when that user moves the read cursor in a channel by calling the channels.mark API method.
@@ -7,6 +9,7 @@ package work.socialhub.kslack.entity.event
  *
  * https://api.slack.com/events/channel_marked
  */
+@Serializable
 class ChannelMarkedEvent : Event {
     override val type: String = TYPE_NAME
     var channel: String? = null

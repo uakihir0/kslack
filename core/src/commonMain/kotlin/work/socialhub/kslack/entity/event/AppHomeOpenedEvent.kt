@@ -1,5 +1,6 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.entity.view.View
 
 /**
@@ -25,6 +26,7 @@ import work.socialhub.kslack.entity.view.View
  *
  * https://api.slack.com/events/app_home_opened
  */
+@Serializable
 class AppHomeOpenedEvent : Event {
     override val type: String = TYPE_NAME
     var user: String? = null

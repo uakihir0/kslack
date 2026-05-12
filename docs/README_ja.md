@@ -8,7 +8,7 @@
 ![badge][badge-mac]
 
 **このライブラリは [Kotlin Multiplatform](https://kotlinlang.org/docs/multiplatform.html) に対応した Slack クライアントライブラリです。**
-[khttpclient] を依存関係に持っており、 内部で Ktor Client を使用しています。
+[khttpclient] を依存関係に持っており、内部で Ktor Client を使用しています。
 そのため、本ライブラリは、Kotlin Multiplatform かつ Ktor Client がサポートしているプラットフォームであれば利用可能です。
 各プラットフォームでどのような挙動をするのかについては、[khttpclient] に依存します。
 
@@ -31,7 +31,110 @@ dependencies {
 }
 ```
 
-**WIP**
+### 通常のJavaプロジェクトでの使用
+
+上記の依存関係は、通常のJavaプロジェクトでも追加して使用することができます。依存関係を追加する際に `-jvm` サフィックスを使用するだけです。
+
+以下はMavenの設定例です：
+
+```xml
+<dependency>
+    <groupId>work.socialhub.kslack</groupId>
+    <artifactId>core-jvm</artifactId>
+    <version>[VERSION]</version>
+</dependency>
+```
+
+### 認証
+
+Slack OAuthアクセストークン（`xoxp-...` はユーザートークン、`xapp-...` はアプリトークン）を指定してクライアントインスタンスを作成します。
+トークンなしでインスタンスを作成し、リクエストごとにトークンを指定することもできます。
+
+```kotlin
+val slack = SlackFactory.instance("xoxp-your-access-token")
+
+val response = slack.auth().authTestBlocking(AuthTestRequest(token = null))
+println("ok: ${response.isOk}")
+println("team: ${response.team}")
+println("userId: ${response.userId}")
+```
+
+OAuth 2.0 認証URLの生成の場合：
+
+```kotlin
+val slack = SlackFactory.instance()
+
+val url = slack.auth().authorizationURL(
+    clientId = "YOUR_CLIENT_ID",
+    redirectUri = "https://your-app.com/callback",
+    scope = "chat:write,channels:read,channels:history",
+    userScope = "users:read",
+)
+
+println("Auth URL: $url")
+```
+
+### チャットメッセージの送信
+
+```kotlin
+val slack = SlackFactory.instance("xoxp-your-access-token")
+
+slack.chat().chatPostMessageBlocking(
+    ChatPostMessageRequest(
+        channel = "#general",
+        text = "Hello from kslack!"
+    )
+)
+```
+
+### チャンネル一覧の取得
+
+```kotlin
+val slack = SlackFactory.instance("xoxp-your-access-token")
+
+val response = slack.conversations().conversationsListBlocking(
+    ConversationsListRequest(isExcludeArchived = true)
+)
+
+for (channel in response.channels!!) {
+    println("found channel: id=${channel.id} name=${channel.name}")
+}
+```
+
+### ストリーミング（Socket Mode）
+
+ストリーミングモジュールは Socket Mode を使用して Slack からのリアルタイムイベントを受信します。
+Slack インスタンスを作成する際にトークンの指定が必要です。
+
+```kotlin
+val slack = SlackFactory.instance("xapp-your-app-token")
+
+val stream = slack.stream()
+
+stream.addEventListener(object : SlackStreamListener {
+    override fun onMessage(event: MessageEvent) {
+        println("Received message: ${event.text}")
+    }
+
+    override fun onOpen() {
+        println("Stream connected")
+    }
+
+    override fun onClose() {
+        println("Stream closed")
+    }
+
+    override fun onError(error: Exception) {
+        println("Stream error: ${error.message}")
+    }
+})
+
+// ストリーミング接続を開始
+stream.start()
+
+// ... 後で、接続を停止
+stream.stop()
+```
 
 ## ライセンス
 

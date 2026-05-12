@@ -16,7 +16,7 @@ class Conversation {
     var enterpriseId: String? = null
     var id: String? = null
     var name: String? = null
-    var created: String? = null
+    var created: Long? = null
     var creator: String? = null
     var unlinked: Int? = null
 

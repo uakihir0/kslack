@@ -7,6 +7,14 @@ import work.socialhub.kslack.api.methods.request.bots.BotsInfoRequest
 import work.socialhub.kslack.api.methods.response.bots.BotsInfoResponse
 import work.socialhub.kslack.util.toBlocking
 
+/**
+ * Implementation of [BotsResource] for Slack's `bots.info` API method.
+ *
+ * Handles HTTP POST requests for retrieving information about a bot user
+ * in the workspace.
+ *
+ * @param token Optional default token provided at factory initialization
+ */
 class BotsResourceImpl(
     token: String?
 ) : AbstractResourceImpl(token), BotsResource {

@@ -1,5 +1,6 @@
 package work.socialhub.kslack.entity.event
 
+import kotlinx.serialization.Serializable
 import work.socialhub.kslack.entity.bot.BotIcons
 
 /**
@@ -12,10 +13,12 @@ import work.socialhub.kslack.entity.bot.BotIcons
  *
  * https://api.slack.com/events/bot_changed
  */
+@Serializable
 class BotChangedEvent : Event {
     override val type: String = TYPE_NAME
     var bot: Bot? = null
 
+    @Serializable
     class Bot {
         var id: String? = null
         var appId: String? = null
