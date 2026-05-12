@@ -1,9 +1,11 @@
 package work.socialhub.kslack.stream.internal
 
-import kotlin.concurrent.AtomicReference
+import kotlin.concurrent.atomics.AtomicReference
+import kotlin.concurrent.atomics.ExperimentalAtomicApi
 import work.socialhub.kslack.stream.SlackStream
 import work.socialhub.kslack.stream.SlackStreamListener
 
+@OptIn(ExperimentalAtomicApi::class)
 class SlackStreamImpl(
     private val token: String?,
 ) : SlackStream, SlackStreamListener {
