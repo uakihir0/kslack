@@ -2,8 +2,11 @@ package work.socialhub.kslack.auth
 
 import work.socialhub.kslack.AbstractTest
 import work.socialhub.kslack.SlackFactory
+import work.socialhub.kslack.api.methods.request.auth.AuthTeamsListRequest
 import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
 import kotlin.test.Test
+import kotlin.test.assertNotNull
+import kotlin.test.assertTrue
 
 class AuthTest : AbstractTest() {
 
@@ -30,5 +33,17 @@ class AuthTest : AbstractTest() {
         println("user: ${response.user}")
         println("teamId: ${response.teamId}")
         println("userId: ${response.userId}")
+    }
+
+    @Test
+    fun testAuthTeamsList() {
+        val slack = SlackFactory.instance(userToken!!)
+        val response = slack.auth().authTeamsListBlocking(
+            AuthTeamsListRequest(token = userToken)
+        )
+        assertTrue(response.isOk, "error: ${response.error}")
+        assertNotNull(response.teams)
+        println("teams count: ${response.teams?.size}")
+        response.teams?.forEach { println("  team: id=${it.id} name=${it.name}") }
     }
 }

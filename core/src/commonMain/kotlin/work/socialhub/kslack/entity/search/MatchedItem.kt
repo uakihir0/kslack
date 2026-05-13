@@ -224,7 +224,7 @@ class MatchedItem {
     @SerialName("original_h")
     var originalHeight: String? = null
 
-    var score: String? = null
+    var score: Double? = null
     var isTopFile: Boolean = false
 
     var deanimateGif: String? = null

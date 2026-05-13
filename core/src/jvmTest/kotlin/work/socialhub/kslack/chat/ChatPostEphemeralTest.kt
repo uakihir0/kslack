@@ -5,12 +5,14 @@ import work.socialhub.kslack.SlackFactory
 import work.socialhub.kslack.api.methods.request.auth.AuthTestRequest
 import work.socialhub.kslack.api.methods.request.chat.ChatPostEphemeralRequest
 import work.socialhub.kslack.api.methods.response.chat.ChatPostEphemeralResponse
+import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class ChatPostEphemeralTest : AbstractTest() {
 
+    @Ignore("Requires specific user/channel setup not guaranteed in test workspace")
     @Test
     fun postEphemeralMessage() {
         val slack = SlackFactory.instance(userToken!!)
