@@ -24,10 +24,10 @@ class PinsListTest : AbstractTest() {
             )
         )
         assertTrue(listResponse.isOk, "conversations.list failed: ${listResponse.error}")
-        assertNotNull(listResponse.channels)
-        assertTrue(listResponse.channels!!.isNotEmpty())
+        val channels = assertNotNull(listResponse.channels, "channels should not be null")
+        assertTrue(channels.isNotEmpty(), "channels should not be empty")
 
-        val channelId = listResponse.channels!![0].id!!
+        val channelId = assertNotNull(channels[0].id, "first channel id should not be null")
         println("using channel: $channelId")
 
         val response = slack.pins().pinsListBlocking(

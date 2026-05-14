@@ -24,11 +24,12 @@ class ConversationsMembersTest : AbstractTest() {
             )
         )
         assertTrue(listResponse.isOk, "conversations.list failed: ${listResponse.error}")
-        assertNotNull(listResponse.channels)
-        assertTrue(listResponse.channels!!.isNotEmpty())
+        val channels = assertNotNull(listResponse.channels, "channels should not be null")
+        assertTrue(channels.isNotEmpty(), "channels should not be empty")
 
-        val channelId = listResponse.channels!![0].id!!
-        println("using channel: $channelId name=${listResponse.channels!![0].name}")
+        val firstChannel = channels[0]
+        val channelId = assertNotNull(firstChannel.id, "first channel id should not be null")
+        println("using channel: $channelId name=${firstChannel.name}")
 
         val response = slack.conversations().conversationsMembersBlocking(
             ConversationsMembersRequest(

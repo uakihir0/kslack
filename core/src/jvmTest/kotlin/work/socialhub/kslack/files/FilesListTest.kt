@@ -21,7 +21,7 @@ class FilesListTest : AbstractTest() {
                 types = null,
                 count = null,
                 page = null,
-                isShowFilesHiddenByLimit = false
+                isShowFilesHiddenByLimit = false,
             )
         )
         assertTrue(response.isOk, "error: ${response.error}")

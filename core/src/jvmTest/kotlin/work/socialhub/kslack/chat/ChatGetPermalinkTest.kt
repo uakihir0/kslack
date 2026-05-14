@@ -12,10 +12,11 @@ class ChatGetPermalinkTest : AbstractTest() {
 
     @Test
     fun testChatGetPermalink() {
-        val slack = SlackFactory.instance(userToken!!)
+        val token = assertNotNull(userToken, "SLACK_USER_TOKEN must be set for this test")
+        val slack = SlackFactory.instance(token)
         val configuredChannelName = System.getenv("SLACK_TEST_CHANNEL")
             ?: System.getProperty("SLACK_TEST_CHANNEL")
-        val channelCandidates = listOfNotNull(configuredChannelName, "general", "geenral").distinct()
+        val channelCandidates = listOfNotNull(configuredChannelName, "general").distinct()
 
         var permalink: String? = null
         val failures = mutableListOf<String>()
@@ -70,10 +71,10 @@ class ChatGetPermalinkTest : AbstractTest() {
             }
         }
 
-        assertNotNull(
+        val result = assertNotNull(
             permalink,
             "chat.getPermalink failed for all candidates=$channelCandidates failures=$failures"
         )
-        assertTrue(permalink!!.startsWith("https://"), "permalink should be a URL: $permalink")
+        assertTrue(result.startsWith("https://"), "permalink should be a URL: $result")
     }
 }
