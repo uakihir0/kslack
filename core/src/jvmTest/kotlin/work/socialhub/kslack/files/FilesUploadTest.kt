@@ -6,12 +6,14 @@ import work.socialhub.kslack.api.methods.request.files.FilesCompleteUploadExtern
 import work.socialhub.kslack.api.methods.request.files.FilesGetUploadURLExternalRequest
 import work.socialhub.kslack.api.methods.response.files.FilesCompleteUploadExternalResponse
 import work.socialhub.kslack.api.methods.response.files.FilesGetUploadURLExternalResponse
+import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class FilesUploadTest : AbstractTest() {
 
+    @Ignore("Incomplete test — no HTTP PUT to uploadUrl, and getUploadURLExternal requires files:write scope")
     @Test
     fun getUploadUrlAndComplete() {
         val slack = SlackFactory.instance(userToken!!)

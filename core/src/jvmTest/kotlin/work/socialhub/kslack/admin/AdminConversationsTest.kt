@@ -4,10 +4,12 @@ import work.socialhub.kslack.AbstractTest
 import work.socialhub.kslack.SlackFactory
 import work.socialhub.kslack.api.methods.request.admin.conversations.AdminConversationsCreateRequest
 import work.socialhub.kslack.api.methods.response.admin.conversations.AdminConversationsCreateResponse
+import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
+@Ignore("Requires admin-level OAuth token (admin.conversations:write)")
 class AdminConversationsTest : AbstractTest() {
 
     @Test

@@ -11,6 +11,6 @@ import kotlin.js.JsExport
 class UsersListResponse : SlackApiResponse() {
     var offset: String? = null // user id
     var members: Array<User>? = null
-    var cacheTs: String? = null
+    var cacheTs: Int? = null
     var responseMetadata: ResponseMetadata? = null
 }
