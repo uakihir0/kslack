@@ -5,7 +5,6 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonNamingStrategy
 import kotlinx.serialization.modules.SerializersModule
-import work.socialhub.kmpcommon.AnySerializer
 
 object JsonHelper {
 
