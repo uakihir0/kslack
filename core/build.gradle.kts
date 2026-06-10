@@ -15,7 +15,7 @@ kotlin {
         }
     }
 
-    js {
+    js(IR) {
         nodejs()
         browser()
         compilerOptions {
@@ -27,6 +27,7 @@ kotlin {
         iosX64()
         iosArm64()
         iosSimulatorArm64()
+        macosX64()
         macosArm64()
     }
 
