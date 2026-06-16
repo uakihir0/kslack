@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.OpenIDConnectResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -17,8 +19,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token for the userInfo method (token method uses client credentials)
  */
 class OpenIDConnectResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), OpenIDConnectResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), OpenIDConnectResource {
 
     override suspend fun openIDConnectToken(
         req: OpenIDConnectTokenRequest

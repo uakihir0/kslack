@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.UsergroupsResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -20,8 +22,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class UsergroupsResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), UsergroupsResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), UsergroupsResource {
 
     override suspend fun usergroupsCreate(req: UsergroupsCreateRequest): UserGroupsCreateResponse {
         return postFormWithToken(req.toParams(), Methods.USERGROUPS_CREATE, getToken(req))

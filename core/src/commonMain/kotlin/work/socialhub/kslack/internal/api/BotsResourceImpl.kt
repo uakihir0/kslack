@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.BotsResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -16,8 +18,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class BotsResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), BotsResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), BotsResource {
 
     override suspend fun botsInfo(req: BotsInfoRequest): BotsInfoResponse {
         return postFormWithToken(req.toParams(), Methods.BOTS_INFO, getToken(req))

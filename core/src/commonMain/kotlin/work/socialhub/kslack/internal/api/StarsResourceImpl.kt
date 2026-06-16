@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.StarsResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -24,8 +26,9 @@ import work.socialhub.kslack.util.toBlocking
  */
 @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
 class StarsResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), StarsResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), StarsResource {
 
     @Deprecated("Stars API is functionally deprecated. Replaced by Later view.")
     override suspend fun starsAdd(

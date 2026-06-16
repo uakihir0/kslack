@@ -47,7 +47,8 @@ open class AbstractResourceImpl(
      * Set when creating the resource via [SlackFactory].
      * Can be overridden by providing a token in individual requests.
      */
-    val token: String?
+    val token: String?,
+    val apiUrl: String = Slack.ENDPOINT_URL_PREFIX
 ) {
 
     // ----------------------------------------------
@@ -68,7 +69,7 @@ open class AbstractResourceImpl(
         endpoint: String,
     ): HttpResponse {
         return HttpRequest()
-            .url("${Slack.ENDPOINT_URL_PREFIX}$endpoint")
+            .url("${apiUrl}$endpoint")
             .also { it.params += params }
             .forceApplicationFormUrlEncoded(true)
             .post()
@@ -89,7 +90,7 @@ open class AbstractResourceImpl(
         token: String,
     ): HttpResponse {
         return HttpRequest()
-            .url("${Slack.ENDPOINT_URL_PREFIX}$endpoint")
+            .url("${apiUrl}$endpoint")
             .also { it.params += params }
             .header("Authorization", "Bearer $token")
             .forceApplicationFormUrlEncoded(true)
@@ -111,7 +112,7 @@ open class AbstractResourceImpl(
         token: String,
     ): HttpResponse {
         return HttpRequest()
-            .url("${Slack.ENDPOINT_URL_PREFIX}$endpoint")
+            .url("${apiUrl}$endpoint")
             .also { it.params += params }
             .header("Authorization", "Bearer $token")
             .forceMultipartFormData(true)

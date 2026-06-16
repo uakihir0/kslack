@@ -2,15 +2,17 @@ package work.socialhub.kslack.stream.internal
 
 import kotlin.concurrent.atomics.AtomicReference
 import kotlin.concurrent.atomics.ExperimentalAtomicApi
+import work.socialhub.kslack.Slack
 import work.socialhub.kslack.stream.SlackStream
 import work.socialhub.kslack.stream.SlackStreamListener
 
 @OptIn(ExperimentalAtomicApi::class)
 class SlackStreamImpl(
     private val token: String?,
+    private val apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
 ) : SlackStream, SlackStreamListener {
 
-    private val client = SocketModeClient(token ?: "", this)
+    private val client = SocketModeClient(token ?: "", this, apiUrl)
     private val listenersRef = AtomicReference(emptyList<SlackStreamListener>())
 
     override fun token(): String {
