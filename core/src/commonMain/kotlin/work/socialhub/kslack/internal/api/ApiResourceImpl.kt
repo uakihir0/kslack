@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.ApiResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -19,8 +21,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class ApiResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), ApiResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), ApiResource {
 
     override suspend fun apiTest(req: ApiTestRequest): ApiTestResponse {
         return postForm(req.toParams(), Methods.API_TEST)

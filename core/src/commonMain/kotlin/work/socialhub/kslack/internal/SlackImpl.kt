@@ -85,40 +85,41 @@ class SlackImpl(
      * Can be null if tokens are provided per-request.
      */
     override val token: String? = null,
+    private val apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
 ) : Slack {
 
     // ----------------------------------------------
     // Resource implementations (eagerly initialized)
     // ----------------------------------------------
 
-    private val admin: AdminResource = AdminResourceImpl(token)
-    private val adminConversations: AdminConversationsResource = AdminConversationsResourceImpl(token)
-    private val api: ApiResource = ApiResourceImpl(token)
-    private val apps: AppsResource = AppsResourceImpl(token)
-    private val auth: AuthResource = AuthResourceImpl(token)
-    private val bookmarks: BookmarksResource = BookmarksResourceImpl(token)
-    private val bots: BotsResource = BotsResourceImpl(token)
-    private val calls: CallsResource = CallsResourceImpl(token)
-    private val chat: ChatResource = ChatResourceImpl(token)
-    private val conversations: ConversationsResource = ConversationsResourceImpl(token)
-    private val dialog: DialogResource = DialogResourceImpl(token)
-    private val dnd: DndResource = DndResourceImpl(token)
-    private val emoji: EmojiResource = EmojiResourceImpl(token)
-    private val files: FilesResource = FilesResourceImpl(token)
-    private val migration: MigrationResource = MigrationResourceImpl(token)
+    private val admin: AdminResource = AdminResourceImpl(token, apiUrl)
+    private val adminConversations: AdminConversationsResource = AdminConversationsResourceImpl(token, apiUrl)
+    private val api: ApiResource = ApiResourceImpl(token, apiUrl)
+    private val apps: AppsResource = AppsResourceImpl(token, apiUrl)
+    private val auth: AuthResource = AuthResourceImpl(token, apiUrl)
+    private val bookmarks: BookmarksResource = BookmarksResourceImpl(token, apiUrl)
+    private val bots: BotsResource = BotsResourceImpl(token, apiUrl)
+    private val calls: CallsResource = CallsResourceImpl(token, apiUrl)
+    private val chat: ChatResource = ChatResourceImpl(token, apiUrl)
+    private val conversations: ConversationsResource = ConversationsResourceImpl(token, apiUrl)
+    private val dialog: DialogResource = DialogResourceImpl(token, apiUrl)
+    private val dnd: DndResource = DndResourceImpl(token, apiUrl)
+    private val emoji: EmojiResource = EmojiResourceImpl(token, apiUrl)
+    private val files: FilesResource = FilesResourceImpl(token, apiUrl)
+    private val migration: MigrationResource = MigrationResourceImpl(token, apiUrl)
     private val oauth: OAuthResource = OAuthResourceImpl()
-    private val openIDConnect: OpenIDConnectResource = OpenIDConnectResourceImpl(token)
-    private val pins: PinsResource = PinsResourceImpl(token)
-    private val reactions: ReactionsResource = ReactionsResourceImpl(token)
-    private val reminders: RemindersResource = RemindersResourceImpl(token)
-    private val search: SearchResource = SearchResourceImpl(token)
-    private val stars: StarsResource = StarsResourceImpl(token)
+    private val openIDConnect: OpenIDConnectResource = OpenIDConnectResourceImpl(token, apiUrl)
+    private val pins: PinsResource = PinsResourceImpl(token, apiUrl)
+    private val reactions: ReactionsResource = ReactionsResourceImpl(token, apiUrl)
+    private val reminders: RemindersResource = RemindersResourceImpl(token, apiUrl)
+    private val search: SearchResource = SearchResourceImpl(token, apiUrl)
+    private val stars: StarsResource = StarsResourceImpl(token, apiUrl)
     private val status: StatusResource = StatusResourceImpl()
-    private val team: TeamResource = TeamResourceImpl(token)
-    private val usergroups: UsergroupsResource = UsergroupsResourceImpl(token)
-    private val users: UsersResource = UsersResourceImpl(token)
-    private val views: ViewsResource = ViewsResourceImpl(token)
-    private val workflows: WorkflowsResource = WorkflowsResourceImpl(token)
+    private val team: TeamResource = TeamResourceImpl(token, apiUrl)
+    private val usergroups: UsergroupsResource = UsergroupsResourceImpl(token, apiUrl)
+    private val users: UsersResource = UsersResourceImpl(token, apiUrl)
+    private val views: ViewsResource = ViewsResourceImpl(token, apiUrl)
+    private val workflows: WorkflowsResource = WorkflowsResourceImpl(token, apiUrl)
 
     // ----------------------------------------------
     // Streaming resource (lazily initialized)
@@ -126,7 +127,7 @@ class SlackImpl(
 
     private val streamInstance: SlackStream by lazy {
         val t = token ?: throw IllegalStateException("Token is required for streaming. Use SlackFactory.instance(token) to create a Slack instance with a token.")
-        SlackStreamImpl(t)
+        SlackStreamImpl(t, apiUrl)
     }
 
     // ----------------------------------------------

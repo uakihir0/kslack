@@ -65,4 +65,20 @@ object SlackFactory {
     ): Slack {
         return SlackImpl(token)
     }
+
+    /**
+     * Creates a Slack API client with a default authentication token
+     * and a custom endpoint URL prefix.
+     *
+     * @param token The OAuth access token
+     * @param apiUrl Custom base URL for API requests
+     * @return A new [Slack] instance configured with the given token and endpoint
+     */
+    @JsName("createInstanceWithTokenAndHost")
+    fun instance(
+        token: String,
+        apiUrl: String,
+    ): Slack {
+        return SlackImpl(token, apiUrl)
+    }
 }

@@ -1,5 +1,6 @@
 package work.socialhub.kslack.stream.internal
 
+import work.socialhub.kslack.Slack
 import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.entity.event.*
 import work.socialhub.kslack.stream.SlackStreamListener
@@ -16,12 +17,12 @@ import kotlin.js.JsExport
 class SocketModeClient(
     private val token: String,
     private val listener: SlackStreamListener,
+    private val apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
 ) {
 
     companion object {
         private const val INITIAL_RECONNECT_DELAY_MS = 1000L
         private const val MAX_RECONNECT_DELAY_MS = 30000L
-        private const val SOCKET_MODE_ENDPOINT = "https://slack.com/api/apps.connections.open"
     }
 
     @Volatile
@@ -70,7 +71,7 @@ class SocketModeClient(
 
     private suspend fun fetchSocketModeUrl(): String {
         val response = HttpRequest()
-            .url(SOCKET_MODE_ENDPOINT)
+            .url("${apiUrl}apps.connections.open")
             .header("Authorization", "Bearer $token")
             .forceApplicationFormUrlEncoded(true)
             .post()
