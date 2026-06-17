@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.CallsResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -21,8 +23,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class CallsResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), CallsResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), CallsResource {
 
     override suspend fun callsAdd(
         req: CallsAddRequest

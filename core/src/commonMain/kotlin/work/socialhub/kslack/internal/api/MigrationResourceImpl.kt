@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.MigrationResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -16,8 +18,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class MigrationResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), MigrationResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), MigrationResource {
 
     override suspend fun migrationExchange(req: MigrationExchangeRequest): MigrationExchangeResponse {
         return postFormWithToken(req.toParams(), Methods.MIGRATION_EXCHANGE, getToken(req))

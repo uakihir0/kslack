@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.ViewsResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -24,8 +26,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class ViewsResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), ViewsResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), ViewsResource {
 
     override suspend fun viewsOpen(req: ViewsOpenRequest): ViewsOpenResponse {
         return postFormWithToken(req.toParams(), Methods.VIEWS_OPEN, getToken(req))

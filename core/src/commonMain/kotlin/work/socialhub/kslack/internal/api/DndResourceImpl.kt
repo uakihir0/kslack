@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.DndResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -16,8 +18,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class DndResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), DndResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), DndResource {
 
     override suspend fun dndEndDnd(req: DndEndDndRequest): DndEndDndResponse {
         return postFormWithToken(req.toParams(), Methods.DND_END_DND, getToken(req))

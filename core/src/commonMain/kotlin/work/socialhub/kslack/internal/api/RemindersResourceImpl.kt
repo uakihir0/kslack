@@ -1,5 +1,7 @@
 package work.socialhub.kslack.internal.api
 
+import work.socialhub.kslack.Slack
+
 import work.socialhub.kslack.api.RemindersResource
 import work.socialhub.kslack.api.methods.Methods
 import work.socialhub.kslack.api.methods.impl.AbstractResourceImpl
@@ -16,8 +18,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class RemindersResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), RemindersResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), RemindersResource {
 
     override suspend fun remindersAdd(req: RemindersAddRequest): RemindersAddResponse {
         return postFormWithToken(req.toParams(), Methods.REMINDERS_ADD, getToken(req))

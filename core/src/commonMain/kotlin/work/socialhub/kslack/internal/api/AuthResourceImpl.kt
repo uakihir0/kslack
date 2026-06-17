@@ -28,8 +28,9 @@ import work.socialhub.kslack.util.toBlocking
  * @param token Optional default token provided at factory initialization
  */
 class AuthResourceImpl(
-    token: String?
-) : AbstractResourceImpl(token), AuthResource {
+    token: String?,
+    apiUrl: String = Slack.ENDPOINT_URL_PREFIX,
+) : AbstractResourceImpl(token, apiUrl), AuthResource {
 
     override suspend fun authRevoke(req: AuthRevokeRequest): AuthRevokeResponse {
         return postFormWithToken(req.toParams(), Methods.AUTH_REVOKE, getToken(req))
