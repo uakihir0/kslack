@@ -107,7 +107,7 @@ class SlackImpl(
     private val emoji: EmojiResource = EmojiResourceImpl(token, apiUrl)
     private val files: FilesResource = FilesResourceImpl(token, apiUrl)
     private val migration: MigrationResource = MigrationResourceImpl(token, apiUrl)
-    private val oauth: OAuthResource = OAuthResourceImpl()
+    private val oauth: OAuthResource = OAuthResourceImpl(token, apiUrl)
     private val openIDConnect: OpenIDConnectResource = OpenIDConnectResourceImpl(token, apiUrl)
     private val pins: PinsResource = PinsResourceImpl(token, apiUrl)
     private val reactions: ReactionsResource = ReactionsResourceImpl(token, apiUrl)
