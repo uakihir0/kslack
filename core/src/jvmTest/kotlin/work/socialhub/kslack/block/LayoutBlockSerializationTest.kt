@@ -1,10 +1,14 @@
 package work.socialhub.kslack.block
 
+import kotlinx.serialization.SerializationException
 import work.socialhub.kslack.api.methods.helper.JsonHelper
 import work.socialhub.kslack.api.methods.response.conversations.ConversationsHistoryResponse
+import work.socialhub.kslack.entity.block.LayoutBlock
+import work.socialhub.kslack.entity.block.SectionBlock
 import work.socialhub.kslack.entity.block.RawLayoutBlock
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFailsWith
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
@@ -84,5 +88,16 @@ class LayoutBlockSerializationTest {
         // And it must decode again without error.
         val reDecoded = JsonHelper.fromJson<ConversationsHistoryResponse>(reEncoded)
         assertEquals("rich_text", reDecoded.messages!![0].blocks!![0].type)
+    }
+
+    @Test
+    fun testSerializeTypedBlockFailsFast() {
+        // Typed blocks are not @Serializable; encoding one would silently drop
+        // every field but type/block_id, so the serializer must fail fast
+        // rather than emit a corrupted Block Kit payload.
+        val blocks: Array<LayoutBlock> = arrayOf(SectionBlock())
+        assertFailsWith<SerializationException> {
+            JsonHelper.toJson(blocks)
+        }
     }
 }

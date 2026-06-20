@@ -1,15 +1,13 @@
 package work.socialhub.kslack.entity.block
 
 import kotlinx.serialization.KSerializer
+import kotlinx.serialization.SerializationException
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.descriptors.buildClassSerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 import kotlinx.serialization.json.JsonDecoder
 import kotlinx.serialization.json.JsonEncoder
-import kotlinx.serialization.json.JsonObject
-import kotlinx.serialization.json.JsonPrimitive
-import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 
@@ -28,6 +26,12 @@ import kotlinx.serialization.json.jsonPrimitive
  * into a lossless [RawLayoutBlock] that keeps the original JSON in
  * [RawLayoutBlock.content]. Parsing therefore never fails on an unknown block,
  * and a deserialize → serialize round-trip preserves the payload verbatim.
+ *
+ * Serialization only supports [RawLayoutBlock]. The typed block classes
+ * (`SectionBlock`, `ImageBlock`, ...) are not `@Serializable` and cannot be
+ * encoded field-by-field, so encoding one would silently drop its content;
+ * instead this serializer fails fast. Outgoing requests should send blocks via
+ * the dedicated `blocksAsString` (pre-rendered JSON) parameters.
  */
 object LayoutBlockSerializer : KSerializer<LayoutBlock> {
 
@@ -48,12 +52,19 @@ object LayoutBlockSerializer : KSerializer<LayoutBlock> {
         require(encoder is JsonEncoder) {
             "LayoutBlockSerializer only supports JSON encoding."
         }
-        // Round-trip the captured payload when available; otherwise emit the
-        // minimal {type, block_id} so typed blocks still serialize without crashing.
-        val element = (value as? RawLayoutBlock)?.content ?: buildJsonObject {
-            value.type?.let { put("type", JsonPrimitive(it)) }
-            (value as? RawLayoutBlock)?.blockId?.let { put("block_id", JsonPrimitive(it)) }
-        }
-        encoder.encodeJsonElement(element)
+        // Only RawLayoutBlock carries a serializable payload. Typed blocks have
+        // no per-field serialization, so encoding one would silently truncate
+        // its data — fail fast instead of corrupting the request.
+        val raw = value as? RawLayoutBlock
+            ?: throw SerializationException(
+                "Cannot serialize LayoutBlock of type '${value.type}' " +
+                    "(${value::class.simpleName}). Only RawLayoutBlock is supported; " +
+                    "send constructed blocks via the 'blocksAsString' parameter instead."
+            )
+        val content = raw.content
+            ?: throw SerializationException(
+                "Cannot serialize RawLayoutBlock of type '${raw.type}' without captured content."
+            )
+        encoder.encodeJsonElement(content)
     }
 }
