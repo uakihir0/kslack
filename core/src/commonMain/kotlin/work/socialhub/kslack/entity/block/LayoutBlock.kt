@@ -1,5 +1,6 @@
 package work.socialhub.kslack.entity.block
 
+import kotlinx.serialization.Serializable
 import kotlin.js.JsExport
 
 /**
@@ -8,11 +9,17 @@ import kotlin.js.JsExport
  * message UI, you can customize the order and appearance of information
  * delivered by your app in Slack.
  *
+ * Blocks are (de)serialized through [LayoutBlockSerializer], which tolerates any
+ * block `type` Slack sends (including `rich_text`) by capturing the raw JSON in
+ * a [RawLayoutBlock]. Without it, decoding any message that carries `blocks`
+ * fails because no concrete subclass is registered for the polymorphic scope.
+ *
  * @see [Block Kit Guide](https://api.slack.com/block-kit)
  *
  * @see [Block Kit Reference](https://api.slack.com/reference/messaging/blocks)
  */
 @JsExport
+@Serializable(with = LayoutBlockSerializer::class)
 interface LayoutBlock {
     /**
      * Determines the type of layout block, e.g. section, divider, context, actions

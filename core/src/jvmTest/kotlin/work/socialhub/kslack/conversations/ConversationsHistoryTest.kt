@@ -4,14 +4,12 @@ import work.socialhub.kslack.AbstractTest
 import work.socialhub.kslack.SlackFactory
 import work.socialhub.kslack.api.methods.request.conversations.ConversationsHistoryRequest
 import work.socialhub.kslack.api.methods.request.conversations.ConversationsListRequest
-import kotlin.test.Ignore
 import kotlin.test.Test
 import kotlin.test.assertNotNull
 import kotlin.test.assertTrue
 
 class ConversationsHistoryTest : AbstractTest() {
 
-    @Ignore("Slack API may return messages with rich_text blocks, but LayoutBlock polymorphic serializer doesn't support rich_text yet")
     @Test
     fun testConversationsHistory() {
         val slack = SlackFactory.instance(userToken!!)
