@@ -35,6 +35,9 @@ class OAuthResourceImpl(
             req.clientSecret?.let { add(HttpParameter.param("client_secret", it)) }
             req.code?.let { add(HttpParameter.param("code", it)) }
             req.redirectUri?.let { add(HttpParameter.param("redirect_uri", it)) }
+            // Token rotation: grant_type=refresh_token renews an expired token.
+            req.grantType?.let { add(HttpParameter.param("grant_type", it)) }
+            req.refreshToken?.let { add(HttpParameter.param("refresh_token", it)) }
         }
         return postForm(params, "oauth.v2.access")
     }
