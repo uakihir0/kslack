@@ -20,6 +20,16 @@ class OAuthV2AccessResponse : SlackApiResponse() {
     var team: OAuthTeam? = null
     var enterprise: OAuthEnterprise? = null
     var incomingWebhook: OAuthIncomingWebhook? = null
+
+    /**
+     * Present only when token rotation is enabled for the app. The bot
+     * [accessToken] then expires after [expiresIn] seconds and can be renewed
+     * with this refresh token via `oauth.v2.access` (grant_type=refresh_token).
+     */
+    var refreshToken: String? = null
+
+    /** Lifetime of the bot [accessToken] in seconds (token rotation only). */
+    var expiresIn: Int? = null
 }
 
 @JsExport
@@ -29,6 +39,16 @@ class OAuthAuthedUser {
     var scope: String? = null
     var tokenType: String? = null // "user"
     var accessToken: String? = null // xoxp-xxx-yyy
+
+    /**
+     * Present only when token rotation is enabled for the app. The user
+     * [accessToken] then expires after [expiresIn] seconds and can be renewed
+     * with this refresh token via `oauth.v2.access` (grant_type=refresh_token).
+     */
+    var refreshToken: String? = null
+
+    /** Lifetime of the user [accessToken] in seconds (token rotation only). */
+    var expiresIn: Int? = null
 }
 @JsExport
 @Serializable
