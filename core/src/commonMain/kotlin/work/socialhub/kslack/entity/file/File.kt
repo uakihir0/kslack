@@ -161,10 +161,10 @@ class File {
     var thumbPdf: String? = null
 
     @SerialName("thumb_pdf_w")
-    var thumbPdfWidth: String? = null
+    var thumbPdfWidth: Int? = null
 
     @SerialName("thumb_pdf_h")
-    var thumbPdfHeight: String? = null
+    var thumbPdfHeight: Int? = null
 
     var thumbTiny: String? = null
 

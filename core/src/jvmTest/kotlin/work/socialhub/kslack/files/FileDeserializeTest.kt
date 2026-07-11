@@ -27,6 +27,9 @@ class FileDeserializeTest {
               "thumb_360_h": 360,
               "thumb_480_w": 340,
               "thumb_480_h": 480,
+              "thumb_pdf": "https://files.slack.com/files-tmb/T-F/doc_thumb_pdf.png",
+              "thumb_pdf_w": 909,
+              "thumb_pdf_h": 1286,
               "original_w": 1055,
               "original_h": 1491
             }
@@ -39,6 +42,9 @@ class FileDeserializeTest {
         assertEquals(360, file.thumb360Height)
         assertEquals(340, file.thumb480Width)
         assertEquals(480, file.thumb480Height)
+        // PDF preview dimensions are also numeric in Slack's file object.
+        assertEquals(909, file.thumbPdfWidth)
+        assertEquals(1286, file.thumbPdfHeight)
         assertEquals(1055, file.originalWidth)
         assertEquals(1491, file.originalHeight)
     }
