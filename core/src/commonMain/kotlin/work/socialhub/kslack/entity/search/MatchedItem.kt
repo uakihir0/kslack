@@ -105,10 +105,10 @@ class MatchedItem {
     var thumb64Gif: String? = null
 
     @SerialName("thumb_64_w")
-    var thumb64Width: String? = null
+    var thumb64Width: Int? = null
 
     @SerialName("thumb_64_h")
-    var thumb64Height: String? = null
+    var thumb64Height: Int? = null
 
     @SerialName("thumb_80")
     var thumb80: String? = null
@@ -117,10 +117,10 @@ class MatchedItem {
     var thumb80Gif: String? = null
 
     @SerialName("thumb_80_w")
-    var thumb80Width: String? = null
+    var thumb80Width: Int? = null
 
     @SerialName("thumb_80_h")
-    var thumb80Height: String? = null
+    var thumb80Height: Int? = null
 
     @SerialName("thumb_160")
     var thumb160: String? = null
@@ -129,10 +129,10 @@ class MatchedItem {
     var thumb160Gif: String? = null
 
     @SerialName("thumb_160_w")
-    var thumb160Width: String? = null
+    var thumb160Width: Int? = null
 
     @SerialName("thumb_160_h")
-    var thumb160Height: String? = null
+    var thumb160Height: Int? = null
 
     @SerialName("thumb_360")
     var thumb360: String? = null
@@ -141,10 +141,10 @@ class MatchedItem {
     var thumb360Gif: String? = null
 
     @SerialName("thumb_360_w")
-    var thumb360Width: String? = null
+    var thumb360Width: Int? = null
 
     @SerialName("thumb_360_h")
-    var thumb360Height: String? = null
+    var thumb360Height: Int? = null
 
     @SerialName("thumb_480")
     var thumb480: String? = null
@@ -153,10 +153,10 @@ class MatchedItem {
     var thumb480Gif: String? = null
 
     @SerialName("thumb_480_w")
-    var thumb480Width: String? = null
+    var thumb480Width: Int? = null
 
     @SerialName("thumb_480_h")
-    var thumb480Height: String? = null
+    var thumb480Height: Int? = null
 
     @SerialName("thumb_720")
     var thumb720: String? = null
@@ -165,10 +165,10 @@ class MatchedItem {
     var thumb720Gif: String? = null
 
     @SerialName("thumb_720_w")
-    var thumb720Width: String? = null
+    var thumb720Width: Int? = null
 
     @SerialName("thumb_720_h")
-    var thumb720Height: String? = null
+    var thumb720Height: Int? = null
 
     @SerialName("thumb_800")
     var thumb800: String? = null
@@ -177,10 +177,10 @@ class MatchedItem {
     var thumb800Gif: String? = null
 
     @SerialName("thumb_800_w")
-    var thumb800Width: String? = null
+    var thumb800Width: Int? = null
 
     @SerialName("thumb_800_h")
-    var thumb800Height: String? = null
+    var thumb800Height: Int? = null
 
     @SerialName("thumb_960")
     var thumb960: String? = null
@@ -189,10 +189,10 @@ class MatchedItem {
     var thumb960Gif: String? = null
 
     @SerialName("thumb_960_w")
-    var thumb960Width: String? = null
+    var thumb960Width: Int? = null
 
     @SerialName("thumb_960_h")
-    var thumb960Height: String? = null
+    var thumb960Height: Int? = null
 
     @SerialName("thumb_1024")
     var thumb1024: String? = null
@@ -201,10 +201,10 @@ class MatchedItem {
     var thumb1024Gif: String? = null
 
     @SerialName("thumb_1024_w")
-    var thumb1024Width: String? = null
+    var thumb1024Width: Int? = null
 
     @SerialName("thumb_1024_h")
-    var thumb1024Height: String? = null
+    var thumb1024Height: Int? = null
 
     var thumbTiny: String? = null
 
@@ -219,10 +219,10 @@ class MatchedItem {
     var imageExifRotation: Int? = null
 
     @SerialName("original_w")
-    var originalWidth: String? = null
+    var originalWidth: Int? = null
 
     @SerialName("original_h")
-    var originalHeight: String? = null
+    var originalHeight: Int? = null
 
     var score: Double? = null
     var isTopFile: Boolean = false
